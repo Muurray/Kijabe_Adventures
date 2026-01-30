@@ -124,6 +124,7 @@ nav a.active {
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     grid-area: badge;
 }
+<<<<<<< HEAD
 .logo {
   display: flex;
   align-items: center;
@@ -136,6 +137,8 @@ nav a.active {
   color: #1b4d1b;
   letter-spacing: 1px;
 }
+=======
+>>>>>>> 3bb9beb36d028fdc5ca29de97c5f94061c615dc0
 
 /* =========================
    HERO / PAGE HERO
