@@ -137,11 +137,11 @@ nav a.active {
   letter-spacing: 1px;
 }
 
-/* =========================
-   HERO / PAGE HERO
-========================= */
-.hero,
-.page-hero {
+.logo-img {
+  display: block;
+  max-height: 48px;
+  width: auto;
+}
     text-align: center;
     padding: 4rem 2rem;
     color: white;
