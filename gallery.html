@@ -163,14 +163,25 @@
   </p>
 </section>
 
-<section class="gallery-photos">
+<section class="gallery-slideshow">
   <h2><i class="fas fa-image"></i> Photos</h2>
   <p>Real experiences from real hikers.</p>
+
+  <div class="slideshow" id="slideshow" role="region" aria-roledescription="carousel" aria-label="Gallery slideshow">
+    <div class="slides" id="slides"></div>
+    <button class="slide-btn prev" aria-label="Previous slide">&#10094;</button>
+    <button class="slide-btn next" aria-label="Next slide">&#10095;</button>
+    <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
+  </div>
 </section>
 
 <section class="gallery-videos">
   <h2><i class="fas fa-video"></i> Videos</h2>
   <p>Short clips from our adventures.</p>
 </section>
+
+<!-- gallery scripts -->
+<script src="js/gallery-images.js"></script>
+<script src="js/gallery.js" defer></script>
 
 </main>
