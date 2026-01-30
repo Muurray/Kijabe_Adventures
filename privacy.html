@@ -1,20 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===========================
+       BASIC META
+  ============================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for Kijabe Adventures." />
-  <meta name="theme-color" content="#4caf50" />
+  <title>Kijabe Adventures | Hiking & Nature Tours Across Kenya</title>
 
-  <title>Privacy Policy | Kijabe Adventures</title>
+  <meta name="description"
+    content="Kijabe Adventures provides guided hikes, nature walks, and eco-tourism experiences across Kenya. Safe, affordable, and led by experienced local guides." />
 
-  <link rel="canonical" href="https://kijabeadventures.com/privacy.html" />
+  <meta name="keywords"
+    content="Kijabe Adventures, hiking Kenya, guided hikes Kenya, Ngong Hills hiking, Kijabe trails, Kenya tourism, eco tours Kenya" />
+
+  <meta name="author" content="Kijabe Adventures" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kijabeadventures.com/" />
+
+  <!-- ===========================
+       OPEN GRAPH (FACEBOOK / WHATSAPP)
+  ============================ -->
+  <meta property="og:title" content="Kijabe Adventures | Guided Hikes Across Kenya" />
+  <meta property="og:description"
+    content="Discover forests, hills, and scenic trails across Kenya with safe, guided hiking experiences." />
+  <meta property="og:url" content="https://kijabeadventures.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
+  <meta property="og:site_name" content="Kijabe Adventures" />
+
+  <!-- ===========================
+       TWITTER CARD
+  ============================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kijabe Adventures | Explore Kenya Beyond the Ordinary" />
+  <meta name="twitter:description"
+    content="Guided hiking and touring experiences across Kenya. Safe. Sustainable. Memorable." />
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/hero.jpg" />
+
+  <!-- ===========================
+       FAVICONS
+  ============================ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#006400">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+
+  <meta name="msapplication-TileColor" content="#006400">
+  <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#006400">
+
+  <!-- ===========================
+       PRELOADS (PERFORMANCE)
+  ============================ -->
+  <link rel="preload" href="css/styles.css" as="style" />
+  <link rel="preload" href="images/logo.png" as="image" />
+
+  <!-- ===========================
+       CSS
+  ============================ -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="manifest" href="/manifest.json" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- ===========================
+       GOOGLE TAG (gtag.js)
+  ============================ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,45 +76,79 @@
     gtag('js', new Date());
     gtag('config', 'G-T50VJ5C9XV');
   </script>
+
+  <!-- ===========================
+       STRUCTURED DATA (SEO)
+  ============================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Kijabe Adventures Hiking Tours",
+    "description": "Guided hiking and outdoor experiences across Kenya including Kijabe, Ngong Hills, and scenic forest trails.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kijabe Adventures",
+      "url": "https://kijabeadventures.com/",
+      "logo": "https://kijabeadventures.com/images/logo.png",
+      "telephone": "+254743980340",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE"
+      }
+    },
+    "touristType": "Hikers",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Kenya"
+    }
+  }
+  </script>
+
 </head>
 
 <body>
-
 <header>
-  <div class="header-container">
-    <div class="logo">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="#4CAF50"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
-      </svg>
-      <span>Kijabe Adventures</span>
-    </div>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-      <span class="sr-only">Toggle navigation</span>
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <nav id="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="safety.html">Safety</a>
-      <a href="donate.html">Support Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="booking.html">Booking</a>
-    </nav>
-
-    <p class="tagline">
-      Guided Hiking & Touring Experiences Across Kenya
-    </p>
-
-    <a href="contact.html"
-       id="next-hike-badge"
-       class="next-hike-badge"
-       aria-label="View next hike details">
-      Loading next hike...
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="index.html" aria-label="Kijabe Adventures Home">
+      <img src="images/logo.png"
+           alt="Kijabe Adventures Logo"
+           width="140"
+           class="logo-img"
+           loading="lazy">
     </a>
+    <span class="logo-text">Kijabe Adventures</span>
   </div>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+    <span class="sr-only">Toggle navigation</span>
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- PRIMARY NAVIGATION (NO DROPDOWNS) -->
+  <nav id="primary-nav" class="primary-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="safety.html">Safety</a>
+    <a href="donate.html">Support Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Booking</a>
+  </nav>
+
+  <!-- TAGLINE -->
+  <p class="tagline">
+    Guided Hiking & Touring Experiences Across Kenya
+  </p>
+
+  <!-- NEXT HIKE BADGE -->
+  <a href="contact.html"
+     id="next-hike-badge"
+     class="next-hike-badge"
+     aria-label="View next hike details">
+    Loading next hike...
+  </a>
 </header>
 
 <main class="page-content">
