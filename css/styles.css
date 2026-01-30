@@ -1,0 +1,635 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+:root {
+    --primary: #4caf50;
+    --primary-dark: #2c6e49;
+    --accent: #ffb74d;
+    --dark: #1f1f1f;
+    --light: #ffffff;
+    --muted: #6b7280;
+    --bg-overlay: rgba(18, 28, 39, 0.78);
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: #f7f8f9;
+}
+
+/* Utility container */
+.page-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+/* =========================
+   HEADER & NAV
+========================= */
+header {
+    background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1.2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "logo nav nav"
+      "tagline tagline badge";
+    align-items: center;
+    gap: 0.75rem 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    grid-area: logo;
+}
+
+.logo svg {
+    margin-right: 10px;
+    fill: var(--accent);
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    letter-spacing: 0.01em;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+}
+.nav-toggle {
+    display: none;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+.next-hike-badge {
+    display: inline-block;
+    margin: 0.8rem auto 0;
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    grid-area: badge;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1b4d1b;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   HERO / PAGE HERO
+========================= */
+.hero,
+.page-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: white;
+    border-radius: var(--radius);
+    background:
+      linear-gradient(115deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
+      url('../images/Ngong Hills.jpg') center/cover no-repeat;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p,
+.page-hero p {
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.cta-button:hover {
+    background: #3b8b3c;
+    transform: translateY(-2px);
+}
+
+.booking-steps {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 1.5rem;
+}
+
+.booking-steps h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.step {
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.4rem 1.2rem;
+    text-align: left;
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(76, 175, 80, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.booking-calendar {
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 2rem 1.5rem;
+}
+
+.booking-calendar iframe {
+    width: 100%;
+    height: 65vh;
+    max-height: 680px;
+    min-height: 420px;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.booking-calendar .cta-button {
+    margin: 0.5rem 0.4rem 0 0;
+}
+
+/* =========================
+   GRID SECTIONS
+========================= */
+.trail-grid,
+.features-grid,
+.season-grid,
+.testimonials-grid,
+.pricing-grid,
+.safety-grid,
+.contact-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.trail-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Cards (shared) */
+.trail-card,
+.feature,
+.season-card,
+.testimonial-card,
+.price-card,
+.safety-card {
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.trail-card:hover,
+.feature:hover,
+.testimonial-card:hover,
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   TRAIL CARDS
+========================= */
+.trail-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.trail-card h3 {
+    padding: 1rem;
+    color: var(--primary-dark);
+}
+
+.trail-card p {
+    padding: 0 1rem 1rem;
+}
+
+.difficulty {
+    margin: 1rem;
+    display: inline-block;
+    background: var(--accent);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* =========================
+   FEATURES / WHY US
+========================= */
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+}
+
+.feature i {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
+.testimonials {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.testimonial-card {
+    text-align: center;
+    padding: 2rem;
+    background: #f9f9f9;
+}
+
+.testimonial-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+}
+
+/* =========================
+   CURRENT HIKE / PRICING
+========================= */
+.current-hike {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    margin-bottom: 3rem;
+}
+
+.current-hike-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-top: 2rem;
+}
+
+.price-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.popular-packages {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.popular-packages h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.price-card p {
+    color: var(--muted);
+}
+
+.about-snippet {
+    background: var(--light);
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.faq {
+    background: #f4f6f8;
+    padding: 3rem 1.5rem;
+    border-radius: var(--radius);
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-section {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+}
+
+.contact-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 2.5rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--accent);
+}
+
+.social-links a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.footer-links li + li {
+    margin-top: 0.25rem;
+}
+
+.footer-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-legal {
+    text-align: center;
+    margin-top: 1rem;
+    color: #d1d5db;
+    font-size: 0.95rem;
+}
+
+.footer-legal a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: white;
+    font-size: 2rem;
+    padding: 15px 18px;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .header-container {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "logo navtoggle"
+          "nav nav"
+          "tagline tagline"
+          "badge badge";
+        text-align: left;
+    }
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: navtoggle;
+    }
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+    nav.open {
+        display: flex;
+    }
+    .tagline {
+        font-size: 0.95rem;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .current-hike-container,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .booking-calendar iframe {
+        height: 55vh;
+        min-height: 360px;
+    }
+}
+/* NEXT HIKE BADGE */
+.next-hike-badge {
+    display: inline-block;
+    margin: 0.8rem auto 0;
+    background: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.6rem 1.3rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.next-hike-badge:hover {
+    transform: translateY(-2px);
+}
+
+/* STATUS COLORS */
+.next-hike-badge.open {
+    background: #2ecc71;
+}
+
+.next-hike-badge.almost-full {
+    background: #e74c3c;
+}
+
+.tagline {
+    grid-area: tagline;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* MOBILE FLOATING */
+@media (max-width: 768px) {
+    .next-hike-badge {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        z-index: 999;
+        margin: 0;
+        font-size: 0.85rem;
+    }
+}

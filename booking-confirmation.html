@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Booking confirmation for Kijabe Adventures.">
+  <meta name="theme-color" content="#4caf50">
+  <title>Booking Confirmation | Kijabe Adventures</title>
+
+  <link rel="canonical" href="https://kijabeadventures.com/booking-confirmation.html" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T50VJ5C9XV');
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="#4CAF50"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+      </svg>
+      <span>Kijabe Adventures</span>
+    </div>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="safety.html">Safety</a>
+      <a href="donate.html">Support Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html">Booking</a>
+    </nav>
+
+    <p class="tagline">
+      Guided Hiking & Touring Experiences Across Kenya
+    </p>
+
+    <a href="contact.html"
+       id="next-hike-badge"
+       class="next-hike-badge"
+       aria-label="View next hike details">
+      Loading next hike...
+    </a>
+  </div>
+</header>
+
+<main class="page-content">
+  <section class="page-hero">
+    <h1>Thank You!</h1>
+    <p>Your message was sent. We’ll confirm your booking or reply shortly.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div>
+        <h2>What’s Next</h2>
+        <p>We’ll reach out on WhatsApp or email to confirm dates, meeting point, and gear list. If it’s urgent, call or message us now.</p>
+        <p><strong>Phone:</strong> +254 743 980 340<br>
+           <strong>Email:</strong> info@kijabeadventures.com<br>
+           <strong>WhatsApp:</strong> Quick replies for bookings</p>
+        <a class="cta-button" href="https://wa.me/254743980340" target="_blank">Message on WhatsApp</a>
+      </div>
+      <div>
+        <h2>Popular Options</h2>
+        <ul>
+          <li>Half-Day Hills – from KES 1,500</li>
+          <li>Sunrise Ridge – from KES 2,200</li>
+          <li>Full-Day Escarpment – from KES 3,200</li>
+        </ul>
+        <a class="cta-button" href="destinations.html">View Destinations</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nairobi & Central Kenya, Kenya</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Support Us</h3>
+      <p>Help us promote safe hiking & conservation.</p>
+      <a href="donate.html" class="cta-button">Donate via M-Pesa / PayPal</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="safety.html">Safety</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2025 Kijabe Adventures. All rights reserved.
+  </p>
+  <p class="footer-legal">
+    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  </p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="js/next-hike.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+</script>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Received | Kijabe Adventures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4caf50">
+<link rel="canonical" href="https://kijabeadventures.com/booking-confirmation.html" />
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T50VJ5C9XV');
+</script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T50VJ5C9XV');
+</script>
+
+<div id="next-hike-badge" class="next-hike-badge">
+  🌄 Next Hike: Loading...
+</div>
+
+<script src="js/next-hike.js"></script>
+
+<body>
+
+<header>
+  <h1>Booking Request Received ✅</h1>
+</header>
+
+<main class="confirmation-page">
+  <p>
+    Thank you for choosing <strong>Kijabe Adventures</strong>!  
+    We have received your booking request.
+  </p>
+
+  <p>
+    Our team will contact you shortly via <strong>WhatsApp</strong> or phone.
+  </p>
+
+  <div class="confirmation-actions">
+    <a href="index.html" class="cta-button">Back to Home</a>
+    <a href="https://wa.me/254743980340"
+       class="whatsapp-booking"
+       target="_blank">
+      Chat on WhatsApp
+    </a>
+  </div>
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Support Us</h3>
+      <p>Help us promote safe hiking & conservation.</p>
+      <a href="donate.html" class="cta-button">Donate via M-Pesa / PayPal</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2025 Kijabe Adventures. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
+

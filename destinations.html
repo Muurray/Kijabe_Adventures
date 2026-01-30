@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Kijabe Adventures destinations and monthly guided hikes across Kenya. Book via WhatsApp or contact us for custom dates.">
+  <meta name="theme-color" content="#4caf50">
+  <title>Destinations | Kijabe Adventures</title>
+
+  <link rel="canonical" href="https://kijabeadventures.com/destinations.html" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="manifest" href="/manifest.json">
+
+  <style>
+    .monthly-adventure {
+      border: 1px solid #e5e7eb;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .monthly-adventure .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--primary);
+      color: white;
+      padding: 6px 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 0.9em;
+      box-shadow: var(--shadow);
+    }
+    .monthly-adventure iframe {
+      border-radius: 10px;
+      margin-top: 12px;
+      border: none;
+      width: 100%;
+      height: 300px;
+    }
+    .whatsapp-booking {
+      display: inline-block;
+      margin-top: 12px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .whatsapp-booking i {
+      margin-right: 6px;
+    }
+    .whatsapp-booking:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T50VJ5C9XV');
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="#4CAF50"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+      </svg>
+      <span>Kijabe Adventures</span>
+    </div>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html" class="active">Destinations</a>
+      <a href="safety.html">Safety</a>
+      <a href="donate.html">Support Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html">Booking</a>
+    </nav>
+
+    <p class="tagline">
+      Guided Hiking & Touring Experiences Across Kenya
+    </p>
+
+    <a href="contact.html"
+       id="next-hike-badge"
+       class="next-hike-badge"
+       aria-label="View next hike details">
+      Loading next hike...
+    </a>
+  </div>
+</header>
+
+<main class="page-content">
+
+  <section class="page-hero">
+    <h1>Destinations & Monthly Adventures</h1>
+    <p>Pick a month, join a scheduled hike, or message us for a custom date.</p>
+  </section>
+
+  <section class="contact-section">
+    <h2>Monthly Hiking Adventures</h2>
+
+    <!-- JANUARY -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Jan 15</div>
+      <h3>Ngong Hills</h3>
+      <p>Open grassland trails with stunning Rift Valley views. Perfect for starting the year strong.</p>
+      <iframe src="https://www.google.com/maps?q=Ngong+Hills&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Ngong%20Hills%20January%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- FEBRUARY -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Feb 12</div>
+      <h3>Karura Forest</h3>
+      <p>Relaxing forest trails, waterfalls, and caves just outside Nairobi.</p>
+      <iframe src="https://www.google.com/maps?q=Karura+Forest&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Karura%20Forest%20February%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- MARCH -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Mar 18</div>
+      <h3>Mount Kenya</h3>
+      <p>Experience Africa's second-highest peak. Challenging hikes with breathtaking views.</p>
+      <iframe src="https://www.google.com/maps?q=Mount+Kenya&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Mount%20Kenya%20March%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- APRIL -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Apr 10</div>
+      <h3>Aberdare Ranges</h3>
+      <p>Highland trails with waterfalls, wildlife, and lush vegetation.</p>
+      <iframe src="https://www.google.com/maps?q=Aberdare+Ranges&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Aberdare%20April%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- MAY -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: May 22</div>
+      <h3>Kijabe Hills</h3>
+      <p>Scenic escarpment trails with panoramic valley views and quiet forests.</p>
+      <iframe src="https://www.google.com/maps?q=Kijabe+Hills&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Kijabe%20Hills%20May%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- JUNE -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Jun 12</div>
+      <h3>Hell's Gate National Park</h3>
+      <p>Adventure trails through gorges and cliffs, with wildlife and hot springs.</p>
+      <iframe src="https://www.google.com/maps?q=Hells+Gate+National+Park&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Hells%20Gate%20June%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- JULY -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Jul 17</div>
+      <h3>Mount Longonot</h3>
+      <p>Strenuous volcanic crater hike with stunning panoramas of the Great Rift Valley.</p>
+      <iframe src="https://www.google.com/maps?q=Mount+Longonot&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Mount%20Longonot%20July%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- AUGUST -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Aug 14</div>
+      <h3>Shimba Hills</h3>
+      <p>Coastal forest with wildlife and cliff viewpoints. Ideal for nature lovers.</p>
+      <iframe src="https://www.google.com/maps?q=Shimba+Hills&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Shimba%20Hills%20August%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- SEPTEMBER -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Sep 11</div>
+      <h3>Maasai Mara Conservancy</h3>
+      <p>Wildlife trails and savannah hikes, perfect for safari-hiking combos.</p>
+      <iframe src="https://www.google.com/maps?q=Maasai+Mara+Conservancy&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Maasai%20Mara%20September%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- OCTOBER -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Oct 16</div>
+      <h3>Amboseli National Park</h3>
+      <p>Hikes with iconic Mount Kilimanjaro views and large elephant herds.</p>
+      <iframe src="https://www.google.com/maps?q=Amboseli+National+Park&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Amboseli%20October%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- NOVEMBER -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Nov 13</div>
+      <h3>Mount Elgon</h3>
+      <p>Challenging hikes with waterfalls, caves, and rich flora.</p>
+      <iframe src="https://www.google.com/maps?q=Mount+Elgon&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Mount%20Elgon%20November%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+    <!-- DECEMBER -->
+    <section class="monthly-adventure">
+      <div class="badge">Next Hike: Dec 18</div>
+      <h3>Mount Suswa</h3>
+      <p>Crater hikes with lava tunnels and scenic escarpments. Ideal year-end adventure.</p>
+      <iframe src="https://www.google.com/maps?q=Mount+Suswa&output=embed" loading="lazy"></iframe>
+      <a href="https://wa.me/254743980340?text=I%20want%20to%20book%20Mount%20Suswa%20December%20hike" class="whatsapp-booking" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nairobi & Central Kenya, Kenya</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Support Us</h3>
+      <p>Help us promote safe hiking & conservation.</p>
+      <a href="donate.html" class="cta-button">Donate via M-Pesa / PayPal</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="safety.html">Safety</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2025 Kijabe Adventures. All rights reserved.
+  </p>
+  <p class="footer-legal">
+    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  </p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="js/next-hike.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+</script>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>
