@@ -142,6 +142,7 @@ nav a.active {
   max-height: 48px;
   width: auto;
 }
+.hero {
     text-align: center;
     padding: 4rem 2rem;
     color: white;
