@@ -11,10 +11,6 @@
     --bg-overlay: rgba(18, 28, 39, 0.78);
     --radius: 12px;
     --shadow: 0 4px 14px rgba(0,0,0,0.12);
-    --card-bg: #f9f9f9;
-    --light-gray: #f4f6f8;
-    --border-color: #ccc;
-    --transition-speed: 0.3s;
 }
 
 /* =========================
@@ -76,7 +72,6 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     font-family: Georgia, serif;
     font-size: 1.8rem;
     font-weight: bold;
@@ -86,19 +81,6 @@ header {
 .logo svg {
     margin-right: 10px;
     fill: var(--accent);
-}
-
-.logo-text {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    letter-spacing: 1px;
-}
-
-.logo-img {
-    display: block;
-    max-height: 48px;
-    width: auto;
 }
 
 nav {
@@ -113,23 +95,14 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: color var(--transition-speed);
+    transition: color 0.3s;
     letter-spacing: 0.01em;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
 }
 
 nav a:hover,
 nav a.active {
     color: var(--accent);
 }
-
-nav a:focus {
-    outline: 2px solid var(--accent);
-}
-
 .nav-toggle {
     display: none;
     background: rgba(255,255,255,0.12);
@@ -138,17 +111,38 @@ nav a:focus {
     padding: 0.35rem 0.6rem;
     border-radius: 8px;
     font-size: 1.2rem;
-    cursor: pointer;
-    transition: background var(--transition-speed);
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+}
+.next-hike-badge {
+    display: inline-block;
+    margin: 0.8rem auto 0;
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    grid-area: badge;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.nav-toggle:hover,
-.nav-toggle:focus {
-    background: rgba(255,255,255,0.2);
-    outline: 2px solid var(--accent);
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1b4d1b;
+  letter-spacing: 1px;
 }
+
+.logo-img {
+  display: block;
+  max-height: 48px;
+  width: auto;
+}
+
 .hero {
     text-align: center;
     padding: 4rem 2rem;
@@ -180,20 +174,12 @@ nav a:focus {
     text-decoration: none;
     font-weight: bold;
     box-shadow: var(--shadow);
-    transition: transform var(--transition-speed), background var(--transition-speed);
-    border: 2px solid transparent;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
 }
 
 .cta-button:hover {
     background: #3b8b3c;
     transform: translateY(-2px);
-}
-
-.cta-button:focus {
-    outline: 2px solid var(--accent);
 }
 
 .booking-steps {
@@ -289,15 +275,10 @@ nav a:focus {
 }
 
 .trail-card:hover,
-.trail-card:focus-within,
 .feature:hover,
-.feature:focus-within,
 .testimonial-card:hover,
-.testimonial-card:focus-within,
-.price-card:hover,
-.price-card:focus-within {
+.price-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -359,7 +340,7 @@ nav a:focus {
 .testimonial-card {
     text-align: center;
     padding: 2rem;
-    background: var(--card-bg);
+    background: #f9f9f9;
 }
 
 .testimonial-card img {
@@ -433,7 +414,7 @@ nav a:focus {
 }
 
 .faq {
-    background: var(--light-gray);
+    background: #f4f6f8;
     padding: 3rem 1.5rem;
     border-radius: var(--radius);
     max-width: 1100px;
@@ -478,17 +459,7 @@ nav a:focus {
     padding: 0.8rem;
     margin-bottom: 1rem;
     border-radius: 6px;
-    border: 1px solid var(--border-color);
-    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--primary);
-    outline: 2px solid var(--primary);
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    border: 1px solid #ccc;
 }
 
 /* =========================
@@ -593,27 +564,16 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0,0,0,0.5);
-    color: white;
+    color: #fff;
     border: none;
     padding: 0.6rem 0.9rem;
     font-size: 1.4rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: background var(--transition-speed);
-    outline: 2px solid transparent;
-    outline-offset: 2px;
 }
-
-.slide-btn:hover {
-    background: rgba(0,0,0,0.7);
-}
-
 .slide-btn.prev { left: 12px; }
 .slide-btn.next { right: 12px; }
-
-.slide-btn:focus {
-    outline: 2px solid var(--accent);
-}
+.slide-btn:focus { outline: 2px solid var(--accent); }
 .indicators {
     position: absolute;
     left: 50%;
@@ -625,20 +585,11 @@ footer {
 .indicator {
     width: 10px;
     height: 10px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(41, 122, 155, 0.6);
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.08);
     cursor: pointer;
-    transition: background var(--transition-speed), box-shadow var(--transition-speed);
-    outline: 2px solid transparent;
-    outline-offset: 2px;
 }
-
-.indicator:hover,
-.indicator:focus {
-    outline: 2px solid var(--accent);
-}
-
 .indicator.active {
     background: var(--accent);
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -666,14 +617,6 @@ footer {
 /* =========================
    RESPONSIVE
 ========================= */
-/* Tablet screens */
-@media (max-width: 1024px) {
-    .current-hike-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mobile screens */
 @media (max-width: 768px) {
     .header-container {
         grid-template-columns: 1fr auto;
@@ -684,14 +627,12 @@ footer {
           "badge badge";
         text-align: left;
     }
-    
     .nav-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         grid-area: navtoggle;
     }
-    
     nav {
         width: 100%;
         justify-content: flex-start;
@@ -699,40 +640,52 @@ footer {
         align-items: flex-start;
         display: none;
     }
-    
     nav.open {
         display: flex;
     }
-    
     .tagline {
         font-size: 0.95rem;
     }
-    
     .hero h1 {
         font-size: 2.2rem;
-    }
-    
-    .hero {
-        padding: 3rem 1rem;
     }
 
     .current-hike-container,
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
     .booking-calendar iframe {
         height: 55vh;
         min-height: 360px;
     }
-    
-    .trail-grid,
-    .features-grid,
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
+}
+/* NEXT HIKE BADGE */
+.next-hike-badge {
+    display: inline-block;
+    margin: 0.8rem auto 0;
+    background: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.6rem 1.3rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
 }
 
+.next-hike-badge:hover {
+    transform: translateY(-2px);
+}
+
+/* STATUS COLORS */
+.next-hike-badge.open {
+    background: #2ecc71;
+}
+
+.next-hike-badge.almost-full {
+    background: #e74c3c;
+}
 
 .tagline {
     grid-area: tagline;
