@@ -104,6 +104,42 @@
     }
   }
   </script>
+    </script>
+  <!-- Google CMP (2-button message) -->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
+<script>
+  (function() {
+    function signalGooglefcPresent() {
+      if (!window.frames['googlefcPresent']) {
+        if (document.body) {
+          const iframe = document.createElement('iframe');
+          iframe.style = 'width:0;height:0;border:0;display:none';
+          iframe.name = 'googlefcPresent';
+          document.body.appendChild(iframe);
+        } else {
+          setTimeout(signalGooglefcPresent, 300);
+        }
+      }
+    }
+    signalGooglefcPresent();
+  })();
+</script>
+<!-- END Google CMP -->
+<!-- Google Consent Mode (default settings before consent) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
+     crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -294,6 +330,21 @@
   <p class="footer-legal">
     <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
   </p>
+
+  <section class="ad-section">
+    <h3>Ads/h3>
+    <!-- AdSense Display Ad -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="pub-3754507736699545"
+      data-ad-slot="YOUR_AD_SLOT_ID"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 </footer>
 
 <!-- WhatsApp Float Button -->

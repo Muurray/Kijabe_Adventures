@@ -146,7 +146,7 @@
 
 </main>
 
-<!-- ===== FOOTER (unchanged) ===== -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-content">
 
@@ -166,12 +166,9 @@
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://www.facebook.com/kijabeadventures" target="_blank" rel="noopener">
-          <i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener">
-          <i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener">
-          <i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
 
@@ -194,10 +191,24 @@
   <p class="footer-legal">
     <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
   </p>
+
+  <section class="ad-section">
+    <!-- AdSense Display Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="pub-3754507736699545"
+         data-ad-slot="YOUR_AD_SLOT_ID"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20support%20your%20work."
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
    class="whatsapp-float"
    target="_blank"
    aria-label="Chat on WhatsApp">
@@ -207,18 +218,21 @@
 <!-- Scripts -->
 <script src="js/next-hike.js"></script>
 <script>
-  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
 </script>
-
 <script>
-  const navToggle = document.querySelector(".nav-toggle");
-  const primaryNav = document.getElementById("primary-nav");
-
-  navToggle.addEventListener("click", () => {
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!expanded));
-    primaryNav.classList.toggle("open");
-  });
+  // Simple mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('open');
+    });
+  }
 </script>
 
 </body>

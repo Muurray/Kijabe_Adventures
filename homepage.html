@@ -104,13 +104,47 @@
     }
   }
   </script>
+  <!-- Google CMP (2-button message) -->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
+<script>
+  (function() {
+    function signalGooglefcPresent() {
+      if (!window.frames['googlefcPresent']) {
+        if (document.body) {
+          const iframe = document.createElement('iframe');
+          iframe.style = 'width:0;height:0;border:0;display:none';
+          iframe.name = 'googlefcPresent';
+          document.body.appendChild(iframe);
+        } else {
+          setTimeout(signalGooglefcPresent, 300);
+        }
+      }
+    }
+    signalGooglefcPresent();
+  })();
+</script>
+<!-- END Google CMP -->
+<!-- Google Consent Mode (default settings before consent) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
+     crossorigin="anonymous"></script>
+
   <!-- Google AdSense Verification -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-3754507736699545"
         crossorigin="anonymous"></script>
-<meta name="google-adsense-platform-account" content="ca-pub-3754507736699545">
-<meta name="google-adsense-platform-domain" content="
-  google.com, pub-3754507736699545, DIRECT, f08c47fec0942fa0
-<meta name="google-adsense-account" content="ca-pub-3754507736699545">
+  <meta name="google-adsense-platform-account" content="ca-pub-3754507736699545">
+  <meta name="google-adsense-platform-domain" content="google.com, pub-3754507736699545, DIRECT, f08c47fec0942fa0">
+  <meta name="google-adsense-account" content="ca-pub-3754507736699545">
 </head>
 
 <body><a href="https://kijabeadventures.com/cdn-cgi/content?id=n3pAcpx5rHEpR2MKhMw8CvXL4ewYSesH3QOnsvgrmqs-1769778753.5401506-1.0.1.1-lDbyBSW860UTUeGN8ihtf6UCmD.x5_qPuE9Xa_RfpS0" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
@@ -378,6 +412,7 @@
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
@@ -385,7 +420,7 @@
     <div class="footer-section">
       <h3>Contact</h3>
       <p><i class="fas fa-phone"></i> +254 743 980 340</p>
-      <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a33343c351a3133303b383f3b3e2c3f342e2f283f2974393537">[email&#160;protected]</a></p>
+      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
       <p><i class="fas fa-map-marker-alt"></i> Nairobi & Central Kenya, Kenya</p>
     </div>
 
@@ -423,6 +458,20 @@
   <p class="footer-legal">
     <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
   </p>
+
+  <section class="ad-section">
+    <!-- AdSense Display Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="pub-3754507736699545"
+         data-ad-slot="YOUR_AD_SLOT_ID"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -434,7 +483,7 @@
 </a>
 
 <!-- Scripts -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/next-hike.js"></script>
+<script src="js/next-hike.js"></script>
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
@@ -453,5 +502,5 @@
   }
 </script>
 
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c6138b99ffd1bb5',t:'MTc2OTc3ODc1Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
