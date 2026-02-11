@@ -181,149 +181,194 @@ nav a.active {
     background: #3b8b3c;
     transform: translateY(-2px);
 }
-
+/* HOW IT WORKS (BOOKING STEPS) */
 .booking-steps {
+    background: #559ce2;          /* Same blue background */
+    padding: 3rem 1.5rem;         /* Same padding */
+    border-radius: var(--radius); /* Same rounded style */
     max-width: 1100px;
-    margin: 0 auto 2.5rem;
-    padding: 0 1.5rem;
+    margin: 0 auto 3rem;
 }
 
 .booking-steps h2 {
     text-align: center;
     margin-bottom: 1rem;
+    color: white;
 }
 
+/* Grid layout matching FAQ + Why Us */
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    gap: 1.2rem;
+    margin-top: 1rem;
 }
 
+/* Individual step cards */
 .step {
-    background: var(--light);
+    background: white;
+    padding: 1.2rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 1.4rem 1.2rem;
-    text-align: left;
+    text-align: center;
 }
 
-.step-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(76, 175, 80, 0.12);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+/* Icons */
+.step-icon i {
+    font-size: 2.4rem;
     margin-bottom: 0.6rem;
-    color: var(--primary);
-    font-size: 1.3rem;
+    color: #007bff;
 }
 
+/* Titles */
+.step h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Paragraph */
+.step p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+/* -------------------------------
+   BOOKING CALENDAR SECTION
+--------------------------------*/
 .booking-calendar {
-    background: var(--light);
+    background: #559ce2;
+    padding: 3rem 1.5rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
     max-width: 1100px;
-    margin: 0 auto 2.5rem;
-    padding: 2rem 1.5rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.booking-calendar h2 {
+    color: white;
+    margin-bottom: 1rem;
 }
 
 .booking-calendar iframe {
     width: 100%;
-    height: 65vh;
-    max-height: 680px;
-    min-height: 420px;
-    border: none;
+    height: 600px;
     border-radius: var(--radius);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+    border: none;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.2rem;
 }
 
+/* Buttons */
 .booking-calendar .cta-button {
-    margin: 0.5rem 0.4rem 0 0;
+    display: inline-block;
+    background: white;
+    color: #007bff;
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    margin: 0.4rem;
+    transition: 0.3s ease;
 }
 
-/* =========================
-   GRID SECTIONS
-========================= */
-.trail-grid,
-.features-grid,
-.season-grid,
-.testimonials-grid,
-.pricing-grid,
-.safety-grid,
-.contact-grid {
+.booking-calendar .cta-button:hover {
+    background: #e9f3ff;
+}
+
+/* -------------------------------
+   POPULAR PACKAGES
+--------------------------------*/
+.popular-packages {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 3rem 1.5rem;
+    background: #559ce2;
+    border-radius: var(--radius);
+}
+
+.popular-packages h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Pricing grid */
+.pricing-grid {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
 }
 
-.trail-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-/* Cards (shared) */
-.trail-card,
-.feature,
-.season-card,
-.testimonial-card,
-.price-card,
-.safety-card {
-    background: var(--light);
+/* Price cards (styled like FAQ items) */
+.price-card {
+    background: white;
+    padding: 1.2rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    transition: transform 0.3s;
 }
 
-.trail-card:hover,
-.feature:hover,
-.testimonial-card:hover,
-.price-card:hover {
-    transform: translateY(-5px);
+.price-card h3 {
+    margin-bottom: 0.4rem;
 }
 
-/* =========================
-   TRAIL CARDS
-========================= */
+.price-card .price {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------
+   FEATURED TRAILS
+--------------------------------*/
+.featured-trails {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 3rem 1.5rem;
+    background: #559ce2;
+    border-radius: var(--radius);
+}
+
+.featured-trails h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Grid layout */
+.trail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+/* Trail cards */
+.trail-card {
+    background: white;
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
 .trail-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 0.6rem;
 }
 
 .trail-card h3 {
-    padding: 1rem;
-    color: var(--primary-dark);
+    margin: 0.4rem 0;
 }
 
-.trail-card p {
-    padding: 0 1rem 1rem;
-}
-
-.difficulty {
-    margin: 1rem;
+.trail-card .difficulty {
     display: inline-block;
-    background: var(--accent);
-    padding: 0.4rem 0.9rem;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-/* =========================
-   FEATURES / WHY US
-========================= */
-.features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.feature {
-    text-align: center;
-    padding: 2rem;
-}
-
-.feature i {
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    background: #e9f3ff;
+    color: #007bff;
+    font-size: 0.85rem;
+    border-radius: var(--radius);
 }
 
 /* =========================
@@ -402,6 +447,51 @@ nav a.active {
 .price-card p {
     color: var(--muted);
 }
+/* WHY US */
+.why-choose-us {
+    background: #559ce2;          /* Same blue background as FAQ */
+    padding: 3rem 1.5rem;         /* Same padding */
+    border-radius: var(--radius); /* Same rounding */
+    max-width: 1100px;            /* Same width */
+    margin: 0 auto 3rem;          /* Same spacing */
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.why-choose-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.why-choose-us-item {
+    background: white; 
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.why-choose-us-item i {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+    color: #007bff; /* Icon color – adjust as needed */
+}
+
+.why-choose-us-item h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.why-choose-us-item p {
+    margin: 0;
+}
+
 
 .about-snippet {
     background: var(--light);
@@ -703,4 +793,18 @@ footer {
         margin: 0;
         font-size: 0.85rem;
     }
+}
+.video-gallery {
+    padding: 20px;
+}
+
+.video-item {
+    margin-bottom: 20px;
+}
+
+video {
+    border-radius: 10px;
+    max-width: 800px;
+    display: block;
+    margin: auto;
 }
