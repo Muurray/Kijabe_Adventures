@@ -115,7 +115,7 @@ nav a.active {
 .next-hike-badge {
     display: inline-block;
     margin: 0.8rem auto 0;
-    background: #4caf50;
+    background: #70af4c;
     color: white;
     font-weight: bold;
     padding: 0.5rem 1.2rem;
@@ -183,7 +183,7 @@ nav a.active {
 }
 /* HOW IT WORKS (BOOKING STEPS) */
 .booking-steps {
-    background: #559ce2;          /* Same blue background */
+    background: #03DF04;          /* Same blue background */
     padding: 3rem 1.5rem;         /* Same padding */
     border-radius: var(--radius); /* Same rounded style */
     max-width: 1100px;
