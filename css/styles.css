@@ -37,7 +37,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--dark);
     line-height: 1.6;
-    background: #f7f8f9;
+    background: rgb(155, 194, 155);
 }
 
 /* Utility container */
@@ -183,7 +183,7 @@ nav a.active {
 }
 /* HOW IT WORKS (BOOKING STEPS) */
 .booking-steps {
-    background: #03DF04;          /* Same blue background */
+    background: #2c6e49;
     padding: 3rem 1.5rem;         /* Same padding */
     border-radius: var(--radius); /* Same rounded style */
     max-width: 1100px;
@@ -217,7 +217,7 @@ nav a.active {
 .step-icon i {
     font-size: 2.4rem;
     margin-bottom: 0.6rem;
-    color: #007bff;
+    color: #72e4ab;
 }
 
 /* Titles */
@@ -235,7 +235,7 @@ nav a.active {
    BOOKING CALENDAR SECTION
 --------------------------------*/
 .booking-calendar {
-    background: #559ce2;
+    background: #2c6e49;
     padding: 3rem 1.5rem;
     border-radius: var(--radius);
     max-width: 1100px;
@@ -282,7 +282,7 @@ nav a.active {
     max-width: 1100px;
     margin: 0 auto 3rem;
     padding: 3rem 1.5rem;
-    background: #559ce2;
+    background: #2c6e49;
     border-radius: var(--radius);
 }
 
@@ -313,7 +313,7 @@ nav a.active {
 
 .price-card .price {
     font-weight: bold;
-    color: #007bff;
+    color: #2c6e49;
     margin-bottom: 0.5rem;
 }
 
@@ -324,7 +324,7 @@ nav a.active {
     max-width: 1100px;
     margin: 0 auto 3rem;
     padding: 3rem 1.5rem;
-    background: #559ce2;
+    background: #2c6e49;
     border-radius: var(--radius);
 }
 
@@ -366,7 +366,7 @@ nav a.active {
     margin-top: 0.4rem;
     padding: 0.3rem 0.6rem;
     background: #e9f3ff;
-    color: #007bff;
+    color: #2c6e49;
     font-size: 0.85rem;
     border-radius: var(--radius);
 }
@@ -449,7 +449,7 @@ nav a.active {
 }
 /* WHY US */
 .why-choose-us {
-    background: #559ce2;          /* Same blue background as FAQ */
+    background: #2c6e49;          
     padding: 3rem 1.5rem;         /* Same padding */
     border-radius: var(--radius); /* Same rounding */
     max-width: 1100px;            /* Same width */
@@ -494,7 +494,7 @@ nav a.active {
 
 
 .about-snippet {
-    background: var(--light);
+    background: #2c6e49;
     max-width: 1100px;
     margin: 0 auto 3rem;
     padding: 2rem 1.5rem;
@@ -504,7 +504,7 @@ nav a.active {
 }
 
 .faq {
-    background: #559ce2;
+    background: #2c6e49;;
     padding: 3rem 1.5rem;
     border-radius: var(--radius);
     max-width: 1100px;
