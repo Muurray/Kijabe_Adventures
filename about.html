@@ -1,67 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===========================
+       BASIC META
+  ============================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kijabe Adventures |GuidedHiking & Nature Tours Across Kenya</title>
+
   <meta name="description"
-        content="Learn about Kijabe Adventures — local guides promoting safe hiking, conservation, and sustainable tourism across Kenya, including Kijabe Hills and Kijabe Forest.">
-  <meta name="theme-color" content="#4caf50">
+    content="Kijabe Adventures provides guided hikes, nature walks, and eco-tourism experiences across Kenya. Safe, affordable, and led by experienced local guides." />
 
-  <title>About Us | Kijabe Adventures</title>
+  <meta name="keywords"
+    content="Kijabe Adventures, hiking Kenya, guided hikes Kenya, Outdoor hiking kenya, Ngong Hills hiking, Kijabe trails, Kenya tourism, eco tours Kenya" />
 
-  <!-- SEO -->
-  <link rel="canonical" href="https://kijabeadventures.com/about.html">
-  <meta name="keywords" content="Kijabe Kenya, Kijabe hills, Kijabe forest, local guides Kenya, hiking Kenya, safe hiking Kenya">
+  <meta name="author" content="Kijabe Adventures" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kijabeadventures.com/" />
+
+  <!-- ===========================
+       OPEN GRAPH (FACEBOOK / WHATSAPP)
+  ============================ -->
+  <meta property="og:title" content="Kijabe Adventures | Guided Hikes Across Kenya" />
+  <meta property="og:description"
+    content="Discover forests, hills, and scenic trails across Kenya with safe, guided hiking experiences." />
+  <meta property="og:url" content="https://kijabeadventures.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
+  <meta property="og:site_name" content="Kijabe Adventures" />
+
+  <!-- ===========================
+       TWITTER CARD
+  ============================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kijabe Adventures | Explore Kenya Beyond the Ordinary" />
+  <meta name="twitter:description"
+    content="Guided hiking and touring experiences across Kenya. Safe. Sustainable. Memorable." />
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/hero.jpg" />
+
+  <!-- ===========================
+       FAVICONS
+  ============================ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#006400">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+
+  <meta name="msapplication-TileColor" content="#006400">
+  <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#006400">
+
+  <!-- ===========================
+       PRELOADS (PERFORMANCE)
+  ============================ -->
+  <link rel="preload" href="css/styles.css" as="style" />
+  <link rel="preload" href="images/logo.png" as="image" />
+
+  <!-- ===========================
+       CSS
+  ============================ -->
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json">
+  <!-- ===========================
+       GOOGLE TAG (gtag.js)
+  ============================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T50VJ5C9XV');
+  </script>
+
+  <!-- ===========================
+       STRUCTURED DATA (SEO)
+  ============================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Kijabe Adventures Hiking Tours",
+    "description": "Guided hiking and outdoor experiences across Kenya including Kijabe, Ngong Hills, and scenic forest trails.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kijabe Adventures",
+      "url": "https://kijabeadventures.com/",
+      "logo": "https://kijabeadventures.com/images/logo.png",
+      "telephone": "+254743980340",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE"
+      }
+    },
+    "touristType": "Hikers",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Kenya"
+    }
+  }
+  </script>
+  
+  <!-- Google CMP (2-button message) -->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
+<script>
+  (function() {
+    function signalGooglefcPresent() {
+      if (!window.frames['googlefcPresent']) {
+        if (document.body) {
+          const iframe = document.createElement('iframe');
+          iframe.style = 'width:0;height:0;border:0;display:none';
+          iframe.name = 'googlefcPresent';
+          document.body.appendChild(iframe);
+        } else {
+          setTimeout(signalGooglefcPresent, 300);
+        }
+      }
+    }
+    signalGooglefcPresent();
+  })();
+</script>
+<!-- END Google CMP -->
+<!-- Google Consent Mode (default settings before consent) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
+     crossorigin="anonymous"></script>
+
+  <!-- Google AdSense Verification -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-3754507736699545"
+        crossorigin="anonymous"></script>
+<meta name="google-adsense-platform-account" content="ca-pub-3754507736699545">
+<meta name="google-adsense-platform-domain" content="
+  google.com, pub-3754507736699545, DIRECT, f08c47fec0942fa0
+<meta name="google-adsense-account" content="ca-pub-3754507736699545">
+
 </head>
 
 <body>
-
 <header>
-  <div class="header-container">
-
-    <div class="logo">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="#4CAF50"
-           xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
-      </svg>
-      <span>Kijabe Adventures</span>
-    </div>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-      <span class="sr-only">Toggle navigation</span>
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <nav id="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="safety.html">Safety</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="community.html">Community</a>
-      <a href="booking.html">Booking</a>
-      <a href="donate.html">Support Us</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <p class="tagline">Guided Hiking & Touring Experiences Across Kenya</p>
-
-    <a href="contact.html"
-       id="next-hike-badge"
-       class="next-hike-badge"
-       aria-label="View next hike details">
-      Loading next hike...
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="index.html" aria-label="Kijabe Adventures Home">
+      <img src="/images/logo.png"
+           alt="Kijabe Adventures Logo"
+           width="140"
+           class="logo-img"
+           loading="lazy">
     </a>
-
+    <span class="logo-text">Kijabe Adventures</span>
   </div>
+   <!-- TAGLINE -->
+  <p class="tagline">
+    Guided Hiking & Touring Experiences Across Kenya
+  </p>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+    <span class="sr-only">Toggle navigation</span>
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- PRIMARY NAVIGATION (NO DROPDOWNS) -->
+  <nav id="primary-nav" class="primary-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="safety.html">Safety</a>
+   <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Booking</a>
+    <a href="community.html">Community</a>
+     <a href="gallery.html">Gallery</a>
+     <a href="blogs/blog.html">Blog</a>
+  </nav>
+
+  <!-- NEXT HIKE BADGE -->
+  <a href="contact.html"
+     id="next-hike-badge"
+     class="next-hike-badge"
+     aria-label="View next hike details">
+    Loading next hike...
+  </a>
 </header>
 
 <main class="page-content">
@@ -72,42 +204,57 @@
     <p>Local guides promoting safe, sustainable hiking across Kenya’s most scenic landscapes.</p>
   </section>
 
+<!-- ABOUT + MISSION WRAPPED TOGETHER -->
+<section class="about-wrapper">
+
   <!-- ABOUT SECTION -->
-  <section class="about-section">
+  <div class="about-section">
+    <h2><i class="fas fa-hiking"></i> About Kijabe Adventures</h2>
+
+    <p>
+      Kijabe Adventures is a locally-led hiking and tourism team offering outdoor experiences 
+      across Kenya — not just in Kijabe. Our guided trips cover regions such as 
+      <strong>Mt. Longonot, Ngong Hills, Mt. Suswa, Aberdares, Naivasha, and the Rift Valley Escarpments</strong>.
+    </p>
+    <p>
+      While Kijabe Hills and Kijabe Forest remain our home base, our passion extends across the country.
+      We work closely with local communities, scouts, and environmental partners to keep trails 
+      safe, clean, and sustainable.
+    </p>
+
+    <!-- GRID -->
     <div class="about-grid">
-
-      <div>
-        <h2><i class="fas fa-hiking"></i> Who We Are</h2>
-        <p>
-          Kijabe Adventures is a locally-led hiking and outdoor experience team based around
-          <strong>Kijabe, Kijabe Hills, and Kijabe Forest</strong> — some of Kenya’s most beautiful and underrated hiking landscapes.
-          Our mission is to make hiking accessible, safe, and enjoyable for everyone, from first-time hikers to seasoned explorers.
-        </p>
-        <p>
-          We understand the trails because we live here. We work closely with local communities, forest rangers,
-          and environmental partners to keep trails open, clean, and sustainable for future generations.
-        </p>
+      <div class="about-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Safety First</h3>
+        <p>Guides trained in first aid & emergency navigation techniques.</p>
       </div>
 
-      <div>
-        <h2><i class="fas fa-leaf"></i> Our Values</h2>
-        <ul class="about-list">
-          <li><strong>Safety First</strong> – All guides are trained in first aid, navigation, and responsible guiding.</li>
-          <li><strong>Local Knowledge</strong> – We support community-based tourism that directly benefits local families.</li>
-          <li><strong>Conservation</strong> – We promote trail cleanups, forest protection, and low-impact hiking.</li>
-          <li><strong>Inclusivity</strong> – We welcome hikers of all levels, ages, and abilities.</li>
-        </ul>
+      <div class="about-card">
+        <i class="fas fa-globe"></i>
+        <h3>Local Knowledge</h3>
+        <p>Supporting community tourism & empowering local guides.</p>
       </div>
 
+      <div class="about-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Conservation</h3>
+        <p>Regular cleanups & sustainable trail protection efforts.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="fas fa-users"></i>
+        <h3>Inclusivity</h3>
+        <p>Open to all experience levels, ages, and abilities.</p>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- COMMUNITY & CONSERVATION -->
-  <section class="about-mission">
+  <!-- MISSION SECTION -->
+  <div class="mission-section">
     <h2><i class="fas fa-globe-africa"></i> Our Mission</h2>
     <p>
-      Our goal is to promote safe hiking, environmental education, and sustainable tourism across Kenya.
-      When you hike with us, you support:
+      We are committed to promoting safe hiking, conservation awareness, and sustainable tourism across Kenya.
     </p>
 
     <div class="mission-grid">
@@ -116,26 +263,57 @@
         <h3>Safety Training</h3>
         <p>Guides trained in wilderness first aid and emergency response.</p>
       </div>
+
       <div class="mission-card">
         <i class="fas fa-broom"></i>
         <h3>Trail Cleanups</h3>
-        <p>Organized monthly trash cleanups within Kijabe Forest & other trails.</p>
+        <p>Monthly cleanup activities in Kijabe Forest and other Kenyan regions.</p>
       </div>
+
       <div class="mission-card">
         <i class="fas fa-users"></i>
         <h3>Community Support</h3>
-        <p>Partnerships with local youth groups and community rangers.</p>
+        <p>Partnerships with youth groups, scouts, and local communities.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2>Join Us on the Trails</h2>
-    <p>Together, we can protect Kenya’s natural beauty while enjoying unforgettable hiking adventures.</p>
-    <a href="booking.html" class="cta-button">Book Your Next Hike</a>
-  </section>
+</section>
 
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Join Us on the Trails</h2>
+  <p>Together, we can protect Kenya’s natural beauty while enjoying unforgettable hiking adventures.</p>
+  <a href="booking.html" class="cta-button">Book Your Next Hike</a>
+</section>
+
+
+<section class="team-section">
+  <h2>Meet Our Team</h2>
+
+  <!-- Wilson -->
+  <div class="team-member">
+    <img src="images/Team/Wilson.jpeg" alt="Wilson – Lead Guide" class="team-photo">
+    <div class="team-info">
+      <h3>Wilson Kuria</h3>
+      <h4>Lead Guide & Operations Director</h4>
+      <p>Wilson oversees all hiking expeditions and ensures every adventure runs smoothly. With years of experience on Kenya’s trails, he specializes in guiding groups safely while delivering unforgettable outdoor experiences. He is a lead Mountain Guide with 10+ years of experience navigating Kenya’s toughest trails</p>
+    </div>
+  </div>
+
+  <!-- Martin -->
+  <div class="team-member">
+    <img src="images/Team/Martin.jpeg" alt="Martin – Logistics Specialist" class="team-photo">
+    <div class="team-info">
+      <h3>Martin Muuri</h3>
+      <h4>Logistics & Safety Coordinator</h4>
+      <p>Martin manages routes, transportation, equipment, and group safety. His attention to detail ensures hikers enjoy a seamless, secure, and well-organized journey on every trail.</p>
+    </div>
+  </div>
+
+</section>
+
+ 
   
 <!-- TESTIMONIALS -->
 <section class="testimonials">
@@ -144,7 +322,7 @@
   <div class="testimonials-grid">
 
     <div class="testimonial-card">
-      <img src="images/testimonials/james.jpeg" alt="James" width="70" height="70" loading="lazy">
+      <img src="images/testimonials/james.jpeg" alt="James" width="90" height="90" loading="lazy">
       <p>
         “Amazing experience at Ngong Hills. The guides were professional
         and very safety conscious.”
