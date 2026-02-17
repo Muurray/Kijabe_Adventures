@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kijabe Adventures Blog | Safari Tips, Guides & Kenya Travel</title>
+    <meta name="description" content="Read safari tips, Kenya safety guides, wildlife facts, and travel advice from Kijabe Adventures. Updated frequently." />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<section class="blog-list-container">
+
+    <h1 class="blog-title">Kijabe Adventures Blog</h1>
+    <p class="blog-subtitle">Travel guides, safari tips & Kenya adventure insights</p>
+
+    <!-- Search -->
+    <input type="text" id="searchBar" class="blog-search" placeholder="Search blog articles...">
+
+    <!-- Blog Grid -->
+    <div id="blogGrid" class="blog-grid">
+
+        <!-- Blog Card 1 -->
+        <div class="blog-card" data-title="10 essential safari hiking tips for beginners">
+            <img src="images/blogs/safari-tips.jpeg" alt="">
+            <div class="blog-card-body">
+                <h3>10 Essential Safari Hiking Tips for Beginners</h3>
+                <p>Learn the top tips for planning your first safari hike in Kenya...</p>
+
+                <a href="blogs/safari-tips.html" class="blog-btn">Read More</a>
+
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blogs/safari-tips.html" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blogs/safari-tips.html" target="_blank">Twitter</a>
+                    <a href="https://wa.me/?text=Check%20this%20out:%20https://yourdomain.com/blogs/safari-tips.html" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card" data-title="is kenya safe for tourists">
+            <img src="images/blogs/kenya-safety.jpg" alt="">
+            <div class="blog-card-body">
+                <h3>Is Kenya Safe for Tourists?</h3>
+                <p>A complete breakdown of safety, areas to avoid, and safari security...</p>
+
+                <a href="blogs/kenya-safety.html" class="blog-btn">Read More</a>
+
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blogs/kenya-safety.html" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blogs/kenya-safety.html" target="_blank">Twitter</a>
+                    <a href="https://wa.me/?text=Check%20this%20out:%20https://yourdomain.com/blogs/kenya-safety.html" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card" data-title="how expensive is a safari">
+            <img src="images/blogs/safari-cost.jpg" alt="">
+            <div class="blog-card-body">
+                <h3>How Expensive Is a Safari?</h3>
+                <p>A full cost breakdown for budget, mid-range, and luxury safari travelers...</p>
+
+                <a href="blogs/safari-cost.html" class="blog-btn">Read More</a>
+
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blogs/safari-cost.html" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blogs/safari-cost.html" target="_blank">Twitter</a>
+                    <a href="https://wa.me/?text=Check%20this%20out:%20https://yourdomain.com/blogs/safari-cost.html" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Card 4 -->
+        <div class="blog-card" data-title="what is the big five">
+            <img src="images/blogs/big-five.jpg" alt="">
+            <div class="blog-card-body">
+                <h3>What Is the Big Five?</h3>
+                <p>Meet Africa’s most iconic animals and discover where to find them...</p>
+
+                <a href="blogs/big-five.html" class="blog-btn">Read More</a>
+
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/blogs/big-five.html" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com/blogs/big-five.html" target="_blank">Twitter</a>
+                    <a href="https://wa.me/?text=Check%20this%20out:%20https://yourdomain.com/blogs/big-five.html" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prevBtn" disabled>Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+</section>
+
+<script>
+// SEARCH FUNCTION
+document.getElementById("searchBar").addEventListener("keyup", function() {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".blog-card");
+
+    cards.forEach(card => {
+        card.style.display = card.dataset.title.includes(query) ? "block" : "none";
+    });
+});
+
+// PAGINATION (4 items per page)
+let currentPage = 1;
+const cardsPerPage = 2;
+const cards = [...document.querySelectorAll(".blog-card")];
+
+function renderPage() {
+    const start = (currentPage - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+
+    cards.forEach((card, index) => {
+        card.style.display = index >= start && index < end ? "block" : "none";
+    });
+    
+    document.getElementById("prevBtn").disabled = currentPage === 1;
+    document.getElementById("nextBtn").disabled = end >= cards.length;
+}
+
+document.getElementById("prevBtn").onclick = () => {
+    currentPage--;
+    renderPage();
+};
+
+document.getElementById("nextBtn").onclick = () => {
+    currentPage++;
+    renderPage();
+};
+
+renderPage();
+</script>
+
+</body>
+</html>

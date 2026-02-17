@@ -1,126 +1,113 @@
 /**
- * Blog Post Loader
- * Fetches a specific blog post based on URL parameter and renders it
+ * ==========================================================
+ *  BLOG POST LOADER (Updated + Clean + SEO Ready)
+ *  - Loads specific post by ?id=
+ *  - Updates SEO tags + JSON-LD schema
+ *  - Displays Related Posts
+ * ==========================================================
  */
 
-// Get blog id from URL
-const urlParams = new URLSearchParams(window.location.search);
-const blogId = urlParams.get("id");
+// Read URL parameter (?id=xxxx)
+const blogId = new URLSearchParams(window.location.search).get("id");
 
-// Elements
+// DOM elements
 const loadingEl = document.getElementById("loading");
-const postContainer = document.getElementById("post-container");
 const errorEl = document.getElementById("error");
+const postContainer = document.getElementById("post-container");
 
+// No ID → Show error
 if (!blogId) {
-  // No blog ID provided
   loadingEl.style.display = "none";
   errorEl.style.display = "block";
 } else {
-  // Fetch all blogs and find the one we need
-  fetch("../data/blogs.json")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Failed to load blog data");
-      }
-      return response.json();
-    })
-    .then(posts => {
-      // Find the post with matching ID
-      const post = posts.find(p => p.id === blogId);
-
-      if (!post) {
-        // Post not found
-        loadingEl.style.display = "none";
-        errorEl.style.display = "block";
-        return;
-      }
-
-      // Update meta tags and title dynamically
-      updateMetaTags(post);
-
-      // Populate the post
-      document.getElementById("blog-title").textContent = post.title;
-      document.getElementById("blog-image").src = post.image;
-      document.getElementById("blog-image").alt = post.title;
-      document.getElementById("blog-content").innerHTML = post.content;
-      
-      // Format and display date
-      const date = new Date(post.date);
-      const formattedDate = date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      });
-      document.getElementById("blog-date").textContent = `Published on ${formattedDate}`;
-      document.getElementById("blog-author").textContent = post.author || "Kijabe Adventures Team";
-
-      // Load related posts (all except current)
-      loadRelatedPosts(posts, blogId);
-
-      // Hide loading, show content
-      loadingEl.style.display = "none";
-      postContainer.style.display = "block";
-
-      // Scroll to top
-      window.scrollTo(0, 0);
-    })
-    .catch(error => {
-      console.error("Error loading blog post:", error);
-      loadingEl.style.display = "none";
-      errorEl.style.display = "block";
-    });
+  loadBlogPost();
 }
 
 /**
- * Update meta tags dynamically for SEO
+ * Load & render blog post
+ */
+async function loadBlogPost() {
+  try {
+    const res = await fetch("../data/blogs.json");
+    if (!res.ok) throw new Error("Failed to load blog posts");
+
+    const posts = await res.json();
+
+    // Find specific post
+    const post = posts.find(p => p.id === blogId);
+    if (!post) {
+      loadingEl.style.display = "none";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    // Inject data
+    renderPost(post);
+
+    // SEO updates
+    updateMetaTags(post);
+
+    // Related articles
+    loadRelatedPosts(posts, blogId);
+
+    // Show content
+    loadingEl.style.display = "none";
+    postContainer.style.display = "block";
+
+    // Scroll top
+    window.scrollTo(0, 0);
+
+  } catch (err) {
+    console.error("Error:", err);
+    loadingEl.style.display = "none";
+    errorEl.style.display = "block";
+  }
+}
+
+/**
+ * Render blog post content
+ */
+function renderPost(post) {
+  document.getElementById("blog-title").textContent = post.title;
+  document.getElementById("blog-image").src = post.image;
+  document.getElementById("blog-image").alt = post.title;
+  document.getElementById("blog-content").innerHTML = post.content;
+
+  // Format date
+  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric", month: "long", day: "numeric"
+  });
+
+  document.getElementById("blog-date").textContent = `Published on ${formattedDate}`;
+  document.getElementById("blog-author").textContent = post.author || "Kijabe Adventures Team";
+}
+
+/**
+ * Update SEO meta tags + JSON-LD schema
  */
 function updateMetaTags(post) {
-  // Update title
+  // Page Title
   document.title = `${post.title} | Kijabe Adventures Blog`;
 
-  // Update meta description
-  const metaDescription = document.querySelector('meta[name="description"]');
-  if (metaDescription) {
-    metaDescription.setAttribute('content', post.excerpt);
-  }
+  // Meta description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute("content", post.excerpt);
 
-  // Update Open Graph tags
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) {
-    ogTitle.setAttribute('content', post.title);
-  }
+  // OG tags
+  updateOg("og:title", post.title);
+  updateOg("og:description", post.excerpt);
+  updateOg("og:image", post.image);
+  updateOg("og:url", window.location.href);
 
-  const ogDescription = document.querySelector('meta[property="og:description"]');
-  if (ogDescription) {
-    ogDescription.setAttribute('content', post.excerpt);
-  }
+  // Twitter tags
+  updateTwitter("twitter:title", post.title);
+  updateTwitter("twitter:description", post.excerpt);
+  updateTwitter("twitter:image", post.image);
 
-  const ogImage = document.querySelector('meta[property="og:image"]');
-  if (ogImage) {
-    ogImage.setAttribute('content', post.image);
-  }
-
-  // Update Twitter Card tags
-  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twitterTitle) {
-    twitterTitle.setAttribute('content', post.title);
-  }
-
-  const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-  if (twitterDescription) {
-    twitterDescription.setAttribute('content', post.excerpt);
-  }
-
-  const twitterImage = document.querySelector('meta[name="twitter:image"]');
-  if (twitterImage) {
-    twitterImage.setAttribute('content', post.image);
-  }
-
-  // Update structured data (Schema.org Blog Post)
-  const schemaScript = document.getElementById('article-schema');
-  if (schemaScript) {
-    const schema = {
+  // JSON-LD Structured Data
+  const schemaEl = document.getElementById("article-schema");
+  if (schemaEl) {
+    schemaEl.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       "headline": post.title,
@@ -133,21 +120,32 @@ function updateMetaTags(post) {
       "publisher": {
         "@type": "Organization",
         "name": "Kijabe Adventures",
-        "logo": "https://kijabeadventures.com/images/logo.png"
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kijabeadventures.com/images/logo.png"
+        }
       },
       "datePublished": post.date
-    };
-    schemaScript.textContent = JSON.stringify(schema);
+    });
   }
 }
 
+function updateOg(property, value) {
+  const tag = document.querySelector(`meta[property="${property}"]`);
+  if (tag) tag.setAttribute("content", value);
+}
+
+function updateTwitter(name, value) {
+  const tag = document.querySelector(`meta[name="${name}"]`);
+  if (tag) tag.setAttribute("content", value);
+}
+
 /**
- * Load and display related posts
+ * Load related posts (3)
  */
 function loadRelatedPosts(posts, currentId) {
   const relatedContainer = document.getElementById("related-container");
-  
-  // Filter out current post and get up to 3 others
+
   const related = posts
     .filter(p => p.id !== currentId)
     .slice(0, 3);
@@ -155,33 +153,29 @@ function loadRelatedPosts(posts, currentId) {
   relatedContainer.innerHTML = "";
 
   if (related.length === 0) {
-    relatedContainer.innerHTML = '<p>No other posts available.</p>';
+    relatedContainer.innerHTML = "<p>No related articles available.</p>";
     return;
   }
 
   related.forEach(post => {
-    const card = document.createElement("div");
-    card.className = "blog-card";
-    
-    const date = new Date(post.date);
-    const formattedDate = date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
+    const formatted = new Date(post.date).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
     });
 
-    card.innerHTML = `
-      <div class="blog-card-image">
-        <img src="${post.image}" alt="${post.title}" loading="lazy">
-      </div>
-      <div class="blog-card-content">
-        <span class="blog-date">${formattedDate}</span>
-        <h3>${post.title}</h3>
-        <p class="blog-excerpt">${post.excerpt}</p>
-        <a href="blog-post.html?id=${post.id}" class="read-more">Read More →</a>
+    const card = `
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="${post.image}" alt="${post.title}" loading="lazy">
+        </div>
+        <div class="blog-card-content">
+          <span class="blog-date">${formatted}</span>
+          <h3>${post.title}</h3>
+          <p>${post.excerpt}</p>
+          <a href="blog-post.html?id=${post.id}" class="read-more">Read More →</a>
+        </div>
       </div>
     `;
 
-    relatedContainer.appendChild(card);
+    relatedContainer.innerHTML += card;
   });
 }
