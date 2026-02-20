@@ -101,12 +101,8 @@
   <!-- NAV -->
   <nav id="primary-nav" class="primary-nav">
     <a href="../index.html">Home</a>
-    <a href="../destinations.html">Destinations</a>
-    <a href="../safety.html">Safety</a>
-    <a href="../Partnership.html">Support Us</a>
     <a href="../about.html">About</a>
     <a href="../contact.html">Contact</a>
-    <a href="../booking.html">Booking</a>
     <a href="../community.html">Community</a>
     <a href="../gallery.html">Gallery</a>
     <a href="blog.html" class="active">Blog</a>
@@ -121,84 +117,140 @@
     <p>Hiking guides, safety tips, and inspiring adventure stories from Kenya's mountains.</p>
   </section>
 
-</main>
+<!-- main remains open so article sections share the same page container -->
+<!-- SECTION 1: Featured HTML Articles (manual) -->
+<section class="blog-list-container article-section" id="featuredArticles">
+    <h2 class="section-title">Featured Articles</h2>
+    <p class="section-subtitle">Hand-picked guides and tips from our team.</p>
 
-<section class="blog-list-container">
+    <input type="text" id="searchBar" class="blog-search" placeholder="Search featured articles...">
 
-    <!-- Search -->
-    <input type="text" id="searchBar" class="blog-search" placeholder="Search blog articles...">
-
-    <!-- Blog Grid -->
     <div id="blogGrid" class="blog-grid">
 
-        <!-- CARD 1 -->
         <div class="blog-card" data-title="10 essential safari hiking tips for beginners">
             <img src="../images/blogs/safari-tips.jpeg" alt="Safari Hiking Tips">
             <div class="blog-card-body">
                 <h3>10 Essential Safari Hiking Tips for Beginners</h3>
                 <p>Learn the top tips for planning your first safari hike in Kenya...</p>
                 <a href="safari-tips.html" class="blog-btn">Read More</a>
-
-                <div class="share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-tips.html" target="_blank">Facebook</a>
-                    <a href="https://wa.me/?text=Check out this article: https://kijabeadventures.com/blogs/safari-tips.html" target="_blank">WhatsApp</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-tips.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Check%20out%20this%20article%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-tips.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/safari-tips.html" title="Copy link"><i class="fas fa-link"></i></button>
                 </div>
             </div>
         </div>
 
         <!-- CARD 2 -->
         <div class="blog-card" data-title="is kenya safe for tourists">
-            <img src="../images/blogs/kenya-safety.jpg" alt="Is Kenya Safe?">
+            <img src="../images/blogs/caves.jpeg" alt="Is Kenya Safe?">
             <div class="blog-card-body">
                 <h3>Is Kenya Safe for Tourists?</h3>
                 <p>A complete breakdown of safety, areas to avoid, and safari security...</p>
                 <a href="kenya-safety.html" class="blog-btn">Read More</a>
-
-                <div class="share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/kenya-safety.html" target="_blank">Facebook</a>
-                    <a href="https://wa.me/?text=Is Kenya safe? Read this: https://kijabeadventures.com/blogs/kenya-safety.html" target="_blank">WhatsApp</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/kenya-safety.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Is%20Kenya%20safe%3F%20Read%20this%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fkenya-safety.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/kenya-safety.html" title="Copy link"><i class="fas fa-link"></i></button>
                 </div>
             </div>
         </div>
 
         <!-- CARD 3 -->
         <div class="blog-card" data-title="how expensive is a safari">
-            <img src="../images/blogs/safari-cost.jpg" alt="Safari Costs">
+            <img src="../images/blogs/plains.jpeg" alt="Safari Costs">
             <div class="blog-card-body">
                 <h3>How Expensive Is a Safari?</h3>
                 <p>A full cost breakdown for budget, mid-range, and luxury safari travelers...</p>
                 <a href="safari-cost.html" class="blog-btn">Read More</a>
-
-                <div class="share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-cost.html" target="_blank">Facebook</a>
-                    <a href="https://wa.me/?text=How expensive is a safari? https://kijabeadventures.com/blogs/safari-cost.html" target="_blank">WhatsApp</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-cost.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=How%20expensive%20is%20a%20safari%3F%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-cost.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/safari-cost.html" title="Copy link"><i class="fas fa-link"></i></button>
                 </div>
             </div>
         </div>
 
         <!-- CARD 4 -->
         <div class="blog-card" data-title="what is the big five">
-            <img src="../images/blogs/big-five.jpg" alt="The Big Five">
+            <img src="../images/blogs/big five.jpg" alt="The Big Five">
             <div class="blog-card-body">
                 <h3>What Is the Big Five?</h3>
                 <p>Meet Africa’s most iconic animals and discover where to find them...</p>
                 <a href="big-five.html" class="blog-btn">Read More</a>
 
-                <div class="share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/big-five.html" target="_blank">Facebook</a>
-                    <a href="https://wa.me/?text=Learn about the Big Five: https://kijabeadventures.com/blogs/big-five.html" target="_blank">WhatsApp</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/big-five.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Learn%20about%20the%20Big%20Five%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fbig-five.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/big-five.html" title="Copy link"><i class="fas fa-link"></i></button>
                 </div>
             </div>
         </div>
 
-    </div>
+        <!-- CARD 5 -->
+        <div class="blog-card" data-title="best time to hike each mountain">
+            <img src="../images/blogs/hiking-seasons.jpeg" alt="Best Time to Hike">
+            <div class="blog-card-body">
+                <h3>Best Time to Hike Each Mountain in Kenya</h3>
+                <p>Seasonal hiking windows and weather tips to pick the perfect day for each trail...</p>
+                <a href="blog-best-time-to-hike.html" class="blog-btn">Read More</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Best%20time%20to%20hike%20in%20Kenya%20-%20https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" title="Copy link"><i class="fas fa-link"></i></button>
+                </div>
+            </div>
+        </div>
 
-    <!-- Pagination -->
-    <div class="pagination">
-        <button id="prevBtn" disabled>Previous</button>
-        <button id="nextBtn">Next</button>
-    </div>
+        <!-- CARD 6 -->
+        <div class="blog-card" data-title="why forest conservation matters">
+            <img src="../images/blogs/forest-conservation.jpeg" alt="Forest Conservation">
+            <div class="blog-card-body">
+                <h3>Why Forest Conservation Matters for Hikers</h3>
+                <p>How hikers can help protect Kenya’s forests and trails for future generations...</p>
+                <a href="blog-forest-conservation.html" class="blog-btn">Read More</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-forest-conservation.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Forest%20conservation%20for%20hikers%20-%20https://kijabeadventures.com/blogs/blog-forest-conservation.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-forest-conservation.html" title="Copy link"><i class="fas fa-link"></i></button>
+                </div>
+            </div>
+        </div>
 
+        <!-- CARD 7 -->
+        <div class="blog-card" data-title="mount longonot guide">
+            <img src="../images/blogs/mt longonot.jpeg" alt="Mount Longonot Guide">
+            <div class="blog-card-body">
+                <h3>Complete Guide to Mount Longonot</h3>
+                <p>Preparation tips, route overview, and safety advice for Mount Longonot expeditions...</p>
+                <a href="blog-mountain-climbing-prep.html" class="blog-btn">Read More</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Mount%20Longonot%20guide%20-%20https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" title="Copy link"><i class="fas fa-link"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="blog-card" data-title="best day hikes near nairobi">
+            <img src="../images/blogs/nairobi-hikes.jpeg" alt="Day Hikes Near Nairobi">
+            <div class="blog-card-body">
+                <h3>Best Day Hikes Near Nairobi</h3>
+                <p>Quick, accessible hikes around Nairobi perfect for weekend adventures...</p>
+                <a href="blog-nairobi-day-hikes.html" class="blog-btn">Read More</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/?text=Best%20day%20hikes%20near%20Nairobi%20-%20https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" title="Copy link"><i class="fas fa-link"></i></button>
+                </div>
+            </div>
+        </div>
+
+    <div id="featuredPagination" class="pagination">
+        <button type="button" id="featuredPrevBtn" disabled aria-label="Previous page">Previous</button>
+        <button type="button" id="featuredNextBtn" aria-label="Next page">Next</button>
+    </div>
 </section>
 
 <!-- ===========================
@@ -206,148 +258,141 @@
 ============================ -->
 
 <script>
-// SEARCH
+// Featured Articles pagination (2 per page)
+var showFeaturedPage;
+(function () {
+    const perPage = 3;
+    let featuredPage = 1;
+    const featuredCards = [...document.querySelectorAll("#blogGrid .blog-card")];
+    const totalPages = Math.ceil(featuredCards.length / perPage);
+
+    showFeaturedPage = function () {
+        const start = (featuredPage - 1) * perPage;
+        const end = start + perPage;
+        featuredCards.forEach((c, i) => {
+            c.style.display = (i >= start && i < end) ? "block" : "none";
+        });
+        const prevBtn = document.getElementById("featuredPrevBtn");
+        const nextBtn = document.getElementById("featuredNextBtn");
+        if (prevBtn) prevBtn.disabled = featuredPage <= 1;
+        if (nextBtn) nextBtn.disabled = featuredPage >= totalPages;
+    };
+
+    document.getElementById("featuredPrevBtn").onclick = function () { featuredPage--; showFeaturedPage(); };
+    document.getElementById("featuredNextBtn").onclick = function () { featuredPage++; showFeaturedPage(); };
+    showFeaturedPage();
+})();
+
+// Search for featured articles (when searching, show all matches; otherwise use pagination)
 document.getElementById("searchBar").addEventListener("keyup", function () {
-    const q = this.value.toLowerCase();
-    document.querySelectorAll(".blog-card").forEach(card => {
-        card.style.display = card.dataset.title.includes(q) ? "block" : "none";
-    });
+    const q = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll("#blogGrid .blog-card");
+    const pagination = document.getElementById("featuredPagination");
+    if (q) {
+        pagination.style.display = "none";
+        cards.forEach(card => { card.style.display = card.dataset.title.includes(q) ? "block" : "none"; });
+    } else {
+        pagination.style.display = "";
+        if (typeof showFeaturedPage === "function") showFeaturedPage();
+    }
 });
 
-// PAGINATION
-let page = 1;
-const perPage = 2;
-const cards = [...document.querySelectorAll(".blog-card")];
-
-function showPage() {
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-
-    cards.forEach((c, i) => {
-        c.style.display = i >= start && i < end ? "block" : "none";
-    });
-
-    document.getElementById("prevBtn").disabled = page === 1;
-    document.getElementById("nextBtn").disabled = end >= cards.length;
-}
-
-document.getElementById("prevBtn").onclick = () => { page--; showPage(); };
-document.getElementById("nextBtn").onclick = () => { page++; showPage(); };
-
-showPage();
+// Copy link handler for share buttons
+document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".share-copy");
+    if (btn) {
+        const url = btn.dataset.url;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(() => {
+                const icon = btn.querySelector("i");
+                if (icon) { icon.className = "fas fa-check"; setTimeout(() => { icon.className = "fas fa-link"; }, 1500); }
+            });
+        } else {
+            const ta = document.createElement("textarea");
+            ta.value = url;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+            const icon = btn.querySelector("i");
+            if (icon) { icon.className = "fas fa-check"; setTimeout(() => { icon.className = "fas fa-link"; }, 1500); }
+        }
+    }
+});
 </script>
 
-<!-- Navigation Toggle -->
-<script>
-const navToggle = document.querySelector('.nav-toggle');
-const nav = document.getElementById('primary-nav');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-}
-</script>
-<section><!-- ======================================================
-  <!-- ======================================================
-     10. JSON BLOG SYSTEM (Dynamic Blog Engine)
-======================================================== -->
-<!-- ======================================================
-     MORE ARTICLES — JSON BLOG SYSTEM
-======================================================== -->
-<section id="jsonBlogSystem">
+<!-- SECTION 2: More Articles (from JSON) -->
+<section id="jsonBlogSystem" class="more-articles-section article-section">
   <h2 class="json-section-title">More Articles</h2>
-  
+  <p class="section-subtitle">Explore more hiking guides, tips, and adventure stories.</p>
   <div id="blogList" class="blog-container"></div>
   <div id="pagination" class="pagination"></div>
 </section>
 
 <script>
 /* ===========================
-      A. HTML SEARCH SYSTEM
-=========================== */
-document.getElementById("searchBar").addEventListener("keyup", function () {
-    const q = this.value.toLowerCase();
-
-    document.querySelectorAll(".blog-card").forEach(card => {
-        card.style.display = card.dataset.title.includes(q) ? "block" : "none";
-    });
-});
-
-
-/* ===========================
-      B. JSON DYNAMIC SYSTEM
+     JSON BLOG SYSTEM (More Articles)
 =========================== */
 
-/* ✔ HTML Posts Already Existing on Page */
-const htmlPosts = [
-  {
-        title: "Is Kenya Safe for Tourists?",
-        description: "A realistic safety breakdown...",
-        link: "kenya-safety.html",
-        date: "2025-01-01",
-        image: "images/blogs/kenya-safety.jpeg"
-    },
-    {
-        title: "How Expensive Is a Safari?",
-        description: "Safari budget guide...",
-        link: "safari-cost.html",
-        date: "2025-01-02",
-        image: "images/blogs/safari-cost.jpeg"
-    },
-    {
-        title: "What is the Big Five?",
-        description: "Meet Kenya’s most iconic wildlife...",
-        link: "big-five.html",
-        date: "2025-01-03",
-        image: "images/blogs/big-five.jpeg"
-    }
-];
+/* More Articles loaded from data/blogs.json */
 
-/* ✔ Loads posts from posts.json */
+
+const BASE_URL = "https://kijabeadventures.com/blogs/";
+
 async function loadJsonPosts() {
     try {
-        const response = await fetch('../blog-data/posts.json');
+        const response = await fetch('../data/blogs.json');
         return await response.json();
-    } catch {
+    } catch (e) {
+        console.warn("Could not load blogs.json:", e);
         return [];
     }
 }
 
-/* ✔ Combine HTML + JSON + Sort by Newest */
-async function loadAllPosts() {
-    const json = await loadJsonPosts();
 
-    let all = [...htmlPosts, ...json];
+const postsPerPage = 6;
+let currentPage = 1;
+let allPosts = [];
 
-    // Sort by date DESC
-    all.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    return all;
+function imgBase(url) {
+    if (!url) return "../images/blogs/safari-tips.jpeg";
+    return (url.startsWith("http") || url.startsWith("../")) ? url : "../" + url.replace(/^images\//, "images/");
 }
 
-/* PAGINATION */
-const postsPerPage = 4;
-let currentPage = 1;
-
 async function renderPosts() {
-    const posts = await loadAllPosts();
+    allPosts = await loadJsonPosts();
+    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     const container = document.getElementById("blogList");
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const paginated = allPosts.slice(start, end);
 
-    let start = (currentPage - 1) * postsPerPage;
-    let end = start + postsPerPage;
-    let paginated = posts.slice(start, end);
+    container.innerHTML = paginated.map(post => {
+        const fullUrl = post.link.startsWith("http") ? post.link : BASE_URL + post.link;
+        const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
+        const waText = encodeURIComponent((post.title || "Article") + " - " + fullUrl);
+        const waUrl = "https://wa.me/?text=" + waText;
+        const excerpt = post.excerpt || post.description || "";
 
-    container.innerHTML = paginated.map(post => `
-        <div class="json-card">
-            <img src="${post.image}" alt="${post.title}">
-            <h3>${post.title}</h3>
-            <p><small>${post.date}</small></p>
-            <p>${post.excerpt || post.description}</p>
-            <a href="${post.link}" class="blog-btn">Read More</a>
-        </div>
-    `).join("");
+        return `
+        <div class="json-card" data-title="${(post.title || "").toLowerCase()}">
+            <img src="${imgBase(post.image)}" alt="${post.title}" loading="lazy">
+            <div class="json-card-body">
+                <h3>${post.title}</h3>
+                <p class="json-card-meta"><small>${post.date || ""}</small></p>
+                <p>${excerpt}</p>
+                <a href="${post.link}" class="blog-btn">Read More</a>
+                <div class="share-buttons" role="group" aria-label="Share article">
+                    <a href="${fbUrl}" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <button type="button" class="share-btn share-copy" data-url="${fullUrl}" title="Copy link"><i class="fas fa-link"></i></button>
+                </div>
+            </div>
+        </div>`;
+    }).join("");
 
-    renderPagination(posts.length);
+    renderPagination(allPosts.length);
 }
 
 function renderPagination(total) {
@@ -355,25 +400,29 @@ function renderPagination(total) {
     const pag = document.getElementById("pagination");
     pag.innerHTML = "";
 
+    pag.innerHTML = `
+        <button type="button" id="morePrevBtn" ${currentPage <= 1 ? "disabled" : ""} onclick="goToPage(currentPage - 1)">Previous</button>
+    `;
     for (let i = 1; i <= totalPages; i++) {
-        pag.innerHTML += `
-            <button onclick="goToPage(${i})" class="${i === currentPage ? 'active' : ''}">
-                ${i}
-            </button>
-        `;
+        pag.innerHTML += `<button type="button" onclick="goToPage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
     }
+    pag.innerHTML += `
+        <button type="button" id="moreNextBtn" ${currentPage >= totalPages ? "disabled" : ""} onclick="goToPage(currentPage + 1)">Next</button>
+    `;
 }
 
 function goToPage(num) {
-    currentPage = num;
+    const totalPages = Math.ceil(allPosts.length / postsPerPage);
+    currentPage = Math.max(1, Math.min(num, totalPages));
     renderPosts();
 }
 
 renderPosts();
 </script>
 
-</body>
+</main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-content">
 
@@ -385,65 +434,84 @@ renderPosts();
     </div>
 
     <div class="footer-section">
-      <h3>Partnership</h3>
-      <p>Work with us to promote safe hiking, conservation, and community-led tourism.</p>
-      <a href="../Partnership.html" class="cta-button">Partner with Kijabe Adventures</a>
+      <h3>Community Center</h3>
+       <li><a href="Partnership.html">Partner With Us</a></li>
+       <li><a href="community.html"> Our Community</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="safety.html">Safety</a></li>
+  
     </div>
 
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/kijabeadventure" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
 
     <div class="footer-section footer-links">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../destinations.html">Destinations</a></li>
-        <li><a href="../safety.html">Safety</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../booking.html">Booking</a></li>
-        <li><a href="../Partnership.html">Partner With Us</a></li>
-        <li><a href="../community.html">Community</a></li>
-        <li><a href="../gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Bookings</a></li>
+         <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </div>
 
   </div>
 
-  <p class="copyright">© 2025 Kijabe Adventures. All rights reserved.</p>
+  <p class="copyright">
+    © 2025 Kijabe Adventures. All rights reserved.
+  </p>
+  <p class="footer-legal">
+    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+  </p>
 
+  <section class="ad-section">
+    <!-- AdSense Display Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="pub-3754507736699545"
+         data-ad-slot="YOUR_AD_SLOT_ID"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 </footer>
 
-</html>
-  <!-- ===========================
-       BLOG POST STRUCTURED DATA
-  ============================ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Blog Post",
-    "description": "A hiking and adventure guide",
-    "image": "https://kijabeadventures.com/images/hero.jpg",
-    "author": {
-      "@type": "Organization",
-      "name": "Kijabe Adventures"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Kijabe Adventures",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://kijabeadventures.com/images/logo.png"
-      }
-    },
-    "datePublished": "2026-01-01"
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="js/next-hike.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
   }
-  </script>
-<html> 
+</script>
+<script>
+  // Simple mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>

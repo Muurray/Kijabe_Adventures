@@ -2,51 +2,156 @@
   {
     "id": "safari-tips",
     "title": "10 Essential Safari Hiking Tips for Beginners",
-    "link": "blog-safari-tips.html",
+    "link": "blog-post.html?id=safari-tips",
     "date": "2026-02-15",
     "author": "Kijabe Adventures Team",
     "image": "images/blogs/safari-tips.jpeg",
     "excerpt": "Learn the top tips for planning your first safari hike in Kenya. From gear to safety, we cover everything you need to know.",
-    "content": "<h2>10 Essential Safari Hiking Tips for Beginners</h2> ... (same)"
+    "content": "<p>Safari hiking in Kenya is an incredible experience, but preparation is key. Whether you're heading to Hell's Gate or Amboseli, these 10 tips will help you make the most of your adventure.</p>\n\n<h2>1. Start Early in the Morning</h2>\n<p>Most wildlife is active during early morning hours. Starting early improves visibility, comfort, and safety.</p>\n\n<h2>2. Invest in Proper Footwear</h2>\n<p>Good hiking boots prevent injuries and support your feet on uneven terrain.</p>\n\n<h2>3. Bring Plenty of Water</h2>\n<p>Always carry enough water—3 to 4 liters per day during a safari hike.</p>\n\n<h2>4. Use Sun Protection</h2>\n<p>Kenya’s sun is intense. Use sunscreen, hats, sunglasses, and UV-protective clothing.</p>\n\n<h2>5. Follow Your Guide’s Instructions</h2>\n<p>Your guide understands wildlife behavior and terrain. Always follow their lead.</p>\n\n<h2>6. Pack Light but Smart</h2>\n<p>Carry only essentials: water, snacks, basic first aid, and a light jacket.</p>\n\n<h2>7. Wear Neutral Colors</h2>\n<p>Earth tones help you blend into nature and avoid startling animals.</p>\n\n<h2>8. Know Your Limits</h2>\n<p>Choose hiking trails that match your fitness level and avoid overexertion.</p>\n\n<h2>9. Respect Wildlife Distance</h2>\n<p>Never approach animals. Use binoculars for safe viewing.</p>\n\n<h2>10. Practice Leave-No-Trace</h2>\n<p>Take all your trash with you and preserve Kenya’s natural beauty.</p>\n\n<p><strong>Ready for your safari hike?</strong>  <a href=\"https://wa.me/254743980340?text=I%20want%20to%20book%20a%20safari%20hike\">Chat with us on WhatsApp</a></p>",
+    "category": "Tips"
   },
   {
     "id": "mountain-climbing-prep",
     "title": "Complete Guide to Preparing for Mount Longonot Kenya Expedition",
-    "link": "blog-mountain-climbing-prep.html",
+    "link": "blog-post.html?id=mountain-climbing-prep",
     "date": "2026-02-10",
     "author": "Kijabe Adventures Team",
-    "image": "images/blogs/mt-longonot.jpeg",
-    "excerpt": "Thinking of climbing Mount Longonot? Here's everything you need to know.",
-    "content": "<h2>Complete Guide to Preparing for Mount Longonot Expedition</h2> ... (same)"
+    "image": "images/blogs/mt longonot.jpeg",
+    "excerpt": "Thinking of climbing Mount Longonot? Here's everything you need to know—gear, fitness, and what to expect on the trail.",
+    "content": "<p>This article is in the works. Check back soon for our complete guide on preparing for Mount Longonot!</p>",
+    "category": "Guides"
   },
   {
     "id": "forest-conservation",
     "title": "Why Forest Conservation Matters for Hikers",
-    "link": "blog-forest-conservation.html",
+    "link": "blog-post.html?id=forest-conservation",
     "date": "2026-02-05",
     "author": "Kijabe Adventures Team",
     "image": "images/blogs/forest-conservation.jpeg",
-    "excerpt": "Hiking through Kenya's forests is a privilege. Learn how to help preserve these natural treasures.",
-    "content": "<h2>Why Forest Conservation Matters for Hikers</h2> ... (same)"
+    "excerpt": "Hiking through Kenya's forests is a privilege. Learn how to help preserve these natural treasures for future generations.",
+    "content": "<p>This article is in the works. Check back soon!</p>",
+    "category": "Conservation"
   },
   {
     "id": "best-time-to-hike",
     "title": "The Best Time to Hike Each Mountain in Kenya",
-    "link": "blog-best-time-to-hike.html",
+    "link": "blog-post.html?id=best-time-to-hike",
     "date": "2026-01-28",
     "author": "Kijabe Adventures Team",
     "image": "images/blogs/hiking-seasons.jpeg",
-    "excerpt": "Timing is everything when hiking Kenya's mountains. Learn which months offer the best weather.",
-    "content": "<h2>The Best Time to Hike Each Mountain in Kenya</h2> ... (same)"
+    "excerpt": "Timing is everything when hiking Kenya's mountains. Learn which months offer the best weather for each peak.",
+    "content": "<p>This article is in the works. Check back soon!</p>",
+    "category": "Planning"
   },
   {
     "id": "nairobi-day-hikes",
     "title": "Best Day Hikes Near Nairobi: Perfect for Weekends",
-    "link": "blog-nairobi-day-hikes.html",
+    "link": "blog-post.html?id=nairobi-day-hikes",
     "date": "2026-01-20",
     "author": "Kijabe Adventures Team",
     "image": "images/blogs/nairobi-hikes.jpeg",
-    "excerpt": "Discover the best day hikes near Nairobi — perfect for weekend adventures.",
-    "content": "<h2>Best Day Hikes Near Nairobi: Perfect for Weekends</h2> ... (same)"
+    "excerpt": "Discover the best day hikes near Nairobi—perfect for weekend adventures. Ngong Hills, Karura Forest, and more.",
+    "content": "<p>This article is in the works. Check back soon!</p>",
+    "category": "Destinations"
+  },
+  {
+    "id": "scenic-naivasha-hikes",
+    "title": "Scenic Hikes in Naivasha You Must Try",
+    "link": "blog-post.html?id=scenic-naivasha-hikes",
+    "date": "2026-02-18",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/naivasha-hikes.jpeg",
+    "excerpt": "Explore the lake views and crater rim trails — scenic day hikes around Naivasha for all levels.",
+    "category": "Destinations"
+  },
+  {
+    "id": "best-beginner-hikes-nairobi",
+    "title": "Best Beginner Hikes Near Nairobi",
+    "link": "blog-post.html?id=best-beginner-hikes-nairobi",
+    "date": "2026-02-17",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/beginner-nairobi.jpeg",
+    "excerpt": "Short, accessible hikes near Nairobi ideal for new hikers — safety tips and route suggestions.",
+    "category": "Guides"
+  },
+  {
+    "id": "general-hiking-articles",
+    "title": "General Hiking Articles",
+    "link": "blog-post.html?id=general-hiking-articles",
+    "date": "2026-02-16",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/hiking-general.jpeg",
+    "excerpt": "A collection of general hiking topics: trail etiquette, conservation, planning, and motivation.",
+    "category": "General"
+  },
+  {
+    "id": "what-to-pack-day-hike-kenya",
+    "title": "What to Pack for a Day Hike in Kenya",
+    "link": "blog-post.html?id=what-to-pack-day-hike-kenya",
+    "date": "2026-02-14",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/pack-list.jpeg",
+    "excerpt": "Lightweight, practical packing list for day hikes in Kenya — essentials and budget-friendly options.",
+    "category": "Planning"
+  },
+  {
+    "id": "how-to-stay-safe-hiking-kenya",
+    "title": "How to Stay Safe While Hiking in Kenya",
+    "link": "blog-post.html?id=how-to-stay-safe-hiking-kenya",
+    "date": "2026-02-13",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/hiking-safety.jpeg",
+    "excerpt": "Practical safety advice for Kenyan trails — navigation, wildlife awareness, weather, and first aid.",
+    "category": "Safety"
+  },
+  {
+    "id": "why-hiking-best-weekend",
+    "title": "Why Hiking is the Best Weekend Activity",
+    "link": "blog-post.html?id=why-hiking-best-weekend",
+    "date": "2026-02-12",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/weekend-hike.jpeg",
+    "excerpt": "Benefits of weekend hikes — health, community, and reconnecting with nature in Kenya.",
+    "category": "Lifestyle"
+  },
+  {
+    "id": "best-time-month-by-month",
+    "title": "Best Time to Hike in Kenya (Month-by-month)",
+    "link": "blog-post.html?id=best-time-month-by-month",
+    "date": "2026-02-11",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/monthly-seasons.jpeg",
+    "excerpt": "A month-by-month guide to planning hikes across Kenya — avoid rains and catch the best views.",
+    "category": "Planning"
+  },
+  {
+    "id": "how-to-start-hiking-beginner",
+    "title": "How to Start Hiking if You're a Beginner",
+    "link": "blog-post.html?id=how-to-start-hiking-beginner",
+    "date": "2026-02-09",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/start-hiking.jpeg",
+    "excerpt": "Step-by-step advice for starting hiking — training, gear, choosing routes, and building confidence.",
+    "category": "Guides"
+  },
+  {
+    "id": "hiking-gear-checklist-kenya",
+    "title": "Hiking Gear Checklist for Kenyans (Budget-friendly)",
+    "link": "blog-post.html?id=hiking-gear-checklist-kenya",
+    "date": "2026-02-08",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/gear-checklist.jpeg",
+    "excerpt": "Affordable and durable gear recommendations for Kenyan hikers — what to buy and what to skip.",
+    "category": "Gear"
+  },
+  {
+    "id": "why-hike-with-guide",
+    "title": "Why You Should Hike With a Professional Guide",
+    "link": "blog-post.html?id=why-hike-with-guide",
+    "date": "2026-02-07",
+    "author": "Kijabe Adventures Team",
+    "image": "images/blogs/guide-benefits.jpeg",
+    "excerpt": "Advantages of hiring a local guide — safety, local knowledge, and supporting communities.",
+    "category": "Guides"
   }
 ]

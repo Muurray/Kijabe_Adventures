@@ -204,3 +204,83 @@
     document.addEventListener("DOMContentLoaded", loadDynamicSEO);
   </script>
 </head>
+<body>
+<header>
+  <div class="logo">
+    <a href="../index.html" aria-label="Kijabe Adventures Home">
+      <img src="../images/logo.png" alt="Kijabe Adventures Logo" width="140" loading="lazy">
+    </a>
+    <span class="logo-text">Kijabe Adventures</span>
+  </div>
+
+  <p class="tagline">Guided Hiking & Touring Experiences Across Kenya</p>
+
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <nav id="primary-nav" class="primary-nav">
+    <a href="../index.html">Home</a>
+    <a href="../safety.html">Safety</a>
+    <a href="../about.html">About US</a>
+    <a href="../contact.html">Contact US</a>
+    <a href="../community.html">Community</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="blog.html" class="active">Blog</a>
+  </nav>
+
+</header>
+  <main class="page-content">
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <div id="loading">Loading article…</div>
+    <div id="error" style="display:none;">Sorry — article not found.</div>
+
+    <article id="post-container" style="display:none;">
+      <h1 id="blog-title">&nbsp;</h1>
+      <div class="blog-meta">
+        <span id="blog-date"></span>
+        <span id="blog-author"></span>
+        <span id="reading-time" class="reading-time"></span>
+      </div>
+
+      <!-- Table of Contents -->
+      <nav id="post-toc" class="post-toc" aria-label="Table of contents"></nav>
+      <div class="post-image-wrap">
+        <img id="blog-image" src="" alt="" />
+      </div>
+
+      <!-- Share buttons will be injected here by `blog-post-loader.js` -->
+      <div id="blog-share" class="post-share"></div>
+
+      <div id="blog-content"></div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="related-posts" id="related-section">
+      <h2>More Hiking Guides</h2>
+      <div id="related-container" class="blog-grid">
+        <!-- Related posts load here -->
+      </div>
+    </section>
+
+    <!-- Comments -->
+    <section id="comments-section" class="comments-section">
+      <h3>Comments</h3>
+      <div id="comments" class="comments-list"></div>
+      <form id="comment-form" class="comment-form">
+        <input id="comment-name" placeholder="Your name" required />
+        <textarea id="comment-text" placeholder="Write a comment" rows="3" required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+      <div class="comments-note">Join the conversation! <code></div>
+    </section>
+  </main>
+
+  <!-- Back to top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="../js/blog-post-loader.js"></script>
+</body>
+</html>

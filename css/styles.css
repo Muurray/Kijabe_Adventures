@@ -1,3 +1,62 @@
+/* ==========================
+   GLOBAL DESIGN SYSTEM
+========================== */
+:root {
+  --primary-color: #006400;   /* Dark green */
+  --secondary-color: #2e8b57; /* Secondary green */
+  --accent-color: #ff9800;    /* Buttons or highlights */
+  --text-color: #333;
+  --background-color: #ffffff;
+
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+}
+
+/* Apply base styles to entire site */
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background: var(--background-color);
+  margin: 0;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-top: 0;
+}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.cta-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: var(--secondary-color);
+}
+
+/* =========================
+   CSS sections
+========================= */
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 /* =========================
    CSS VARIABLES
 ========================= */
@@ -11,6 +70,18 @@
     --bg-overlay: rgba(18, 28, 39, 0.78);
     --radius: 12px;
     --shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+/* Layout helper for article sections (uniform container) */
+.article-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
 /* =========================
@@ -401,6 +472,106 @@ nav a.active {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
+
+/* =========================
+     Share Buttons
+========================= */
+.share-actions,
+.post-share,
+.card-share {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.share-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.45rem 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    background: var(--primary-dark);
+}
+
+.share-fb { background:#1877f2; }
+.share-wa { background:#25D366; color: #04240f; }
+.share-copy { background:#6b7280; }
+
+.more-article-card .share-actions {
+    margin-top: 0.5rem;
+}
+
+/* small tweaks for related posts */
+.related-posts .blog-card { margin-bottom: 1rem; }
+
+/* Table of Contents */
+.post-toc { margin: 1rem 0; padding: 0.6rem; border-left: 3px solid var(--primary); background: #fff; border-radius: 8px; }
+.post-toc .toc-list { list-style: none; padding-left: 0.5rem; }
+.post-toc .toc-list li { margin: 0.25rem 0; }
+.post-toc .toc-h2 a { font-weight: 700; color: var(--dark); text-decoration: none; }
+.post-toc .toc-h3 { margin-left: 0.7rem; }
+.post-toc a:hover { text-decoration: underline; }
+
+/* Scroll progress bar */
+#scroll-progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: linear-gradient(90deg, #70af4c, #2c6e49); z-index: 9999; }
+
+/* Back to top */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    z-index: 10000;
+}
+.post-toc a.active { font-weight: 700; color: var(--primary-dark); }
+
+/* Sticky TOC on larger screens */
+@media(min-width: 900px) {
+    .post-toc { position: sticky; top: 80px; max-width: 280px; }
+}
+
+/* Reading time */
+.reading-time { color: var(--muted); margin-left: 0.5rem; font-size: 0.95rem; }
+
+/* Comments */
+.comments-section { margin-top: 2rem; background: #fff; padding: 1rem; border-radius: 8px; }
+.comments-list { margin-bottom: 0.8rem; }
+.comment-item { padding: 0.6rem; border-bottom: 1px solid #eee; }
+.comment-item .comment-time { color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.comment-form { display: flex; flex-direction: column; gap: 0.5rem; }
+.comment-form input, .comment-form textarea { padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; }
+.comment-form button { align-self: flex-start; padding: 0.5rem 0.9rem; background: var(--primary); color: white; border: none; border-radius: 6px; }
+.comments-note { margin-top: 0.6rem; color: var(--muted); font-size: 0.9rem; }
+
+/* Blog list card tweaks */
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.blog-card { position: relative; overflow: hidden; background: white; border-radius: 10px; box-shadow: var(--shadow); }
+.blog-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.blog-card-body { padding: 0.9rem; }
+.card-link { position: absolute; inset: 0; z-index: 1; text-indent: -9999px; }
+.blog-card .blog-btn { position: relative; z-index: 2; }
+.share-buttons { display:flex; gap:0.5rem; margin-top:0.6rem; z-index:2; position:relative; }
+.share-buttons .share-btn { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:6px; background:#ddd; color:#222; text-decoration:none; border:none; }
+.share-buttons .share-btn i { pointer-events:none; }
+.blog-card:hover { transform: translateY(-4px); transition: transform 0.2s ease; }
 
 .testimonial-card {
     text-align: center;
@@ -1134,7 +1305,7 @@ video {
 
 /* Blog Card Styles */
 .blog-card {
-    background: white;
+    background:  linear-gradient(120deg, var(--primary-dark), var(--primary));
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -1640,12 +1811,36 @@ video {
   border-radius: 10px;
 }
 
+.section-title {
+  font-size: 1.8rem;
+  color: var(--primary-dark, #2b4d2f);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted, #6b7280);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
 .json-section-title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #2b4d2f;
+  color: var(--primary-dark, #2b4d2f);
+}
+
+.json-card-body {
+  padding: 0;
+}
+
+.json-card-meta {
+  color: var(--muted, #6b7280);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .blog-container {
@@ -1699,11 +1894,16 @@ video {
 .pagination {
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .pagination button {
   padding: 8px 12px;
-  margin: 5px;
+  margin: 0;
   border: none;
   background: #ddd;
   border-radius: 5px;
@@ -1736,4 +1936,18 @@ video {
 .more-article-card p {
   font-size: 14px;
   color: #555;
+}
+.share-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.share-buttons button {
+  padding: 8px 14px;
+  background: #2b7a78;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
 }
