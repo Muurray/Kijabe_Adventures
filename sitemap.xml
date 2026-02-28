@@ -107,6 +107,32 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://kijabeadventures.com/blogs/blog-best-time-to-hike.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    </url>
+  <url>
+    <loc>https://kijabeadventures.com/blogs/blog-forest-conservation.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
   <!-- Legal -->
   <url>
     <loc>https://kijabeadventures.com/privacy.html</loc>
