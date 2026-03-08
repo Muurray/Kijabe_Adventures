@@ -25,7 +25,7 @@
   <meta property="og:title" content="Kijabe Adventures | Guided Hikes Across Kenya" />
   <meta property="og:description"
     content="Discover forests, hills, and scenic trails across Kenya with safe, guided hiking experiences." />
-  <meta property="og:url" content="https://kijabeadventures.com/" />
+  <meta property="og:url" content="https://kijabeadventures.com/contact.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
   <meta property="og:site_name" content="Kijabe Adventures" />
@@ -170,9 +170,9 @@
 
   <!-- PRIMARY NAVIGATION -->
   <nav id="primary-nav" class="primary-nav">
-    <a href="index.html" class="active">Home</a>
-   <a href="about.html" class="active">About Us</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="index.html" class>Home</a>
+   <a href="about.html">About Us</a>
+    <a href="contact.html"class="active">Contact Us</a>
     <a href="community.html">Community</a>
      <a href="gallery.html">Gallery</a>
      <a href="blogs/blog.html">Blog</a>
@@ -191,22 +191,67 @@
 <main class="page-content">
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <h2>Contact & Book a Hike</h2>
-    <p>Reach out for bookings, questions, or custom hiking experiences.</p>
-  </section>
+<section class="page-hero">
+  <h1>Book Your Next Hiking Adventure</h1>
+  <p>Join guided hikes across Kenya — safe, affordable, and led by experienced local guides.</p>
+
+  <div class="hero-buttons">
+    <a href="#booking-form" class="cta-button large">
+📅 Reserve Your Spot
+</a>
+    <a href="https://wa.me/254743980340?text=Hello%20I%20want%20to%20book%20a%20hike"
+       class="cta-button secondary"
+       target="_blank">
+       Book Instantly on WhatsApp
+    </a>
+  </div>
+  <div class="hero-cta">
+</section>
+
+<section class="featured-hike">
+
+<h2>🌄 Upcoming Guided Hikes</h2>
+<div class="featured-hikes-grid">
+
+<div class="featured-hike-card">
+<h3>Current Hike: Kijabe Hills Sunrise Hike</h3>
+<img src="images/sites/kijabe-hills.webp"
+alt="Kijabe Hills sunrise hiking trail"
+loading="lazy"
+width="400"
+height="260">
+
+<h3>Kijabe Hills Sunrise Hike</h3>
+<p>📅 April 15, 2026</p>
+<p>📍 Kijabe Hills</p>
+<p>⏰ Start: 6:30 AM</p>
+<p>💰 KES 2,500</p>
+<p>👥...🔥 Limited Spots Available</p>
+<a href="https://wa.me/254743980340?text=I%20want%20to%20book%20kijabe%20Hills%Hike"
+class="cta-button">
+Reserve Your Spot
+</a>
+</div>
+
+<div class="featured-hike-card">
+<h3>Next Hike: Ngong Hills Sunrise Hike</h3>
+<img src="images/Sites/ngong-hills.webp"
+alt="Ngong Hills sunrise hiking trail"
+loading="lazy"
+width="400"
+height="260">
+<h3>Mt Longonot</h3>
+<p><strong>Difficulty:</strong> Challenging</p>
+<p>📅 Jan 22, 2026</p>
+<p>💰 KES 3,500</p>
+<a href="..." class="cta-button">Reserve Spot</a>
+</div>
+</div>
+</section>
 
   <!-- CURRENT HIKE -->
   <section class="current-hike">
-    <h2>🌄 Current Hike</h2>
-
-    <div class="current-hike-container">
-      <div class="hike-info">
-        <h3>Ngong Hills – January 15</h3>
-        <p>Join us for a stunning hike with panoramic views of the Great Rift Valley.</p>
-        <p><strong>Location:</strong> Ngong Hills, Nairobi</p>
-        <p><strong>Next Hike Date:</strong> Jan 15, 2026</p>
-
+    <h2>🌄 Our Packages</h2>
         <div class="pricing-grid">
           <div class="price-card">
             <h4>Half-Day Hike</h4>
@@ -245,43 +290,124 @@
           </div>
         </div>
       </div>
-
-      <div class="hike-map">
-        <iframe
-          src="https://www.google.com/maps?q=Ngong+Hills&output=embed"
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
   </section>
+<section class="booking-guarantee">
+
+<p>✔ Secure your spot instantly</p>
+<p>✔ Pay easily via M-Pesa</p>
+<p>✔ Experienced local hiking guides</p>
+<p>✔ Small friendly groups</p>
+
+</section>
 
   <!-- CONTACT SECTION -->
-  <section class="contact-section">
-    <h2>Get in Touch</h2>
+   <section id="booking-form" class="booking-section">
+    <h2>Reserve Your Spot</h2>
+<form action="https://formsubmit.co/e829d55a227eefc780c3186bc8393f1f" method="POST">
 
-    <div class="contact-grid">
+<input type="text" name="name" placeholder="Full Name" required>
 
-      <div class="contact-info">
-        <p><strong>Phone:</strong> +254 743 980 340</p>
-        <p><strong>Email:</strong> info@kijabeadventures.com</p>
-        <p><strong>WhatsApp:</strong> Quick bookings and questions</p>
-      </div>
+<input type="email" name="email" placeholder="Email Address" required>
 
-      <form action="https://formsubmit.co/info@kijabeadventures.com" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
-        <!-- Settings -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Booking Inquiry">
-        <input type="hidden" name="_next" value="https://kijabeadventures.com/booking-confirmation.html">
+<select name="hike">
 
-        <button type="submit" class="cta-button">Send Message</button>
-      </form>
+<option value="">Select Hike</option>
+<option>Ngong Hills – Jan 15</option>
+<option>Kijabe Forest – Jan 22</option>
+<option>Mount Longonot – Feb 3</option>
 
+</select>
+
+<select name="people">
+<option>Number of Participants</option>
+<option>1</option>
+<option>2</option>
+<option>3-5</option>
+<option>6+</option>
+</select>
+
+<textarea name="message" placeholder="Special requests or questions"></textarea>
+
+<button type="submit" class="cta-button large">
+Book My Hike
+</button>
+
+</form>
     </div>
   </section>
+  
+ 
+  <!-- SOCIAL CONNECT -->
+   <section class="social-connect">
+
+<h2>Follow Our Adventures</h2>
+
+<a href="https://instagram.com/kijabeadventures">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+
+<a href="https://facebook.com">
+<i class="fab fa-facebook"></i> Facebook
+</a>
+
+</section>
+
+
+<section class="whatsapp-booking">
+
+<h2>Need a Quick Booking?</h2>
+
+<p>Chat with us directly on WhatsApp and reserve your hiking spot instantly.</p>
+
+<a href="https://wa.me/254743980340?text=Hello%20I%20want%20to%20book%20a%20hike"
+class="whatsapp-big-button">
+
+<i class="fab fa-whatsapp"></i>
+Chat on WhatsApp
+
+</a>
+
+</section><section class="location-map">
+
+<h2>Where We Hike</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Ngong+Hills&output=embed"
+width="100%"
+height="400"
+style="border:0"
+loading="lazy">
+</iframe>
+
+</section>
+
+
+<section class="faq-section">
+
+<h2>Booking Questions</h2>
+
+<h3>Do I need hiking experience?</h3>
+<p>No. We offer beginner, moderate, and advanced hikes.</p>
+
+<h3>What should I bring?</h3>
+<p>Water, comfortable shoes, sunscreen, and a light jacket.</p>
+
+<h3>Are group discounts available?</h3>
+<p>Yes. Contact us for private group bookings.</p>
+
+</section>
+<section class="final-cta">
+
+<h2>Ready for Your Next Adventure?</h2>
+
+<a href="#booking-form" class="cta-button large">
+Reserve Your Hiking Spot
+</a>
+
+</section>
+
 
 </main>
 <!-- FOOTER -->
