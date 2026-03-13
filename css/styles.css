@@ -1929,4 +1929,235 @@ gap:30px;
 max-width:1100px;
 margin:auto;
 }
+.final-cta{
+text-align:center;
+padding:80px 20px;
+background:#f5f9f6;
+margin-top:60px;
+}
 
+.final-cta h2{
+font-size:32px;
+margin-bottom:25px;
+}
+.social-connect{
+text-align:center;
+padding:70px 20px;
+background:#f7faf7;
+}
+
+.social-connect h2{
+margin-bottom:25px;
+font-size:30px;
+}
+
+.social-connect a{
+display:inline-block;
+margin:10px 15px;
+padding:12px 22px;
+background:#ffffff;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:#333;
+box-shadow:0 3px 8px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.social-connect a:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 14px rgba(0,0,0,0.12);
+}
+.whatsapp-booking{
+text-align:center;
+padding:80px 20px;
+background:#eaf7ef;
+}
+
+.whatsapp-booking h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.whatsapp-booking p{
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
+font-size:18px;
+}
+.whatsapp-big-button{
+display:inline-block;
+padding:16px 32px;
+background:#25D366;
+color:white;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.whatsapp-big-button i{
+margin-right:10px;
+}
+
+.whatsapp-big-button:hover{
+background:#1ebe5b;
+transform:scale(1.05);
+}
+.fa-instagram{
+color:#e1306c;
+}
+
+.fa-facebook{
+color:#1877f2;
+}
+.booking-guarantee{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+text-align:center;
+padding:60px 20px;
+}
+
+.booking-section{
+text-align:center;
+padding:80px 20px;
+}
+
+.booking-section form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea{
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:16px;
+}
+
+.booking-section textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.booking-section button{
+margin-top:10px;
+}
+.cta-button.large{
+padding:16px 28px;
+font-size:18px;
+margin-top:10px;
+}
+.insta-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+max-width:1000px;
+margin:30px auto;
+}
+
+.insta-grid img{
+width:100%;
+border-radius:8px;
+}
+
+/* GLOBAL CONTAINER */
+.container{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+}
+
+/* SECTION SPACING */
+section{
+padding:60px 0;
+}
+
+/* CENTER TEXT */
+section h1,
+section h2,
+section h3,
+section p{
+text-align:center;
+}
+
+/* CENTER LISTS */
+section ul{
+display:inline-block;
+text-align:left;
+margin-top:20px;
+line-height:1.8;
+}
+
+/* COMMUNITY STATS */
+.community-stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+text-align:center;
+padding:60px 20px;
+}
+
+.stat{
+min-width:150px;
+}
+
+.stat h3{
+font-size:32px;
+color:#2e7d32;
+}
+
+/* MEMBERS GRID */
+.members-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.member-card{
+max-width:220px;
+text-align:center;
+}
+
+.member-card img{
+width:100%;
+border-radius:12px;
+}
+
+/* INSTAGRAM GRID */
+.insta-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+}
+
+.insta-grid img{
+width:100%;
+border-radius:10px;
+}
+body{
+background:#f4f7f4;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.6;
+}
+/* SOFT CARD SECTIONS */
+
+main section{
+max-width:1000px;
+margin:40px auto;
+padding:50px 30px
