@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===========================
+        BASIC META
+  ============================ -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How to Plan a Fun Scavenger Hunt in Your Area | Kijabe Adventures</title>
+
+<meta name="description" content="Learn how to plan a fun scavenger hunt in your area for friends, families, schools, or corporate team building. Simple steps, ideas, and outdoor adventure tips.">
+<meta name="keywords" content="scavenger hunt ideas, outdoor scavenger hunt, team building activities, family fun, hiking adventures, nature scavenger hunt">
+<meta name="author" content="Kijabe Adventures">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kijabeadventures.com/blogs/scavenger-hunt-hikes.html" />
+
+  <!-- ===========================
+        OPEN GRAPH
+  ============================ -->
+  <meta property="og:title" content="Kijabe Adventures Blog | Hiking Stories & Tips" />
+  <meta property="og:description"
+    content="Discover hiking guides, mountain preparation tips, and inspiring adventure stories from Kenya." />
+  <meta property="og:url" content="https://kijabeadventures.com/blogs/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
+  <meta property="og:site_name" content="Kijabe Adventures" />
+
+
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<a href="../index.html">
+<img src="../images/logo.png" alt="Kijabe Adventures Logo">
+</a>
+<span>Kijabe Adventures</span>
+</div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+<a href="../blogs/blog.html">Blog</a>
+</nav>
+
+</header>
+
+
+<main class="blog-post">
+
+<section class="blog-hero">
+
+<h1>How to Plan a Fun Scavenger Hunt in Your Area</h1>
+
+<p class="blog-meta">
+By Kijabe Adventures • Outdoor Activities
+</p>
+
+<img src="../images/blogs/scavenger-hunt-hikes.png"
+alt="Friends enjoying an outdoor scavenger hunt adventure">
+
+</section>
+
+
+<section class="blog-content">
+
+<p>
+A scavenger hunt is one of the most exciting ways to explore your
+neighborhood, park, forest trail, or town while having fun with
+friends, family, or colleagues. Whether you are organizing a
+birthday activity, a school event, or a team-building challenge,
+a well-planned scavenger hunt can turn any location into a
+memorable adventure.
+</p>
+
+
+<h2>1. Choose the Perfect Location</h2>
+
+<p>
+Start by selecting a location that is safe, accessible, and
+interesting to explore. Parks, hiking trails, nature reserves,
+or even your local neighborhood can work perfectly.
+</p>
+
+<ul>
+<li>Local parks</li>
+<li>Forest trails</li>
+<li>Hiking routes</li>
+<li>Neighborhood streets</li>
+<li>School grounds</li>
+</ul>
+
+
+<h2>2. Create a List of Items to Find</h2>
+
+<p>
+A scavenger hunt works best when participants search for unique
+items or locations. Mix easy items with more challenging ones to
+make the game exciting.
+</p>
+
+<p>Example scavenger hunt items:</p>
+
+<ul>
+<li>A unique shaped leaf</li>
+<li>A rock with an unusual color</li>
+<li>A hidden trail sign</li>
+<li>A bird feather</li>
+<li>A photo of a scenic viewpoint</li>
+</ul>
+
+
+<h2>3. Add Fun Challenges</h2>
+
+<p>
+To make the hunt more interactive, include small challenges
+along the way. These could involve taking photos, solving riddles,
+or performing a simple task.
+</p>
+
+<ul>
+<li>Take a team selfie at a scenic spot</li>
+<li>Solve a nature riddle</li>
+<li>Identify a local tree or plant</li>
+<li>Find the highest viewpoint in the area</li>
+</ul>
+
+
+<h2>4. Set Clear Rules</h2>
+
+<p>
+Before starting the hunt, explain the rules to all participants.
+Set boundaries for the search area and ensure everyone respects
+nature and other visitors.
+</p>
+
+<ul>
+<li>Stay within the designated area</li>
+<li>Do not damage plants or wildlife</li>
+<li>Work as a team</li>
+<li>Return before the time limit</li>
+</ul>
+
+
+<h2>5. Offer a Reward</h2>
+
+<p>
+Adding a small prize can motivate participants and make the
+competition even more exciting. Rewards can include certificates,
+small gifts, or even a free hiking adventure.
+</p>
+
+
+<h2>Make It an Outdoor Adventure</h2>
+
+<p>
+A scavenger hunt becomes even more memorable when combined with
+an outdoor adventure. Exploring forests, hills, or scenic trails
+adds excitement and helps participants connect with nature.
+</p>
+
+<p>
+At Kijabe Adventures, we encourage outdoor activities that bring
+people together while promoting environmental awareness and
+community engagement.
+</p>
+
+</section>
+
+
+<section class="blog-cta">
+
+<h2>Explore More Outdoor Adventures</h2>
+
+<p>
+Looking for more fun outdoor activities? Join one of our guided
+hikes and explore Kenya’s beautiful landscapes with experienced
+local guides.
+</p>
+
+<a href="../contact.html" class="cta-button">
+Book Your Next Adventure
+</a>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>© 2025 Kijabe Adventures</p>
+
+</footer>
+
+</body>
+</html>
