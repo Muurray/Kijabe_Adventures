@@ -5,19 +5,28 @@
   --primary-color: #006400;   /* Dark green */
   --secondary-color: #2e8b57; /* Secondary green */
   --accent-color: #ff9800;    /* Buttons or highlights */
-  --text-color: #333;
+  --text-color: #000000;       /* Main text color */
   --background-color: #ffffff;
-
+   --primary: #4caf50;
+    --primary-dark: #2c6e49;
+    --accent: #ffffff;
+    --dark: #1f1f1f;
+    --light: #ffffff;
+    --muted: #6b7280;
+    --bg-overlay: rgba(18, 28, 39, 0.78);
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0,0,0,0.12);
   --heading-font: 'Poppins', sans-serif;
   --body-font: 'Open Sans', sans-serif;
 }
 
 /* Apply base styles to entire site */
-body {
-  font-family: var(--body-font);
-  color: var(--text-color);
-  background: var(--background-color);
-  margin: 0;
+body{
+margin:0;
+font-family:var(--body-font);
+background:#f4f7f4;
+color:var(--dark);
+line-height:1.6;
 }
 h1, h2, h3, h4, h5 {
   font-family: var(--heading-font);
@@ -33,20 +42,9 @@ a:hover {
   color: var(--accent-color);
 }
 
-.cta-button {
-  background: var(--primary-color);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.cta-button:hover {
-  background: var(--secondary-color);
-}
 
 /* =========================
-   CSS sections
+   CSS sections /* SECTION SPACING */
 ========================= */
 section {
   padding: 60px 20px;
@@ -55,21 +53,6 @@ section {
 section h2 {
   text-align: center;
   margin-bottom: 30px;
-}
-
-/* =========================
-   CSS VARIABLES
-========================= */
-:root {
-    --primary: #4caf50;
-    --primary-dark: #2c6e49;
-    --accent: #ffffff;
-    --dark: #1f1f1f;
-    --light: #ffffff;
-    --muted: #6b7280;
-    --bg-overlay: rgba(18, 28, 39, 0.78);
-    --radius: 12px;
-    --shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
 /* =========================
@@ -103,17 +86,9 @@ section h2 {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--dark);
-    line-height: 1.6;
-    background: rgb(155, 194, 155);
-}
-
 /* Utility container */
 .page-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: auto;
     padding: 2rem 1rem;
 }
@@ -235,23 +210,6 @@ nav a.active {
     font-size: 1.2rem;
 }
 
-/* Buttons */
-.cta-button {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s, background 0.3s;
-}
-
-.cta-button:hover {
-    background: #3b8b3c;
-    transform: translateY(-2px);
-}
 /* HOW IT WORKS (BOOKING STEPS) */
 .booking-steps {
     background: #2c6e49;
@@ -782,7 +740,7 @@ nav a.active {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
-booking-section {
+.booking-section {
     background: white;
     padding: 3rem 2rem;
     border-radius: var(--radius);
@@ -866,7 +824,9 @@ footer {
 .footer-legal a:hover {
     color: var(--accent);
 }
-
+.copyright {
+  text-align: center;
+}
 /* =========================
    GALLERY SLIDESHOW
 ========================= */
@@ -998,24 +958,9 @@ footer {
     }
 }
 /* NEXT HIKE BADGE */
-.next-hike-badge {
-    display: inline-block;
-    margin: 0.8rem auto 0;
-    background: #4caf50;
-    color: #fff;
-    font-weight: bold;
-    padding: 0.6rem 1.3rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    text-decoration: none;
-    transition: transform 0.3s, background 0.3s;
-}
-/* NEXT HIKE BADGE */
-
 .next-hike-badge{
 position:fixed;
-bottom:90px;   /* pushes it above WhatsApp */
+bottom:90px;
 right:20px;
 background:#2e7d32;
 color:white;
@@ -1026,26 +971,10 @@ font-weight:600;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 z-index:999;
+transition:transform .3s;
 }
-
-
-.next-hike-badge:hover {
-    transform: translateY(-2px);
-}
-
-/* STATUS COLORS */
-.next-hike-badge.open {
-    background: #2ecc71;
-}
-
-.next-hike-badge.almost-full {
-    background: #e74c3c;
-}
-
-.tagline {
-    grid-area: tagline;
-    text-align: left;
-    font-weight: 600;
+.next-hike-badge:hover{
+transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,0.3);
 }
 
 /* MOBILE FLOATING */
@@ -1263,46 +1192,21 @@ video {
 /* =========================
    CTA SECTION
 ========================= */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-    border-radius: var(--radius);
-    max-width: 1200px;
-    margin: 3rem auto;
-    box-shadow: var(--shadow);
+.cta-button{
+display:inline-block;
+padding:12px 22px;
+background:var(--primary);
+color:white;
+border-radius:8px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
 }
 
-.cta-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+.cta-button:hover{
+background:var(--primary-dark);
+transform:translateY(-2px);
 }
-
-.cta-section p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-}
-
-.cta-button {
-    display: inline-block;
-    background: white;
-    color: var(--primary-dark);
-    padding: 0.9rem 2.5rem;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
 /* =========================
    PAGE HERO
 ========================= */
@@ -1349,11 +1253,6 @@ video {
         gap: 1.5rem;
     }
 }
-/* FULL PAGE CLEANUP */
-body {
-    background: #f7f7f7 !important;
-}
-
 /* Blog Container */
 .blog-post-article {
     max-width: 780px;
@@ -1439,18 +1338,6 @@ body {
 .blog-post-content ul {
     padding-left: 2rem;
 }
-
-/* CTA Box */
-.blog-cta {
-    max-width: 680px;
-    margin: 2.5rem auto;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    background: linear-gradient(135deg, #1b7f4e, #46c270);
-    color: white;
-}
-
 
 /* Related Posts Section */
 .related-posts {
@@ -2095,10 +1982,6 @@ padding:60px 20px;
 text-align:center;
 }
 
-/* SECTION SPACING */
-section{
-padding:60px 0;
-}
 
 /* CENTER TEXT */
 section h1,
@@ -2167,8 +2050,8 @@ margin:auto;
 width:100%;
 border-radius:10px;
 }
-body{
-background:#f4f7f4;
-font-family:Arial, Helvetica, sans-serif;
-line-height:1.6;
+a:focus,
+button:focus{
+outline:2px solid var(--accent);
+outline-offset:2px;
 }

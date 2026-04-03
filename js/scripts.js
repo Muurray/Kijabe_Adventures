@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Simba Safaris is ready!");
+    console.log("kijabe adventures is ready!");
 });

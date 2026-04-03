@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+
+    content="Read inspiring hiking stories, mountain guides, safety tips, and adventure advice from Kijabe Adventures. Learn how to prepare for Kenya's best trails." />
+
+  <meta name="keywords"
+    content="hiking blog, Kenya hiking guides, mountain climbing tips, hiking safety, Nairobi hikes, Mount Kenya guide" />
+
+  <meta name="author" content="Kijabe Adventures" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kijabeadventures.com/blogs/blog-dynamic.html" />
+
+  <!-- ===========================
+        OPEN GRAPH
+  ============================ -->
+  <meta property="og:title" content="Kijabe Adventures Blog | Hiking Stories & Tips" />
+  <meta property="og:description"
+    content="Discover hiking guides, mountain preparation tips, and inspiring adventure stories from Kenya." />
+  <meta property="og:url" content="https://kijabeadventures.com/blogs/blog-dynamic.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
+  <meta property="og:site_name" content="Kijabe Adventures" />
+
+  <!-- ===========================
+       TWITTER CARD
+  ============================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kijabe Adventures Blog | Mountain Guides & Hiking Tips" />
+  <meta name="twitter:description"
+    content="Expert hiking guides and adventure stories. Learn from experienced mountaineers." />
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
+
+  <!-- ===========================
+       FAVICONS
+  ============================ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#006400">
+  <link rel="shortcut icon" href="../images/favicons/favicon.ico">
+  <meta name="theme-color" content="#006400">
+
+  <!-- ===========================
+       CSS
+  ============================ -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- ===========================
+       STRUCTURED DATA (SEO)
+  ============================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Kijabe Adventures Blog",
+    "description": "Hiking guides and adventure stories from Kenya",
+    "url": "https://kijabeadventures.com/blogs/blog-dynamic.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kijabe Adventures",
+      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+
+<header>
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="../index.html" aria-label="Kijabe Adventures Home">
+      <img src="../images/logo.png"
+           alt="Kijabe Adventures Logo"
+           width="140"
+           loading="lazy">
+    </a>
+    <span class="logo-text">Kijabe Adventures</span>
+  </div>
+
+  <p class="tagline">Guided Hiking & Touring Experiences Across Kenya</p>
+
+  <!-- Mobile Button -->
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- NAV -->
+  <nav id="primary-nav" class="primary-nav">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../community.html">Community</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="blog.html" class="active">Blog</a>
+  </nav>
+
+</header>
+<body>
+<main>
+
+<section id="jsonBlogSystem" class="more-articles-section article-section">
+  <h2 class="json-section-title">More Articles</h2>
+  <p class="section-subtitle">Explore more hiking guides, tips, and adventure stories.</p>
+
+  <div id="blogList" class="blog-container"></div>
+  <div id="pagination" class="pagination"></div>
+</section>
+
+</main>
+
+<script>
+const BASE_URL = "https://kijabeadventures.com/blogs/";
+
+async function loadJsonPosts() {
+    try {
+        const response = await fetch('../data/blogs.json');
+        return await response.json();
+    } catch (e) {
+        console.warn("Could not load blogs.json:", e);
+        return [];
+    }
+}
+
+const postsPerPage = 6;
+let currentPage = 1;
+let allPosts = [];
+
+function imgBase(url) {
+    if (!url) return "../images/blogs/safari-tips.jpeg";
+    return (url.startsWith("http") || url.startsWith("../"))
+        ? url
+        : "../" + url.replace(/^images\//, "images/");
+}
+
+async function renderPosts() {
+    allPosts = await loadJsonPosts();
+    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const container = document.getElementById("blogList");
+
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const paginated = allPosts.slice(start, end);
+
+    container.innerHTML = paginated.map(post => {
+        const fullUrl = post.link.startsWith("http")
+            ? post.link
+            : BASE_URL + post.link;
+
+        const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
+        const waUrl = "https://wa.me/?text=" + encodeURIComponent(post.title + " - " + fullUrl);
+
+        return `
+        <div class="json-card">
+            <img src="${imgBase(post.image)}" alt="${post.title}" loading="lazy">
+
+            <div class="json-card-body">
+                <h3>${post.title}</h3>
+                <p><small>${post.date || ""}</small></p>
+                <p>${post.excerpt || ""}</p>
+
+                <a href="${post.link}" class="blog-btn">Read More</a>
+
+                <div class="share-buttons">
+                    <a href="${fbUrl}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="${waUrl}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <button class="share-copy" data-url="${fullUrl}">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+        </div>`;
+    }).join("");
+
+    renderPagination(allPosts.length);
+}
+
+function renderPagination(total) {
+    const totalPages = Math.ceil(total / postsPerPage);
+    const pag = document.getElementById("pagination");
+
+    pag.innerHTML = "";
+
+    pag.innerHTML += `
+        <button onclick="goToPage(${currentPage - 1})"
+        ${currentPage === 1 ? "disabled" : ""}>Previous</button>
+    `;
+
+    for (let i = 1; i <= totalPages; i++) {
+        pag.innerHTML += `
+            <button onclick="goToPage(${i})"
+            class="${i === currentPage ? 'active' : ''}">
+            ${i}
+            </button>
+        `;
+    }
+
+    pag.innerHTML += `
+        <button onclick="goToPage(${currentPage + 1})"
+        ${currentPage === totalPages ? "disabled" : ""}>Next</button>
+    `;
+}
+
+function goToPage(page) {
+    const totalPages = Math.ceil(allPosts.length / postsPerPage);
+    currentPage = Math.max(1, Math.min(page, totalPages));
+    renderPosts();
+}
+
+document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".share-copy");
+    if (btn) {
+        navigator.clipboard.writeText(btn.dataset.url);
+        btn.innerHTML = "✓";
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-link"></i>';
+        }, 1500);
+    }
+});
+
+renderPosts();
+</script>
+
+</body>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nairobi & Central Kenya, Kenya</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Community Center</h3>
+       <li><a href="../partnership.html">Partner With Us</a></li>
+       <li><a href="../community.html"> Our Community</a></li>
+        <li><a href="../destinations.html">Destinations</a></li>
+        <li><a href="../safety.html">Safety</a></li>
+        <li><a href="blog.html">Blog</a></li>
+  
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../booking.html">Bookings</a></li>
+         <li><a href="../gallery.html">Gallery</a></li>
+            <li><a href="../about.html">About Us</a></li>
+            <h3>BLOG LINKS</h3>
+             <li><a href="blog.html">Blog</a></li>
+             <li><a href="../safari-tips.html">Safari Tips</a></li>
+             <li><a href="../kenya-safety.html">Is Kenya Safe?</a></li>
+             <li><a href="../safari-cost.html">Safari Costs</a></li>
+             <li><a href="../big-five.html">The Big Five</a></li>
+             <li><a href="../blog-best-time-to-hike.html">Best Time to Hike</a></li>
+             <li><a href="../blog-forest-conservation.html">Forest Conservation</a></li>
+             <li><a href="../blog-mountain-climbing-prep.html">Mount Longonot Guide</a></li>
+             <li><a href="../blog-nairobi-day-hikes.html">Nairobi Day Hikes</a></li>
+             <li><a href="../scavenger-hunt-hikes.html">Scavenger Hunt Hikes in Kenya</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2025 Kijabe Adventures. All rights reserved.
+  </p>
+  <p class="footer-legal">
+    <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a>
+  </p>
+
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="js/next-hisectionke.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+</script>
+<script>
+  // Simple mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>

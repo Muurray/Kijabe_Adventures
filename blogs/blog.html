@@ -27,7 +27,7 @@
     content="Discover hiking guides, mountain preparation tips, and inspiring adventure stories from Kenya." />
   <meta property="og:url" content="https://kijabeadventures.com/blogs/blog.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
   <meta property="og:site_name" content="Kijabe Adventures" />
 
   <!-- ===========================
@@ -37,7 +37,7 @@
   <meta name="twitter:title" content="Kijabe Adventures Blog | Mountain Guides & Hiking Tips" />
   <meta name="twitter:description"
     content="Expert hiking guides and adventure stories. Learn from experienced mountaineers." />
-  <meta name="twitter:image" content="https://kijabeadventures.com/images/hero.jpg" />
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
 
   <!-- ===========================
        FAVICONS
@@ -70,7 +70,7 @@
     "publisher": {
       "@type": "Organization",
       "name": "Kijabe Adventures",
-      "logo": "https://kijabeadventures.com/images/logo.png"
+      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
     }
   }
   </script>
@@ -83,7 +83,7 @@
   <!-- LOGO -->
   <div class="logo">
     <a href="../index.html" aria-label="Kijabe Adventures Home">
-      <img src="../images/logo.png"
+      <img src="../images/kijabe-adventure-logo.png"
            alt="Kijabe Adventures Logo"
            width="140"
            loading="lazy">
@@ -260,179 +260,18 @@
                 </div>
             </div>
         </div>
-
+</div>
     <div id="featuredPagination" class="pagination">
         <button type="button" id="featuredPrevBtn" disabled aria-label="Previous page">Previous</button>
         <button type="button" id="featuredNextBtn" aria-label="Next page">Next</button>
     </div>
 </section>
 
-<!-- ===========================
-     SCRIPTS
-============================ -->
-
-<script>
-// Featured Articles pagination (2 per page)
-var showFeaturedPage;
-(function () {
-    const perPage = 3;
-    let featuredPage = 1;
-    const featuredCards = [...document.querySelectorAll("#blogGrid .blog-card")];
-    const totalPages = Math.ceil(featuredCards.length / perPage);
-
-    showFeaturedPage = function () {
-        const start = (featuredPage - 1) * perPage;
-        const end = start + perPage;
-        featuredCards.forEach((c, i) => {
-            c.style.display = (i >= start && i < end) ? "block" : "none";
-        });
-        const prevBtn = document.getElementById("featuredPrevBtn");
-        const nextBtn = document.getElementById("featuredNextBtn");
-        if (prevBtn) prevBtn.disabled = featuredPage <= 1;
-        if (nextBtn) nextBtn.disabled = featuredPage >= totalPages;
-    };
-
-    document.getElementById("featuredPrevBtn").onclick = function () { featuredPage--; showFeaturedPage(); };
-    document.getElementById("featuredNextBtn").onclick = function () { featuredPage++; showFeaturedPage(); };
-    showFeaturedPage();
-})();
-
-// Search for featured articles (when searching, show all matches; otherwise use pagination)
-document.getElementById("searchBar").addEventListener("keyup", function () {
-    const q = this.value.toLowerCase().trim();
-    const cards = document.querySelectorAll("#blogGrid .blog-card");
-    const pagination = document.getElementById("featuredPagination");
-    if (q) {
-        pagination.style.display = "none";
-        cards.forEach(card => { card.style.display = card.dataset.title.includes(q) ? "block" : "none"; });
-    } else {
-        pagination.style.display = "";
-        if (typeof showFeaturedPage === "function") showFeaturedPage();
-    }
-});
-
-// Copy link handler for share buttons
-document.addEventListener("click", function (e) {
-    const btn = e.target.closest(".share-copy");
-    if (btn) {
-        const url = btn.dataset.url;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(() => {
-                const icon = btn.querySelector("i");
-                if (icon) { icon.className = "fas fa-check"; setTimeout(() => { icon.className = "fas fa-link"; }, 1500); }
-            });
-        } else {
-            const ta = document.createElement("textarea");
-            ta.value = url;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand("copy");
-            document.body.removeChild(ta);
-            const icon = btn.querySelector("i");
-            if (icon) { icon.className = "fas fa-check"; setTimeout(() => { icon.className = "fas fa-link"; }, 1500); }
-        }
-    }
-});
-</script>
-
-<!-- SECTION 2: More Articles (from JSON) -->
-<section id="jsonBlogSystem" class="more-articles-section article-section">
-  <h2 class="json-section-title">More Articles</h2>
-  <p class="section-subtitle">Explore more hiking guides, tips, and adventure stories.</p>
-  <div id="blogList" class="blog-container"></div>
-  <div id="pagination" class="pagination"></div>
-</section>
-
-<script>
-/* ===========================
-     JSON BLOG SYSTEM (More Articles)
-=========================== */
-
-/* More Articles loaded from data/blogs.json */
-
-
-const BASE_URL = "https://kijabeadventures.com/blogs/";
-
-async function loadJsonPosts() {
-    try {
-        const response = await fetch('../data/blogs.json');
-        return await response.json();
-    } catch (e) {
-        console.warn("Could not load blogs.json:", e);
-        return [];
-    }
-}
-
-
-const postsPerPage = 6;
-let currentPage = 1;
-let allPosts = [];
-
-function imgBase(url) {
-    if (!url) return "../images/blogs/safari-tips.jpeg";
-    return (url.startsWith("http") || url.startsWith("../")) ? url : "../" + url.replace(/^images\//, "images/");
-}
-
-async function renderPosts() {
-    allPosts = await loadJsonPosts();
-    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    const container = document.getElementById("blogList");
-    const start = (currentPage - 1) * postsPerPage;
-    const end = start + postsPerPage;
-    const paginated = allPosts.slice(start, end);
-
-    container.innerHTML = paginated.map(post => {
-        const fullUrl = post.link.startsWith("http") ? post.link : BASE_URL + post.link;
-        const fbUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(fullUrl);
-        const waText = encodeURIComponent((post.title || "Article") + " - " + fullUrl);
-        const waUrl = "https://wa.me/?text=" + waText;
-        const excerpt = post.excerpt || post.description || "";
-
-        return `
-        <div class="json-card" data-title="${(post.title || "").toLowerCase()}">
-            <img src="${imgBase(post.image)}" alt="${post.title}" loading="lazy">
-            <div class="json-card-body">
-                <h3>${post.title}</h3>
-                <p class="json-card-meta"><small>${post.date || ""}</small></p>
-                <p>${excerpt}</p>
-                <a href="${post.link}" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="${fbUrl}" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="${fullUrl}" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
-        </div>`;
-    }).join("");
-
-    renderPagination(allPosts.length);
-}
-
-function renderPagination(total) {
-    const totalPages = Math.ceil(total / postsPerPage);
-    const pag = document.getElementById("pagination");
-    pag.innerHTML = "";
-
-    pag.innerHTML = `
-        <button type="button" id="morePrevBtn" ${currentPage <= 1 ? "disabled" : ""} onclick="goToPage(currentPage - 1)">Previous</button>
-    `;
-    for (let i = 1; i <= totalPages; i++) {
-        pag.innerHTML += `<button type="button" onclick="goToPage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
-    }
-    pag.innerHTML += `
-        <button type="button" id="moreNextBtn" ${currentPage >= totalPages ? "disabled" : ""} onclick="goToPage(currentPage + 1)">Next</button>
-    `;
-}
-
-function goToPage(num) {
-    const totalPages = Math.ceil(allPosts.length / postsPerPage);
-    currentPage = Math.max(1, Math.min(num, totalPages));
-    renderPosts();
-}
-
-renderPosts();
-</script>
+<div style="text-align:center; margin-top:40px;">
+  <a href="blog-dynamic.html" class="blog-btn">
+    View More Articles →
+  </a>
+</div>
 
 </main>
 
@@ -497,19 +336,6 @@ renderPosts();
     <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a>
   </p>
 
-  <section class="ad-section">
-    <!-- AdSense Display Ad -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="pub-3754507736699545"
-         data-ad-slot="YOUR_AD_SLOT_ID"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </section>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -521,7 +347,8 @@ renderPosts();
 </a>
 
 <!-- Scripts -->
-<script src="js/next-hike.js"></script>
+<script src="../js/next-hike.js"></script>
+
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
@@ -538,6 +365,57 @@ renderPosts();
       primaryNav.classList.toggle('open');
     });
   }
+</script>
+<!-- Featured Articles Script -->
+<script>
+var showFeaturedPage;
+
+(function () {
+    const perPage = 3;
+    let featuredPage = 1;
+
+    const featuredCards = [...document.querySelectorAll("#blogGrid .blog-card")];
+    const totalPages = Math.ceil(featuredCards.length / perPage);
+
+    showFeaturedPage = function () {
+        const start = (featuredPage - 1) * perPage;
+        const end = start + perPage;
+
+        featuredCards.forEach((c, i) => {
+            c.style.display = (i >= start && i < end) ? "block" : "none";
+        });
+
+        document.getElementById("featuredPrevBtn").disabled = featuredPage <= 1;
+        document.getElementById("featuredNextBtn").disabled = featuredPage >= totalPages;
+    };
+
+    document.getElementById("featuredPrevBtn").onclick = () => {
+        featuredPage--;
+        showFeaturedPage();
+    };
+
+    document.getElementById("featuredNextBtn").onclick = () => {
+        featuredPage++;
+        showFeaturedPage();
+    };
+
+    showFeaturedPage();
+})();
+
+document.getElementById("searchBar").addEventListener("keyup", function () {
+    const q = this.value.toLowerCase();
+    const cards = document.querySelectorAll("#blogGrid .blog-card");
+
+    if (q) {
+        document.getElementById("featuredPagination").style.display = "none";
+        cards.forEach(card => {
+            card.style.display = card.dataset.title.includes(q) ? "block" : "none";
+        });
+    } else {
+        document.getElementById("featuredPagination").style.display = "";
+        showFeaturedPage();
+    }
+});
 </script>
 
 </body>
