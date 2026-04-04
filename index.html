@@ -261,8 +261,9 @@ Chat on WhatsApp
 </div>
 ✔ Certified Local Guides
 ✔ First Aid Trained
-✔ Small Group Hikes
+✔ Small and large Group Hikes
 </section>
+
 <section class="trust-badges">
 
 <div class="badge">⭐ 4.9 Rated Hiking Experiences</div>
@@ -273,6 +274,99 @@ Chat on WhatsApp
 
 <div class="badge">🌿 Eco-Friendly Tourism</div>
 
+</section>
+
+<section class="event-banner">
+
+  <div class="event-banner-content">
+
+    <!-- LEFT: TEXT -->
+    <div class="event-info">
+      <h2>🌄 Kijabe Hills Labour Day Hike</h2>
+
+      <p class="event-meta">
+        📅 June 1 (Labour Day) |
+        📍 Kijabe Hills |
+        ⏰ 9:30 AM – 4:00 PM
+      </p>
+
+      <p class="event-highlight">
+        🤝 Team Building • Networking • Social Hiking
+      </p>
+
+      <p class="event-price">💰 KES 2,000 per person</p>
+
+      <p class="limited">🔥 Limited Slots Available</p>
+
+      <!-- QUICK BOOKING -->
+      <div class="booking-inline">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="number" id="people" placeholder="People" min="1" required>
+
+        <button onclick="sendToWhatsApp()" class="cta-button">
+          Book Now
+        </button>
+      </div>
+
+      <!-- SHARE -->
+      <div class="share-event center">
+        <p>📢 Share Event</p>
+
+        <div class="share-buttons">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a href="https://api.whatsapp.com/send?text=Join%20Kijabe%20Hike%20June%201%20https://kijabeadventures.com" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <a href="https://twitter.com/intent/tweet?text=Join%20Kijabe%20Hike%20June%201&url=https://kijabeadventures.com" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="event-image">
+      <img src="images/kijabe-hills.webp" alt="Kijabe Hills hiking trail">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="event-benefits">
+  <h2>🤝 Why Join This Hike?</h2>
+
+  <div class="benefits-grid">
+    <div>
+      <i class="fas fa-users"></i>
+      <h3>Meet New People</h3>
+      <p>Connect with like-minded hikers and outdoor lovers.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-handshake"></i>
+      <h3>Team Building</h3>
+      <p>Fun group activities designed to build friendships.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-camera"></i>
+      <h3>Content & Memories</h3>
+      <p>Capture amazing moments for your social media.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-heart"></i>
+      <h3>Relax & Recharge</h3>
+      <p>Escape the city and refresh your mind.</p>
+    </div>
+  </div>
 </section>
 
 <section class="booking-steps">
@@ -294,58 +388,10 @@ Chat on WhatsApp
       <p>Pay via M-Pesa, get your confirmation, and enjoy the hike.</p>
     </div>
   </div>
-</section>
-<section class="featured-hike">
-
-<h2>🌄 Next Guided Hike</h2>
-
-<div class="featured-hike-card">
-
-<img src="images/ngong-hills.webp"
-alt="Ngong Hills hiking trail in Kenya with Rift Valley views"
-loading="lazy"
-width="400"
-height="260">
-
-<h3>Ngong Hills Sunrise Hike</h3>
-<p>📅 April 15, 2026</p>
-<p>📍 Ngong Hills</p>
-<p>⏰ Start: 6:30 AM</p>
-<p>💰 KES 2,500</p>
-<p>👥...🔥 Limited Spots Available</p>
-
-<a href="contact.html" class="cta-button">
-Reserve Your Spot
-</a>
-
-</div>
-
-</section>
-
-<section class="booking-calendar">
-  <h2>📅 Upcoming Hikes & Availability</h2>
-
-  <iframe
-    src="https://calendar.google.com/calendar/embed?src=muurimartin%40gmail.com&ctz=Africa%2FNairobi"
-    style="border: 0px;"
-    width="100%"
-    height="150"
-    frameborder="0px;"
-    scrolling="no">
-  </iframe>
-
-  <a href="https://wa.me/254743980340"
-     class="cta-button"
-     target="_blank">
-    Book via WhatsApp
-  </a>
-  <a href="https://wa.me/254743980340?text=I%20have%20paid%20via%20M-Pesa.%20My%20name%20is%20_____"
-   class="cta-button"
-   target="_blank">
-  Pay via M-Pesa & Confirm
+  <a href="https://chat.whatsapp.com/CHrXcVDUsOc6zOV0QZXO8P?mode=gi_t" class="cta-button">
+Join Our Hiking Community
 </a>
 </section>
-
 <section class="popular-packages">
   <h2><i class="fas fa-hiking"></i> Popular Packages</h2>
   <div class="pricing-grid">
@@ -593,6 +639,44 @@ document.getElementById("year").textContent = new Date().getFullYear();
     });
   }
 </script>
+<script>
+async function sendToWhatsApp() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const people = document.getElementById("people").value;
+
+  if (!name || !phone || !people) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const data = {
+    name: name,
+    phone: phone,
+    people: people,
+    event: "Kijabe Hills Labour Day Hike - June 1"
+  };
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbw1VQQzZZc4g3nGNPfM_MWw3OFox8-823OKtfjuZpIRE9JssRVJK3JF_EDICuuiy-_p/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+  } catch (error) {
+    console.error("Error saving booking:", error);
+  }
+
+  const message = `Hello Kijabe Adventures!%0A
+I would like to book the Kijabe Hills Labour Day Hike.%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+People: ${people}`;
+
+  const url = `https://wa.me/254743980340?text=${message}`;
+  window.open(url, "_blank");
+}
+</script>
+
 
 </body>
 </html>
