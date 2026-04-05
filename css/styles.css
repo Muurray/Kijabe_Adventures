@@ -2207,3 +2207,19 @@ outline-offset:2px;
     justify-content: center;
   }
 }
+.community-text {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #4caf50;
+}
+.join-community {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.join-community .cta-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
