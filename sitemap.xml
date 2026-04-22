@@ -9,24 +9,10 @@
   </url>
 
   <url>
-    <loc>https://kijabeadventures.com/booking.html</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://kijabeadventures.com//blogs/blog-scavenger-hunt-hikes.html</loc>
     <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://kijabeadventures.com/destinations.html</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <url>
@@ -42,7 +28,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://kijabeadventures.com/essay.html</loc>
     <lastmod>2026-01-30</lastmod>

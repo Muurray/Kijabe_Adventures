@@ -1897,10 +1897,12 @@ outline:2px solid var(--accent);
 outline-offset:2px;
 }
 .event-banner {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, rgba(12, 40, 58, 0.95), rgba(32, 58, 82, 0.98)), radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 38%);
+  background-blend-mode: overlay, normal;
   color: #fff;
   padding: 60px 20px;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 24px 24px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 24px 50px rgba(0,0,0,0.2);
 }
 
 .event-banner h2 {
@@ -2395,4 +2397,467 @@ outline-offset:2px;
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+.calc-card {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.calc-card h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.checkbox {
+  grid-column: span 2;
+}
+
+.calc-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  background: #006400;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.result-card {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f01919;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #006400;
+}
+
+.deposit {
+  color: #444;
+}
+
+.payment-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #eaf7ea;
+  text-align: center;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox {
+    grid-column: span 1;
+  }
+}
+.cta-primary {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cta-primary.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.deposit-warning {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.deposit-warning a {
+  color: #856404;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #856404;
+}
+.event-banner {
+  padding: 60px 20px;
+  background: #f9fbf9;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  background: #041336;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* TOP LEFT: EVENT INFO */
+.event-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.event-info h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.event-meta {
+  color: #2be780;
+  margin-bottom: 15px;
+}
+
+.event-highlight {
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+/* BADGE */
+.event-badge {
+  display: block;              /* enables centering */
+  width: fit-content;          /* keeps badge compact */
+  margin: 0 auto 12px auto;    /* centers horizontally */
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.event-badge {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* PRICE BOX */
+.event-price-box {
+  background: #645a00;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin: 20px auto;       /* centers horizontally */
+  text-align: center;      /* centers inner text */
+  display: block;          /* ensures margin auto works */
+  width: fit-content;      /* keeps box tight */
+}
+
+.event-price-box.center {
+  display: block;
+  text-align: center;
+  max-width: 200px;
+}
+
+
+
+/* INCLUSIONS */
+.event-includes p {
+  margin: 5px 0;
+  color: lab(96.83% -23.18 93.98);
+}
+
+/* WARNING */
+.deposit-warning {
+  color: #d9534f;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+/* BOOKING CARD */
+.booking-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #457dc7;
+}
+
+.booking-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.calc-result {
+  margin: 5px 0;
+}
+
+/* BUTTON */
+.cta-primary {
+  display: block;
+  margin-top: 10px;
+  padding: 12px;
+  background: #25D366;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.cta-primary.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* SHARE */
+.share-event {
+  margin-top: 20px;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.share-buttons a {
+  font-size: 20px;
+  color: #52cf0ad5;
+}
+
+.copy-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #ac0606;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* TOP RIGHT: IMAGE */
+.event-image {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.event-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* BOTTOM LEFT: BOOKING SECTION */
+.booking-section {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* BOTTOM RIGHT: SHARE SECTION */
+.share-section {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .event-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+  }
+
+  .event-info {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .event-image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .booking-section {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .share-section {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .event-image img {
+    max-width: 100%;
+  }
+
+  .share-buttons {
+    justify-content: center;
+  }
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+
+  border-radius: 12px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.cta-primary {
+  display: block;
+  margin-top: 12px;
+  padding: 12px;
+  background: #25D366;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.cta-primary.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+}
+
+.event-price-box {
+  background: #006400;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px auto;
+  width: fit-content;
 }

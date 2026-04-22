@@ -221,84 +221,175 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <main>
 
+
 <!-- HERO -->
 <section class="hero">
-<h1>Guided Hiking Adventures Across Kenya</h1>
-<p>
-Explore Ngong Hills, Kijabe Forest, Karura and more with experienced local guides.
-Safe, affordable and beginner-friendly hikes.
-</p>
-<div class="hero-actions">
+  <h1>Guided Hiking Adventures Across Kenya</h1>
 
-<a href="destinations.html" class="cta-button">
-Explore Trails
-</a>
+  <p>
+    Explore Kijabe Hills, Ngong Hills, Mt. Suswa, Karura Forest, and more hidden hiking trails with experienced local guides.
+    Safe, social, affordable and unforgettable hiking experiences.
+  </p>
 
-<a href="contact.html" class="cta-button primary">
-Book a Hike
-</a>
+  <div class="hero-actions">
 
-<a href="https://wa.me/254743980340"
-class="cta-button whatsapp"
-target="_blank">
+    <a href="destinations.html" class="cta-button">
+      Explore Trails
+    </a>
 
-<i class="fab fa-whatsapp"></i>
-Chat on WhatsApp
+    <!-- EVENT CTA -->
+    <button onclick="openEventModal()" class="cta-button primary">
+      🎉 Join Upcoming Hike
+    </button>
 
-</a>
+    <!-- CALCULATOR CTA -->
+    <button onclick="openCalcModal()" class="cta-button whatsapp">
+      💳 Private Group Pricing
+    </button>
 
-</div>
-✔ Certified Local Guides
-✔ First Aid Trained
-✔ Organized Small and large Groups Hiking Events
-</section>
+  </div>
 
-<section class="trust-badges">
-
-<div class="badge">⭐ 4.9 Rated Hiking Experiences</div>
-
-<div class="badge">👣 5000+ Happy Hikers</div>
-
-<div class="badge">🛡️ Safety First Guided Hiking Tours</div>
-
-<div class="badge">🌿 Eco-Friendly Tourism and Hiking activities</div>
-
+  <p class="hero-trust">
+    ⭐ 4.9 Rated Hiking Experiences <br>
+    👣 5000+ Happy Hikers <br>
+    🛡️ Safety First Guided Tours <br>
+    🌿 Eco-Friendly & Beginner Friendly
+  </p>
 </section>
 
 <section class="event-banner">
 
-  <div class="event-banner-content">
+  <div class="event-card">
 
-    <!-- LEFT: TEXT -->
+    <!-- TOP LEFT: EVENT INFO -->
     <div class="event-info">
+      <span class="event-badge">Limited Slots Available</span>
       <h2>🌄 Kijabe Hills Labour Day Hike</h2>
 
       <p class="event-meta">
-        📅 June 1 (Labour Day) |
-        📍 Kijabe Hills |
-        ⏰ 9:30 AM – 4:00 PM
+        📅 June 1 • ⏰ 9:30 AM – 4:00 PM<br>
+        📍 Kijabe Hills<br>
+        📌 Meeting Point: Mai Mahiu Parking Area
       </p>
+
+      <div class="event-price-box">
+        <span class="price">KES 2,000</span>
+        <span class="per-person">per person</span>
+      </div>
 
       <p class="event-highlight">
         🤝 Team Building • Networking • Social Hiking
       </p>
 
-      <p class="event-price">💰 KES 2,000 per person</p>
-
-      <p class="limited">🔥 Limited Slots Available</p>
-
-      <!-- QUICK BOOKING -->
-      <div class="booking-inline">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-        <input type="number" id="people" placeholder="People" min="1" required>
-
-        <button onclick="sendToWhatsApp()" class="cta-button">
-          Book Now
-        </button>
+      <!-- INCLUSIONS -->
+      <div class="event-includes">
+        <p>✅ Guide Fees Included</p>
+        <p>✅ Park Entrance Fee Included</p>
+        <p>✅ Drinking Water Provided</p>
       </div>
 
-      <!-- SHARE -->
+      <!-- NOTICE -->
+      <p class="deposit-warning">
+        ⚠️ Booking is only confirmed after paying a <strong>30% booking fee</strong> via M-Pesa Till.
+      </p>
+    </div>
+
+    <!-- TOP RIGHT: IMAGE -->
+    <div class="event-image">
+      <img src="images/kijabe-hills.webp" alt="Kijabe Hills hiking trail">
+    </div>
+
+    <!-- BOTTOM LEFT: BOOKING CARD -->
+     
+    <div class="booking-section">
+      <div class="booking-card">
+
+  <input type="text" id="eventName" placeholder="Your Name" required>
+
+  <!-- HIKER TYPE -->
+  <label>Select Hiker Type:</label>
+  <select id="eventType">
+    <option value="">Select Type</option>
+    <option value="adult">Adults</option>
+    <option value="student">Students</option>
+    <option value="child">Children</option>
+  </select>
+
+  <!-- NUMBER -->
+  <input type="number" id="eventPeople" placeholder="Number of People" min="1" required>
+
+  <p class="calc-result">Total: <strong id="eventTotal">KES 0</strong></p>
+  <p class="calc-result">Booking fee (30%): <strong id="eventDeposit">KES 0</strong></p>
+
+  <a id="eventWhatsapp" class="cta-primary disabled" href="#">
+    Book & Confirm via WhatsApp
+  </a>
+
+  <p class="mpesa-note">
+    💳 Pay booking fee via M-Pesa Till: <strong>5440810</strong>
+  </p>
+
+</div>
+    </div>
+
+    <!-- BOTTOM RIGHT: SHARE BUTTONS -->
+    <div class="share-section">
+      <div class="share-event">
+        <p>📢 Share this hike</p>
+
+        <div class="share-buttons">
+          <a id="shareFacebook" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a id="shareWhatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <button onclick="copyLink()" class="copy-btn">
+            🔗 Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="event-benefits">
+  <h2>🤝 Why Join This Hike?</h2>
+
+  <div class="benefits-grid">
+    <div>
+      <i class="fas fa-users"></i>
+      <h3>Meet New People</h3>
+      <p>Connect with like-minded hikers and outdoor lovers.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-handshake"></i>
+      <h3>Team Building</h3>
+      <p>Fun group activities designed to build friendships.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-camera"></i>
+      <h3>Content & Memories</h3>
+      <p>Capture amazing moments for your social media.</p>
+    </div>
+
+    <div>
+      <i class="fas fa-heart"></i>
+      <h3>Relax & Recharge</h3>
+      <p>Escape the city and refresh your mind.</p>
+    </div>
+  </div>
+  <div class="join-community">
+  <p class="community-text">👥 Connect with other hikers before the event</p>
+
       <div class="share-event center">
         <p>📢 Share Event</p>
 
@@ -388,6 +479,101 @@ Chat on WhatsApp
     </div>
   </div>
 </section>
+<section class="private-bookings">
+
+<div class="calc-card">
+
+  <h2>⛰️ Private Group Booking</h2>
+  <p class="subtitle">Plan your hike in seconds. Transparent pricing. Instant booking.</p>
+
+  <div class="form-grid">
+
+    <!-- NAME -->
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="customerName" placeholder="John Doe">
+    </div>
+
+    <!-- HIKE TYPE -->
+    <div class="form-group">
+      <label>Hiker Type</label>
+      <select id="hikeType">
+        <option value="">Select Type</option>
+        <option value="adults">Adults</option>
+        <option value="students">Students</option>
+        <option value="children">Children</option>
+      </select>
+    </div>
+
+    <!-- NUMBER -->
+    <div class="form-group">
+      <label>Number of Hikers</label>
+      <input type="number" id="hikers" min="1" placeholder="e.g. 10">
+    </div>
+
+    <!-- DATE -->
+    <div class="form-group">
+      <label>Hike Date</label>
+      <input type="date" id="hikeDate">
+    </div>
+
+    <!-- DESTINATION -->
+    <div class="form-group">
+      <label>Destination</label>
+      <select id="destination">
+        <option value="">Select Location</option>
+        <option value="Kijabe Hills">Kijabe Hills</option>
+        <option value="Ngong Hills">Ngong Hills</option>
+        <option value="Mt Longonot">Mt Longonot</option>
+      </select>
+    </div>
+
+    <!-- RESIDENCY -->
+    <div class="form-group">
+      <label>Residency</label>
+      <select id="residency">
+        <option value="resident">Kenyan Resident</option>
+        <option value="nonresident">Non-Resident</option>
+      </select>
+    </div>
+
+    <!-- PARKING -->
+    <div class="form-group checkbox">
+      <label>
+        <input type="checkbox" id="parking">
+        Add Parking (+KES 300)
+      </label>
+    </div>
+
+  </div>
+
+  <p id="errorMsg" class="error-message"></p>
+
+  <button class="calc-btn">Calculate Booking</button>
+
+  <!-- RESULTS -->
+  <div class="result-card">
+    <p>👥 Total Hikers: <strong id="totalHikers">0</strong></p>
+    <p class="price">Total Cost(KES) <span id="total">0</span></p>
+    <p class="deposit">Booking fee: KES <span id="deposit">0</span></p>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="payment-card">
+    <h4>📲 Pay 30% Booking Fee</h4>
+    <p><strong>Till Number:</strong> 5440810</p>
+
+    <a id="whatsappLink" class="whatsapp-btn disabled">
+      Confirm Booking
+    </a>
+  </div>
+
+</div>
+
+</section>
+
+
+
 <section class="popular-packages">
   <h2><i class="fas fa-hiking"></i> Popular Packages</h2>
   <div class="pricing-grid">
@@ -615,6 +801,84 @@ document.getElementById("year").textContent = new Date().getFullYear();
    aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
+<!-- EVENT MODAL -->
+<div id="eventModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeEventModal()">&times;</span>
+
+    <h2>🌄 Kijabe Hills Labour Day Hike</h2>
+
+    <p class="event-meta">
+      📅 June 1 • ⏰ 9:30 AM <br>
+      📍 Kijabe Hills <br>
+      📌 Meeting Point: Mai Mahiu Parking Area
+    </p>
+
+    <div class="event-price-box">
+      <span>KES</span>
+      <strong>2,000</strong>
+      <small>per person</small>
+    </div>
+
+    <p class="deposit-warning">
+      ⚠️ Booking is only confirmed after paying a 30% booking fee via M-Pesa Till.
+    </p>
+
+    <!-- INPUTS -->
+    <input type="text" id="modalEventName" placeholder="Your Name" required>
+    <input type="number" id="modalEventPeople" placeholder="Number of People" min="1" required>
+
+    <p id="modalEventError" class="error-message"></p>
+
+    <!-- RESULTS -->
+    <p>Total: <strong id="modalEventTotal">KES 0</strong></p>
+    <p>Booking fee (30%): <strong id="modalEventDeposit">KES 0</strong></p>
+
+    <a id="modalEventWhatsapp" class="cta-primary disabled" href="#">
+      Confirm Booking via WhatsApp
+    </a>
+
+    <p class="mpesa-note">
+      💳 Pay via M-Pesa Till: <strong>5440810</strong>
+    </p>
+
+  </div>
+</div>
+
+ <!-- CALCULATOR MODAL -->
+<div id="calcModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeCalcModal()">&times;</span>
+
+    <h2>💳 Private Group Booking</h2>
+
+    <input type="text" id="calcName" placeholder="Your Name" required>
+    <input type="number" id="calcPeople" placeholder="Number of Hikers" min="1" required>
+
+    <select id="calcType">
+      <option value="">Select Hike Type</option>
+      <option value="adults">Adults</option>
+      <option value="students">Students</option>
+      <option value="children">Children</option>
+    </select>
+
+    <p id="calcError" class="error-message"></p>
+
+    <p>Total: <strong id="calcTotal">KES 0</strong></p>
+    <p>Booking fee (30%): <strong id="calcDeposit">KES 0</strong></p>
+
+    <a id="calcWhatsapp" class="cta-primary disabled">
+      Confirm Booking
+    </a>
+
+    <p class="mpesa-note">
+      💳 Till Number: <strong>5440810</strong>
+    </p>
+
+  </div>
+</div>
 
 <!-- Scripts -->
 <script src="js/next-hike.js"></script>
@@ -676,6 +940,77 @@ People: ${people}`;
 <div class="mobile-book-now">
   <button onclick="sendToWhatsApp()">🔥 Book June 1 Hike</button>
 </div>
+<script>
+async function payWithMpesa() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const people = document.getElementById("people").value;
 
+  if (!name || !phone || !people) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  // Calculate total amount
+  const amount = 2000 * people;
+
+  try {
+    const response = await fetch("http://localhost:5000/stkpush", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        phone: phone,
+        amount: amount
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    alert("📱 Check your phone for M-Pesa payment prompt");
+
+  } catch (error) {
+    console.error(error);
+    alert("Payment failed. Make sure your server is running.");
+  }
+}
+</script>
+<script>
+// OPEN MODALS
+function openEventModal() {
+  document.getElementById("eventModal").style.display = "block";
+}
+
+function openCalcModal() {
+  document.getElementById("calcModal").style.display = "block";
+}
+
+// CLOSE MODALS
+function closeEventModal() {
+  document.getElementById("eventModal").style.display = "none";
+}
+
+function closeCalcModal() {
+  document.getElementById("calcModal").style.display = "none";
+}
+
+// CLOSE ON OUTSIDE CLICK
+window.onclick = function(e) {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+  }
+};
+
+// ESC KEY CLOSE
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeEventModal();
+    closeCalcModal();
+  }
+});
+</script>
+<script src="js/calculator.js"></script>
 </body>
 </html>

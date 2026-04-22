@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiking Price Calculator</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+
+    .calculator {
+        max-width: 420px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    select, input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .result {
+        margin-top: 15px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Hiking Price Calculator</h2>
+
+    <!-- Residency -->
+    <label>Residency:</label>
+    <select id="residency">
+        <option value="500">Kenyan Resident (KES 500)</option>
+        <option value="632">Non-Resident (KES 632)</option>
+    </select>
+
+    <!-- Age -->
+    <label>Category:</label>
+    <select id="age">
+        <option value="1">Adult</option>
+        <option value="0.9">Student (10% Discount)</option>
+    </select>
+
+    <!-- People -->
+    <label>Number of People:</label>
+    <input type="number" id="people" value="1" min="1">
+
+    <!-- Parking -->
+    <label>Self Drive (Parking Fee KES 300):</label>
+    <select id="parking">
+        <option value="0">No</option>
+        <option value="300">Yes</option>
+    </select>
+
+    <!-- Guides -->
+    <label>Number of Guides (KES 3000 per 2 guides):</label>
+    <select id="guides">
+        <option value="3000">2 Guides (KES 3000)</option>
+        <option value="6000">4 Guides (KES 6000)</option>
+        <option value="9000">6 Guides (KES 9000)</option>
+        <option value="12000">8 Guides (KES 12000)</option>
+        <option value="15000">10 Guides (KES 15000)</option>
+    </select>
+
+    <button onclick="calculatePrice()">Calculate Total</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function calculatePrice() {
+    let residencyFee = parseFloat(document.getElementById("residency").value);
+    let ageFactor = parseFloat(document.getElementById("age").value);
+    let people = parseInt(document.getElementById("people").value);
+    let parking = parseFloat(document.getElementById("parking").value);
+    let guides = parseFloat(document.getElementById("guides").value);
+
+    // Per person cost
+    let perPerson = residencyFee * ageFactor;
+
+    // Total cost
+    let total = (perPerson * people) + parking + guides;
+
+    document.getElementById("result").innerHTML =
+        "Total Price: KES " + total.toLocaleString();
+}
+</script>
+
+</body>
+</html>
