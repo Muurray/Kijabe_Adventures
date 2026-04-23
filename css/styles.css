@@ -2158,9 +2158,9 @@ outline-offset:2px;
   background: rgba(6, 240, 6, 0.76);
 }
 .mobile-book-now {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-
 .mobile-book-now button {
   border-radius: 30px;
 }
@@ -2630,7 +2630,7 @@ outline-offset:2px;
 /* INCLUSIONS */
 .event-includes p {
   margin: 5px 0;
-  color: lab(96.83% -23.18 93.98);
+  color: #00ff80;
 }
 
 /* WARNING */
@@ -2642,8 +2642,8 @@ outline-offset:2px;
 
 /* BOOKING CARD */
 .booking-card {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 10px;
+  padding: 10px;
   border-radius: 12px;
   background: #457dc7;
 }
@@ -2854,7 +2854,7 @@ input, select {
 }
 
 .event-price-box {
-  background: #006400;
+  background: #466ec4;
   color: white;
   padding: 10px;
   border-radius: 10px;

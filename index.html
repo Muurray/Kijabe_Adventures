@@ -51,7 +51,6 @@ content="Join guided hiking tours in Kenya including Ngong Hills, Karura Forest,
 
   <meta name="msapplication-TileColor" content="#006400">
   <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#006400">
 
   <!-- ===========================
        PRELOADS (PERFORMANCE)
@@ -283,7 +282,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
       <!-- INCLUSIONS -->
       <div class="event-includes">
-        <p>✅ Guide Fees Included</p>
+        <p>✅ Entrance Fee Included</p>
+        <p>✅ Guide Fee Included</p>
         <p>✅ Park Entrance Fee Included</p>
         <p>✅ Drinking Water Provided</p>
       </div>
@@ -303,18 +303,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
      
     <div class="booking-section">
       <div class="booking-card">
-
+  <label>Booking Fees Calculator:</label>
   <input type="text" id="eventName" placeholder="Your Name" required>
 
   <!-- HIKER TYPE -->
-  <label>Select Hiker Type:</label>
+  <label for="eventType">Select Hiker Type:</label>
   <select id="eventType">
     <option value="">Select Type</option>
     <option value="adult">Adults</option>
     <option value="student">Students</option>
     <option value="child">Children</option>
   </select>
-
   <!-- NUMBER -->
   <input type="number" id="eventPeople" placeholder="Number of People" min="1" required>
 
@@ -335,17 +334,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <!-- BOTTOM RIGHT: SHARE BUTTONS -->
     <div class="share-section">
       <div class="share-event">
-        <p>📢 Share this hike</p>
+        <div class="share-event center">
+        <p>📢 Share Event</p>
 
         <div class="share-buttons">
-          <a id="shareFacebook" target="_blank">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com" target="_blank" rel="noopener" title="Share on Facebook">
             <i class="fab fa-facebook"></i>
           </a>
-
-          <a id="shareWhatsapp" target="_blank">
+          <a href="https://api.whatsapp.com/send?text=Join%20Kijabe%20Hike%20June%201%20https://kijabeadventures.com" target="_blank" rel="noopener" title="Share on WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
-
+          <a href="https://x.com/intent/tweet?text=Join%20Kijabe%20Hike%20June%201&url=https://kijabeadventures.com" target="_blank" rel="noopener" title="Share on X (Twitter)">
+          <i class="fab fa-x-twitter"></i>
+          </a>
           <button onclick="copyLink()" class="copy-btn">
             🔗 Copy Link
           </button>
@@ -354,61 +355,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
   </div>
-
-</section>
-
-
-
-<section class="event-benefits">
-  <h2>🤝 Why Join This Hike?</h2>
-
-  <div class="benefits-grid">
-    <div>
-      <i class="fas fa-users"></i>
-      <h3>Meet New People</h3>
-      <p>Connect with like-minded hikers and outdoor lovers.</p>
-    </div>
-
-    <div>
-      <i class="fas fa-handshake"></i>
-      <h3>Team Building</h3>
-      <p>Fun group activities designed to build friendships.</p>
-    </div>
-
-    <div>
-      <i class="fas fa-camera"></i>
-      <h3>Content & Memories</h3>
-      <p>Capture amazing moments for your social media.</p>
-    </div>
-
-    <div>
-      <i class="fas fa-heart"></i>
-      <h3>Relax & Recharge</h3>
-      <p>Escape the city and refresh your mind.</p>
-    </div>
-  </div>
-  <div class="join-community">
-  <p class="community-text">👥 Connect with other hikers before the event</p>
-
-      <div class="share-event center">
-        <p>📢 Share Event</p>
-
-        <div class="share-buttons">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com" target="_blank">
-            <i class="fab fa-facebook"></i>
-          </a>
-
-          <a href="https://api.whatsapp.com/send?text=Join%20Kijabe%20Hike%20June%201%20https://kijabeadventures.com" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-
-          <a href="https://twitter.com/intent/tweet?text=Join%20Kijabe%20Hike%20June%201&url=https://kijabeadventures.com" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
 
 </section>
 
@@ -445,7 +391,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
   <a href="https://chat.whatsapp.com/CHrXcVDUsOc6zOV0QZXO8P?mode=gi_t"
      class="cta-button whatsapp"
-     target="_blank">
+     target="_blank"
+     rel="noopener">
     <i class="fab fa-whatsapp"></i> Join Our Hiking Community
   </a>
 </div>
@@ -483,13 +430,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <!-- NAME -->
     <div class="form-group">
-      <label>Your Name</label>
+      <label for="customerName">Your Name</label>
       <input type="text" id="customerName" placeholder="John Doe">
     </div>
 
     <!-- HIKE TYPE -->
     <div class="form-group">
-      <label>Hiker Type</label>
+      <label for="hikeType">Hiker Type</label>
       <select id="hikeType">
         <option value="">Select Type</option>
         <option value="adults">Adults</option>
@@ -500,19 +447,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <!-- NUMBER -->
     <div class="form-group">
-      <label>Number of Hikers</label>
+      <label for="hikers">Number of Hikers</label>
       <input type="number" id="hikers" min="1" placeholder="e.g. 10">
     </div>
 
     <!-- DATE -->
     <div class="form-group">
-      <label>Hike Date</label>
+      <label for="hikeDate">Hike Date</label>
       <input type="date" id="hikeDate">
     </div>
 
     <!-- DESTINATION -->
     <div class="form-group">
-      <label>Destination</label>
+      <label for="destination">Destination</label>
       <select id="destination">
         <option value="">Select Location</option>
         <option value="Kijabe Hills">Kijabe Hills</option>
@@ -523,7 +470,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <!-- RESIDENCY -->
     <div class="form-group">
-      <label>Residency</label>
+      <label for="residency">Residency</label>
       <select id="residency">
         <option value="resident">Kenyan Resident</option>
         <option value="nonresident">Non-Resident</option>
@@ -754,9 +701,9 @@ Read Our Hiking Blog
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener" title="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener" title="Follow us on Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
 
@@ -791,6 +738,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
    class="whatsapp-float"
    target="_blank"
+   rel="noopener"
    aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -850,6 +798,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
     <input type="text" id="calcName" placeholder="Your Name" required>
     <input type="number" id="calcPeople" placeholder="Number of Hikers" min="1" required>
 
+    <label for="calcType">Hike Type</label>
     <select id="calcType">
       <option value="">Select Hike Type</option>
       <option value="adults">Adults</option>
