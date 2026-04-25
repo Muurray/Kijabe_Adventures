@@ -2861,3 +2861,50 @@ input, select {
   margin: 15px auto;
   width: fit-content;
 }
+/* ===============================
+   📱 MOBILE STICKY BOOKING BAR
+================================ */
+.mobile-booking-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+
+  background: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+
+/* Buttons */
+.mobile-booking-bar .bar-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Primary (Event) */
+.mobile-booking-bar .primary {
+  background: #006400;
+  color: #fff;
+}
+
+/* Secondary (Private) */
+.mobile-booking-bar .secondary {
+  background: #25D366;
+  color: #fff;
+}
+
+/* 🚫 Hide on desktop */
+@media (min-width: 768px) {
+  .mobile-booking-bar {
+    display: none;
+  }
+}

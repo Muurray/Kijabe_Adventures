@@ -396,47 +396,71 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <i class="fab fa-whatsapp"></i> Join Our Hiking Community
   </a>
 </div>
-
 </section>
+
+ <!-- Booking STEPs -->
 <section class="booking-steps">
-  <h2><i class="fas fa-check-circle"></i> How Booking Works</h2>
+  <h2><i class="fas fa-check-circle"></i> How It Works</h2>
 
   <div class="steps-grid">
 
     <!-- STEP 1 -->
     <div class="step">
-      <div class="step-icon"><i class="fas fa-calculator"></i></div>
-      <h3>Calculate Your Price</h3>
+      <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+      <h3>1. Choose Your Experience</h3>
       <p>
-        Use our smart calculator to instantly see your total cost based on group size,
-        hiker type, and optional parking.
+        Join an upcoming group hike or plan a private hike for your group.
       </p>
+      <div class="step-actions">
+        <button onclick="openEventModal()" class="cta-button primary">
+          🎉 Join Upcoming Hike
+        </button>
+        <button onclick="openCalcModal()" class="cta-button whatsapp">
+          💳 Plan Private Hike
+        </button>
+      </div>
     </div>
 
     <!-- STEP 2 -->
     <div class="step">
-      <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
-      <h3>Confirm via WhatsApp</h3>
+      <div class="step-icon"><i class="fas fa-calculator"></i></div>
+      <h3>2. Calculate & Confirm</h3>
       <p>
-        Click “Confirm Booking” to send your details directly to us on WhatsApp.
-        We’ll guide you with final details, meeting point, and preparation tips.
+        Use our smart hiking cost calculators to instantly see your total cost based on group size,
+        hiker type, and optional parking — then confirm your booking via WhatsApp.
       </p>
+      <div class="step-actions">
+        <button onclick="openEventModal()" class="cta-button">
+          ⚡ Quick Event Booking
+        </button>
+        <button onclick="openCalcModal()" class="cta-button">
+          📊 Private Groups
+        </button>
+      </div>
     </div>
 
     <!-- STEP 3 -->
     <div class="step">
       <div class="step-icon"><i class="fas fa-money-bill-wave"></i></div>
-      <h3>Pay 30% Deposit</h3>
+      <h3>3. Pay & Secure Your Slot</h3>
       <p>
-        Secure your slot by paying a <strong>30% deposit</strong> via 
-        <strong>M-Pesa Till Number 5440810</strong>. The balance is paid on the hike day.
+        Pay a <strong>30% booking fee</strong> via M-Pesa Till <strong>5440810</strong>
+        to secure your slot. The balance is paid on the hike day or before.
       </p>
+      <div class="step-actions">
+        <a href="https://wa.me/254743980340"
+           target="_blank"
+           rel="noopener"
+           class="cta-button whatsapp">
+          📲 Confirm via WhatsApp
+        </a>
+      </div>
     </div>
 
     <!-- STEP 4 -->
     <div class="step">
       <div class="step-icon"><i class="fas fa-hiking"></i></div>
-      <h3>Show Up & Hike</h3>
+      <h3>4. Show Up & Hike</h3>
       <p>
         Arrive at the meeting point, meet your guide, and enjoy a safe, fun, and
         memorable hiking experience.
@@ -445,7 +469,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
   </div>
 </section>
-
 <section class="private-bookings">
 
 <div class="calc-card">
@@ -906,9 +929,6 @@ People: ${people}`;
 }
 </script>
 
-<div class="mobile-book-now">
-  <button onclick="sendToWhatsApp()">🔥 Book June 1 Hike</button>
-</div>
 <script>
 async function payWithMpesa() {
   const name = document.getElementById("name").value;
@@ -981,5 +1001,18 @@ document.addEventListener("keydown", function(e) {
 });
 </script>
 <script src="js/calculator.js"></script>
+<!-- 🔥 MOBILE STICKY BOOKING BAR -->
+<div class="mobile-booking-bar">
+
+  <button onclick="openEventModal()" class="bar-btn primary">
+    🎉 Join Hike
+  </button>
+
+  <button onclick="openCalcModal()" class="bar-btn secondary">
+    💳 Private Booking
+  </button>
+
+</div>
+
 </body>
 </html>
