@@ -3,132 +3,153 @@
 
   <url>
     <loc>https://kijabeadventures.com/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://kijabeadventures.com//blogs/blog-scavenger-hunt-hikes.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://kijabeadventures.com/homepage.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://kijabeadventures.com/gallery.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://kijabeadventures.com/about.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://kijabeadventures.com/community.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://kijabeadventures.com/community.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://kijabeadventures.com/gallery.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://kijabeadventures.com/essay.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://kijabeadventures.com/private-group-hikes.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/safety.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/contact.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/Partnership.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-<!-- Blog -->
+  <url>
+    <loc>https://kijabeadventures.com/404.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://kijabeadventures.com/blogs/blog.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Articles -->
   <url>
     <loc>https://kijabeadventures.com/blogs/safari-tips.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/blogs/kenya-safety.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/blogs/safari-cost.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/blogs/big-five.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/blogs/blog-best-time-to-hike.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    </url>
+  </url>
+
   <url>
     <loc>https://kijabeadventures.com/blogs/blog-forest-conservation.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://kijabeadventures.com/blogs/scavenger-hunt-hikes</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- Legal -->
   <url>
     <loc>https://kijabeadventures.com/privacy.html</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://kijabeadventures.com/terms.html</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -51,7 +51,6 @@
 
   <meta name="msapplication-TileColor" content="#006400">
   <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#006400">
 
   <!-- ===========================
        PRELOADS (PERFORMANCE)
@@ -145,14 +144,23 @@
   <meta name="google-adsense-platform-account" content="ca-pub-3754507736699545">
   <meta name="google-adsense-platform-domain" content="google.com, pub-3754507736699545, DIRECT, f08c47fec0942fa0">
   <meta name="google-adsense-account" content="ca-pub-3754507736699545">
+<script>
+if (window.location.pathname.endsWith("index.html")) {
+  window.location.replace(
+    window.location.origin +
+    window.location.pathname.replace("index.html", "")
+  );
+}
+</script>
 </head>
 
-<body><a href="https://kijabeadventures.com/cdn-cgi/content?id=n3pAcpx5rHEpR2MKhMw8CvXL4ewYSesH3QOnsvgrmqs-1769778753.5401506-1.0.1.1-lDbyBSW860UTUeGN8ihtf6UCmD.x5_qPuE9Xa_RfpS0" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<body><a href="https://kijabeadventures.com/cdn-cgi/content?id=n3pAcpx5rHEpR2MKhMw8CvXL4ewYSesH3QOnsvgrmqs-1769778753.5401506-1.0.1.1-lDbyBSW860UTUeGN8ihtf6UCmD.x5_qPuE9Xa_RfpS0" aria-hidden="true" rel="nofollow noopener" hidden></a>
 <header>
   <!-- LOGO -->
   <div class="logo">
-    <a href="index.html" aria-label="Kijabe Adventures Home">
+    <a href="/index.html" aria-label="Kijabe Adventures Home">
       <img src="images/logo.png"
+           alt="Kijabe Adventures logo"
            width="140"
            class="logo-img"
            loading="lazy">
@@ -172,16 +180,16 @@
 
   <!-- PRIMARY NAVIGATION -->
   <nav id="primary-nav" class="primary-nav">
-    <a href="index.html" class="active">Home</a>
-   <a href="about.html" class="active">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="community.html">Community</a>
-     <a href="gallery.html">Gallery</a>
-     <a href="blogs/blog.html">Blog</a>
+    <a href="/index.html" class="active">Home</a>
+   <a href="/about.html" class="active">About Us</a>
+    <a href="/contact.html">Contact Us</a>
+    <a href="/community.html">Community</a>
+     <a href="/gallery.html">Gallery</a>
+     <a href="/blogs/blog.html">Blog</a>
   </nav>
 
   <!-- NEXT HIKE BADGE -->
-  <a href="contact.html"
+  <a href="/contact.html"
      id="next-hike-badge"
      class="next-hike-badge"
      aria-label="View next hike details">
@@ -201,7 +209,7 @@
 
   <div class="hero-actions">
     <a href="destinations.html" class="cta-button">Explore Trails</a>
-    <a href="contact.html" class="cta-button">Book a Hike</a>
+    <a href="/contact.html" class="cta-button">Book a Hike</a>
   </div>
 </section>
 
@@ -229,8 +237,10 @@
   <h2>📅 Upcoming Hikes & Availability</h2>
 
   <iframe
+    class="calendar-iframe"
+    title="Upcoming hikes calendar"
+    aria-label="Upcoming hikes calendar"
     src="https://calendar.google.com/calendar/embed?src=muurimartin%40gmail.com&ctz=Africa%2FNairobi"
-    style="border:0"
     width="100%"
     height="400"
     frameborder="0"
@@ -239,14 +249,16 @@
 
   <a href="https://wa.me/254743980340"
      class="cta-button"
-     target="_blank">
+     target="_blank"
+     rel="noopener noreferrer">
     Book via WhatsApp
   </a>
   <a href="https://wa.me/254743980340?text=I%20have%20paid%20via%20M-Pesa.%20My%20name%20is%20_____"
-   class="cta-button"
-   target="_blank">
-  Pay via M-Pesa & Confirm
-</a>
+     class="cta-button"
+     target="_blank"
+     rel="noopener noreferrer">
+    Pay via M-Pesa & Confirm
+  </a>
 
 </section>
 
@@ -407,34 +419,35 @@
       <h3>Contact</h3>
       <p><i class="fas fa-phone"></i> +254 743 980 340</p>
       <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Nairobi & Central Kenya, Kenya</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kijabe,kenya</p>
     </div>
 
     <div class="footer-section">
       <h3>Community Center</h3>
-       <li><a href="Partnership.html">Partner With Us</a></li>
-       <li><a href="community.html"> Our Community</a></li>
+      <ul>
+        <li><a href="/Partnership.html">Partner With Us</a></li>
+        <li><a href="/community.html"> Our Community</a></li>
         <li><a href="destinations.html">Destinations</a></li>
-        <li><a href="safety.html">Safety</a></li>
-  
+        <li><a href="/safety.html">Safety</a></li>
+      </ul>
     </div>
 
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener" aria-label="Kijabe Adventures on Facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener" aria-label="Kijabe Adventures on Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/kijabeadventure" target="_blank" rel="noopener" aria-label="Kijabe Adventures on X" title="X"><i class="fab fa-x"></i></a>
       </div>
     </div>
 
     <div class="footer-section footer-links">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/contact.html">Contact</a></li>
         <li><a href="booking.html">Bookings</a></li>
-         <li><a href="gallery.html">Gallery</a></li>
+         <li><a href="/gallery.html">Gallery</a></li>
       </ul>
     </div>
 
@@ -444,7 +457,7 @@
     © 2025 Kijabe Adventures. All rights reserved.
   </p>
   <p class="footer-legal">
-    <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
 
   <section class="ad-section">
@@ -452,8 +465,10 @@
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
      crossorigin="anonymous"></script>
 <!-- Kijabeads -->
+<style>
+  .adsbygoogle { display: block; }
+</style>
 <ins class="adsbygoogle"
-     style="display:block"
      data-ad-client="ca-pub-3754507736699545"
      data-ad-slot="6762486218"
      data-ad-format="auto"
@@ -468,6 +483,7 @@
 <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
    class="whatsapp-float"
    target="_blank"
+   rel="noopener"
    aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -494,3 +510,4 @@
 
 </body>
 </html>
+

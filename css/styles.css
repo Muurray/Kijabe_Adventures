@@ -789,6 +789,19 @@ footer {
 .footer-legal a:hover {
     color: var(--accent);
 }
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .footer-legal,
+  .copyright {
+    text-align: left;
+  }
+}
+
 .copyright {
   text-align: center;
 }
@@ -2907,4 +2920,52 @@ input, select {
   .mobile-booking-bar {
     display: none;
   }
+}
+.terms-accordion {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header i {
+  margin-right: 8px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.2rem;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 400px;
+  padding: 1rem 1.2rem;
+}
+
+.accordion-item.active .fa-chevron-down {
+  transform: rotate(180deg);
 }

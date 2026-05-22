@@ -1,165 +1,200 @@
-// ===============================
-// 🔥 CENTRAL SHARED LOGIC
-// ===============================
+// ======================================
+// 🔥 CENTRAL PRICING ENGINE
+// ======================================
+
 const PricingEngine = {
+
   BOOKING_FEE_RATE: 0.3,
+  PARKING_PER_CAR: 300,
+
+  prices: {
+    resident: {
+      adult: 2000,
+      student: 1500,
+      child: 1000
+    },
+
+    nonresident: {
+      adult: 3000,
+      student: 2500,
+      child: 2000
+    }
+  },
+
+  getPrice(type, residency) {
+
+    if (!this.prices[residency]) return 0;
+    return this.prices[residency][type] || 0;
+  },
+
+  calculateParking(people, enabled) {
+
+    if (!enabled) {
+      return {
+        cars: 0,
+        parkingCost: 0
+      };
+    }
+
+    const cars = Math.ceil(people / 4);
+
+    return {
+      cars,
+      parkingCost: cars * this.PARKING_PER_CAR
+    };
+  },
 
   calculateDeposit(total) {
     return Math.round(total * this.BOOKING_FEE_RATE);
   }
 };
 
-// ===============================
-// 🎉 EVENT CALCULATOR (BANNER + MODAL)
-// ===============================
-function initEventCalculator() {
+// ======================================
+// 🔥 REUSABLE CALCULATOR
+// ======================================
 
-  // 🔹 Supports BOTH banner + modal (duplicate IDs handled safely)
-  const nameInputs = document.querySelectorAll("#eventName");
-  const peopleInputs = document.querySelectorAll("#eventPeople");
+function initBookingCalculator(config) {
 
-  const totalEls = document.querySelectorAll("#eventTotal");
-  const depositEls = document.querySelectorAll("#eventDeposit");
-  const btns = document.querySelectorAll("#eventWhatsapp");
+  const name = document.querySelector(config.name);
+  const people = document.querySelector(config.people);
+  const type = document.querySelector(config.type);
+  const residency = document.querySelector(config.residency);
+  const parking = document.querySelector(config.parking);
 
-  const PRICE_PER_PERSON = 2000;
+  const totalEl = document.querySelector(config.total);
+  const depositEl = document.querySelector(config.deposit);
+  const btn = document.querySelector(config.button);
 
-  function update() {
-
-    nameInputs.forEach((nameInput, index) => {
-
-      const peopleInput = peopleInputs[index];
-      const totalEl = totalEls[index];
-      const depositEl = depositEls[index];
-      const btn = btns[index];
-
-      if (!nameInput || !peopleInput) return;
-
-      let name = nameInput.value.trim();
-      let people = parseInt(peopleInput.value);
-
-      if (!name || !people || people < 1) {
-        totalEl.innerText = "KES 0";
-        depositEl.innerText = "KES 0";
-        btn.classList.add("disabled");
-        btn.href = "#";
-        return;
-      }
-
-      let total = PRICE_PER_PERSON * people;
-      let deposit = PricingEngine.calculateDeposit(total);
-
-      totalEl.innerText = `KES ${total.toLocaleString()}`;
-      depositEl.innerText = `KES ${deposit.toLocaleString()}`;
-
-      let message = `Hello Kijabe Adventures 👋🏾
-
-My name is ${name}.
-
-I want to join the Kijabe Hills Hike.
-
-👥 People: ${people}
-
-💰 Total: KES ${total.toLocaleString()}
-💳 Deposit (30%): KES ${deposit.toLocaleString()}
-
-I will pay via Till Number 5440810.`;
-
-      btn.href = `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
-      btn.classList.remove("disabled");
-    });
-  }
-
-  nameInputs.forEach(input => input.addEventListener("input", update));
-  peopleInputs.forEach(input => input.addEventListener("input", update));
-}
-
-// ===============================
-// 💳 PRIVATE BOOKING CALCULATOR
-// ===============================
-function initPrivateCalculator() {
-
-  const name = document.getElementById("customerName");
-  const people = document.getElementById("hikers");
-  const type = document.getElementById("hikeType");
-  const parking = document.getElementById("parking");
-
-  const totalEl = document.getElementById("total");
-  const depositEl = document.getElementById("deposit");
-  const btn = document.getElementById("whatsappLink");
-
-  function getPrice(t) {
-    if (t === "adults") return 2000;
-    if (t === "students") return 1500;
-    if (t === "children") return 1000;
-    return 0;
-  }
+  if (!name || !people || !type || !residency) return;
 
   function update() {
 
-    if (!name || !people || !type) return;
+    const customerName = name.value.trim();
+    const hikers = parseInt(people.value);
+    const hikeType = type.value;
+    const residentType = residency.value;
 
-    let n = name.value.trim();
-    let p = parseInt(people.value);
-    let t = type.value;
+    if (
+      !customerName ||
+      !hikers ||
+      !hikeType ||
+      !residentType
+    ) {
 
-    if (!n || !p || !t) {
-      totalEl.innerText = "0";
-      depositEl.innerText = "0";
+      totalEl.innerText = "KES 0";
+      depositEl.innerText = "KES 0";
+
       btn.classList.add("disabled");
       btn.href = "#";
+
       return;
     }
 
-    let pricePerPerson = getPrice(t);
-    let total = pricePerPerson * p;
+    // PRICE
+    const pricePerPerson =
+      PricingEngine.getPrice(hikeType, residentType);
 
-    // ✅ SMART PARKING
-    let cars = 0;
-    let parkingCost = 0;
+    let total = pricePerPerson * hikers;
 
-    if (parking && parking.checked) {
-      cars = Math.ceil(p / 4); // 1 car per 4 people
-      parkingCost = cars * 300;
-      total += parkingCost;
-    }
+    // PARKING
+    const parkingData =
+      PricingEngine.calculateParking(
+        hikers,
+        parking?.checked
+      );
 
-    let deposit = PricingEngine.calculateDeposit(total);
+    total += parkingData.parkingCost;
 
-    totalEl.innerText = total.toLocaleString();
-    depositEl.innerText = deposit.toLocaleString();
+    // DEPOSIT
+    const deposit =
+      PricingEngine.calculateDeposit(total);
 
-    let message = `Hello Kijabe Adventures 👋🏾
+    // UI
+    totalEl.innerText =
+      `KES ${total.toLocaleString()}`;
 
-My name is ${n}.
+    depositEl.innerText =
+      `KES ${deposit.toLocaleString()}`;
 
-Private hike booking:
+    // WHATSAPP MESSAGE
+    const message = `Hello Kijabe Adventures 👋🏾
 
-👥 People: ${p}
-👤 Type: ${t}
+My name is ${customerName}.
 
-🚗 Cars: ${cars}
-🅿️ Parking: KES ${parkingCost}
+I want to book a hike.
+
+👥 People: ${hikers}
+👤 Type: ${hikeType}
+🌍 Residency: ${residentType}
+
+🚗 Cars: ${parkingData.cars}
+🅿️ Parking: KES ${parkingData.parkingCost}
 
 💰 Total: KES ${total.toLocaleString()}
 💳 Deposit (30%): KES ${deposit.toLocaleString()}
 
 I will pay via Till Number 5440810.`;
 
-    btn.href = `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
+    btn.href =
+      `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
+
     btn.classList.remove("disabled");
   }
 
+  // EVENTS
   name.addEventListener("input", update);
   people.addEventListener("input", update);
   type.addEventListener("change", update);
+  residency.addEventListener("change", update);
   parking?.addEventListener("change", update);
 }
 
-// ===============================
-// 🚀 INIT EVERYTHING
-// ===============================
+// ======================================
+// 🚀 INIT ALL CALCULATORS
+// ======================================
+
 document.addEventListener("DOMContentLoaded", () => {
-  initEventCalculator();
-  initPrivateCalculator();
+
+  // EVENT BANNER
+  initBookingCalculator({
+
+    name: "#eventName",
+    people: "#eventPeople",
+    type: "#eventType",
+    residency: "#eventResidency",
+    parking: "#eventParking",
+
+    total: "#eventTotal",
+    deposit: "#eventDeposit",
+    button: "#eventWhatsapp"
+  });
+
+  // EVENT MODAL
+  initBookingCalculator({
+
+    name: "#modalEventName",
+    people: "#modalEventPeople",
+    type: "#modalEventType",
+    residency: "#modalEventResidency",
+    parking: "#modalEventParking",
+
+    total: "#modalEventTotal",
+    deposit: "#modalEventDeposit",
+    button: "#modalEventWhatsapp"
+  });
+
+  // PRIVATE BOOKING
+  initBookingCalculator({
+
+    name: "#customerName",
+    people: "#hikers",
+    type: "#hikeType",
+    residency: "#residency",
+    parking: "#parking",
+
+    total: "#total",
+    deposit: "#deposit",
+    button: "#whatsappLink"
+  });
+
 });
