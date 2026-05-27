@@ -1,90 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-  <!-- =========================
-  BASIC SEO
-  ========================== -->
-
+  <!-- ===========================
+       BASIC META
+  ============================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
 
-  <title>
-    Private Group Hikes in Kenya | Kijabe Hills, Ngong Hills & Mt Longonot Hiking Tours
-  </title>
+  <title>Private Group Hikes in Kenya | Kijabe Adventures</title>
 
   <meta name="description"
-        content="Book private group hikes in Kenya including Kijabe Hills, Ngong Hills, Mt Longonot, Karura Forest and scenic waterfall trails. Perfect for corporate team building, friends, schools, families and outdoor groups.">
+    content="Book private group hikes in Kenya including Kijabe Hills, Ngong Hills, Mt Longonot, Karura Forest and scenic waterfall trails. Perfect for corporate team building, friends, schools, families and outdoor groups.">
 
   <meta name="keywords"
-        content="
-        private group hikes Kenya,
-        Kijabe Hills hiking,
-        Ngong Hills hiking,
-        Mt Longonot hiking,
-        corporate hiking Kenya,
-        team building hikes,
-        private hiking tours Kenya,
-        waterfall hikes Kenya,
-        Kijabe waterfalls,
-        Kijabe railway trails,
-        group hiking packages Kenya
-        ">
+    content="private group hikes Kenya, Kijabe Hills hiking, Ngong Hills hiking, Mt Longonot hiking, corporate hiking Kenya, team building hikes, private hiking tours Kenya, waterfall hikes Kenya">
 
   <meta name="author" content="Kijabe Adventures">
 
-  <!-- CANONICAL -->
-  <link rel="canonical"
-        href="https://kijabeadventures.com/private-group-hikes.html">
+  <link rel="canonical" href="https://kijabeadventures.com/private-group-hikes.html">
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title"
-        content="Private Group Hikes in Kenya | Kijabe Adventures">
-
+  <!-- ===========================
+       OPEN GRAPH
+  ============================ -->
+  <meta property="og:title" content="Private Group Hikes in Kenya | Kijabe Adventures">
   <meta property="og:description"
-        content="Explore Kijabe Hills, Ngong Hills, Mt Longonot and scenic waterfall hiking trails with private group hiking experiences in Kenya.">
+    content="Explore Kijabe Hills, Ngong Hills, Mt Longonot and scenic waterfall hiking trails with private group hiking experiences in Kenya.">
+  <meta property="og:image" content="https://kijabeadventures.com/images/kijabe-hills.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://kijabeadventures.com/private-group-hikes.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kijabe Adventures">
 
-  <meta property="og:image"
-        content="https://kijabeadventures.com/images/kijabe-hills.webp">
+  <!-- ===========================
+       TWITTER CARD
+  ============================ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Private Group Hikes in Kenya | Kijabe Adventures">
+  <meta name="twitter:description"
+    content="Explore Kijabe Hills, Ngong Hills, Mt Longonot and scenic waterfall hiking trails with private group hiking experiences in Kenya.">
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/kijabe-hills.webp">
 
-  <meta property="og:url"
-        content="https://kijabeadventures.com/private-group-hikes.html">
+  <!-- ===========================
+       FAVICONS
+  ============================ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  <meta name="theme-color" content="#2d6a4f">
 
-  <meta property="og:type"
-        content="website">
+  <!-- ===========================
+       PRELOADS
+  ============================ -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="css/private-booking.css" as="style">
+  <link rel="preload" href="/images/kijabe-adventure-logo.png" as="image" fetchpriority="high">
 
-  <!-- FONTS -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
+  <!-- ===========================
+       FONTS (non-blocking)
+  ============================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
 
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- CSS -->
+  <!-- ===========================
+       CSS
+  ============================ -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/private-booking.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- STRUCTURED DATA -->
+  <!-- ===========================
+       STRUCTURED DATA
+  ============================ -->
+
+  <!-- TouristTrip — private hikes service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    "name": "Private Group Hikes Kenya",
-    "description": "Private group hiking tours in Kenya including Kijabe Hills, Ngong Hills, Mt Longonot and waterfall trails.",
+    "name": "Private Group Hikes in Kenya",
+    "description": "Private group hiking tours in Kenya including Kijabe Hills, Ngong Hills, Mt Longonot, Karura Forest and scenic waterfall trails. Perfect for corporate team building, friends, schools and families.",
     "touristType": "Hikers",
     "provider": {
       "@type": "Organization",
       "name": "Kijabe Adventures",
-      "url": "https://kijabeadventures.com"
+      "url": "https://kijabeadventures.com",
+      "telephone": "+254743980340"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KES",
+      "price": "1500",
+      "description": "From KES 1,500 per person depending on destination, group size and residency."
     },
     "areaServed": {
       "@type": "Country",
@@ -93,55 +107,94 @@
   }
   </script>
 
+  <!-- FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much do private group hikes cost in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Private hiking costs depend on destination, group size, residency and optional services such as parking and transport. Use our instant price calculator to get your exact quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you organize corporate team building hikes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We organize corporate hiking experiences for companies, organizations and professional teams across Kenya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the hikes beginner friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer beginner-friendly hikes, moderate hikes and advanced adventure hikes tailored to your group's fitness level."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
-
+<!-- ===========================
+     HEADER
+============================ -->
 <header>
-<!-- LOGO -->
+
+  <!-- LOGO -->
   <div class="logo">
-    <a href="/index.html" aria-label="Kijabe Adventures Home">
+    <a href="/" aria-label="Kijabe Adventures Home">
       <img src="/images/kijabe-adventure-logo.png"
            alt="Kijabe Adventures Logo"
            width="140"
+           height="48"
            class="logo-img"
-           loading="lazy">
+           fetchpriority="high">
     </a>
     <span class="logo-text">Kijabe Adventures</span>
   </div>
-   <!-- TAGLINE -->
+
+  <!-- TAGLINE -->
   <p class="tagline">
-    Guided Hiking & Touring Experiences Across Kenya
+    Guided Hiking &amp; Touring Experiences Across Kenya
   </p>
 
   <!-- MOBILE MENU BUTTON -->
-  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+  <button class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Toggle navigation">
     <span class="sr-only">Toggle navigation</span>
-    <i class="fas fa-bars"></i>
+    <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
   <!-- PRIMARY NAVIGATION -->
-  <nav id="primary-nav" class="primary-nav">
-    <a href="/index.html" class="active">Home</a>
-   <a href="/about.html">About Us</a>
+  <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+    <a href="/">Home</a>
+    <a href="/about.html">About Us</a>
     <a href="/contact.html">Contact Us</a>
     <a href="/community.html">Community</a>
-     <a href="/gallery.html">Gallery</a>
-     <a href="/blogs/blog.html">Blog</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/blogs/blog.html">Blog</a>
   </nav>
-
 
 </header>
 
-<!-- =========================
-HERO SECTION
-========================= -->
+<main>
 
-<section class="private-hero">
+<!-- ===========================
+     HERO  (single — duplicate private-hero removed)
+============================ -->
+<section class="hero">
 
   <div class="container">
 
@@ -149,34 +202,184 @@ HERO SECTION
       🌍 Kenya Private Hiking Experiences
     </span>
 
-    <h1>
-      Private Group Hikes in Kenya
-    </h1>
+    <h1>Private Group Hikes in Kenya</h1>
 
     <p class="hero-subtitle">
-
       Book guided private hiking adventures across Kenya including
       Kijabe Hills, Kijabe River Waterfalls, Kiharu Waterfalls,
       Ngong Hills, Mt Longonot, Karura Forest and scenic escarpment trails.
-
     </p>
 
     <p class="hero-description">
-
       Perfect for corporate team building, friends, schools,
       travel groups, birthday hikes, outdoor communities and
       family adventures.
-
     </p>
 
     <div class="hero-keywords">
-
       <span>✅ Corporate Team Building Hikes</span>
       <span>✅ Kijabe Hills Waterfalls</span>
       <span>✅ Railway Trail Adventures</span>
       <span>✅ Scenic River Walk Trails</span>
       <span>✅ Beginner Friendly Hiking</span>
       <span>✅ Guided Group Hiking Tours</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="/upcoming-hiking-events.html" class="cta-button primary">
+        🎉 Join Upcoming Hike
+      </a>
+      <a href="#booking-calculator" class="cta-button whatsapp">
+        💳 Get Private Group Price
+      </a>
+    </div>
+
+  </div>
+
+</section>
+<!-- ======================================
+⛰️ PRIVATE BOOKING CALCULATOR (FULL UI)
+====================================== -->
+
+<section class="private-bookings" id="booking-calculator">
+
+  <div class="calc-card">
+
+    <h2>⛰️ Private Group Booking Calculator</h2>
+    <p class="subtitle">
+      Plan your hike in seconds. Prices shown only when all fields are complete.
+    </p>
+
+    <div class="form-grid">
+
+      <!-- NAME -->
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="customerName" placeholder="John Doe">
+      </div>
+
+      <!-- PHONE -->
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="customerPhone" placeholder="07XX XXX XXX">
+      </div>
+
+      <!-- HIKE TYPE -->
+      <div class="form-group">
+        <label>Hiker Type</label>
+        <select id="hikeType">
+          <option value="">Select Type</option>
+          <option value="adult">Adults</option>
+          <option value="student">Students</option>
+          <option value="child">Children under 12</option>
+        </select>
+      </div>
+
+      <!-- NUMBER OF HIKERS -->
+      <div class="form-group">
+        <label>Number of Hikers</label>
+        <input type="number" id="hikers" min="1" placeholder="e.g. 10">
+      </div>
+
+      <!-- DATE -->
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date" id="hikeDate">
+      </div>
+
+      <!-- DESTINATION (OPTIONAL FOR FUTURE PRICING) -->
+      <div class="form-group">
+        <label>Destination</label>
+        <select id="destination">
+          <option value="">Select Destination</option>
+          <option value="Kijabe Hills">Kijabe Hills</option>
+          <option value="Ngong Hills">Ngong Hills</option>
+          <option value="Mt Longonot">Mt Longonot</option>
+          <option value="Karura Forest">Karura Forest</option>
+        </select>
+      </div>
+
+      <!-- RESIDENCY -->
+      <div class="form-group">
+        <label>Residency</label>
+        <select id="residency">
+          <option value="">Select Residency</option>
+          <option value="resident">Kenyan Resident</option>
+          <option value="nonresident">Non-Resident</option>
+        </select>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="form-group">
+        <label>Transport Option</label>
+        <select id="transportOption">
+          <option value="">Select Transport</option>
+          <option value="self">Own Transport</option>
+          <option value="nairobi">Nairobi Pickup</option>
+          <option value="westlands">Westlands Pickup</option>
+          <option value="kikuyu">Kikuyu Pickup</option>
+          <option value="thika">Thika Pickup</option>
+        </select>
+      </div>
+
+      <!-- PARKING (ONLY FOR SELF TRANSPORT) -->
+      <div class="form-group checkbox" id="parkingBox" style="display:none;">
+        <label>
+          <input type="checkbox" id="parking">
+          Add Parking (+KES 300 per car)
+        </label>
+      </div>
+
+      <!-- PICKUP INFO -->
+      <div class="form-group" id="pickupInfoBox" style="display:none;">
+        <label>Pickup Info</label>
+        <div id="pickupInfo"></div>
+      </div>
+
+    </div>
+
+    <!-- ERROR / INFO -->
+    <p id="errorMsg" class="error-message"></p>
+
+    <!-- BUTTON -->
+  <p class="live-note">
+  💡 Prices update automatically as you fill the form
+</p>
+    <!-- RESULTS (HIDDEN UNTIL VALID) -->
+    <div class="result-card" id="resultCard" style="display:none;">
+
+      <p>👥 Hikers: <strong id="totalHikers">0</strong></p>
+
+      <p class="price">
+        Total Cost:
+        <strong>KES <span id="total">0</span></strong>
+      </p>
+
+      <p class="deposit">
+        Booking Fee (30%):
+        <strong>KES <span id="deposit">0</span></strong>
+      </p>
+
+    </div>
+
+    <!-- PAYMENT INFO -->
+    <div class="payment-card">
+
+      <h4>📲 Payment Instructions</h4>
+
+      <ol>
+        <li>Go to M-Pesa</li>
+        <li>Select Lipa na M-Pesa → Buy Goods</li>
+        <li>Enter Till Number: <strong>5440810</strong></li>
+        <li>Pay booking fee only (30%)</li>
+        <li>Send confirmation via WhatsApp</li>
+      </ol>
+
+      <a id="whatsappLink"
+         class="whatsapp-btn disabled"
+         href="#">
+        Confirm Booking via WhatsApp
+      </a>
 
     </div>
 
@@ -184,369 +387,84 @@ HERO SECTION
 
 </section>
 
-<!-- =========================
-SEO CONTENT
-========================= -->
-
-<section class="seo-content">
+<!-- ===========================
+     SEO CONTENT
+============================ -->
+<section class="seo-content" aria-labelledby="seo-title">
 
   <div class="container">
 
-    <h2>
-      Guided Private Hiking Tours Across Kenya
-    </h2>
+    <h2 id="seo-title">Guided Private Hiking Tours Across Kenya</h2>
 
     <p>
-
       Kijabe Adventures organizes private group hikes across
       Kenya for corporate teams, schools, churches, families,
       friends and travel groups seeking memorable outdoor experiences.
-
     </p>
 
     <p>
-
       Our most popular hiking destinations include
-      Kijabe Hills, Kijabe River Walk Trails,
-      Kiharu Waterfalls, Kijabe Railway Trails,
-      Ngong Hills, Mt Longonot and Karura Forest.
-
+      Kijabe Hills (Kijabe River Walk Trails,
+      Kiharu Waterfalls, and Kijabe Railway Trail),
+      as well as Ngong Hills, Mt Longonot and Karura Forest.
     </p>
 
     <p>
-
       Whether you want a beginner-friendly nature walk,
       a scenic waterfall adventure, or a challenging
       mountain hike, we provide experienced local guides,
       organized logistics and customized hiking packages.
-
     </p>
 
   </div>
 
 </section>
 
-<!-- =========================
-CALCULATOR SECTION
-========================= -->
-
-<section class="private-booking-section">
+<!-- ===========================
+     DESTINATIONS
+============================ -->
+<section class="destinations-section" aria-labelledby="destinations-title">
 
   <div class="container">
 
-    <div class="calc-card">
-
-      <h2>⛰️ Private Group Booking</h2>
-
-      <p class="subtitle">
-        Plan your hike in seconds. Transparent pricing. Instant booking.
-      </p>
-
-      <div class="form-grid">
-
-        <!-- NAME -->
-        <div class="form-group">
-
-          <label for="customerName">
-            Your Name
-          </label>
-
-          <input type="text"
-                 id="customerName"
-                 placeholder="John Doe">
-
-        </div>
-
-        <!-- HIKE TYPE -->
-        <div class="form-group">
-
-          <label for="hikeType">
-            Hiker Type
-          </label>
-
-          <select id="hikeType">
-
-            <option value="">
-              Select Type
-            </option>
-
-            <option value="adults">
-              Adults
-            </option>
-
-            <option value="students">
-              Students
-            </option>
-
-            <option value="children">
-              Children
-            </option>
-
-          </select>
-
-        </div>
-
-        <!-- HIKERS -->
-        <div class="form-group">
-
-          <label for="hikers">
-            Number of Hikers
-          </label>
-
-          <input type="number"
-                 id="hikers"
-                 min="1"
-                 placeholder="e.g. 10">
-
-        </div>
-
-        <!-- DATE -->
-        <div class="form-group">
-
-          <label for="hikeDate">
-            Preferred Hike Date
-          </label>
-
-          <input type="date"
-                 id="hikeDate">
-
-        </div>
-
-        <!-- DESTINATION -->
-        <div class="form-group">
-
-          <label for="destination">
-            Destination
-          </label>
-
-          <select id="destination">
-
-            <option value="">
-              Select Destination
-            </option>
-
-            <option value="Kijabe Hills">
-              Kijabe Hills
-            </option>
-
-            <option value="Kijabe River Waterfalls">
-              Kijabe River Waterfalls
-            </option>
-
-            <option value="Kiharu Waterfalls">
-              Kiharu Waterfalls
-            </option>
-
-            <option value="Kijabe Railway Trails">
-              Kijabe Railway Trails
-            </option>
-
-            <option value="Kijabe River Walk">
-              Kijabe River Walk
-            </option>
-
-            <option value="Ngong Hills">
-              Ngong Hills
-            </option>
-
-            <option value="Mt Longonot">
-              Mt Longonot
-            </option>
-
-            <option value="Karura Forest">
-              Karura Forest
-            </option>
-
-          </select>
-
-        </div>
-
-        <!-- RESIDENCY -->
-        <div class="form-group">
-
-          <label for="residency">
-            Residency
-          </label>
-
-          <select id="residency">
-
-            <option value="resident">
-              Kenyan Resident
-            </option>
-
-            <option value="nonresident">
-              Non-Resident
-            </option>
-
-          </select>
-
-        </div>
-
-        <!-- PARKING -->
-        <div class="form-group checkbox">
-
-          <label>
-
-            <input type="checkbox"
-                   id="parking">
-
-            Add Parking (+KES 300 per car)
-
-          </label>
-
-        </div>
-
-      </div>
-
-      <!-- ERROR -->
-      <p id="errorMsg"
-         class="error-message"></p>
-
-      <!-- BUTTON -->
-      <button class="calc-btn"
-              id="calculateBtn">
-
-        Calculate Booking
-
-      </button>
-
-      <!-- RESULTS -->
-      <div class="result-card">
-
-        <p>
-          👥 Total Hikers:
-          <strong id="totalHikers">0</strong>
-        </p>
-
-        <p class="price">
-          Total Cost:
-          KES <span id="total">0</span>
-        </p>
-
-        <p class="deposit">
-          Booking Fee (30%):
-          KES <span id="deposit">0</span>
-        </p>
-
-      </div>
-
-      <!-- PAYMENT -->
-      <div class="payment-card">
-
-        <h4>📲 Pay 30% Booking Fee</h4>
-
-        <p>
-          <strong>Till Number:</strong>
-          5440810
-        </p>
-
-        <a id="whatsappLink"
-           class="whatsapp-btn disabled"
-           href="#">
-
-          Confirm Booking via WhatsApp
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-DESTINATIONS
-========================= -->
-
-<section class="destinations-section">
-
-  <div class="container">
-
-    <h2>
-      Popular Hiking Destinations in Kenya
-    </h2>
+    <h2 id="destinations-title">Popular Hiking Destinations in Kenya</h2>
 
     <div class="destination-grid">
 
       <div class="destination-card">
-
         <h3>🌄 Kijabe Hills</h3>
-
-        <p>
-
-          Famous for escarpment views,
-          scenic valleys, river walks and
-          breathtaking forest hiking trails.
-
-        </p>
-
+        <p>Famous for escarpment views, scenic valleys, river walks and breathtaking forest hiking trails.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
       <div class="destination-card">
-
         <h3>💦 Kijabe River Waterfalls</h3>
-
-        <p>
-
-          Explore beautiful hidden waterfalls
-          along the scenic Kijabe River.
-
-        </p>
-
+        <p>Explore beautiful hidden waterfalls along the scenic Kijabe River walk trail.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
       <div class="destination-card">
-
         <h3>🚂 Kijabe Railway Trails</h3>
-
-        <p>
-
-          Historic railway walking trails featuring
-          tunnels, bridges and Rift Valley views.
-
-        </p>
-
+        <p>Historic railway walking trails featuring tunnels, bridges and Rift Valley views.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
       <div class="destination-card">
-
         <h3>🌿 Kiharu Waterfalls</h3>
-
-        <p>
-
-          One of the most beautiful hidden gems
-          around Kijabe town.
-
-        </p>
-
+        <p>One of the most beautiful hidden gems around Kijabe town — a must-see for waterfall lovers.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
       <div class="destination-card">
-
         <h3>⛰️ Ngong Hills</h3>
-
-        <p>
-
-          Windy ridge hikes with amazing
-          Nairobi skyline and Rift Valley views.
-
-        </p>
-
+        <p>Windy ridge hikes with amazing Nairobi skyline and Rift Valley views.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
       <div class="destination-card">
-
         <h3>🌋 Mt Longonot</h3>
-
-        <p>
-
-          Adventure hiking experience featuring
-          crater rim trekking and volcanic scenery.
-
-        </p>
-
+        <p>Adventure hiking experience featuring crater rim trekking and volcanic scenery.</p>
+        <a href="#booking-calculator" class="cta-button primary dest-cta">Book This Trail</a>
       </div>
 
     </div>
@@ -555,118 +473,307 @@ DESTINATIONS
 
 </section>
 
-<!-- =========================
-FAQ SECTION
-========================= -->
-
-<section class="faq-section">
+<!-- ===========================
+     FAQ
+============================ -->
+<section class="faq-section" aria-labelledby="faq-title">
 
   <div class="container">
 
-    <h2>
-      Frequently Asked Questions
-    </h2>
+    <h2 id="faq-title">Frequently Asked Questions</h2>
 
-    <div class="faq-item">
-
-      <h3>
-        How much do private group hikes cost in Kenya?
-      </h3>
-
-      <p>
-
-        Private hiking costs depend on destination,
-        group size, residency and optional services
-        such as parking and transport.
-
-      </p>
-
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">How much do private group hikes cost in Kenya?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Private hiking costs depend on destination, group size, residency and optional
+          services such as parking and transport. Use our instant price calculator above
+          to get your exact quote.
+        </p>
+      </div>
     </div>
 
-    <div class="faq-item">
-
-      <h3>
-        Do you organize corporate team building hikes?
-      </h3>
-
-      <p>
-
-        Yes. We organize corporate hiking experiences
-        for companies, organizations and professional teams.
-
-      </p>
-
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Do you organize corporate team building hikes?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Yes. We organize corporate hiking experiences for companies, organizations
+          and professional teams across Kenya. Contact us on WhatsApp to discuss
+          your group's needs.
+        </p>
+      </div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Are the hikes beginner friendly?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Yes. We offer beginner-friendly hikes, moderate hikes and advanced adventure
+          hikes tailored to your group's fitness level.
+        </p>
+      </div>
+    </div>
 
-      <h3>
-        Are the hikes beginner friendly?
-      </h3>
-
-      <p>
-
-        Yes. We offer beginner-friendly hikes,
-        moderate hikes and advanced adventure hikes.
-
-      </p>
-
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">How far in advance should I book a private group hike?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          We recommend booking at least 3–7 days in advance to confirm guide
+          availability and logistics. For larger groups (20+), 2 weeks notice is ideal.
+        </p>
+      </div>
     </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-FOOTER
-========================= -->
+<!-- ===========================
+     EXPLORE MORE
+============================ -->
+<section class="explore-more">
+  <h2>Explore More Hiking Experiences</h2>
+  <div class="explore-links">
+    <a href="/upcoming-hiking-events.html">Upcoming Hiking Events</a>
+    <a href="/blogs/blog.html">Hiking Guides &amp; Tips</a>
+    <a href="/gallery.html">Hiking Gallery</a>
+    <a href="/contact.html">Contact Us</a>
+  </div>
+</section>
 
+</main>
+
+<!-- ===========================
+     FOOTER
+============================ -->
 <footer>
   <div class="footer-content">
+
     <div class="footer-section">
       <h3>Contact</h3>
-      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
-      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kijabe,kenya</p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> info@kijabeadventures.com</p>
+      <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kijabe, Kenya</p>
     </div>
 
     <div class="footer-section">
       <h3>Community Center</h3>
       <ul>
-        <li><a href="/Partnership.html">Partner With Us</a></li>
+        <li><a href="/partnership.html">Partner With Us</a></li>
         <li><a href="/community.html">Our Community</a></li>
-        <li><a href="destinations.html">Destinations</a></li>
         <li><a href="/safety.html">Safety</a></li>
+        <li><a href="/blogs/blog.html">Blog</a></li>
       </ul>
     </div>
 
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener" title="Facebook" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener" title="Instagram" aria-label="Visit our Instagram profile"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/kijabeadventure" target="_blank" rel="noopener" title="X" aria-label="Visit our X profile"><i class="fab fa-x"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61587034792994"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Follow us on Facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/kijabeadventures"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Follow us on Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://x.com/kijabeadventure"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Follow us on X (formerly Twitter)">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/254743980340"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Chat with us on WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
 
     <div class="footer-section footer-links">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="/index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About Us</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="booking.html">Bookings</a></li>
         <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/blogs/blog.html">Blog</a></li>
       </ul>
     </div>
+
   </div>
 
-  <p class="copyright">© 2026 Kijabe Adventures. All Rights Reserved.</p>
-  <p class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  <p class="copyright">
+    &copy; <span id="year"></span> Kijabe Adventures. All rights reserved.
+  </p>
+
+  <p class="footer-legal">
+    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a>
+  </p>
 </footer>
 
-<!-- JS -->
-<script src="js/calculator.js"></script>
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20private%20group%20hike."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- ===========================
+     CALCULATOR MODAL
+     (for mobile sticky bar — pre-fills same form logic)
+============================ -->
+<div id="calcModal"
+     class="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="calc-modal-title"
+     hidden>
+  <div class="modal-content">
+
+    <button class="close" onclick="closeCalcModal()" aria-label="Close calculator modal">&times;</button>
+
+    <h2 id="calc-modal-title">💳 Private Group Booking</h2>
+
+    <label for="calcName">Your Name</label>
+    <input type="text" id="calcName" placeholder="Your Name" required autocomplete="name">
+
+    <label for="calcPhone">Phone Number</label>
+    <input type="tel" id="calcPhone" placeholder="07XX XXX XXX" required autocomplete="tel">
+
+    <label for="calcPeople">Number of Hikers</label>
+    <input type="number" id="calcPeople" placeholder="Number of Hikers" min="1" max="500" required>
+
+    <label for="calcType">Hiker Type</label>
+    <select id="calcType">
+      <option value="">Select Hiker Type</option>
+      <option value="adults">Adults (KES 2,000)</option>
+      <option value="students">Students (KES 1,500)</option>
+      <option value="children">Children under 12 (KES 1,000)</option>
+    </select>
+
+    <label for="calcDestination">Destination</label>
+    <select id="calcDestination">
+      <option value="">Select Location</option>
+      <option value="Kijabe Hills">Kijabe Hills</option>
+      <option value="Kijabe River Waterfalls">Kijabe River Waterfalls</option>
+      <option value="Ngong Hills">Ngong Hills</option>
+      <option value="Mt Longonot">Mt Longonot</option>
+      <option value="Karura Forest">Karura Forest</option>
+    </select>
+
+    <p id="calcError" class="error-message" role="alert"></p>
+
+    <p>Total: <strong id="calcTotal">KES 0</strong></p>
+    <p>Booking fee (30%): <strong id="calcDeposit">KES 0</strong></p>
+
+    <a id="calcWhatsapp" class="cta-primary disabled" href="#" aria-disabled="true">
+      Confirm Booking via WhatsApp
+    </a>
+
+    <p class="mpesa-note">
+      💳 M-Pesa Till Number: <strong>5440810</strong>
+    </p>
+
+  </div>
+</div>
+
+<!-- ===========================
+     MOBILE STICKY BAR
+============================ -->
+<div class="mobile-booking-bar" role="navigation" aria-label="Mobile booking actions">
+  <a href="/upcoming-hiking-events.html" class="bar-btn primary">
+    🎉 Join Upcoming Hike
+  </a>
+  <button onclick="openCalcModal()" class="bar-btn secondary">
+    💳 Private Booking
+  </button>
+</div>
+
+<!-- ===========================
+     SCRIPTS
+============================ -->
+
+<!-- Year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Mobile nav toggle -->
+<script>
+  (function () {
+    var navToggle = document.querySelector('.nav-toggle');
+    var primaryNav = document.getElementById('primary-nav');
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', function () {
+        var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        primaryNav.classList.toggle('open');
+      });
+    }
+  })();
+</script>
+
+<!-- Modal open/close -->
+<script>
+  function openCalcModal() {
+    var modal = document.getElementById("calcModal");
+    if (modal) {
+      modal.hidden = false;
+      modal.style.display = "block";
+      var firstInput = modal.querySelector('input, select, button');
+      if (firstInput) firstInput.focus();
+    }
+  }
+
+  function closeCalcModal() {
+    var modal = document.getElementById("calcModal");
+    if (modal) {
+      modal.hidden = true;
+      modal.style.display = "none";
+    }
+  }
+
+  // openEventModal stub — not used on this page but guards against any
+  // shared script that calls it
+  function openEventModal() {
+    window.location.href = "/upcoming-hiking-events.html";
+  }
+
+  window.addEventListener('click', function (e) {
+    var modal = document.getElementById("calcModal");
+    if (modal && e.target === modal) closeCalcModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeCalcModal();
+  });
+</script>
+
+<!-- Set minimum date on date picker to today -->
+<script>
+  (function () {
+    var dateInput = document.getElementById('hikeDate');
+    if (dateInput) {
+      var today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+  })();
+</script>
+
+<!-- Calculator JS -->
+<script src="js/calculator.js" defer></script>
+
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+</script>
 
 </body>
-</html>
-
+</html>    

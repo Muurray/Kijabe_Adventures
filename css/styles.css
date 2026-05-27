@@ -2969,3 +2969,248 @@ input, select {
 .accordion-item.active .fa-chevron-down {
   transform: rotate(180deg);
 }
+.booking-options {
+  padding: 80px 20px;
+  background: #f8faf8;
+}
+
+.booking-options h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+}
+
+.booking-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.booking-option-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.booking-option-card:hover {
+  transform: translateY(-5px);
+}
+
+.booking-option-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.booking-option-content {
+  padding: 25px;
+}
+
+.option-badge {
+  display: inline-block;
+  background: #006400;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.option-badge.private {
+  background: #ff9800;
+}
+
+.booking-option-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.booking-option-content p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.booking-option-content ul {
+  margin-bottom: 25px;
+  padding-left: 18px;
+}
+
+.booking-option-content li {
+  margin-bottom: 10px;
+}
+.homepage-featured-event {
+  padding: 80px 20px;
+  background: #f8faf8;
+}
+
+.featured-event-card {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.upcoming-hike-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 420px;
+}
+
+.featured-event-content {
+  padding: 40px;
+}
+
+.featured-tag {
+  display: inline-block;
+  background: #006400;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.featured-event-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.featured-event-content p {
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+@media (max-width: 900px) {
+
+  .featured-event-card {
+    grid-template-columns: 1fr;
+  }
+
+  .upcoming-hike-img {
+    min-height: 280px;
+  }
+
+  .featured-event-content {
+    padding: 25px;
+  }
+
+  .featured-event-content h2 {
+    font-size: 1.8rem;
+  }
+
+}
+/* =========================
+   EXPLORE MORE SECTION
+========================= */
+
+.explore-more {
+  padding: 70px 20px;
+  background: #f7fdf8;
+  text-align: center;
+}
+
+.explore-more h2 {
+  font-size: 2rem;
+  color: #0b3d2e;
+  margin-bottom: 35px;
+  font-weight: 700;
+}
+
+/* LINKS GRID */
+.explore-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* LINK CARDS */
+.explore-links a {
+  background: white;
+  padding: 22px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #0b3d2e;
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: 1px solid #dcefe0;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+/* HOVER EFFECT */
+.explore-links a:hover {
+  transform: translateY(-5px);
+  background: #0b3d2e;
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .explore-more {
+    padding: 55px 15px;
+  }
+
+  .explore-more h2 {
+    font-size: 1.6rem;
+  }
+
+  .explore-links {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-links a {
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+}
+.event-countdown{
+  display:flex;
+  gap:20px;
+
+  margin:30px 0;
+}
+
+.event-countdown div{
+  background:rgba(255,255,255,0.15);
+
+  padding:15px 20px;
+
+  border-radius:16px;
+
+  text-align:center;
+
+  min-width:90px;
+
+  backdrop-filter:blur(5px);
+}
+
+.event-countdown span{
+  display:block;
+
+  font-size:2rem;
+  font-weight:700;
+}
+
+.event-countdown small{
+  opacity:0.85;
+}

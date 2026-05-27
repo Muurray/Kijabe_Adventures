@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- ===========================
-        BASIC META
+       BASIC META
   ============================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kijabe Adventures | Hiking Blog & Adventure Stories</title>
+  <meta name="robots" content="index, follow" />
+
+  <title>Hiking Blog — Kenya Trails, Tips & Adventure Stories | Kijabe Adventures</title>
 
   <meta name="description"
-    content="Read inspiring hiking stories, mountain guides, safety tips, and adventure advice from Kijabe Adventures. Learn how to prepare for Kenya's best trails." />
+    content="Read hiking guides, safety tips, and adventure stories from Kijabe Adventures. Discover Kenya's best trails including Kijabe Hills, Ngong Hills, Mt Longonot and Karura Forest." />
 
   <meta name="keywords"
-    content="hiking blog, Kenya hiking guides, mountain climbing tips, hiking safety, Nairobi hikes, Mount Kenya guide" />
+    content="hiking blog Kenya, Kenya hiking guides, Kijabe Hills guide, Ngong Hills hike, Mt Longonot guide, Nairobi day hikes, hiking safety tips, safari hiking Kenya" />
 
   <meta name="author" content="Kijabe Adventures" />
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://kijabeadventures.com/blogs/blog.html" />
 
   <!-- ===========================
-        OPEN GRAPH
+       OPEN GRAPH
   ============================ -->
-  <meta property="og:title" content="Kijabe Adventures Blog | Hiking Stories & Tips" />
+  <meta property="og:title" content="Hiking Blog — Kenya Trails & Tips | Kijabe Adventures" />
   <meta property="og:description"
-    content="Discover hiking guides, mountain preparation tips, and inspiring adventure stories from Kenya." />
+    content="Discover hiking guides, trail tips, and inspiring adventure stories from Kenya." />
   <meta property="og:url" content="https://kijabeadventures.com/blogs/blog.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Kijabe Adventures" />
 
   <!-- ===========================
        TWITTER CARD
   ============================ -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kijabe Adventures Blog | Mountain Guides & Hiking Tips" />
+  <meta name="twitter:title" content="Hiking Blog — Kenya Trails & Tips | Kijabe Adventures" />
   <meta name="twitter:description"
-    content="Expert hiking guides and adventure stories. Learn from experienced mountaineers." />
+    content="Expert hiking guides and adventure stories from Kenya's best trails." />
   <meta name="twitter:image" content="https://kijabeadventures.com/images/nature-trail.webp" />
 
   <!-- ===========================
@@ -46,8 +50,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicons/favicon-16x16.png">
   <link rel="manifest" href="../images/favicons/site.webmanifest">
-  <link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#006400">
+  <link rel="mask-icon" href="../images/favicons/safari-pinned-tab.svg" color="#2d6a4f">
   <link rel="shortcut icon" href="../images/favicons/favicon.ico">
+  <meta name="theme-color" content="#2d6a4f">
+
+  <!-- ===========================
+       PRELOADS
+  ============================ -->
+  <link rel="preload" href="../css/styles.css" as="style" />
+  <link rel="preload" href="../css/blogs.css" as="style" />
+  <link rel="preload" href="../images/kijabe-adventure-logo.png" as="image" fetchpriority="high">
 
   <!-- ===========================
        CSS
@@ -55,23 +67,51 @@
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/blogs.css" />
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <!-- ===========================
-       STRUCTURED DATA (SEO)
+       STRUCTURED DATA
   ============================ -->
+
+  <!-- Blog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Kijabe Adventures Blog",
-    "description": "Hiking guides and adventure stories from Kenya",
+    "name": "Kijabe Adventures Hiking Blog",
+    "description": "Hiking guides, safety tips, and adventure stories from Kenya's best trails.",
     "url": "https://kijabeadventures.com/blogs/blog.html",
     "publisher": {
       "@type": "Organization",
       "name": "Kijabe Adventures",
-      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
+      "url": "https://kijabeadventures.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
+      }
     }
+  }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kijabeadventures.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://kijabeadventures.com/blogs/blog.html"
+      }
+    ]
   }
   </script>
 
@@ -79,219 +119,365 @@
 
 <body>
 
+<!-- ===========================
+     HEADER
+============================ -->
 <header>
-  <!-- LOGO -->
+
   <div class="logo">
-    <a href="/index.html" aria-label="Kijabe Adventures Home">
+    <a href="/" aria-label="Kijabe Adventures Home">
       <img src="../images/kijabe-adventure-logo.png"
            alt="Kijabe Adventures Logo"
            width="140"
-           loading="lazy">
+           height="48"
+           fetchpriority="high">
     </a>
     <span class="logo-text">Kijabe Adventures</span>
   </div>
 
-  <p class="tagline">Guided Hiking & Touring Experiences Across Kenya</p>
+  <p class="tagline">Guided Hiking &amp; Touring Experiences Across Kenya</p>
 
-  <!-- Mobile Button -->
-  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+  <button type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Toggle navigation">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
-  <!-- NAV -->
-  <nav id="primary-nav" class="primary-nav">
-    <a href="/index.html">Home</a>
+  <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+    <a href="/">Home</a>
     <a href="/about.html">About</a>
     <a href="/contact.html">Contact</a>
     <a href="/community.html">Community</a>
     <a href="/gallery.html">Gallery</a>
-    <a href="/blogs/blog.html" class="active">Blog</a>
+    <a href="/blogs/blog.html" class="active" aria-current="page">Blog</a>
   </nav>
 
 </header>
 
 <main class="page-content">
 
+  <!-- ===========================
+       PAGE HERO
+  ============================ -->
   <section class="page-hero">
     <h1>Kijabe Adventures Blog</h1>
-    <p>Hiking guides, safety tips, and inspiring adventure stories from Kenya's mountains.</p>
+    <p>Hiking guides, safety tips, and inspiring adventure stories from Kenya's mountains and trails.</p>
   </section>
 
-<!-- main remains open so article sections share the same page container -->
-<!-- SECTION 1: Featured HTML Articles (manual) -->
-<section class="blog-list-container article-section" id="featuredArticles">
-    <h2 class="section-title">Featured Articles</h2>
+  <!-- ===========================
+       FEATURED ARTICLES
+  ============================ -->
+  <section class="blog-list-container article-section" id="featuredArticles" aria-labelledby="featured-title">
+
+    <h2 class="section-title" id="featured-title">Featured Articles</h2>
     <p class="section-subtitle">Hand-picked guides and tips from our team.</p>
 
-    <input type="text" id="searchBar" class="blog-search" placeholder="Search featured articles...">
+    <label for="searchBar" class="sr-only">Search featured articles</label>
+    <input type="search"
+           id="searchBar"
+           class="blog-search"
+           placeholder="Search articles..."
+           aria-label="Search featured articles"
+           autocomplete="off">
 
-    <div id="blogGrid" class="blog-grid">
+    <div id="blogGrid" class="blog-grid" aria-live="polite" aria-atomic="false">
 
-        <div class="blog-card" data-title="10 essential safari hiking tips for beginners">
-            <img src="../images/blogs/safari-tips.jpeg" alt="Safari Hiking Tips">
-            <div class="blog-card-body">
-                <h3>10 Essential Safari Hiking Tips for Beginners</h3>
-                <p>Learn the top tips for planning your first safari hike in Kenya...</p>
-                <a href="/blogs/safari-tips.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-tips.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Check%20out%20this%20article%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-tips.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/safari-tips.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 1 -->
+      <article class="blog-card" data-title="10 essential safari hiking tips for beginners">
+        <img src="../images/blogs/safari-tips.jpeg"
+             alt="Hiker on a safari trail in Kenya at sunrise"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>10 Essential Safari Hiking Tips for Beginners</h3>
+          <p>Learn the top tips for planning your first safari hike in Kenya, from gear to safety.</p>
+          <a href="/blogs/safari-tips.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: 10 Essential Safari Hiking Tips">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-tips.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Check%20out%20this%20article%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-tips.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/safari-tips.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 2 -->
-        <div class="blog-card" data-title="is kenya safe for tourists">
-            <img src="../images/blogs/caves.jpeg" alt="Is Kenya Safe?">
-            <div class="blog-card-body">
-                <h3>Is Kenya Safe for Tourists?</h3>
-                <p>A complete breakdown of safety, areas to avoid, and safari security...</p>
-                <a href="/blogs/kenya-safety.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/kenya-safety.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Is%20Kenya%20safe%3F%20Read%20this%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fkenya-safety.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/kenya-safety.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 2 -->
+      <article class="blog-card" data-title="is kenya safe for tourists">
+        <img src="../images/blogs/caves.jpeg"
+             alt="Cave entrance on a guided Kenya hiking trail"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Is Kenya Safe for Tourists?</h3>
+          <p>A complete breakdown of safety, areas to avoid, and safari security advice.</p>
+          <a href="/blogs/kenya-safety.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Is Kenya Safe for Tourists">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/kenya-safety.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Is%20Kenya%20safe%3F%20Read%20this%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fkenya-safety.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/kenya-safety.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 3 -->
-        <div class="blog-card" data-title="how expensive is a safari">
-            <img src="../images/blogs/plains.jpeg" alt="Safari Costs">
-            <div class="blog-card-body">
-                <h3>How Expensive Is a Safari?</h3>
-                <p>A full cost breakdown for budget, mid-range, and luxury safari travelers...</p>
-                <a href="/blogs/safari-cost.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-cost.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=How%20expensive%20is%20a%20safari%3F%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-cost.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/safari-cost.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 3 -->
+      <article class="blog-card" data-title="how expensive is a safari">
+        <img src="../images/blogs/plains.jpeg"
+             alt="Wide open Kenyan savannah plains on a safari"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>How Expensive Is a Safari?</h3>
+          <p>A full cost breakdown for budget, mid-range, and luxury safari travelers.</p>
+          <a href="/blogs/safari-cost.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: How Expensive Is a Safari">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/safari-cost.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=How%20expensive%20is%20a%20safari%3F%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fsafari-cost.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/safari-cost.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 4 -->
-        <div class="blog-card" data-title="what is the big five">
-            <img src="../images/blogs/big five.jpg" alt="The Big Five">
-            <div class="blog-card-body">
-                <h3>What Is the Big Five?</h3>
-                <p>Meet Africa’s most iconic animals and discover where to find them...</p>
-                <a href="/blogs/big-five.html" class="blog-btn">Read More</a>
-
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/big-five.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Learn%20about%20the%20Big%20Five%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fbig-five.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/big-five.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 4 -->
+      <article class="blog-card" data-title="what is the big five">
+        <img src="../images/blogs/big five.jpg"
+             alt="Africa's Big Five animals — elephant, lion, leopard, rhino, buffalo"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>What Is the Big Five?</h3>
+          <p>Meet Africa's most iconic animals and discover where to find them in Kenya.</p>
+          <a href="/blogs/big-five.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: What Is the Big Five">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/big-five.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Learn%20about%20the%20Big%20Five%3A%20https%3A%2F%2Fkijabeadventures.com%2Fblogs%2Fbig-five.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/big-five.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 5 -->
-        <div class="blog-card" data-title="best time to hike each mountain">
-            <img src="../images/blogs/hiking-seasons.jpeg" alt="Best Time to Hike">
-            <div class="blog-card-body">
-                <h3>Best Time to Hike Each Mountain in Kenya</h3>
-                <p>Seasonal hiking windows and weather tips to pick the perfect day for each trail...</p>
-                <a href="/blogs/blog-best-time-to-hike.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Best%20time%20to%20hike%20in%20Kenya%20-%20https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-best-time-to-hike.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 5 -->
+      <article class="blog-card" data-title="best time to hike each mountain">
+        <img src="../images/blogs/hiking-seasons.jpeg"
+             alt="Hiker on a misty Kenya mountain trail in the dry season"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Best Time to Hike Each Mountain in Kenya</h3>
+          <p>Seasonal hiking windows and weather tips to pick the perfect day for each trail.</p>
+          <a href="/blogs/blog-best-time-to-hike.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Best Time to Hike">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-best-time-to-hike.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Best%20time%20to%20hike%20in%20Kenya%20-%20https://kijabeadventures.com/blogs/blog-best-time-to-hike.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/blog-best-time-to-hike.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 6 -->
-        <div class="blog-card" data-title="why forest conservation matters">
-            <img src="../images/blogs/forest-conservation.jpeg" alt="Forest Conservation">
-            <div class="blog-card-body">
-                <h3>Why Forest Conservation Matters for Hikers</h3>
-                <p>How hikers can help protect Kenya’s forests and trails for future generations...</p>
-                <a href="/blogs/blog-forest-conservation.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-forest-conservation.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Forest%20conservation%20for%20hikers%20-%20https://kijabeadventures.com/blogs/blog-forest-conservation.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-forest-conservation.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 6 -->
+      <article class="blog-card" data-title="why forest conservation matters">
+        <img src="../images/blogs/forest-conservation.jpeg"
+             alt="Lush Kenyan forest canopy — forest conservation for hikers"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Why Forest Conservation Matters for Hikers</h3>
+          <p>How hikers can help protect Kenya's forests and trails for future generations.</p>
+          <a href="/blogs/blog-forest-conservation.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Forest Conservation">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-forest-conservation.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Forest%20conservation%20for%20hikers%20-%20https://kijabeadventures.com/blogs/blog-forest-conservation.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/blog-forest-conservation.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 7 -->
-        <div class="blog-card" data-title="mount longonot guide">
-            <img src="../images/blogs/mt longonot.jpeg" alt="Mount Longonot Guide">
-            <div class="blog-card-body">
-                <h3>Complete Guide to Mount Longonot</h3>
-                <p>Preparation tips, route overview, and safety advice for Mount Longonot expeditions...</p>
-                <a href="/blogs/blog-mountain-climbing-prep.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Mount%20Longonot%20guide%20-%20https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 7 -->
+      <article class="blog-card" data-title="mount longonot guide">
+        <img src="../images/blogs/mt longonot.jpeg"
+             alt="Mount Longonot crater rim hike in Kenya"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Complete Guide to Mount Longonot</h3>
+          <p>Preparation tips, route overview, and safety advice for Mount Longonot expeditions.</p>
+          <a href="/blogs/blog-mountain-climbing-prep.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Mount Longonot Guide">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Mount%20Longonot%20guide%20-%20https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/blog-mountain-climbing-prep.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
+      </article>
 
-        <!-- CARD 8 -->
-        <div class="blog-card" data-title="best day hikes near nairobi">
-            <img src="../images/blogs/nairobi-hikes.jpeg" alt="Day Hikes Near Nairobi">
-            <div class="blog-card-body">
-                <h3>Best Day Hikes Near Nairobi</h3>
-                <p>Quick, accessible hikes around Nairobi perfect for weekend adventures...</p>
-                <a href="/blogs/blog-nairobi-day-hikes.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Best%20day%20hikes%20near%20Nairobi%20-%20https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
+      <!-- CARD 8 -->
+      <article class="blog-card" data-title="best day hikes near nairobi">
+        <img src="../images/blogs/nairobi-hikes.jpeg"
+             alt="Scenic day hike trail near Nairobi, Kenya"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Best Day Hikes Near Nairobi</h3>
+          <p>Quick, accessible hikes around Nairobi perfect for weekend adventures.</p>
+          <a href="/blogs/blog-nairobi-day-hikes.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Best Day Hikes Near Nairobi">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Best%20day%20hikes%20near%20Nairobi%20-%20https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/blog-nairobi-day-hikes.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
-        <!-- CARD 9 -->
-        <div class="blog-card" data-title="scavenger hunt hikes">
-            <img src="../images/blogs/scavenger-hunt.jpeg" alt="Scavenger Hunt Hikes">
-            <div class="blog-card-body">
-                <h3>Scavenger Hunt Hikes in Kenya</h3>
-                <p>Fun and engaging outdoor activities for families and groups...</p>
-                <a href="blog-scavenger-hunt-hikes.html" class="blog-btn">Read More</a>
-                <div class="share-buttons" role="group" aria-label="Share article">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/?text=Scavenger%20Hunt%20Hikes%20in%20Kenya%20-%20https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <button type="button" class="share-btn share-copy" data-url="https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html" title="Copy link"><i class="fas fa-link"></i></button>
-                </div>
-            </div>
-        </div>
-</div>
-    <div id="featuredPagination" class="pagination">
-        <button type="button" id="featuredPrevBtn" disabled aria-label="Previous page">Previous</button>
-        <button type="button" id="featuredNextBtn" aria-label="Next page">Next</button>
-    </div>
-</section>
+      </article>
 
-<div style="text-align:center; margin-top:40px;">
-  <a href="/blogs/blog-dynamic.html" class="blog-btn">
-    View More Articles →
-  </a>
-</div>
+      <!-- CARD 9 -->
+      <article class="blog-card" data-title="scavenger hunt hikes">
+        <img src="../images/blogs/scavenger-hunt.jpeg"
+             alt="Group doing a scavenger hunt hike in Kenya"
+             width="400" height="260"
+             loading="lazy">
+        <div class="blog-card-body">
+          <h3>Scavenger Hunt Hikes in Kenya</h3>
+          <p>Fun and engaging outdoor activities for families and groups across Kenya's trails.</p>
+          <a href="/blogs/blog-scavenger-hunt-hikes.html" class="blog-btn">Read More</a>
+          <div class="share-buttons" role="group" aria-label="Share: Scavenger Hunt Hikes">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/?text=Scavenger%20Hunt%20Hikes%20in%20Kenya%20-%20https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html"
+               target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="share-btn share-copy"
+                    data-url="https://kijabeadventures.com/blogs/blog-scavenger-hunt-hikes.html"
+                    aria-label="Copy link">
+              <i class="fas fa-link" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /#blogGrid -->
+
+    <!-- PAGINATION -->
+    <nav class="pagination" id="featuredPagination" aria-label="Blog article pages">
+      <button type="button" id="featuredPrevBtn" disabled aria-label="Previous page">
+        &larr; Previous
+      </button>
+      <span id="pageIndicator" class="page-indicator" aria-live="polite"></span>
+      <button type="button" id="featuredNextBtn" aria-label="Next page">
+        Next &rarr;
+      </button>
+    </nav>
+
+  </section><!-- /#featuredArticles -->
+
+  <!-- View More -->
+  <div class="view-more-wrap">
+    <a href="/blogs/blog-dynamic.html" class="blog-btn">
+      View More Articles &rarr;
+    </a>
+  </div>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ===========================
+     FOOTER
+============================ -->
 <footer>
   <div class="footer-content">
 
     <div class="footer-section">
       <h3>Contact</h3>
-      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
-      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kijabe,kenya</p>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> info@kijabeadventures.com</p>
+      <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kijabe, Kenya</p>
     </div>
 
     <div class="footer-section">
       <h3>Community Center</h3>
       <ul>
         <li><a href="/partnership.html">Partner With Us</a></li>
-        <li><a href="/community.html"> Our Community</a></li>
-        <li><a href="../destinations.html">Destinations</a></li>
+        <li><a href="/community.html">Our Community</a></li>
         <li><a href="/safety.html">Safety</a></li>
         <li><a href="/blogs/blog.html">Blog</a></li>
       </ul>
@@ -300,125 +486,189 @@
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/kijabeadventure" target="_blank" rel="noopener"><i class="fab fa-x"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61587034792994"
+           target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/kijabeadventures"
+           target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://x.com/kijabeadventure"
+           target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (formerly Twitter)">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/254743980340"
+           target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
 
     <div class="footer-section footer-links">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="../booking.html">Bookings</a></li>
-        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
         <li><a href="/blogs/blog.html">Blog</a></li>
-        <li><a href="/blogs/safari-tips.html">Safari Tips</a></li>
-        <li><a href="/blogs/kenya-safety.html">Is Kenya Safe?</a></li>
-        <li><a href="/blogs/safari-cost.html">Safari Costs</a></li>
-        <li><a href="/blogs/big-five.html">The Big Five</a></li>
-        <li><a href="/blogs/blog-best-time-to-hike.html">Best Time to Hike</a></li>
-        <li><a href="/blogs/blog-forest-conservation.html">Forest Conservation</a></li>
-        <li><a href="/blogs/blog-mountain-climbing-prep.html">Mount Longonot Guide</a></li>
-        <li><a href="/blogs/blog-nairobi-day-hikes.html">Nairobi Day Hikes</a></li>
-        <li><a href="/blogs/scavenger-hunt-hikes.html">Scavenger Hunt Hikes in Kenya</a></li>
+        <li><a href="/upcoming-hiking-events.html">Upcoming Hikes</a></li>
+        <li><a href="/private-group-hikes.html">Private Group Hikes</a></li>
       </ul>
     </div>
 
   </div>
 
   <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
+    &copy; <span id="year"></span> Kijabe Adventures. All rights reserved.
   </p>
   <p class="footer-legal">
-    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a>
   </p>
-
 </footer>
 
 <!-- WhatsApp Float Button -->
 <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
    class="whatsapp-float"
    target="_blank"
-   rel="noopener"
+   rel="noopener noreferrer"
    aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
-<!-- Scripts -->
-<script src="../js/next-hike.js"></script>
+<!-- ===========================
+     SCRIPTS
+============================ -->
 
 <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js");
-  }
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<!-- Mobile nav toggle -->
 <script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
-<!-- Featured Articles Script -->
-<script>
-var showFeaturedPage;
-
-(function () {
-    const perPage = 3;
-    let featuredPage = 1;
-
-    const featuredCards = [...document.querySelectorAll("#blogGrid .blog-card")];
-    const totalPages = Math.ceil(featuredCards.length / perPage);
-
-    showFeaturedPage = function () {
-        const start = (featuredPage - 1) * perPage;
-        const end = start + perPage;
-
-        featuredCards.forEach((c, i) => {
-            c.style.display = (i >= start && i < end) ? "block" : "none";
-        });
-
-        document.getElementById("featuredPrevBtn").disabled = featuredPage <= 1;
-        document.getElementById("featuredNextBtn").disabled = featuredPage >= totalPages;
-    };
-
-    document.getElementById("featuredPrevBtn").onclick = () => {
-        featuredPage--;
-        showFeaturedPage();
-    };
-
-    document.getElementById("featuredNextBtn").onclick = () => {
-        featuredPage++;
-        showFeaturedPage();
-    };
-
-    showFeaturedPage();
-})();
-
-document.getElementById("searchBar").addEventListener("keyup", function () {
-    const q = this.value.toLowerCase();
-    const cards = document.querySelectorAll("#blogGrid .blog-card");
-
-    if (q) {
-        document.getElementById("featuredPagination").style.display = "none";
-        cards.forEach(card => {
-            card.style.display = card.dataset.title.includes(q) ? "block" : "none";
-        });
-    } else {
-        document.getElementById("featuredPagination").style.display = "";
-        showFeaturedPage();
+  (function () {
+    var navToggle = document.querySelector('.nav-toggle');
+    var primaryNav = document.getElementById('primary-nav');
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', function () {
+        var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        primaryNav.classList.toggle('open');
+      });
     }
-});
+  })();
+</script>
+
+<!-- Copy-link buttons -->
+<script>
+  document.querySelectorAll('.share-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = btn.dataset.url;
+      if (!url) return;
+      navigator.clipboard.writeText(url).then(function () {
+        var icon = btn.querySelector('i');
+        if (icon) {
+          icon.classList.replace('fa-link', 'fa-check');
+          setTimeout(function () {
+            icon.classList.replace('fa-check', 'fa-link');
+          }, 1800);
+        }
+      }).catch(function () {
+        /* fallback for older browsers */
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      });
+    });
+  });
+</script>
+
+<!-- Featured articles — pagination + search -->
+<script>
+  (function () {
+    var PER_PAGE     = 3;
+    var currentPage  = 1;
+    var allCards     = Array.from(document.querySelectorAll('#blogGrid .blog-card'));
+    var totalPages   = Math.ceil(allCards.length / PER_PAGE);
+    var isSearching  = false;
+
+    var prevBtn       = document.getElementById('featuredPrevBtn');
+    var nextBtn       = document.getElementById('featuredNextBtn');
+    var pageIndicator = document.getElementById('pageIndicator');
+    var pagination    = document.getElementById('featuredPagination');
+    var searchBar     = document.getElementById('searchBar');
+
+    function showPage(page) {
+      var start = (page - 1) * PER_PAGE;
+      var end   = start + PER_PAGE;
+
+      allCards.forEach(function (card, i) {
+        card.hidden = !(i >= start && i < end);
+      });
+
+      prevBtn.disabled = page <= 1;
+      nextBtn.disabled = page >= totalPages;
+
+      if (pageIndicator) {
+        pageIndicator.textContent = 'Page ' + page + ' of ' + totalPages;
+      }
+
+      currentPage = page;
+    }
+
+    function runSearch(q) {
+      q = q.trim().toLowerCase();
+      isSearching = !!q;
+
+      if (isSearching) {
+        pagination.hidden = true;
+        allCards.forEach(function (card) {
+          card.hidden = !card.dataset.title.includes(q);
+        });
+      } else {
+        pagination.hidden = false;
+        showPage(currentPage);
+      }
+    }
+
+    prevBtn.addEventListener('click', function () {
+      if (currentPage > 1) showPage(currentPage - 1);
+    });
+
+    nextBtn.addEventListener('click', function () {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    });
+
+    searchBar.addEventListener('input', function () {
+      runSearch(this.value);
+    });
+
+    /* Clear search on Escape */
+    searchBar.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        this.value = '';
+        runSearch('');
+        this.blur();
+      }
+    });
+
+    /* Init */
+    showPage(1);
+  })();
+</script>
+
+<!-- Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
 </script>
 
 </body>
 </html>
-
