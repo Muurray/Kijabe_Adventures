@@ -156,6 +156,7 @@
   min-height: 650px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 80px 60px;
 }
 
@@ -163,6 +164,15 @@
   max-width: 700px;
   color: #fff;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+ background: rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
 }
 
 .featured-event-badge {
@@ -179,6 +189,7 @@
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 20px;
+  align-content: center;
 }
 
 .featured-event-meta,
@@ -395,4 +406,39 @@
     display: none;
   }
 
+}
+html {
+  scroll-behavior: smooth;
+}
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #ffd27a;
+  font-weight: 600;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px 12px;
+  border-radius: 20px;
+
+  transition: all 0.2s ease;
+}
+
+.map-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.event-location-map {
+  scroll-margin-top: 80px;
+}
+.event-location-map {
+  padding: 80px 20px;
+  transition: background 0.3s ease;
+}
+
+.event-location-map:target {
+  background: #f0f7f2;
+  border-radius: 20px;
 }
