@@ -46,6 +46,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blogs.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -112,16 +115,16 @@
 
   <!-- PRIMARY NAVIGATION (NO DROPDOWNS) -->
   <nav id="primary-nav" class="primary-nav">
-        <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/community.html">Community</a>
-    <a href="/gallery.html">Gallery</a>
-     <a href="/blogs/blog.html" class="active">Blog</a>
+        <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../community.html">Community</a>
+    <a href="../gallery.html">Gallery</a>
+     <a href="../blogs/blog.html" class="active">Blog</a>
   </nav>
 
   <!-- NEXT HIKE BADGE -->
-  <a href="/contact.html"
+  <a href="../upcoming-hiking-events.html"
      id="next-hike-badge"
      class="next-hike-badge"
      aria-label="View next hike details">
@@ -130,7 +133,10 @@
 </header>
 
 <section class="blog-container">
-    <img src="../images/blogs/kenya-mountain.webp" class="blog-header-img" alt="Safari Hiking Tips">
+    <img src="../images/blogs/kenya-mountains.webp"
+     class="blog-header-img"
+  alt="Hikers walking through a Kenyan safari landscape">
+  
 
     <h1>10 Essential Safari Hiking Tips for Beginners</h1>
     <p class="blog-meta">Published on February 15, 2026 • By Kijabe Adventures Team</p>
@@ -184,18 +190,18 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
       Planning to explore Kenya's beautiful hills?
     </p>
     <p>
-      Join our <a href="/contact.html">guided hiking adventures</a>
+      Join our <a href="../contact.html">guided hiking adventures</a>
       and experience Ngong Hills, Kijabe Forest, and scenic trails.
     </p>
  <h2>Also Read</h2>
         <ul>
-            <li><a href="/blogs/safari-tips.html">10 Essential Safari Hiking Tips for Beginners</a></li>
-            <li><a href="/safety.html">Safety Tips for Hiking in Kenya</a></li>
-            <li><a href="destinations.html">More Hiking Destinations in Kenya</a></li>
+          
+            <li><a href="../blogs/safari-cost.html">How much is a Safari Hiking Trip in Kenya?</a></li>
+            <li><a href="../safety.html">Safety Tips for Hiking in Kenya</a></li>
+            <li><a href="../gallery.html">More Hiking Destinations in Kenya</a></li>
         </ul>
 
 </section>
-</body>
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
@@ -211,7 +217,6 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
       <h3>Community Center</h3>
        <li><a href="/Partnership.html">Partner With Us</a></li>
        <li><a href="/community.html"> Our Community</a></li>
-        <li><a href="destinations.html">Destinations</a></li>
         <li><a href="/safety.html">Safety</a></li>
   
     </div>
@@ -230,7 +235,6 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
       <ul>
         <li><a href="/index.html">Home</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="booking.html">Bookings</a></li>
          <li><a href="/gallery.html">Gallery</a></li>
       </ul>
     </div>
@@ -243,22 +247,6 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
   <p class="footer-legal">
     <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
-
-  <section class="ad-section">
-    <!-- AdSense Display Ad -->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
-     crossorigin="anonymous"></script>
-<!-- Kijabeads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3754507736699545"
-     data-ad-slot="6762486218"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  </section>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -270,7 +258,7 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
 </a>
 
 <!-- Scripts -->
-<script src="js/next-hike.js"></script>
+<script src="../js/next-hike.js"></script>
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
