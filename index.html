@@ -51,13 +51,7 @@
   <link rel="shortcut icon" href="images/favicons/favicon.ico">
   <meta name="msapplication-TileColor" content="#2d6a4f">
   <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
-  <meta name="theme-color"
-      content="#2d6a4f"
-      media="(prefers-color-scheme: light)">
-
-  <meta name="theme-color"
-        content="#1b4332"
-        media="(prefers-color-scheme: dark)">
+  <!-- Theme color is omitted for unsupported browsers. -->
   <!-- ===========================
        PRELOADS
   ============================ -->
@@ -272,44 +266,63 @@
   </script>
 
   <!-- Reviews structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Guided Hiking Tours — Kijabe Adventures",
-    "brand": {
-      "@type": "Brand",
-      "name": "Kijabe Adventures"
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Guided Hiking Tours — Kijabe Adventures",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kijabe Adventures"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "James M."
+      },
+      "reviewBody": "Amazing experience at Ngong Hills. The guides were professional and very safety conscious."
     },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "James M." },
-        "reviewBody": "Amazing experience at Ngong Hills. The guides were professional and very safety conscious.",
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
       },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Aisha K." },
-        "reviewBody": "Kijabe Hills was breathtaking. Highly recommended for both beginners and experienced hikers.",
-        
+      "author": {
+        "@type": "Person",
+        "name": "Aisha K."
       },
-      {
-        "@type": "Review",
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        "author": { "@type": "Person", "name": "Peter W." },
-        "reviewBody": "Well-organized hikes, friendly guides, and great views. Worth every shilling.",
-        s
-      }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "5000"
+      "reviewBody": "Kijabe Hills was breathtaking. Highly recommended for both beginners and experienced hikers."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Peter W."
+      },
+      "reviewBody": "Well-organized hikes, friendly guides, and great views. Worth every shilling."
     }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "5000"
   }
-  </script>
+}
+</script>
 </head>
 
 <body>
@@ -390,66 +403,80 @@
     </a>
   </div>
 </section>
-
 <!-- ===========================
      BOOKING OPTIONS
 ============================ -->
-<section class="booking-options">
-  <h2>Choose Your Hiking Experience</h2>
+<section class="featured-trails booking-options">
+  <h2>
+    <i class="fas fa-route" aria-hidden="true"></i>
+    Choose Your Hiking Experience
+  </h2>
 
-  <div class="booking-options-grid">
+  <div class="trail-grid">
 
     <!-- UPCOMING HIKE -->
-    <div class="booking-option-card">
-      <img src="images/kijabe-hills.webp"
-           alt="Group of hikers on Kijabe Hills escarpment trail"
-           width="600"
-           height="400"
-           loading="lazy">
+    <article class="trail-card">
 
-      <div class="booking-option-content">
-        <span class="option-badge">Upcoming Event</span>
+      <a href="/upcoming-hiking-events.html"
+         aria-label="Join Upcoming Group Hike">
+        <img src="images/kijabe-hills.webp"
+             width="400"
+             height="260"
+             alt="Group of hikers on Kijabe Hills escarpment trail"
+             loading="lazy">
+      </a>
+
+      <div class="trail-card-body">
+        <a href="/upcoming-hiking-events.html"
+          class="option-badge">
+          🎉 Join the Upcoming Events
+        </a>
+
         <h3>Kijabe Hills Labour Day Hike</h3>
+
         <p>
           Join our upcoming guided social hike featuring waterfalls,
           escarpment views, networking, photography and outdoor adventure.
         </p>
-        <ul>
-          <li>✅ Guided Group Hike</li>
-          <li>✅ Entrance Included</li>
-          <li>✅ Beginner Friendly</li>
-        </ul>
-        <a href="/upcoming-hiking-events.html" class="cta-button primary">
-          🎉 View Event &amp; Book
-        </a>
+
+        <div class="trail-meta">
+          <span class="difficulty easy">Guided Group Hike</span>
+          <span class="trail-detail">Beginner Friendly</span>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <!-- PRIVATE GROUPS -->
-    <div class="booking-option-card">
-      <img src="images/private-hike.webp"
-           alt="Corporate team building hike — private guided group"
-           width="600"
-           height="400"
-           loading="lazy">
+    <!-- PRIVATE HIKES -->
+    <article class="trail-card">
 
-      <div class="booking-option-content">
-        <span class="option-badge private">Private Groups</span>
+      <a href="/private-group-hikes.html"
+         aria-label="Plan a Private Group Hike">
+        <img src="images/private-hike.webp"
+             width="400"
+             height="260"
+             alt="Corporate team building hike in Kenya"
+             loading="lazy">
+      </a>
+
+      <div class="trail-card-body">
+<a href="/private-group-hikes.html"
+   class="option-badge private">
+   👥 Plan Private Hikes for Groups
+</a>
+
         <h3>Private Group Hikes</h3>
+
         <p>
           Plan private hiking experiences for friends, corporates,
-          schools, families and team building groups across Kenya.
+          schools, families and team-building groups across Kenya.
         </p>
-        <ul>
-          <li>✅ Instant Price Calculator</li>
-          <li>✅ Multiple Destinations</li>
-          <li>✅ Flexible Dates</li>
-        </ul>
-        <a href="/private-group-hikes.html" class="cta-button whatsapp">
-          💳 Plan Private Hike
-        </a>
+
+        <div class="trail-meta">
+          <span class="difficulty moderate">Instant Pricing</span>
+          <span class="trail-detail">Flexible Dates</span>
+        </div>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
@@ -972,6 +999,19 @@
     navigator.serviceWorker.register("/sw.js");
   }
 </script>
+<!-- MOBILE STICKY BOOKING BAR -->
+<div class="mobile-sticky-bar">
 
+  <a href="/upcoming-hiking-events.html"
+     class="sticky-btn upcoming">
+    🎉 Upcoming Hikes
+  </a>
+
+  <a href="/private-group-hikes.html"
+     class="sticky-btn private">
+    💳 Private Hikes
+  </a>
+
+</div>
 </body>
 </html>
