@@ -199,6 +199,64 @@ nav a.active {
     margin-bottom: 1rem;
 }
 
+/* Partnership & CTA styles */
+.partnership-banner img,
+.partnership-banner .partnership-banner-img {
+  display: block;
+  max-width: 1100px;
+  width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.impact-areas .impact-list,
+.partnership-opps .opps-list {
+  max-width: 900px;
+  margin: 0.5rem auto 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 1rem;
+}
+.impact-areas .impact-list li,
+.partnership-opps .opps-list li {
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  color: var(--dark);
+}
+
+.briquette-project ul {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding-left: 1rem;
+}
+
+.guide-recruitment .cta-button,
+.event-organizers .cta-button,
+.partnership-opps .cta-button,
+.final-cta .cta-button {
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 1.1rem;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(44,110,73,0.12);
+}
+
+.cta-center { text-align: center; margin-top: 1rem; }
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .impact-areas .impact-list,
+  .partnership-opps .opps-list { grid-template-columns: 1fr; }
+}
+
 .hero p,
 .page-hero p {
     font-size: 1.2rem;
@@ -1235,7 +1293,6 @@ text-align:center;
 section h1,
 section h2,
 section h3,
-section p{
 text-align:center;
 }
 
@@ -2782,3 +2839,24 @@ input, select {
   align-items: center;
   margin: 0 auto 10px auto;
 }
+.hero-stats span{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    padding:.6rem 1rem;
+    border-radius:999px;
+}
+.hero::before{
+    background: rgba(0,0,0,.55);
+}
+.booking-options{
+    position:relative;
+    margin-top:-80px;
+    z-index:10;
+    padding: 40px 30px;
+}
+.trail-cta{
+    background:#ff9800;
+    color:#fff;
+    font-weight:700;
+}
+

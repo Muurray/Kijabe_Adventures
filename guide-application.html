@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guide Application | Kijabe Adventures</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .form-container{max-width:800px;margin:2rem auto;padding:1.2rem;background:#fff;border-radius:10px;box-shadow:var(--shadow)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+    label{font-weight:700;display:block;margin-bottom:6px}
+    input,textarea,select{width:100%;padding:0.6rem;border:1px solid #ddd;border-radius:6px}
+    textarea{min-height:140px}
+    .full{grid-column:1/-1}
+    .submit-btn{background:var(--primary);color:#fff;padding:0.8rem 1.2rem;border-radius:8px;border:none;font-weight:700}
+    .small-note{font-size:0.95rem;color:var(--muted);margin-top:0.6rem}
+  </style>
+</head>
+<body>
+  <main class="page-content">
+    <section class="form-container">
+      <h1>Apply to Join Our Guide Network</h1>
+      <p>Fill this short form and we'll get back to you via WhatsApp or email.</p>
+      <form id="guideForm">
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" required>
+          </div>
+          <div>
+            <label for="phone">Phone (WhatsApp)</label>
+            <input id="phone" name="phone" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email">
+          </div>
+          <div>
+            <label for="location">Primary location</label>
+            <input id="location" name="location" placeholder="e.g. Ngong Hills">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full">
+            <label for="experience">Trail experience / certification</label>
+            <textarea id="experience" name="experience" placeholder="Describe your guiding experience, certifications, languages, typical routes."></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="availability">Availability</label>
+            <select id="availability" name="availability">
+              <option>Weekends</option>
+              <option>Weekdays</option>
+              <option>Full-time</option>
+              <option>Occasional / Events</option>
+            </select>
+          </div>
+          <div>
+            <label for="references">References</label>
+            <input id="references" name="references" placeholder="Names & contacts">
+          </div>
+        </div>
+        <p class="small-note">We do not collect CV files here. After submitting, our coordinator will contact you and request supporting documents if needed.</p>
+        <div style="margin-top:1rem">
+          <button type="submit" class="submit-btn">Submit Application</button>
+          <a href="/Partnership.html" style="margin-left:12px;display:inline-block">← Back</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+    document.getElementById('guideForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = encodeURIComponent(document.getElementById('name').value || '');
+      var phone = encodeURIComponent(document.getElementById('phone').value || '');
+      var email = encodeURIComponent(document.getElementById('email').value || '');
+      var location = encodeURIComponent(document.getElementById('location').value || '');
+      var experience = encodeURIComponent(document.getElementById('experience').value || '');
+      var availability = encodeURIComponent(document.getElementById('availability').value || '');
+      var references = encodeURIComponent(document.getElementById('references').value || '');
+
+      var subject = 'Guide Application: ' + name;
+      var body = 'Name: ' + name + '%0D%0A' +
+                 'Phone: ' + phone + '%0D%0A' +
+                 'Email: ' + email + '%0D%0A' +
+                 'Location: ' + location + '%0D%0A' +
+                 'Availability: ' + availability + '%0D%0A' +
+                 'Experience: ' + experience + '%0D%0A' +
+                 'References: ' + references + '%0D%0A%0D%0A' +
+                 'Submitted from: Partnership -> Guide Application page';
+      var mailto = 'mailto:info@kijabeadventures.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      // Fallback: open mail client or redirect to WhatsApp with summary
+      if (confirm('Submit application via your email client? Press Cancel to send via WhatsApp instead.')) {
+        window.location.href = mailto;
+      } else {
+        var wa = 'https://wa.me/254743980340?text=' + encodeURIComponent('Guide application from ' + (document.getElementById('name').value || '') + '\nPhone: ' + (document.getElementById('phone').value || '') + '\nLocation: ' + (document.getElementById('location').value || '') + '\nExperience: ' + (document.getElementById('experience').value || ''));
+        window.open(wa,'_blank');
+      }
+    });
+  </script>
+</body>
+</html>

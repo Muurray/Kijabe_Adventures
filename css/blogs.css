@@ -307,8 +307,7 @@ main.blog-page .related-posts {
     color: #fff;
     border: none;
     display: none;
-    align-items: center;
-    justify-content: center;
+    
     box-shadow: var(--shadow);
     cursor: pointer;
     z-index: 10000;
@@ -1730,6 +1729,10 @@ text-decoration:none;
 transition:0.3s;
 }
 
+.whatsapp {
+  display: inline-block;
+}
+
 .whatsapp-big-button i{
 margin-right:10px;
 }
@@ -1816,7 +1819,6 @@ text-align:center;
 section h1,
 section h2,
 section h3,
-section p{
 text-align:center;
 }
 
@@ -1864,4 +1866,16 @@ text-align:center;
 .member-card img{
 width:100%;
 border-radius:12px;
+}
+.cta-section .blog-btn {
+  display: inline-block;
+}
+
+.cta-section p {
+  text-align: center;
+}
+
+.cta-center {
+  text-align: center;
+  margin: 20px 0;
 }
