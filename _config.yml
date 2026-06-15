@@ -1,0 +1,37 @@
+title: Kijabe Adventures
+description: Guided hikes and adventure experiences in Kenya
+baseurl: ""
+url: "https://kijabeadventures.com"
+lang: en
+
+# Enable Jekyll to process the site
+plugins:
+  - jekyll-redirect-from
+
+# Markdown processor
+markdown: kramdown
+
+# Build settings
+exclude:
+  - .git
+  - .gitignore
+  - README.md
+  - fix_blog.py
+  - temp_fix_blog_html.py
+  - temp_normalize_blog_pages.py
+  - validate_sitemap.py
+  - m-backend
+  - node_modules
+  - .env
+  - serve.py
+  - server.js
+  - package.json
+  - package-lock.json
+
+# Keep files that shouldn't be processed
+keep_files:
+  - sitemap.xml
+  - robots.txt
+  - ads.txt
+  - manifest.json
+  - CNAME

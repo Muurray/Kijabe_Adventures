@@ -1,0 +1,17 @@
+# Redirect all www to non-www (for any subdomain)
+https://www.kijabeadventures.com/*  https://kijabeadventures.com/:splat  301!
+
+# Redirect HTTP to HTTPS
+http://kijabeadventures.com/*  https://kijabeadventures.com/:splat  301!
+http://www.kijabeadventures.com/*  https://kijabeadventures.com/:splat  301!
+
+# Remove index.html from URLs
+/index.html  /  301!
+/blogs/index.html  /blogs/  301!
+
+# Redirect old legacy URLs to correct pages
+/blog.html  /blogs/blog.html  301!
+/blog-nairobi-day-hikes.html  /blogs/blog-nairobi-day-hikes.html  301!
+/current-hike.html  /upcoming-hiking-events.html  301!
+/blogs/privacy.html  /privacy.html  301!
+/blogs/mount-longonot-guide.html  /blogs/blog-mountain-climbing-prep.html  301!
