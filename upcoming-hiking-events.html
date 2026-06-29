@@ -75,8 +75,8 @@
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Kijabe Hills Scenic Group Hike",
-    "startDate": "2026-07-01T09:30",
-    "endDate": "2026-07-01T16:00",
+    "startDate": "2026-08-01T09:30",
+    "endDate": "2026-08-01T16:00",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -214,14 +214,19 @@
           <span id="minutes">--</span>
           <small>Minutes</small>
         </div>
+        <div>
+    <span id="seconds">--</span>
+    <small>Seconds</small>
+</div>
       </div>
 
       <h2 id="featured-event-title">
         🌄 Kijabe Hills Scenic Group Hike
       </h2>
 
+     
       <p class="featured-event-meta">
-        📅 July 1 &bull; ⏰ 9:30 AM – 4:00 PM
+       📅 August 1 &bull; ⏰ 9:30 AM – 4:00 PM
       </p>
 
      <p class="featured-event-location">
@@ -574,7 +579,7 @@
     <h2 id="modal-event-title">🌄 Kijabe Hills Scenic Group Hike</h2>
 
     <p class="event-meta">
-      📅 July 1 &bull; ⏰ 9:30 AM<br>
+     📅 August 1 &bull; ⏰ 9:30 AM
       📍 Kijabe Hills<br>
       📌 Meeting Point: Mai Mahiu Parking Area
     </p>
@@ -679,41 +684,54 @@
 
 <!-- Countdown timer — with graceful expiry handling -->
 <script>
-  (function () {
-    // UPDATE THIS DATE when scheduling the next event
-    var EVENT_DATE = new Date("July 1, 2026 09:30:00").getTime();
+const EVENT_DATE = new Date("August 1, 2026 09:30:00").getTime();
 
-    var daysEl    = document.getElementById("days");
-    var hoursEl   = document.getElementById("hours");
-    var minutesEl = document.getElementById("minutes");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
-    function updateCountdown() {
-      var now      = Date.now();
-      var distance = EVENT_DATE - now;
+function updateCountdown() {
 
-      if (distance <= 0) {
-        // Event has started or passed
-        if (daysEl)    daysEl.textContent    = "0";
-        if (hoursEl)   hoursEl.textContent   = "0";
-        if (minutesEl) minutesEl.textContent  = "0";
-        var badge = document.querySelector('.featured-event-badge');
-        if (badge) badge.textContent = "🎉 Event In Progress!";
-        return; // stop updating
-      }
+    const now = Date.now();
+    const distance = EVENT_DATE - now;
 
-      var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    if (distance <= 0) {
 
-      if (daysEl)    daysEl.textContent    = days;
-      if (hoursEl)   hoursEl.textContent   = hours;
-      if (minutesEl) minutesEl.textContent  = minutes;
+        daysEl.textContent = "0";
+        hoursEl.textContent = "0";
+        minutesEl.textContent = "0";
+        if (secondsEl) secondsEl.textContent = "0";
 
-      setTimeout(updateCountdown, 60000); // update every minute
+        document.querySelector(".featured-event-badge").textContent =
+            "🎉 Event In Progress!";
+
+        clearInterval(timer);
+
+        return;
     }
 
-    updateCountdown();
-  })();
+    daysEl.textContent =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    hoursEl.textContent =
+        Math.floor((distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60));
+
+    minutesEl.textContent =
+        Math.floor((distance % (1000 * 60 * 60)) /
+        (1000 * 60));
+
+    if (secondsEl) {
+        secondsEl.textContent =
+            Math.floor((distance % (1000 * 60)) / 1000);
+    }
+
+}
+
+updateCountdown();
+
+const timer = setInterval(updateCountdown, 1000);
 </script>
 
 <!-- Modal open/close -->
