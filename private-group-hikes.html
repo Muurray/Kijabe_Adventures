@@ -185,7 +185,11 @@
     <a href="/gallery.html">Gallery</a>
     <a href="/blogs/blog.html">Blog</a>
   </nav>
-
+<!-- NEXT HIKE BADGE -->
+ <a href="upcoming-hiking-events.html"
+   class="next-hike-badge">
+    Loading...
+</a>
 </header>
 
 <main>
@@ -763,14 +767,16 @@
     }
   })();
 </script>
-
-<!-- Calculator JS -->
+<script src="js/config.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
+<script src="js/js/next-hike.js" defer></script>
 
 <!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js");
+    navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
 

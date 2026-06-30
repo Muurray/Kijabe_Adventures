@@ -24,14 +24,15 @@
   <!-- ===========================
        OPEN GRAPH
   ============================ -->
-  <meta property="og:title" content="Upcoming Hiking Events in Kenya | Kijabe Adventures">
-  <meta property="og:description" content="Explore upcoming guided hiking events across Kenya with Kijabe Adventures.">
-  <meta property="og:image" content="https://kijabeadventures.com/images/kijabe-hills.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://kijabeadventures.com/upcoming-hiking-events.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Kijabe Adventures">
+
+<meta property="og:title" content="Upcoming Hiking Events in Kenya: Kijabe Hills Scenic Group Hike | Kijabe Adventures">
+<meta property="og:description" content="Join our next group hike on Saturday, 1 August 2026. Book online, calculate prices and reserve private hikes.">
+<meta property="og:image" content="https://kijabeadventures.com/images/hike-poster-august-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kijabeadventures.com/upcoming-hiking-events.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kijabe Adventures">
 
   <!-- ===========================
        TWITTER CARD
@@ -151,7 +152,11 @@
     <a href="/blogs/blog.html">Blog</a>
     <a href="/contact.html">Contact</a>
   </nav>
-
+<!-- NEXT HIKE BADGE -->
+ <a href="upcoming-hiking-events.html"
+   class="next-hike-badge">
+    Loading...
+</a>
 </header>
 
 <main>
@@ -180,7 +185,7 @@
       <a href="#upcoming-events" class="cta-button primary">
         🎉 View Upcoming Hikes
       </a>
-      <a href="/private-group-hikes.html" class="cta-button whatsapp">
+      <a href="/private-group-hikes.html" class="cta-button primary">
         💳 Private Group Hikes
       </a>
     </div>
@@ -215,15 +220,23 @@
           <small>Minutes</small>
         </div>
         <div>
-    <span id="seconds">--</span>
-    <small>Seconds</small>
-</div>
-
+        <span id="seconds">--</span>
+       <small>Seconds</small>
       </div>
 
-      <h2 id="featured-event-title">
+      </div>
+      <div class="event-title-row">
+
+    <h2 id="featured-event-title">
         🌄 Kijabe Hills Scenic Group Hike
-      </h2>
+    </h2>
+
+    <button id="shareBtn" class="share-pill">
+        <i class="fas fa-share-alt"></i>
+        Share This Hike
+    </button>
+
+</div>
 
       <p class="featured-event-meta">
         📅 Saturday, 1 August 2026 • ⏰ 9:30 AM – 4:00 PM
@@ -259,24 +272,49 @@
         <a href="#event-booking" class="cta-button primary">
           🎟️ Book This Hike
         </a>
-        <a href="https://wa.me/254743980340"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="cta-button whatsapp">
-          📲 Ask Questions
         </a>
-        <a href="https://api.whatsapp.com/send?text=Join%20our%20Kijabe%20Hills%20Hike%20https://kijabeadventures.com/upcoming-hiking-events.html"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="cta-button whatsapp">
-          📲 Share Event
-        </a>
+      <a href="/private-group-hikes.html" class="cta-button primary">
+        💳 Book Private Hike
+      </a>
       </div>
+      <div class="share-widget">
 
-    </div>
-  </div>
+    <h3>📢 Invite Your Friends</h3>
+<p>
+    Invite your friends and family to join this hiking adventure.
+</p>
+
+
+      <div class="share-buttons">
+
+    <button id="facebookBtn" class="share-btn facebook">
+    <i class="fab fa-facebook-f"></i> Facebook
+</button>
+
+<button id="whatsappBtn" class="share-btn whatsapp">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+</button>
+
+<button id="xBtn" class="share-btn twitter">
+    <i class="fab fa-x-twitter"></i> X
+</button>
+
+<button id="linkedinBtn" class="share-btn linkedin">
+    <i class="fab fa-linkedin"></i> LinkedIn
+</button>
+    <button id="copyBtn" class="share-btn">
+        🔗 Copy Link
+    </button>
+    </div> <!-- share-buttons -->
+
+</div> <!-- share-widget -->
+
+</div> <!-- featured-event-content -->
+
+</div> <!-- featured-event-overlay -->
 
 </section>
+
 <!-- ===========================
      EVENT BOOKING CALCULATOR
 ============================ -->
@@ -662,6 +700,12 @@
      SCRIPTS
 ============================ -->
 
+<script src="js/config.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/share.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/js/next-hike.js" defer></script>
+
 <!-- Year -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -680,58 +724,6 @@
       });
     }
   })();
-</script>
-
-<!-- Countdown timer — with graceful expiry handling -->
-<script>
-  const EVENT_DATE = new Date("2026-08-01T09:30:00+03:00").getTime();
-
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-
-function updateCountdown() {
-
-    const now = Date.now();
-    const distance = EVENT_DATE - now;
-
-    if (distance <= 0) {
-
-        daysEl.textContent = "0";
-        hoursEl.textContent = "0";
-        minutesEl.textContent = "0";
-        if (secondsEl) secondsEl.textContent = "0";
-
-        document.querySelector(".featured-event-badge").textContent =
-            "🎉 Event In Progress!";
-
-        clearInterval(timer);
-
-        return;
-    }
-
-    daysEl.textContent =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
-
-    hoursEl.textContent =
-        Math.floor((distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60));
-
-    minutesEl.textContent =
-        Math.floor((distance % (1000 * 60 * 60)) /
-        (1000 * 60));
-
-    if (secondsEl) {
-        secondsEl.textContent =
-            Math.floor((distance % (1000 * 60)) / 1000);
-    }
-
-}
-
-updateCountdown();
-
-const timer = setInterval(updateCountdown, 1000);
 </script>
 
 <!-- Modal open/close -->
@@ -771,15 +763,15 @@ const timer = setInterval(updateCountdown, 1000);
   });
 </script>
 
-<!-- Calculator script -->
-<script src="js/calculator.js" defer></script>
+
 
 <!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js");
+    navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
+
 
 </body>
 </html>

@@ -84,6 +84,7 @@
 </head>
 
 <body>
+
 <header>
   <div class="logo">
     <a href="../index.html" aria-label="Kijabe Adventures Home">
@@ -113,12 +114,11 @@
     <a href="../blogs/blog.html" class="active">Blog</a>
   </nav>
 
-  <a href="../upcoming-hiking-events.html"
-     id="next-hike-badge"
-     class="next-hike-badge"
-     aria-label="View next hike details">
-    Loading next hike...
-  </a>
+  <!-- NEXT HIKE BADGE -->
+ <a href="upcoming-hiking-events.html"
+   class="next-hike-badge">
+    Loading...
+</a>
 </header>
 
 <main class="blog-page" role="main">
@@ -516,6 +516,18 @@
 <!-- ===========================
      PAGE SCRIPTS
 ============================ -->
+<script src="js/config.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/share.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/js/next-hike.js" defer></script>
+
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/js/sw.js");
+  }
+</script>
 <script>
   (function () {
     var navToggle = document.querySelector('.nav-toggle');

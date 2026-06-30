@@ -1,36 +1,73 @@
-// === NEXT HIKE CONFIG (EDIT ONLY HERE) ===
-const nextHike = {
-    title: "Ngong Hills",
-    date: "2026-01-15", // YYYY-MM-DD
-    status: "open" // open | almost-full
-};
+/*
+=========================================
+Kijabe Adventures
+Next Hike Badge
+=========================================
+*/
 
-// === HELPERS ===
-function daysRemaining(hikeDate) {
-    const today = new Date();
-    const eventDate = new Date(hikeDate);
-    const diff = eventDate - today;
-    return Math.ceil(diff / (1000 * 60 * 60 * 24));
-}
-
-// === RENDER BADGE ===
 document.addEventListener("DOMContentLoaded", () => {
-    const badge = document.getElementById("next-hike-badge");
-    if (!badge) return;
 
-    const daysLeft = daysRemaining(nextHike.date);
+    const badges = document.querySelectorAll(".next-hike-badge");
 
-    const statusLabel =
-        nextHike.status === "almost-full"
-            ? "🔴 Almost Full"
-            : "🟢 Open";
+    if (!badges.length) return;
 
-    badge.classList.add(
-        nextHike.status === "almost-full" ? "almost-full" : "open"
-    );
+    if (typeof SITE_CONFIG === "undefined") {
 
-    badge.innerHTML = `
-        🌄 ${nextHike.title}<br>
-        ${statusLabel} · ⏳ ${daysLeft} days left
-    `;
+        console.error("SITE_CONFIG not found.");
+
+        badges.forEach(badge => {
+            badge.textContent = "Configuration Error";
+        });
+
+        return;
+
+    }
+
+    function updateBadges() {
+
+        const now = Date.now();
+
+        const distance = SITE_CONFIG.eventDate - now;
+
+        let daysLeft = Math.ceil(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
+        if (daysLeft < 0) daysLeft = 0;
+
+        const statusLabel =
+            SITE_CONFIG.eventStatus === "almost-full"
+                ? "🔴 Almost Full"
+                : "🟢 Open";
+
+        badges.forEach(badge => {
+
+            badge.classList.remove("open", "almost-full");
+
+            badge.classList.add(SITE_CONFIG.eventStatus);
+
+            if (distance <= 0) {
+
+                badge.innerHTML = `
+                    🌄 ${SITE_CONFIG.eventTitle}<br>
+                    🥾 Hiking Today!
+                `;
+
+            } else {
+
+                badge.innerHTML = `
+                    🌄 ${SITE_CONFIG.eventTitle}<br>
+                    ${statusLabel} • 🔥 Only ${daysLeft} ${daysLeft === 1 ? "Day" : "Days"} Left
+                `;
+
+            }
+
+        });
+
+    }
+
+    updateBadges();
+
+    setInterval(updateBadges, 60000);
+
 });

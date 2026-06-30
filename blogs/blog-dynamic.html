@@ -160,6 +160,11 @@
     <a href="/gallery.html">Gallery</a>
     <a href="/blogs/blog.html" class="active">Blog</a>
   </nav>
+  <!-- NEXT HIKE BADGE -->
+ <a href="upcoming-hiking-events.html"
+   class="next-hike-badge">
+    Loading...
+</a>
 
 </header>
 
@@ -505,10 +510,16 @@
   })();
 </script>
 
+<script src="js/config.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/share.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/js/next-hike.js" defer></script>
+
 <!-- Service Worker -->
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
 <!-- MOBILE STICKY BOOKING BAR -->
