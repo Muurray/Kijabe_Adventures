@@ -90,7 +90,7 @@
       "@type": "Organization",
       "name": "Kijabe Adventures",
       "url": "https://kijabeadventures.com/",
-      "logo": "https://kijabeadventures.com/images/logo.png",
+      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png",
       "telephone": "+254743980340",
       "address": {
         "@type": "PostalAddress",
@@ -148,7 +148,7 @@
   <!-- LOGO -->
   <div class="logo">
     <a href="/index.html" aria-label="Kijabe Adventures Home">
-      <img src="/images/logo.png"
+      <img src="/images/kijabe-adventure-logo.png"
            alt="Kijabe Adventures Logo"
            width="140"
            class="logo-img"
@@ -292,32 +292,21 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
-<script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 
   <a href="/upcoming-hiking-events.html"
      class="sticky-btn upcoming">
-    🎉 Upcoming Hikes
+    🎉 Book Upcoming Hike
   </a>
 
   <a href="/private-group-hikes.html"
      class="sticky-btn private">
-    💳 Private Hikes
+    💳 Book Private Hike
   </a>
 
 </div>
+
 </body>
 </html>
 

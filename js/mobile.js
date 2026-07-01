@@ -29,36 +29,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+/* ==========================================
+   MOBILE STICKY BOOKING BAR
+========================================== */
 
-    /* ==========================================
-       STICKY MOBILE BAR
-    ========================================== */
+document.addEventListener("DOMContentLoaded", () => {
 
     const stickyBar = document.querySelector(".mobile-sticky-bar");
 
-    if (stickyBar) {
+    if (!stickyBar) return;
 
-        let lastScroll = 0;
+    // Highlight current page button
+    const currentPage = window.location.pathname;
 
-        window.addEventListener("scroll", () => {
+    document.querySelectorAll(".sticky-btn").forEach(button => {
 
-            const currentScroll = window.pageYOffset;
+        const href = button.getAttribute("href");
 
-            if (currentScroll > lastScroll && currentScroll > 100) {
+        if (href && currentPage.endsWith(href)) {
+            button.classList.add("active");
+        }
 
-                stickyBar.style.transform = "translateY(100%)";
+    });
 
-            } else {
+    // Hide bar while scrolling down
+    let lastScroll = 0;
 
-                stickyBar.style.transform = "translateY(0)";
+    window.addEventListener("scroll", () => {
 
-            }
+        const currentScroll = window.scrollY;
 
-            lastScroll = currentScroll;
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            stickyBar.classList.add("hidden");
+        } else {
+            stickyBar.classList.remove("hidden");
+        }
 
-        });
+        lastScroll = currentScroll;
 
-    }
+    });
+
+});
 
     /* ==========================================
        ACTIVE STICKY BUTTON

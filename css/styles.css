@@ -3123,3 +3123,78 @@ text-decoration:none;
 margin:0 6px;
 
 }
+/* ==========================================
+   MOBILE STICKY BOOKING BAR
+========================================== */
+
+.mobile-sticky-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    display:none;
+    z-index:9999;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    background:#fff;
+    box-shadow:0 -3px 15px rgba(0,0,0,.15);
+
+    transition:transform .3s ease;
+}
+
+.mobile-sticky-bar.hidden{
+    transform:translateY(100%);
+}
+
+.sticky-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 10px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    text-align:center;
+}
+
+.sticky-btn.upcoming{
+    background:#2c6e49;
+}
+
+.sticky-btn.private{
+    background:#ff9800;
+}
+
+.sticky-btn.active{
+    opacity:.9;
+    pointer-events:none;
+}
+
+@media (max-width:768px){
+
+    .mobile-sticky-bar{
+        display:grid;
+    }
+
+    body{
+        padding-bottom:70px;
+    }
+
+}
+
+@media (min-width:769px){
+
+    .mobile-sticky-bar{
+        display:none;
+    }
+
+}

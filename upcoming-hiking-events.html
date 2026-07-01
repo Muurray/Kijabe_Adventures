@@ -672,18 +672,6 @@
   </div>
 </div>
 
-<!-- ===========================
-     MOBILE STICKY BAR
-============================ -->
-<div class="mobile-booking-bar" role="navigation" aria-label="Mobile booking actions">
-  <button onclick="openEventModal()" class="bar-btn primary">
-    🎉 Join Hike
-  </button>
-  <a href="/private-group-hikes.html" class="bar-btn secondary">
-    💳 Private Booking
-  </a>
-</div>
-
 <div class="sticky-event-bar" role="navigation" aria-label="Quick booking actions">
   <a href="#event-booking" class="sticky-btn primary">
     🎟️ Book Hike
@@ -772,7 +760,20 @@
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
+<!-- MOBILE STICKY BOOKING BAR -->
+<div class="mobile-sticky-bar">
 
+  <a href="/upcoming-hiking-events.html"
+     class="sticky-btn upcoming">
+    🎉 Book Upcoming Hikes
+  </a>
+
+  <a href="/private-group-hikes.html"
+     class="sticky-btn private">
+    💳 Book Private Hikes
+  </a>
+
+</div>
 
 </body>
 </html>

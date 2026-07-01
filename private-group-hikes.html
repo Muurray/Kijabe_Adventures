@@ -690,18 +690,6 @@ document.getElementById("year").textContent =
 </div>
 
 <!-- ===========================
-     MOBILE STICKY BAR
-============================ -->
-<div class="mobile-booking-bar" role="navigation" aria-label="Mobile booking actions">
-  <a href="/upcoming-hiking-events.html" class="bar-btn primary">
-    🎉 Join Upcoming Hike
-  </a>
-  <button onclick="openCalcModal()" class="bar-btn secondary">
-    💳 Private Booking
-  </button>
-</div>
-
-<!-- ===========================
      SCRIPTS
 ============================ -->
 
@@ -710,20 +698,7 @@ document.getElementById("year").textContent =
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<!-- Mobile nav toggle -->
-<script>
-  (function () {
-    var navToggle = document.querySelector('.nav-toggle');
-    var primaryNav = document.getElementById('primary-nav');
-    if (navToggle && primaryNav) {
-      navToggle.addEventListener('click', function () {
-        var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        primaryNav.classList.toggle('open');
-      });
-    }
-  })();
-</script>
+
 
 <!-- Modal open/close -->
 <script>
@@ -784,6 +759,19 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
+<!-- MOBILE STICKY BOOKING BAR -->
+<div class="mobile-sticky-bar">
 
+  <a href="/upcoming-hiking-events.html"
+     class="sticky-btn upcoming">
+    🎉 Book Upcoming Hike
+  </a>
+
+  <a href="/private-group-hikes.html"
+     class="sticky-btn private">
+    💳 Book Private Hike
+  </a>
+
+</div>
 </body>
 </html>    

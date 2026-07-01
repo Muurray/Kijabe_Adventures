@@ -260,29 +260,18 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
-<script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
+
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 
   <a href="/upcoming-hiking-events.html"
      class="sticky-btn upcoming">
-    🎉 Upcoming Hikes
+    🎉 Book Upcoming Hike
   </a>
 
   <a href="/private-group-hikes.html"
      class="sticky-btn private">
-    💳 Private Hikes
+    💳 Book Private Hike
   </a>
 
 </div>
