@@ -243,9 +243,14 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
 
   </div>
 
-  <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
-  </p>
+ <p class="copyright">
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
     <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
@@ -266,6 +271,7 @@ Here are 10 essential safari hiking tips every first-time explorer should know.<
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>

@@ -100,6 +100,17 @@
     Loading...
 </a>
 </header>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+
+<a href="/index.html">
+Home
+</a>
+
+<span>/</span>
+
+<span>Blog Page</span>
+
+</nav>
     <main class="blog-page">
   <article class="blog-post">
     <header class="blog-post-header">
@@ -275,12 +286,16 @@
     </div>
 
   </div>
+<p class="copyright">
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
 
-  <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
-  </p>
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
-    <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
 </footer>
 
@@ -298,6 +313,7 @@
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>

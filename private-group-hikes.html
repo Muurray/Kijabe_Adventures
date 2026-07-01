@@ -609,11 +609,15 @@
   </div>
 
   <p class="copyright">
-    &copy; <span id="year"></span> Kijabe Adventures. All rights reserved.
-  </p>
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
 
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
-    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
 </footer>
 
@@ -772,6 +776,7 @@
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>

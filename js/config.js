@@ -11,6 +11,8 @@ const SITE_CONFIG = {
     meetingPoint: "Mai Mahiu Parking Area",
 
     destination: "Kijabe Hills",
+    
+    location: "Kijabe Hills",
 
     eventStatus: "open",
 

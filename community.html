@@ -56,8 +56,7 @@
   <!-- ===========================
        PRELOADS (PERFORMANCE)
   ============================ -->
-  <link rel="preload" href="css/styles.css" as="style" />
-  <link rel="preload" href="images/logo.png" as="image" />
+  <link rel="preload" href="images/kijabe-adventure-logo.png" as="image" />
 
   <!-- ===========================
        CSS
@@ -103,8 +102,21 @@
       "name": "Kenya"
     }
   }
+  {
+ "@context":"https://schema.org",
+ "@type":"Organization",
+
+ "name":"Kijabe Adventures",
+
+ "url":"https://kijabeadventures.com",
+
+ "sameAs":[
+ "https://www.instagram.com/kijabeadventures",
+ "https://web.facebook.com/profile.php?id=61587034792994",
+ "https://x.com/kijabeadventure"
+ ]
+}
   </script>
-    </script>
   <!-- Google CMP (2-button message) -->
 <script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
 <script>
@@ -139,13 +151,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
      crossorigin="anonymous"></script>
-
-  <!-- Google AdSense Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-3754507736699545"
-        crossorigin="anonymous"></script>
 <meta name="google-adsense-platform-account" content="ca-pub-3754507736699545">
-<meta name="google-adsense-platform-domain" content="
-  google.com, pub-3754507736699545, DIRECT, f08c47fec0942fa0
 <meta name="google-adsense-account" content="ca-pub-3754507736699545">
 
 </head>
@@ -159,7 +165,8 @@
            alt="Kijabe Adventures Logo"
            width="140"
            class="logo-img"
-           loading="lazy">
+          fetchpriority="high"
+          decoding="async"
     </a>
     <span class="logo-text">Kijabe Adventures</span>
   </div>
@@ -192,6 +199,17 @@
     Loading...
 </a>
 </header>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+
+<a href="/index.html">
+Home
+</a>
+
+<span>/</span>
+
+<span>Community</span>
+
+</nav>
 <main>
 
 <section class="page-hero">
@@ -307,12 +325,83 @@ We welcome volunteers who want to help organize hikes,
 support conservation activities, and promote eco-tourism
 across Kenya.
 </p>
+<section class="community-cta">
 
-<a href="/contact.html" class="cta-button">
-Become a Volunteer
+<h2>
+Ready for Your Next Adventure?
+</h2>
+
+<p>
+
+Whether you're a beginner or an experienced hiker,
+there's a place for you in our community.
+
+</p>
+
+<div class="cta-grid">
+
+<a href="/upcoming-hiking-events.html"
+class="cta-card">
+
+🥾
+
+<h3>Upcoming Hikes</h3>
+
+<p>
+Reserve your next adventure.
+</p>
+
 </a>
+
+<a href="/private-group-hikes.html"
+class="cta-card">
+
+🏕️
+
+<h3>Private Hikes</h3>
+
+<p>
+
+Plan a custom experience.
+
+</p>
+
+</a>
+
+<a href="/contact.html"
+class="cta-card">
+
+🌳
+
+<h3>Volunteer</h3>
+
+<p>
+
+Join conservation activities.
+
+</p>
+
+</a>
+
+<a href="https://wa.me/254743980340"
+class="cta-card">
+
+💬
+
+<h3>Chat on WhatsApp</h3>
+
+<p>
+
+Get quick answers instantly.
+
+</p>
+
+</a>
+
 </div>
+
 </section>
+
 <section class="community-members">
 
 <h2>Meet Our Hiking Community</h2>
@@ -320,19 +409,19 @@ Become a Volunteer
 <div class="members-grid">
 
 <div class="member-card">
-<img src="images/community/hiker1.jpg" alt="Community hiker at Ngong Hills">
+<img src="images/community/hiker1.jpeg" alt="Community hiker at Ngong Hills">
 <h3>Brian</h3>
 <p>Completed 12 hikes with Kijabe Adventures</p>
 </div>
 
 <div class="member-card">
-<img src="images/community/hiker2.jpg" alt="Community hiker at Mount Longonot">
+<img src="images/community/hiker2.jpeg" alt="Community hiker at Mount Longonot">
 <h3>Anne</h3>
 <p>Loves sunrise hikes and trail photography</p>
 </div>
 
 <div class="member-card">
-<img src="images/community/hiker3.jpg" alt="Community hiking group">
+<img src="images/community/hiker3.jpeg" alt="Community hiking group">
 <h3>David</h3>
 <p>Volunteer clean-up hike organizer</p>
 </div>
@@ -372,7 +461,7 @@ Start the Challenge
   <!-- Facebook Feed -->
   <div class="facebook-embed">
     <iframe 
-      src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/YOUR_PAGE_NAME&tabs=timeline&width=340&height=400"
+      src="https://www.facebook.com/plugins/page.php?href=https://web.facebook.com/profile.php?id=61587034792994"
       width="100%" 
       height="400"
       title="Facebook community updates"
@@ -394,13 +483,13 @@ Start the Challenge
 
 <div class="insta-grid">
 
-<img src="images/community/hike1.jpg" alt="Hiking Ngong Hills">
+<img src="images/community/hike1.jpeg" alt="Hiking Ngong Hills">
 
-<img src="images/community/hike2.jpg" alt="Mount Longonot hike">
+<img src="images/community/hike2.jpeg" alt="Mount Longonot hike">
 
-<img src="images/community/hike3.jpg" alt="Community hiking group">
+<img src="images/community/hike3.jpeg" alt="Community hiking group">
 
-<img src="images/community/hike4.jpg" alt="Kenya nature trail">
+<img src="images/community/hike4.jpeg" alt="Kenya nature trail">
 
 </div>
 
@@ -486,20 +575,23 @@ Chat on WhatsApp
       <ul>
         <li><a href="/index.html">Home</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="booking.html">Bookings</a></li>
          <li><a href="/gallery.html">Gallery</a></li>
       </ul>
     </div>
 
   </div>
 
-  <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
-  </p>
+ <p class="copyright">
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
     <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
-
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -516,6 +608,7 @@ Chat on WhatsApp
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>
@@ -523,32 +616,7 @@ Chat on WhatsApp
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
-<script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
-<!-- MOBILE STICKY BOOKING BAR -->
-<div class="mobile-sticky-bar">
 
-  <a href="/upcoming-hiking-events.html"
-     class="sticky-btn upcoming">
-    🎉 Upcoming Hikes
-  </a>
-
-  <a href="/private-group-hikes.html"
-     class="sticky-btn private">
-    💳 Private Hikes
-  </a>
-
-</div>
 </body>
 </html>
 

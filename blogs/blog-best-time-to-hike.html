@@ -262,11 +262,16 @@ While specific pricing and operating hours aren’t detailed in the context, kij
 
   </div>
 
-  <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
-  </p>
+ <p class="copyright">
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
-    <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
 </footer>
 
@@ -285,6 +290,7 @@ While specific pricing and operating hours aren’t detailed in the context, kij
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>

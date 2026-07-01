@@ -229,7 +229,6 @@
       <ul>
         <li><a href="/index.html">Home</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="../booking.html">Bookings</a></li>
          <li><a href="/gallery.html">Gallery</a></li>
           <li><a href="/blogs/blog.html">Blog</a></li>
       </ul>
@@ -238,8 +237,13 @@
   </div>
 
   <p class="copyright">
-    © 2025 Kijabe Adventures. All rights reserved.
-  </p>
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
     <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
@@ -260,6 +264,7 @@
 <script src="js/share.js" defer></script>
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>
