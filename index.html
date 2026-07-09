@@ -56,8 +56,8 @@
        PRELOADS
   ============================ -->
 
-  <link rel="preload" href="/images/kijabe-adventure-logo.png" as="image" fetchpriority="high">
-  <link rel="preload" href="/images/ngong-hills.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="/images/kijabe-adventure-logo.png" as="image">
+  <link rel="preload" href="/images/ngong-hills.webp" as="image">
 
   <!-- ===========================
        FONTS (non-blocking)
@@ -339,8 +339,7 @@
            alt="Kijabe Adventures Logo"
            width="140"
            height="48"
-           class="logo-img"
-           fetchpriority="high">
+           class="logo-img">
     </a>
     <span class="logo-text">Kijabe Adventures</span>
   </div>
@@ -853,7 +852,29 @@
 
   </div>
 </section>
+<!-- ===========================
+     GALLERY SLIDESHOW
+============================ -->
+<section class="gallery-slideshow" aria-labelledby="gallery-title">
+  <h2 id="gallery-title"><i class="fas fa-image" aria-hidden="true"></i> Photos from Our Hikes</h2>
+  <p>Real experiences from real hikers.</p>
 
+  <div class="slideshow"
+       id="slideshow"
+       role="region"
+       aria-roledescription="carousel"
+       aria-label="Hiking gallery slideshow">
+    <div class="slides" id="slides"></div>
+    <button class="slide-btn prev" aria-label="Previous slide">&#10094;</button>
+    <button class="slide-btn next" aria-label="Next slide">&#10095;</button>
+    <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
+  </div>
+</section>
+
+
+<!-- Gallery scripts (deferred — non-blocking) -->
+<script src="js/gallery-images.js" defer></script>
+<script src="js/gallery.js" defer></script>
 <!-- ===========================
      BLOG TEASER
 ============================ -->
@@ -935,7 +956,7 @@
     <div class="footer-section">
       <h3>Community Center</h3>
       <ul>
-        <li><a href="/partnership.html">Partner With Us</a></li>
+        <li><a href="/Partnership.html">Partner With Us</a></li>
         <li><a href="/community.html">Our Community</a></li>
         <li><a href="/safety.html">Safety</a></li>
         <li><a href="/blogs/blog.html">Blog</a></li>
@@ -1058,12 +1079,12 @@
 
   <a href="/upcoming-hiking-events.html"
      class="sticky-btn upcoming">
-    🎉 Upcoming Hikes
+    🎉 Book Upcoming Hike
   </a>
 
   <a href="/private-group-hikes.html"
      class="sticky-btn private">
-    💳 Private Hikes
+    💳 Book Private Hike
   </a>
 
 </div>
