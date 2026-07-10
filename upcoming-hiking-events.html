@@ -671,6 +671,7 @@
 
   </div>
 
+
 <!-- ===========================
      SCRIPTS
 ============================ -->
@@ -686,60 +687,6 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
-<!-- Mobile nav toggle -->
-<script>
-  (function () {
-    var navToggle = document.querySelector('.nav-toggle');
-    var primaryNav = document.getElementById('primary-nav');
-    if (navToggle && primaryNav) {
-      navToggle.addEventListener('click', function () {
-        var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        primaryNav.classList.toggle('open');
-      });
-    }
-  })();
-</script>
-
-<!-- Modal open/close -->
-<script>
-  function openEventModal() {
-    var modal = document.getElementById("eventModal");
-    if (modal) {
-      modal.hidden = false;
-      modal.style.display = "block";
-      // Trap focus to first input
-      var firstInput = modal.querySelector('input, select, button');
-      if (firstInput) firstInput.focus();
-    }
-  }
-
-  function closeEventModal() {
-    var modal = document.getElementById("eventModal");
-    if (modal) {
-      modal.hidden = true;
-      modal.style.display = "none";
-    }
-  }
-
-  // Close on outside click
-  window.addEventListener('click', function (e) {
-    var modal = document.getElementById("eventModal");
-    if (modal && e.target === modal) {
-      closeEventModal();
-    }
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeEventModal();
-    }
-  });
-</script>
-
-
 
 <!-- Service Worker -->
 <script>
