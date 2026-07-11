@@ -675,6 +675,12 @@
 <!-- ===========================
      SCRIPTS
 ============================ -->
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/js/sw.js");
+  }
+</script>
 
 <script src="js/config.js" defer></script>
 <script src="js/countdown.js" defer></script>
@@ -683,17 +689,7 @@
 <script src="js/js/next-hike.js" defer></script>
 <script src="js/mobile.js" defer></script>
 
-<!-- Year -->
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
-<!-- Service Worker -->
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/sw.js");
-  }
-</script>
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 
