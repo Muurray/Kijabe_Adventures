@@ -1292,8 +1292,8 @@ text-align:center;
 /* CENTER TEXT */
 section h1,
 section h2,
-section h3,
-text-align:center;
+section h3 {
+  text-align:center;
 }
 
 /* CENTER LISTS */
@@ -2642,7 +2642,8 @@ input, select {
 
   min-width:90px;
 
-  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .event-countdown span{
@@ -2839,9 +2840,10 @@ input, select {
   align-items: center;
   margin: 0 auto 10px auto;
 }
-.hero-stats span{
+hero-stats span{
     background:rgba(255,255,255,.15);
-    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     padding:.6rem 1rem;
     border-radius:999px;
 }
@@ -2965,137 +2967,7 @@ input, select {
     opacity:.95;
 
 }
-/* =========================
-   MOBILE STICKY ACTION BAR
-========================= */
 
-.mobile-sticky-bar{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    display:none;
-    z-index:9999;
-
-    background:#fff;
-    box-shadow:0 -3px 15px rgba(0,0,0,.15);
-
-    grid-template-columns:repeat(3,1fr);
-}
-
-.mobile-sticky-bar .sticky-btn{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    padding:12px 4px;
-
-    text-decoration:none;
-    color:#fff;
-
-    font-weight:600;
-    font-size:.82rem;
-
-    transition:.25s;
-}
-
-.mobile-sticky-bar i{
-    font-size:20px;
-    margin-bottom:4px;
-}
-
-.mobile-sticky-bar span{
-    font-size:12px;
-}
-
-.upcoming{
-    background:#2c6e49;
-}
-
-.private{
-    background:#ff9800;
-}
-
-.whatsapp{
-    background:#25D366;
-}
-
-.mobile-sticky-bar .sticky-btn:active{
-    transform:scale(.97);
-}
-
-@media(max-width:768px){
-
-.mobile-sticky-bar{
-    display:grid;
-}
-
-body{
-    padding-bottom:75px;
-}
-
-}
-
-@media(min-width:769px){
-
-.mobile-sticky-bar{
-    display:none;
-}
-
-}
-.sticky-btn.active{
-    background:#1b4332;
-    pointer-events:none;
-}
-.mobile-sticky-bar{
-    animation:slideUp .35s ease;
-}
-
-@keyframes slideUp{
-
-from{
-    transform:translateY(100%);
-}
-
-to{
-    transform:translateY(0);
-}
-
-}
-.mobile-sticky-bar{
-    transition:transform .3s ease;
-}
-.mobile-sticky-bar{
-    transition:transform .3s ease;
-}
-
-.sticky-btn.active{
-
-    background:#1f4d36;
-
-    pointer-events:none;
-
-    opacity:.95;
-
-}
-body.menu-open{
-    overflow:hidden;
-}
-
-.mobile-sticky-bar{
-    transition:transform .3s ease;
-}
-
-.mobile-sticky-bar.hidden{
-    transform:translateY(100%);
-}
-
-.sticky-btn.active{
-    pointer-events:none;
-    opacity:.9;
-}
 .breadcrumb{
 
 max-width:1200px;
@@ -3128,65 +3000,79 @@ margin:0 6px;
 ========================================== */
 
 .mobile-sticky-bar{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    display:none;
-    z-index:9999;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
 
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
 
-    background:#fff;
-    box-shadow:0 -3px 15px rgba(0,0,0,.15);
+    background: #fff;
+    box-shadow: 0 -3px 15px rgba(0,0,0,.15);
 
-    transition:transform .3s ease;
+    transform: translateY(100%);
+    transition: transform .3s ease;
 }
 
+/* Show after JS adds .show */
+.mobile-sticky-bar.show{
+    transform: translateY(0);
+}
+
+/* Hide while scrolling down */
 .mobile-sticky-bar.hidden{
-    transform:translateY(100%);
+    transform: translateY(100%);
 }
 
 .sticky-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    padding: 15px 10px;
 
-    padding:15px 10px;
+    text-align: center;
+    text-decoration: none;
 
-    text-decoration:none;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 600;
 
-    color:#fff;
-
-    font-size:.95rem;
-    font-weight:600;
-
-    text-align:center;
+    transition: opacity .25s ease;
 }
 
 .sticky-btn.upcoming{
-    background:#2c6e49;
+    background: #2c6e49;
 }
 
 .sticky-btn.private{
-    background:#ff9800;
+    background: #ff9800;
+}
+
+.sticky-btn.whatsapp{
+    background: #25D366;
+}
+
+.sticky-btn:active{
+    transform: scale(.97);
 }
 
 .sticky-btn.active{
-    opacity:.9;
-    pointer-events:none;
+    background: #1f4d36;
+    opacity: .9;
+    pointer-events: none;
 }
 
 @media (max-width:768px){
 
     .mobile-sticky-bar{
-        display:grid;
+        display: grid;
     }
 
     body{
-        padding-bottom:70px;
+        padding-bottom: 72px;
     }
 
 }
@@ -3194,15 +3080,7 @@ margin:0 6px;
 @media (min-width:769px){
 
     .mobile-sticky-bar{
-        display:none;
+        display: none;
     }
 
-}
-.mobile-sticky-bar {
-    transform: translateY(100%);
-    transition: transform .3s ease;
-}
-
-.mobile-sticky-bar.show {
-    transform: translateY(0);
 }

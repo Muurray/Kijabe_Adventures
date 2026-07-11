@@ -602,10 +602,7 @@
         to secure your slot. The balance is paid on the hike day or before.
       </p>
       <div class="step-actions">
-        <a href="https://wa.me/254743980340"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="cta-button whatsapp">
+       <a href="slide#booking-calculator" class="cta-button whatsapp">
           📲 Confirm via WhatsApp
         </a>
       </div>
@@ -1023,6 +1020,12 @@
 <!-- ===========================
      SCRIPTS
 ============================ -->
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/js/sw.js");
+  }
+</script>
 <script src="js/config.js" defer></script>
 <script src="js/countdown.js" defer></script>
 <script src="js/share.js" defer></script>
@@ -1030,17 +1033,7 @@
 <script src="js/js/next-hike.js" defer></script>
 <script src="js/mobile.js" defer></script>
 
-<!-- Service Worker -->
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/sw.js");
-  }
-</script>
 
-<!-- Year -->
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 
  

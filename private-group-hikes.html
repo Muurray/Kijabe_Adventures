@@ -51,13 +51,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
   <link rel="manifest" href="images/favicons/site.webmanifest">
   <link rel="shortcut icon" href="images/favicons/favicon.ico">
-  <meta name="theme-color" content="#2d6a4f">
+
 
   <!-- ===========================
        PRELOADS
   ============================ -->
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="preload" href="css/private-booking.css" as="style">
   <link rel="preload" href="/images/kijabe-adventure-logo.png" as="image">
 
   <!-- ===========================
@@ -270,7 +268,7 @@
       <!-- HIKE TYPE -->
       <div class="form-group">
         <label>Hiker Type</label>
-        <select id="hikeType">
+        <select id="hikeType" title="Select hiker type">
           <option value="">Select Type</option>
           <option value="adult">Adults</option>
           <option value="student">Students</option>
@@ -293,7 +291,7 @@
       <!-- DESTINATION (OPTIONAL FOR FUTURE PRICING) -->
       <div class="form-group">
         <label>Destination</label>
-        <select id="destination">
+        <select id="destination" title="Select destination">
           <option value="">Select Destination</option>
           <option value="Kijabe Hills">Kijabe Hills</option>
           <option value="Ngong Hills">Ngong Hills</option>
@@ -305,7 +303,7 @@
       <!-- RESIDENCY -->
       <div class="form-group">
         <label>Residency</label>
-        <select id="residency">
+        <select id="residency" title="Select Residency">
           <option value="">Select Residency</option>
           <option value="resident">Kenyan Resident</option>
           <option value="nonresident">Non-Resident</option>
@@ -315,7 +313,7 @@
       <!-- TRANSPORT -->
       <div class="form-group">
         <label>Transport Option</label>
-        <select id="transportOption">
+        <select id="transportOption" title="Select Transport Option">
           <option value="">Select Transport</option>
           <option value="self">Own Transport</option>
           <option value="nairobi">Nairobi Pickup</option>

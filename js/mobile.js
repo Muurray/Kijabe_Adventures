@@ -1,7 +1,7 @@
 /* ======================================================
    MOBILE.JS
    Shared mobile functionality for all pages
-   ====================================================== */
+====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -26,14 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             primaryNav.classList.toggle("open");
 
+            document.body.classList.toggle("menu-open");
+
         });
 
     }
-/* ==========================================
-   MOBILE STICKY BOOKING BAR
-========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* ==========================================
+       MOBILE STICKY BOOKING BAR
+    ========================================== */
 
     const stickyBar = document.querySelector(".mobile-sticky-bar");
 
@@ -52,40 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Hide bar while scrolling down
     let lastScroll = 0;
 
     window.addEventListener("scroll", () => {
 
         const currentScroll = window.scrollY;
 
-        if (currentScroll > lastScroll && currentScroll > 100) {
+        // Show bar after scrolling down a little
+        if (currentScroll > 300) {
+            stickyBar.classList.add("show");
+        } else {
+            stickyBar.classList.remove("show");
+        }
+
+        // Hide while scrolling down
+        if (currentScroll > lastScroll && currentScroll > 450) {
             stickyBar.classList.add("hidden");
         } else {
             stickyBar.classList.remove("hidden");
         }
 
         lastScroll = currentScroll;
-
-    });
-
-});
-
-    /* ==========================================
-       ACTIVE STICKY BUTTON
-    ========================================== */
-
-    const page = window.location.pathname;
-
-    document.querySelectorAll(".sticky-btn").forEach(btn => {
-
-        const href = btn.getAttribute("href");
-
-        if (href && page.endsWith(href)) {
-
-            btn.classList.add("active");
-
-        }
 
     });
 
