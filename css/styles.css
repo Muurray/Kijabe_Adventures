@@ -3084,3 +3084,15 @@ margin:0 6px;
     }
 
 }
+.mobile-sticky-bar {
+    transform: translateY(100%);
+    transition: transform .3s ease;
+}
+
+.mobile-sticky-bar.show {
+    transform: translateY(0);
+}
+
+.mobile-sticky-bar.hidden {
+    transform: translateY(100%);
+}
