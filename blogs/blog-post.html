@@ -302,11 +302,9 @@
 
     <div class="footer-section">
       <h3>Community Center</h3>
-       <li><a href="/partnership.html">Partner With Us</a></li>
+       <li><a href="/Partnership.html">Partner With Us</a></li>
        <li><a href="/community.html"> Our Community</a></li>
-        <li><a href="../destinations.html">Destinations</a></li>
         <li><a href="/safety.html">Safety</a></li>
-        <li><a href="/blogs/blog.html">Blog</a></li>
   
     </div>
 
@@ -325,7 +323,6 @@
         <li><a href="/index.html">Home</a></li>
         <li><a href="/contact.html">Contact</a></li>
          <li><a href="/gallery.html">Gallery</a></li>
-          <li><a href="/blogs/blog.html">Blog</a></li>
       </ul>
     </div>
 
@@ -353,32 +350,20 @@ document.getElementById("year").textContent =
 </a>
 
 <!-- Scripts -->
-<!-- Scripts -->
-<script src="js/config.js" defer></script>
-<script src="js/countdown.js" defer></script>
-<script src="js/share.js" defer></script>
-<script src="js/calculator.js" defer></script>
-<script src="js/js/next-hike.js" defer></script>
-<script src="js/mobile.js" defer></script>
+<script src="../js/config.js" defer></script>
+<script src="../js/countdown.js" defer></script>
+<script src="../js/share.js" defer></script>
+<script src="../js/calculator.js" defer></script>
+<script src="../js/js/next-hike.js" defer></script>
+<script src="../js/mobile.js" defer></script>
 
 <!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/sw.js");
+    navigator.serviceWorker.register("../js/sw.js");
   }
 </script>
-<script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
+
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 
