@@ -7,6 +7,12 @@
  * ==========================================================
  */
 
+function resolveAssetUrl(value) {
+  if (!value) return "";
+  if (/^(https?:)?\/\//i.test(value) || value.startsWith("/") || value.startsWith("data:")) return value;
+  return value.startsWith("../") ? value : "/" + value.replace(/^\.\//, "").replace(/^\.\.\//, "");
+}
+
 // Read URL parameter (?id=xxxx)
 const blogId = new URLSearchParams(window.location.search).get("id");
 
@@ -68,8 +74,9 @@ async function loadBlogPost() {
  * Render blog post content
  */
 function renderPost(post) {
+  const resolvedImage = resolveAssetUrl(post.image);
   document.getElementById("blog-title").textContent = post.title;
-  document.getElementById("blog-image").src = post.image;
+  document.getElementById("blog-image").src = resolvedImage;
   document.getElementById("blog-image").alt = post.title;
   document.getElementById("blog-content").innerHTML = post.content;
 
@@ -171,15 +178,18 @@ function updateMetaTags(post) {
   if (metaDesc) metaDesc.setAttribute("content", post.excerpt);
 
   // OG tags
+  const resolvedImage = resolveAssetUrl(post.image);
+  const absoluteImageUrl = resolvedImage.startsWith("http") ? resolvedImage : `https://kijabeadventures.com${resolvedImage}`;
+
   updateOg("og:title", post.title);
   updateOg("og:description", post.excerpt);
-  updateOg("og:image", post.image);
+  updateOg("og:image", absoluteImageUrl);
   updateOg("og:url", window.location.href);
 
   // Twitter tags
   updateTwitter("twitter:title", post.title);
   updateTwitter("twitter:description", post.excerpt);
-  updateTwitter("twitter:image", post.image);
+  updateTwitter("twitter:image", absoluteImageUrl);
 
   // JSON-LD Structured Data
   const schemaEl = document.getElementById("article-schema");
@@ -194,7 +204,7 @@ function updateMetaTags(post) {
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
-      "image": post.image,
+      "image": absoluteImageUrl,
       "author": {
         "@type": "Organization",
         "name": post.author || "Kijabe Adventures Team"
@@ -204,7 +214,7 @@ function updateMetaTags(post) {
         "name": "Kijabe Adventures",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://kijabeadventures.com/images/logo.png"
+          "url": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
         }
       },
       "datePublished": post.date,
@@ -249,7 +259,7 @@ function loadRelatedPosts(posts, currentId) {
     const card = `
       <div class="blog-card">
         <div class="blog-card-image">
-          <img src="${post.image}" alt="${post.title}" loading="lazy">
+          <img src="${resolveAssetUrl(post.image)}" alt="${post.title}" loading="lazy">
         </div>
         <div class="blog-card-content">
           <span class="blog-date">${formatted}</span>

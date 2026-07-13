@@ -56,7 +56,7 @@
   ============================ -->
   <link rel="preload" href="../css/styles.css" as="style">
   <link rel="preload" href="../css/blogs.css" as="style">
-  <link rel="preload" href="../images/logo.png" as="image">
+  <link rel="preload" href="../images/kijabe-adventure-logo.png" as="image">
 
   <!-- ===========================
        CSS
@@ -104,7 +104,7 @@
       "name": "Kijabe Adventures",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://kijabeadventures.com/images/logo.png"
+        "url": "https://kijabeadventures.com/images/kijabe-adventure-logo.png"
       }
     },
     "datePublished": "2026-01-01"
@@ -159,17 +159,25 @@
        OG TAGS, TWITTER, CANONICAL
   ============================ -->
   <script>
+    function resolveAssetUrl(value) {
+      if (!value) return "";
+      if (/^(https?:)?\/\//i.test(value) || value.startsWith("/") || value.startsWith("data:")) return value;
+      return "/" + value.replace(/^\.\//, "").replace(/^\.\.\//, "");
+    }
+
     async function loadDynamicSEO() {
       const params = new URLSearchParams(window.location.search);
       const postId = params.get("id");
-      if (!postId) return;  // HTML-only blog pages work fine
+      if (!postId) return;
 
-      const res = await fetch("../blog-data/posts.json");
+      const res = await fetch("../data/blogs.json");
       const posts = await res.json();
       const post = posts.find(p => p.id === postId);
       if (!post) return;
 
-      // Update SEO Tags
+      const imageUrl = resolveAssetUrl(post.image);
+      const absoluteImageUrl = imageUrl.startsWith("http") ? imageUrl : `https://kijabeadventures.com${imageUrl}`;
+
       document.getElementById("dynamic-title").innerText = post.title;
       document.getElementById("dynamic-desc").setAttribute("content", post.excerpt || post.description);
 
@@ -179,24 +187,23 @@
 
       document.getElementById("og-title").content = post.title;
       document.getElementById("og-desc").content = post.excerpt;
-      document.getElementById("og-image").content = "https://kijabeadventures.com/" + post.image;
+      document.getElementById("og-image").content = absoluteImageUrl;
 
       document.getElementById("tw-title").content = post.title;
       document.getElementById("tw-desc").content = post.excerpt;
-      document.getElementById("tw-image").content = "https://kijabeadventures.com/" + post.image;
+      document.getElementById("tw-image").content = absoluteImageUrl;
 
-      // Structured Data
       const schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.excerpt,
-        "image": "https://kijabeadventures.com/" + post.image,
+        "image": absoluteImageUrl,
         "author": { "@type": "Organization", "name": post.author || "Kijabe Adventures" },
         "publisher": {
           "@type": "Organization",
           "name": "Kijabe Adventures",
-          "logo": { "@type": "ImageObject", "url": "https://kijabeadventures.com/images/logo.png" }
+          "logo": { "@type": "ImageObject", "url": "https://kijabeadventures.com/images/kijabe-adventure-logo.png" }
         },
         "datePublished": post.date
       };
@@ -210,7 +217,7 @@
 <header>
   <div class="logo">
     <a href="/index.html" aria-label="Kijabe Adventures Home">
-      <img src="../images/logo.png" alt="Kijabe Adventures Logo" width="140" loading="lazy">
+      <img src="../images/kijabe-adventure-logo.png" alt="Kijabe Adventures Logo" width="140" loading="lazy">
     </a>
     <span class="logo-text">Kijabe Adventures</span>
   </div>
