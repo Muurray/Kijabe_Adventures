@@ -3083,3 +3083,383 @@ margin:0 6px;
     }
 
 }
+/* ======================================
+   PARTNERS & ASSOCIATIONS
+====================================== */
+
+.partners-section{
+
+    background:#f8faf8;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    border-top:1px solid #e5e5e5;
+
+}
+
+.partners-section h2{
+
+    color:#14532d;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.partners-section p{
+
+    max-width:800px;
+
+    margin:0 auto 40px;
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.partners-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+.partners-grid a{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:.3s;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.partners-grid a:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+}
+
+.partners-grid img{
+
+    max-width:110px;
+
+    max-height:80px;
+
+    width:auto;
+
+    filter:grayscale(100%);
+
+    opacity:.8;
+
+    transition:.3s;
+
+}
+
+.partners-grid a:hover img{
+
+    filter:none;
+
+    opacity:1;
+
+}
+
+@media(max-width:768px){
+
+    .partners-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}/* ==========================
+   STAFF LOGIN BUTTON
+========================== */
+
+.staff-login-btn{
+
+    margin-left:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border:2px solid #ff9800;
+
+    border-radius:30px;
+
+    background:transparent;
+
+    color:#ff9800;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.staff-login-btn:hover{
+
+    background:#ff9800;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(255,152,0,.35);
+
+}
+@media (max-width:768px){
+
+    .primary-nav{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .staff-login-btn{
+
+        margin-left:0;
+
+        width:100%;
+
+        justify-content:center;
+
+        margin-top:10px;
+
+    }
+
+}
+.primary-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.primary-nav a,
+.staff-login-btn{
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+/*=============================
+MODAL
+=============================*/
+
+.staff-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.6);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.staff-modal.active{
+
+    display:flex;
+
+}
+
+.staff-card{
+
+    width:420px;
+
+    max-width:95%;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    position:relative;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.staff-logo{
+
+    width:80px;
+
+    margin-bottom:15px;
+
+}
+
+.staff-card h2{
+
+    color:#0b6b3a;
+
+    margin-bottom:12px;
+
+}
+
+.staff-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.staff-card p{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    margin-bottom:20px;
+
+}
+
+.input-box i{
+
+    color:#888;
+
+    margin-right:10px;
+
+}
+
+.input-box input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    font-size:1rem;
+
+}
+
+.staff-card button[type="submit"]{
+
+    width:100%;
+
+    background:#0b6b3a;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.staff-card button[type="submit"]:hover{
+
+    background:#0d7a42;
+
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:12px;
+
+    right:15px;
+
+    border:none;
+
+    background:none;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+}
+.staff-error{
+
+    display:none;
+
+    margin:15px 0;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#ffe9e9;
+
+    border-left:5px solid #d32f2f;
+
+    color:#b71c1c;
+
+    font-size:.95rem;
+
+    line-height:1.5;
+
+    text-align:left;
+
+}
