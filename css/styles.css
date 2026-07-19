@@ -3193,7 +3193,8 @@ margin:0 6px;
 
     }
 
-}/* ==========================
+}
+/* ==========================
    STAFF LOGIN BUTTON
 ========================== */
 
@@ -3445,5 +3446,25 @@ MODAL
     line-height:1.5;
 
     text-align:left;
+
+}
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+@media (max-width:768px){
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.staff-login-btn{
+    padding:4px 8px;
+    font-size:.75rem;
+}
 
 }
