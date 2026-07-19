@@ -46,24 +46,21 @@ Social Sharing Widget
 
     }
 
-    function shareText() {
+function shareText() {
 
-        return `🥾 KIJABE HILLS SCENIC GROUP HIKE
+    return `🥾 ${title}
 
 📅 ${eventDate}
 
-⏳ ${getCountdown()}
+🔥 ${getCountdown()}
 
-✅ Book your slot
-✅ Use our hike price calculator
-✅ Book private group hikes
-
-💳 Pay only a 30% booking fee via M-Pesa
+✅ Guided hike
+✅ Beginner friendly
+✅ Book online
 
 🌍 ${pageURL}`;
 
-    }
-
+}
     /* ========================================= */
 
     const shareBtn = document.getElementById("shareBtn");
