@@ -1175,10 +1175,11 @@ Book Your Next Hike
 
     <div class="staff-card">
 
-        <button type="button"
-                class="close-modal"
-                id="closeStaffModal"
-                aria-label="Close">
+        <button
+            type="button"
+            class="close-modal"
+            id="closeStaffModal"
+            aria-label="Close">
             &times;
         </button>
 
@@ -1188,19 +1189,25 @@ Book Your Next Hike
 
         <p>Please enter your staff password to continue.</p>
 
-        <form id="staffLoginForm" action="staff/index.html" method="post">
+        <form id="staffLoginForm" novalidate>
+
+            <!-- Hidden username for browser accessibility -->
+            <input
+                type="text"
+                name="username"
+                autocomplete="username"
+                hidden>
 
             <div class="input-box">
-
                 <i class="fas fa-lock"></i>
 
                 <input
                     id="staffPassword"
+                    name="password"
                     type="password"
                     placeholder="Enter Staff Password"
                     autocomplete="current-password"
                     required>
-
             </div>
 
             <div id="staffError" class="staff-error"></div>
