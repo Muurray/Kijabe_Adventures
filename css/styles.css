@@ -3194,9 +3194,7 @@ margin:0 6px;
     }
 
 }
-/* ==========================
-   STAFF LOGIN BUTTON
-========================== */
+
 
 /* ==========================
    STAFF LOGIN BUTTON
@@ -3410,22 +3408,34 @@ MODAL
 }
 
 .close-modal{
-
     position:absolute;
-
-    top:12px;
-
+    top:15px;
     right:15px;
 
+    width:42px;
+    height:42px;
+
     border:none;
+    border-radius:50%;
 
-    background:none;
+    background:#f5f5f5;
+    color:#555;
 
-    font-size:1.8rem;
+    font-size:28px;
+    line-height:1;
 
     cursor:pointer;
 
+    transition:.25s;
 }
+
+.close-modal:hover{
+    background:#ff9800;
+    color:#fff;
+    transform:rotate(90deg);
+}
+
+
 .staff-error{
 
     display:none;
