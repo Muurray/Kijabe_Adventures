@@ -3091,7 +3091,7 @@ margin:0 6px;
 
     background:#f8faf8;
 
-    padding:60px 20px;
+    padding:40px 20px;
 
     text-align:center;
 
@@ -3235,11 +3235,9 @@ margin:0 6px;
     background:#ff9800;
     color:#fff;
 
-}
+  transform:translateY(-2px);
 
-    transform:translateY(-2px);
-
-    box-shadow:0 8px 20px rgba(255,152,0,.35);
+  box-shadow:0 8px 20px rgba(255,152,0,.35);
 
 }
 @media (max-width:768px){
