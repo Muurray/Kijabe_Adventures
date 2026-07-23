@@ -148,7 +148,7 @@ main.blog-page .related-posts {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    color: #666;
+    color: #fbfbff;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
@@ -218,7 +218,7 @@ main.blog-page .related-posts {
 
 .blog-post-content li {
     margin-bottom: 0.5rem;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 .blog-post-content blockquote {
@@ -2154,4 +2154,80 @@ width:80px;
 
 border-radius:50%;
 
+}
+.blog-post-header{
+    background: linear-gradient(
+        135deg,
+        #14532d,
+        #166534
+    );
+    color:#fff;
+    text-align:center;
+    padding:70px 30px;
+    border-radius:18px;
+    margin-bottom:35px;
+}
+
+.blog-post-header h1{
+    color:#fff;
+    font-size:clamp(2rem,5vw,3.8rem);
+    line-height:1.15;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.blog-meta{
+    color:rgba(255,255,255,.9);
+    font-size:1rem;
+}
+.blog-post-header{
+    position:relative;
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("../images/kijabe-hills.webp") center/cover no-repeat;
+    color:#fff;
+    padding:90px 30px;
+    border-radius:18px;
+    overflow:hidden;
+}
+.blog-post-header h1{
+    text-shadow:
+        0 3px 8px rgba(0,0,0,.35);
+}
+.blog-post-header{
+    position:relative;
+}
+
+.blog-post-header>*{
+    position:relative;
+    z-index:2;
+}
+/* ======================================
+   BLOG IMAGE CAPTIONS
+====================================== */
+
+.blog-caption,
+figure figcaption,
+figcaption {
+    display: block;
+    margin: 0.8rem auto 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 600;          /* Semi-bold */
+    color: #555;
+    line-height: 1.6;
+    max-width: 90%;
+}
+.blog-figure {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.blog-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto;
 }
