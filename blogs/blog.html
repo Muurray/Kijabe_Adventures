@@ -169,23 +169,48 @@
   <!-- ===========================
        FEATURED ARTICLES
   ============================ -->
-  <section class="blog-list-container article-section" id="featuredArticles" aria-labelledby="featured-title">
+  <div class="blog-tools">
 
-    <h2 class="section-title" id="featured-title">Featured Articles</h2>
-    <p class="section-subtitle">Hand-picked guides and tips from our team.</p>
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input
+            type="search"
+            id="searchBar"
+            placeholder="Search Articles..."
+            autocomplete="off">
+    </div>
 
-    <label for="searchBar" class="sr-only">Search featured articles</label>
-    <input type="search"
-           id="searchBar"
-           class="blog-search"
-           placeholder="Search articles..."
-           aria-label="Search featured articles"
-           autocomplete="off">
+    <div class="category-filters">
 
+
+    <button class="filter-btn active" data-category="all">All</button>
+
+    <button class="filter-btn" data-category="hiking">Hiking Guides</button>
+
+    <button class="filter-btn" data-category="destinations">Destinations</button>
+
+    <button class="filter-btn" data-category="history">History</button>
+
+    <button class="filter-btn" data-category="wildlife">Wildlife</button>
+
+    <button class="filter-btn" data-category="safety">Safety</button>
+
+    <button class="filter-btn" data-category="travel">Travel Tips</button>
+
+    <button class="filter-btn" data-category="family">Family</button>
+
+    <button class="filter-btn" data-category="conservation">Conservation</button>
+
+</div> <!-- category-filters -->
+
+</div> <!-- blog-tools -->
     <div id="blogGrid" class="blog-grid" aria-live="polite" aria-atomic="false">
 
       <!-- CARD 1 -->
-      <article class="blog-card" data-title="10 essential safari hiking tips for beginners">
+   <article
+    class="blog-card"
+    data-title="10 essential safari hiking tips for beginners"
+    data-category="hiking">
         <img src="../images/blogs/safari-tips.jpeg"
              alt="Hiker on a safari trail in Kenya at sunrise"
              width="400" height="260"
@@ -213,7 +238,10 @@
       </article>
 
       <!-- CARD 2 -->
-      <article class="blog-card" data-title="is kenya safe for tourists">
+     <article
+    class="blog-card"
+    data-title="is kenya safe for tourists"
+    data-category="safety travel">
         <img src="../images/blogs/caves.jpeg"
              alt="Cave entrance on a guided Kenya hiking trail"
              width="400" height="260"
@@ -241,7 +269,10 @@
       </article>
 
       <!-- CARD 3 -->
-      <article class="blog-card" data-title="how expensive is a safari">
+   <article
+    class="blog-card"
+    data-title="how expensive is a safari"
+    data-category="travel">
         <img src="../images/blogs/plains.jpeg"
              alt="Wide open Kenyan savannah plains on a safari"
              width="400" height="260"
@@ -269,7 +300,10 @@
       </article>
 
       <!-- CARD 4 -->
-      <article class="blog-card" data-title="what is the big five">
+  <article
+    class="blog-card"
+    data-title="what is the big five"
+    data-category="wildlife">
         <img src="../images/blogs/big-five.webp"
              alt="Africa's Big Five animals — elephant, lion, leopard, rhino, buffalo"
              width="400" height="260"
@@ -297,7 +331,10 @@
       </article>
 
       <!-- CARD 5 -->
-      <article class="blog-card" data-title="best time to hike each mountain">
+    <article
+    class="blog-card"
+    data-title="best time to hike each mountain"
+    data-category="hiking destinations">
         <img src="../images/blogs/hiking-seasons.jpeg"
              alt="Hiker on a misty Kenya mountain trail in the dry season"
              width="400" height="260"
@@ -325,7 +362,10 @@
       </article>
 
       <!-- CARD 6 -->
-      <article class="blog-card" data-title="why forest conservation matters">
+<article
+    class="blog-card"
+    data-title="why forest conservation matters"
+    data-category="conservation hiking">
         <img src="../images/blogs/forest-conservation.jpeg"
              alt="Lush Kenyan forest canopy — forest conservation for hikers"
              width="400" height="260"
@@ -353,7 +393,10 @@
       </article>
 
       <!-- CARD 7 -->
-      <article class="blog-card" data-title="mount longonot guide">
+<article
+    class="blog-card"
+    data-title="mount longonot guide"
+    data-category="destinations hiking">
         <img src="../images/blogs/mt longonot.jpeg"
              alt="Mount Longonot crater rim hike in Kenya"
              width="400" height="260"
@@ -381,7 +424,10 @@
       </article>
 
       <!-- CARD 8 -->
-      <article class="blog-card" data-title="best day hikes near nairobi">
+    <article
+    class="blog-card"
+    data-title="best day hikes near nairobi"
+    data-category="destinations hiking">
         <img src="../images/blogs/nairobi-hikes.jpeg"
              alt="Scenic day hike trail near Nairobi, Kenya"
              width="400" height="260"
@@ -409,7 +455,10 @@
       </article>
 
       <!-- CARD 9 -->
-      <article class="blog-card" data-title="scavenger hunt hikes">
+     <article
+    class="blog-card"
+    data-title="scavenger hunt hikes"
+    data-category="family hiking">
         <img src="../images/blogs/scavenger-hunt-hikes.PNG"
              alt="Group doing a scavenger hunt hike in Kenya"
              width="400" height="260"
@@ -435,8 +484,12 @@
           </div>
         </div>
       </article>
-
-      <article class="blog-card" data-title="old kijabe township history hiking destination">
+      
+      <!-- CARD 10 -->
+<article
+    class="blog-card"
+    data-title="old kijabe township history hiking destination"
+    data-category="history destinations hiking">
         <img src="../images/blogs/rails.jpeg"
              alt="Historical railway tracks near Old Kijabe Township in Kenya"
              width="400" height="260"
@@ -464,7 +517,6 @@
       </article>
 
     </div>
-    
     <!-- /#blogGrid -->
 
     <!-- PAGINATION -->
@@ -506,7 +558,7 @@
     <div class="footer-section">
       <h3>Community Center</h3>
       <ul>
-        <li><a href="/partnership.html">Partner With Us</a></li>
+        <li><a href="/Partnership.html">Partner With Us</a></li>
         <li><a href="/community.html">Our Community</a></li>
         <li><a href="/safety.html">Safety</a></li>
         <li><a href="/blogs/blog.html">Blog</a></li>
@@ -543,8 +595,6 @@
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="/gallery.html">Gallery</a></li>
         <li><a href="/blogs/blog.html">Blog</a></li>
-        <li><a href="/upcoming-hiking-events.html">Upcoming Hikes</a></li>
-        <li><a href="/private-group-hikes.html">Private Group Hikes</a></li>
       </ul>
     </div>
 
@@ -621,76 +671,58 @@
 
 <!-- Featured articles — pagination + search -->
 <script>
-  (function () {
-    var PER_PAGE     = 3;
-    var currentPage  = 1;
-    var allCards     = Array.from(document.querySelectorAll('#blogGrid .blog-card'));
-    var totalPages   = Math.ceil(allCards.length / PER_PAGE);
-    var isSearching  = false;
+ document.addEventListener("DOMContentLoaded", function () {
 
-    var prevBtn       = document.getElementById('featuredPrevBtn');
-    var nextBtn       = document.getElementById('featuredNextBtn');
-    var pageIndicator = document.getElementById('pageIndicator');
-    var pagination    = document.getElementById('featuredPagination');
-    var searchBar     = document.getElementById('searchBar');
+    const searchBar = document.getElementById("searchBar");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".blog-card");
 
-    function showPage(page) {
-      var start = (page - 1) * PER_PAGE;
-      var end   = start + PER_PAGE;
+    let selectedCategory = "all";
 
-      allCards.forEach(function (card, i) {
-        card.hidden = !(i >= start && i < end);
-      });
+    function filterCards() {
 
-      prevBtn.disabled = page <= 1;
-      nextBtn.disabled = page >= totalPages;
+        const search = searchBar.value.toLowerCase();
 
-      if (pageIndicator) {
-        pageIndicator.textContent = 'Page ' + page + ' of ' + totalPages;
-      }
+        cards.forEach(card => {
 
-      currentPage = page;
-    }
+            const title = card.dataset.title.toLowerCase();
+            const categories = card.dataset.category || "";
 
-    function runSearch(q) {
-      q = q.trim().toLowerCase();
-      isSearching = !!q;
+            const matchesSearch = title.includes(search);
 
-      if (isSearching) {
-        pagination.hidden = true;
-        allCards.forEach(function (card) {
-          card.hidden = !card.dataset.title.includes(q);
+            const matchesCategory =
+                selectedCategory === "all" ||
+                categories.includes(selectedCategory);
+
+            card.style.display =
+                (matchesSearch && matchesCategory)
+                ? ""
+                : "none";
+
         });
-      } else {
-        pagination.hidden = false;
-        showPage(currentPage);
-      }
+
     }
 
-    prevBtn.addEventListener('click', function () {
-      if (currentPage > 1) showPage(currentPage - 1);
+    searchBar.addEventListener("input", filterCards);
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            filterButtons.forEach(btn =>
+                btn.classList.remove("active"));
+
+            this.classList.add("active");
+
+            selectedCategory = this.dataset.category;
+
+            filterCards();
+
+        });
+
     });
 
-    nextBtn.addEventListener('click', function () {
-      if (currentPage < totalPages) showPage(currentPage + 1);
-    });
-
-    searchBar.addEventListener('input', function () {
-      runSearch(this.value);
-    });
-
-    /* Clear search on Escape */
-    searchBar.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        this.value = '';
-        runSearch('');
-        this.blur();
-      }
-    });
-
-    /* Init */
-    showPage(1);
-  })();
+});
 </script>
 
 <!-- Scripts -->
