@@ -84,60 +84,6 @@ header {
 /* Primary navigation — real markup uses a plain <nav>, not .primary-nav.
    Kept .primary-nav rules as an alias in case older markup still
    references that class; safe to delete once confirmed unused. */
-nav {
-  grid-area: nav;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-  letter-spacing: 0.01em;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--accent);
-}
-
-.primary-nav { gap: 22px; }
-.primary-nav a { font-size: 0.95rem; }
-
-.nav-toggle {
-  display: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.35rem 0.6rem;
-  border-radius: 8px;
-  font-size: 1.2rem;
-}
-
-.next-hike-badge {
-  grid-area: badge;
-  display: inline-block;
-  margin: 0.8rem auto 0;
-  background: #70af4c;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-  .tagline { display: none; }
-  header { padding: 10px 4%; }
-  .logo-img { max-height: 38px; }
-  .logo-text { font-size: 1.15rem; }
-  .next-hike-badge { font-size: 0.75rem; padding: 7px 12px; }
-}
 
 /* =========================
    HERO BANNER
@@ -259,8 +205,8 @@ section ul {
 }
 
 .blog-post-image {
-  width: 100%;
-  height: 350px;
+  width: 50%;
+  height: 150px;
   object-fit: cover;
   display: block;
   border-bottom: 1px solid #eee;
@@ -1699,4 +1645,56 @@ background:#f9f9f9;
 .filter-btn.active{
     background:#2d6a4f;
     color:#fff;
+}
+header{
+    position:relative;
+    z-index:1000;
+}
+
+.primary-nav{
+    z-index:1001;
+}
+.blog-post img.float-right{
+    float:right;
+    width:320px;
+    margin:10px 0 20px 25px;
+    border-radius:10px;
+}
+
+.blog-post img.float-left{
+    float:left;
+    width:320px;
+    margin:10px 25px 20px 0;
+    border-radius:10px;
+}
+
+.blog-post::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+/* Small images inside blog articles */
+.blog-post-content img,
+.blog-content img,
+.blog-post img {
+    display: block;
+    width: 100%;
+    max-width: 320px;      /* Change to 250-400px as desired */
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+}
+.blog-figure {
+    max-width: 320px;
+    margin: 20px auto;
+}
+
+.blog-figure img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-figure figcaption {
+    font-size: 0.85rem;
 }

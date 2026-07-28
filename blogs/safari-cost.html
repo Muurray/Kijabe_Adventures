@@ -179,7 +179,21 @@
         </ul>
 
 </div>
-  </article></main>
+  </article>
+  <section class="author-box">
+      <img src="../images/kijabe-adventure-logo.png" alt="Kijabe Adventures logo" title="Kijabe Adventures" width="80" height="80">
+      <div>
+        <h3>Written by Kijabe Adventures</h3>
+        <p>Our local guides have years of experience leading safe, enjoyable hiking tours across Kenya, sharing trail knowledge, history, and conservation insights.</p>
+      </div>
+    </section>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> ›
+      <a href="/blogs/blog.html">Blog</a> ›
+      <span>How Expensive Is a Safari in Kenya?</span>
+    </nav>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -195,7 +209,7 @@
     <div class="footer-section">
       <h3>Community Center</h3>
       <ul>
-       <li><a href="../partnership.html">Partner With Us</a></li>
+       <li><a href="../Partnership.html">Partner With Us</a></li>
        <li><a href="../community.html"> Our Community</a></li>
        <li><a href="../safety.html">Safety</a></li>
        <li><a href="../blogs/blog.html">Blog</a></li>
@@ -261,18 +275,7 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
-<script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-</script>
+
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 

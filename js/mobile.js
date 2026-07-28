@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentScroll = window.scrollY;
 
         // Show bar after scrolling down a little
-        if (currentScroll > 300) {
+        if (currentScroll > 150) {
             stickyBar.classList.add("show");
         } else {
             stickyBar.classList.remove("show");
         }
 
         // Hide while scrolling down
-        if (currentScroll > lastScroll && currentScroll > 450) {
+        if (currentScroll > lastScroll && currentScroll > 250) {
             stickyBar.classList.add("hidden");
         } else {
             stickyBar.classList.remove("hidden");
