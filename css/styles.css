@@ -3477,3 +3477,71 @@ MODAL
 }
 
 }
+/* ===========================
+   Responsive Tables
+=========================== */
+
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    margin:30px 0;
+}
+
+.comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.comparison-table caption{
+    font-size:1.25rem;
+    font-weight:700;
+    margin-bottom:15px;
+    color:#1b5e20;
+    text-align:left;
+}
+
+.comparison-table th{
+    background:#1b5e20;
+    color:#fff;
+    padding:18px;
+    font-weight:700;
+    text-align:left;
+    font-size:1rem;
+}
+
+.comparison-table td{
+    padding:16px 18px;
+    border-bottom:1px solid #e5e5e5;
+    line-height:1.7;
+}
+
+.comparison-table tr:nth-child(even){
+    background:#f8faf8;
+}
+
+.comparison-table tr:hover{
+    background:#eef7ef;
+}
+
+.comparison-table td:first-child{
+    font-weight:600;
+    color:#1b5e20;
+}
+
+@media(max-width:768px){
+
+.comparison-table{
+    font-size:.9rem;
+}
+
+.comparison-table th,
+.comparison-table td{
+    padding:12px;
+}
+
+}
