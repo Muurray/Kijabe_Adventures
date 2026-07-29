@@ -106,7 +106,7 @@ content="Discover why forest conservation is essential for hikers in Kenya. Lear
 
     <!-- PRIMARY NAVIGATION (NO DROPDOWNS) -->
     <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
-        <a href="/index.html">Home</a>
+        <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
         <a href="/community.html">Community</a>
@@ -120,6 +120,7 @@ content="Discover why forest conservation is essential for hikers in Kenya. Lear
     Loading...
 </a>
 </header>
+<div id="reading-progress"></div>
     <main class="blog-page">
   <article class="blog-post">
     <header class="blog-post-header">
@@ -592,6 +593,28 @@ Forests provide shade, protect trails from erosion, support wildlife, and create
 </details>
 </section>
 </main>
+<section class="author-box">
+
+<img src="../images/kijabe-adventure-logo.png"
+     alt="Kijabe Adventures"
+     width="50"
+     height="50">
+
+<div>
+
+<h3>Written by Kijabe Adventures</h3>
+
+<p>
+
+Our local guides have years of experience leading hiking tours across Kijabe Hills, Kijabe Forest, Old Kijabe Township, Ngong Hills, Mount Longonot, and other destinations throughout Kenya.
+
+Every article is based on firsthand trail experience, local knowledge, and a commitment to responsible tourism, conservation, and visitor safety.
+
+</p>
+
+</div>
+
+</section>
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
@@ -669,6 +692,14 @@ document.getElementById("year").textContent =
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/js/sw.js");
   }
+</script>
+<script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
 </script>
 
 <!-- MOBILE STICKY BOOKING BAR -->

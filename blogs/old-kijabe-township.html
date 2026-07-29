@@ -1032,6 +1032,14 @@ document.getElementById("year").textContent =
   }
 </script>
 <script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
+</script>
+<script>
   (function () {
     var navToggle = document.querySelector('.nav-toggle');
     var primaryNav = document.getElementById('primary-nav');
@@ -1072,20 +1080,7 @@ document.getElementById("year").textContent =
     });
   });
 </script>
-<script>
-
-  window.addEventListener("scroll",()=>{
-
-const winScroll=document.documentElement.scrollTop;
-
-const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-const scrolled=(winScroll/height)*100;
-
-document.getElementById("reading-progress").style.width=scrolled+"%";
-
-});
-</script>
+<div id="reading-progress"></div>
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
 

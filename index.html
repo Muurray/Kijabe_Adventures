@@ -368,6 +368,7 @@
     Loading...
 </a>
 </header>
+<div id="reading-progress"></div>
 <main>
 
 <!-- ===========================
@@ -884,16 +885,7 @@
 <!-- Gallery scripts (deferred — non-blocking) -->
 <script src="js/gallery-images.js" defer></script>
 <script src="js/gallery.js" defer></script>
-<!-- ===========================
-     BLOG TEASER
-============================ -->
-<section class="latest-blog">
-  <h2>Hiking Tips &amp; Guides</h2>
-  <p>Learn how to prepare for your next hiking adventure in Kenya.</p>
-  <a href="/blogs/blog.html" class="cta-button">
-    Read Our Hiking Blog
-  </a>
-</section>
+
 
 <!-- ===========================
      FAQ
@@ -1118,6 +1110,14 @@ Book Your Next Hike
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/js/sw.js");
   }
+</script>
+<script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
 </script>
 <script src="js/config.js" defer></script>
 <script src="js/countdown.js" defer></script>

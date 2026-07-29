@@ -70,7 +70,7 @@
     Loading...
 </a>
 </header>
-
+<div id="reading-progress"></div>
 <main class="blog-page">
   <article class="blog-post">
     <header class="blog-post-header">
@@ -217,9 +217,36 @@ While specific pricing and operating hours aren’t detailed in the context, kij
     </div>
   </article>
 
-    <p><a href="/blogs/blog.html" class="blog-btn">← Back to Blog</a></p>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> ›
+      <a href="/blogs/blog.html">Blog</a> ›
+      <span>Best Time to Hike Mautains in Kenya</span>
+    </nav>
 
 </main>
+
+<section class="author-box">
+
+<img src="../images/kijabe-adventure-logo.png"
+     alt="Kijabe Adventures"
+     width="50"
+     height="50">
+
+<div>
+
+<h3>Written by Kijabe Adventures</h3>
+
+<p>
+
+Our local guides have years of experience leading hiking tours across Kijabe Hills, Kijabe Forest, Old Kijabe Township, Ngong Hills, Mount Longonot, and other destinations throughout Kenya.
+
+Every article is based on firsthand trail experience, local knowledge, and a commitment to responsible tourism, conservation, and visitor safety.
+
+</p>
+
+</div>
+
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -297,6 +324,14 @@ document.getElementById("year").textContent =
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/js/sw.js");
   }
+</script>
+<script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
 </script>
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">

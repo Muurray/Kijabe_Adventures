@@ -3545,3 +3545,42 @@ MODAL
 }
 
 }
+
+/* =========================
+   6. SCROLL PROGRESS & BACK-TO-TOP
+========================= */
+#scroll-progress,
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #70af4c, var(--primary));
+  z-index: 9999;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+s

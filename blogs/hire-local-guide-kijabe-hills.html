@@ -807,7 +807,14 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
-
+<script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
+</script>
 <script>
   (function () {
     var navToggle = document.querySelector('.nav-toggle');
@@ -849,14 +856,6 @@ document.getElementById("year").textContent =
   });
 </script>
 
-<script>
-  window.addEventListener("scroll", () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("reading-progress").style.width = scrolled + "%";
-  });
-</script>
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
   <a href="/upcoming-hiking-events.html" class="sticky-btn upcoming">🎉 Book Upcoming Hike</a>

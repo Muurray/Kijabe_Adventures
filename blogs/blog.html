@@ -155,6 +155,7 @@
   </nav>
 
 </header>
+<div id="reading-progress"></div>
 
 <main class="page-content">
 
@@ -571,6 +572,28 @@
     </nav>
 
 </main>
+<section class="author-box">
+
+<img src="../images/kijabe-adventure-logo.png"
+     alt="Kijabe Adventures"
+     width="50"
+     height="50">
+
+<div>
+
+<h3>Written by Kijabe Adventures</h3>
+
+<p>
+
+Our local guides have years of experience leading hiking tours across Kijabe Hills, Kijabe Forest, Old Kijabe Township, Ngong Hills, Mount Longonot, and other destinations throughout Kenya.
+
+Every article is based on firsthand trail experience, local knowledge, and a commitment to responsible tourism, conservation, and visitor safety.
+
+</p>
+
+</div>
+
+</section>
 
 <!-- ===========================
      FOOTER
@@ -654,7 +677,14 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
+<script>
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
+</script>
 
 <!-- Copy-link buttons -->
 <script>

@@ -545,22 +545,8 @@ Visit Kijabe Hills early in the morning for the clearest views of the Great Rift
     <summary><strong>Can I join a guided hike?</strong></summary>
     <p>Yes. Kijabe Adventures organizes regular guided group hikes and private hiking experiences across Kenya.</p>
 </details>
-<section class="author-box">
 
-<img src="../images/kijabe-adventure-logo.png" alt="Kijabe Adventures logo" title="Kijabe Adventures">
 
-<div>
-
-<h3>Written by Kijabe Adventures</h3>
-
-<p>
-Our local guides have years of experience leading safe, enjoyable hiking tours across Kenya, sharing trail knowledge, history, and conservation insights.
-</p>
-
-</div>
-
-</section>
-</p>
 <section class="blog-cta">
 
 <h2>Ready to experience one of these trails? Ready for Your Next Adventure?</h2>
@@ -584,6 +570,7 @@ Private Group Hike
 </a>
 
 </section>
+
 <nav class="breadcrumbs" aria-label="Breadcrumb">
 
 <a href="/">Home</a>
@@ -599,6 +586,28 @@ Private Group Hike
 </nav>
 
  </article>
+ <section class="author-box">
+
+<img src="../images/kijabe-adventure-logo.png"
+     alt="Kijabe Adventures"
+     width="50"
+     height="50">
+
+<div>
+
+<h3>Written by Kijabe Adventures</h3>
+
+<p>
+
+Our local guides have years of experience leading hiking tours across Kijabe Hills, Kijabe Forest, Old Kijabe Township, Ngong Hills, Mount Longonot, and other destinations throughout Kenya.
+
+Every article is based on firsthand trail experience, local knowledge, and a commitment to responsible tourism, conservation, and visitor safety.
+
+</p>
+
+</div>
+
+</section>
  <section class="related-posts">
 
 <h2>Related Articles</h2>
@@ -692,29 +701,16 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
+
 <script>
-  // Simple mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const primaryNav = document.getElementById('primary-nav');
-  if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      primaryNav.classList.toggle('open');
-    });
-  }
-  window.addEventListener("scroll",()=>{
-
-const winScroll=document.documentElement.scrollTop;
-
-const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-const scrolled=(winScroll/height)*100;
-
-document.getElementById("reading-progress").style.width=scrolled+"%";
-
-});
+  window.addEventListener("scroll", () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById("reading-progress").style.width = scrolled + "%";
+  });
 </script>
+  
 
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">
