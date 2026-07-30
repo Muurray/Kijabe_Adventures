@@ -153,5 +153,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url>
+    <loc>https://kijabeadventures.com/gallery.html</loc>
 
+    <lastmod>2026-07-30</lastmod>
+
+    <changefreq>monthly</changefreq>
+
+    <priority>0.8</priority>
+
+    <video:video>
+
+        <video:thumbnail_loc>
+            https://kijabeadventures.com/images/video-thumbnails/kijabe-hills-hike.png
+        </video:thumbnail_loc>
+
+        <video:title>
+            Post-Hike Stretching Exercises | Kijabe Adventures
+        </video:title>
+
+        <video:description>
+            Watch hikers perform essential post-hike stretching exercises after completing a guided Kijabe Hills hiking adventure. Learn simple recovery techniques that reduce muscle soreness and improve flexibility after hiking.
+        </video:description>
+
+        <video:content_loc>
+            https://kijabeadventures.com/videos/site1.mp4
+        </video:content_loc>
+
+        <video:duration>23</video:duration>
+
+        <video:publication_date>
+            2026-07-30T09:00:00+03:00
+        </video:publication_date>
+
+    </video:video>
+
+</url>
 </urlset>

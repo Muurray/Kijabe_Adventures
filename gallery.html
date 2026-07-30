@@ -204,19 +204,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
   </div>
 </section>
-
+<!-- ===========================
+     HIKING VIDEOS
+============================ -->
 <section class="gallery-videos">
-  <h2><i class="fas fa-video"></i> Videos</h2>
-  <p>Short clips from our adventures.</p>
-</section>
-<section id="video-gallery" class="video-gallery">
 
-    <div class="video-item">
-        <video controls width="100%" preload="metadata">
-            <source src="videos/site1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="container">
+
+    <h2><i class="fas fa-video"></i> Hiking Videos & Trail Highlights</h2>
+
+        <p>
+            Watch our guided hiking adventures across Kenya:Recovery is part of every adventure. Watch our hikers cool down with guided post-hike stretching exercises after exploring the scenic Kijabe Hills and the Great Rift Valley with Kijabe Adventures
+        </p>
+
+        <figure class="video-item">
+
+            <video
+                controls
+                preload="metadata"
+                poster="/images/video-thumbnails/kijabe-hills-hike.png"
+                width="100%">
+
+                <source src="/videos/site1.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+          <figcaption>
+          Watch hikers perform essential post-hike stretches after a guided Kijabe Hills hike. These simple recovery exercises help improve flexibility, reduce muscle stiffness and prepare your body for your next hiking adventure.
+          </figcaption>
+
+        </figure>
+
     </div>
+
 </section>
 <!-- ===========================
      BLOG TEASER
@@ -329,6 +350,27 @@ document.getElementById("year").textContent =
   </a>
 
 </div>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"VideoObject",
+  "name":"Kijabe Hills Guided Hiking Adventure",
+  "description":"Watch our guided hike through Kijabe Hills featuring Old Kijabe Township, scenic hiking trails, breathtaking Great Rift Valley viewpoints and nature experiences with Kijabe Adventures.",
+  "thumbnailUrl":"https://kijabeadventures.com/images/video-thumbnails/kijabe-hills-hike.png",
+  "uploadDate":"2026-07-30",
+  "duration":"PT2M30S",
+  "contentUrl":"https://kijabeadventures.com/videos/site1.mp4",
+  "embedUrl":"https://kijabeadventures.com/gallery.html",
+  "publisher":{
+      "@type":"Organization",
+      "name":"Kijabe Adventures",
+      "logo":{
+          "@type":"ImageObject",
+          "url":"https://kijabeadventures.com/images/kijabe-adventure-logo.png",
+      }
+  }
+}
+</script>
 </body>
 </html>
 
