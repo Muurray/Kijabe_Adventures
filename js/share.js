@@ -4,26 +4,24 @@ Kijabe Adventures
 Social Sharing Widget
 =========================================
 */
+
 (() => {
 
     const pageURL = SITE_CONFIG.eventURL;
+
     const title = SITE_CONFIG.eventTitle;
-    const eventDate = SITE_CONFIG.eventDate;
 
-    /**
-     * Returns a live countdown string.
-     */
+    const eventDate = SITE_CONFIG.eventDateText;
+
     function getCountdown() {
-
-       const EVENT_DATE = SITE_CONFIG.eventDate;
 
         const now = Date.now();
 
-        const distance = EVENT_DATE - now;
+        const distance = SITE_CONFIG.eventDate - now;
 
         if (distance <= 0) {
 
-            return "🎉 The hike is happening now!";
+            return "🥾 The hike is happening today!";
 
         }
 
@@ -32,36 +30,38 @@ Social Sharing Widget
 
         const hours =
             Math.floor(
-                (distance % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
+                (distance % (1000 * 60 * 60 * 24))
+                / (1000 * 60 * 60)
             );
 
         const minutes =
             Math.floor(
-                (distance % (1000 * 60 * 60)) /
-                (1000 * 60)
+                (distance % (1000 * 60 * 60))
+                / (1000 * 60)
             );
 
         return `${days} days ${hours} hrs ${minutes} mins remaining`;
 
     }
 
-function shareText() {
+    function shareText() {
 
-    return `🥾 ${title}
+        return `🥾 KIJABE HILLS SCENIC GROUP HIKE
 
 📅 ${eventDate}
 
-🔥 ${getCountdown()}
+⏳ ${getCountdown()}
 
-✅ Guided hike
-✅ Beginner friendly
-✅ Book online
+✅ Book your slot
+✅ Guided by local experts
+✅ Great Rift Valley views
+✅ Private group hikes available
+
+💳 Pay only a 30% booking fee
 
 🌍 ${pageURL}`;
 
-}
-    /* ========================================= */
+    }
 
     const shareBtn = document.getElementById("shareBtn");
     const facebookBtn = document.getElementById("facebookBtn");
@@ -79,21 +79,26 @@ function shareText() {
                 try {
 
                     await navigator.share({
+
                         title,
+
                         text: shareText(),
+
                         url: pageURL
+
                     });
 
-                } catch (e) {
-                    console.log(e);
-                }
+                } catch (e) {}
 
             } else {
 
                 window.open(
+
                     "https://www.facebook.com/sharer/sharer.php?u=" +
                     encodeURIComponent(pageURL),
+
                     "_blank"
+
                 );
 
             }
@@ -107,9 +112,13 @@ function shareText() {
         facebookBtn.onclick = () => {
 
             window.open(
+
                 "https://www.facebook.com/sharer/sharer.php?u=" +
+
                 encodeURIComponent(pageURL),
+
                 "_blank"
+
             );
 
         };
@@ -121,9 +130,13 @@ function shareText() {
         whatsappBtn.onclick = () => {
 
             window.open(
+
                 "https://wa.me/?text=" +
+
                 encodeURIComponent(shareText()),
+
                 "_blank"
+
             );
 
         };
@@ -135,9 +148,13 @@ function shareText() {
         xBtn.onclick = () => {
 
             window.open(
+
                 "https://twitter.com/intent/tweet?text=" +
+
                 encodeURIComponent(shareText()),
+
                 "_blank"
+
             );
 
         };
@@ -149,9 +166,13 @@ function shareText() {
         linkedinBtn.onclick = () => {
 
             window.open(
+
                 "https://www.linkedin.com/sharing/share-offsite/?url=" +
+
                 encodeURIComponent(pageURL),
+
                 "_blank"
+
             );
 
         };
@@ -174,9 +195,9 @@ function shareText() {
 
                 }, 2000);
 
-            } catch (err) {
+            } catch {
 
-                alert("Unable to copy the link.");
+                alert("Unable to copy link.");
 
             }
 

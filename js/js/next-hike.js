@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("SITE_CONFIG not found.");
 
         badges.forEach(badge => {
+
             badge.textContent = "Configuration Error";
+
         });
 
         return;
@@ -33,7 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
             distance / (1000 * 60 * 60 * 24)
         );
 
-        if (daysLeft < 0) daysLeft = 0;
+        if (daysLeft < 0) {
+
+            daysLeft = 0;
+
+        }
 
         const statusLabel =
             SITE_CONFIG.eventStatus === "almost-full"
@@ -46,21 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             badge.classList.add(SITE_CONFIG.eventStatus);
 
-            if (distance <= 0) {
-
-                badge.innerHTML = `
-                    🌄 ${SITE_CONFIG.eventTitle}<br>
-                    🥾 Hiking Today!
-                `;
-
-            } else {
-
-                badge.innerHTML = `
-                    🌄 ${SITE_CONFIG.eventTitle}<br>
-                    ${statusLabel} • 🔥 Only ${daysLeft} ${daysLeft === 1 ? "Day" : "Days"} Left
-                `;
-
-            }
+            badge.innerHTML = `
+                🌄 ${SITE_CONFIG.eventTitle}<br>
+                📅 ${SITE_CONFIG.eventDateText}<br>
+                ${statusLabel} • 🔥 ${daysLeft} ${daysLeft === 1 ? "Day" : "Days"} Left
+            `;
 
         });
 
