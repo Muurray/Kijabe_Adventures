@@ -26,8 +26,9 @@
   ============================ -->
 
 <meta property="og:title" content="Upcoming Hiking Events in Kenya: Kijabe Hills Scenic Group Hike | Kijabe Adventures">
-<meta property="og:description" content="Join our next group hike on Saturday, 1 August 2026. Book online, calculate prices and reserve private hikes.">
-<meta property="og:image" content="https://kijabeadventures.com/images/hike-poster-august-2026.png">
+<meta property="og:description"
+      content="Join our next guided Kijabe Hills group hike. Monthly hiking adventures, online booking, affordable prices and unforgettable experiences near Nairobi.">
+<meta property="og:image" content="https://kijabeadventures.com/images/c:\Users\Muurray\Downloads\upcoming_hiking-event.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://kijabeadventures.com/upcoming-hiking-events.html">
@@ -108,6 +109,97 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kijabe Adventures",
+    "url": "https://kijabeadventures.com",
+    "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png",
+    "sameAs": [
+      "https://www.facebook.com/kijabeadventures",
+      "https://www.instagram.com/kijabeadventures",
+      "https://x.com/kijabeadventure",
+      "https://wa.me/254743980340"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kijabe Adventures",
+    "url": "https://kijabeadventures.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://kijabeadventures.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script> 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kijabeadventures.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Upcoming Hiking Events",
+        "item": "https://kijabeadventures.com/upcoming-hiking-events.html"
+      }
+    ]
+  }
+  </script> 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Upcoming Hiking Events in Kenya | Kijabe Adventures",
+    "url": "https://kijabeadventures.com/upcoming-hiking-events.html",
+    "description": "Join upcoming hiking events in Kenya including Kijabe Hills, Ngong Hills, Karura Forest and Mt Longonot guided hikes. Affordable, beginner friendly and group hiking experiences.",
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the upcoming hiking events in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kijabe Adventures organizes guided hiking events across Kenya, including Kijabe Hills, Ngong Hills, Karura Forest, and Mount Longonot. Check our website for the latest schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I book a hiking event?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can book a hiking event directly on our website by selecting the desired hike, filling out the booking form, and paying the required deposit via M-Pesa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the hikes suitable for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our guided hikes are designed to accommodate hikers of all skill levels, including beginners. Our professional guides ensure a safe and enjoyable experience for everyone."
+        }
+      }
+    ]
+  }
+  </script>
+
 
 </head>
 
@@ -173,13 +265,25 @@
       🌍 Guided Hiking Events Across Kenya
     </span>
 
-    <h1>Upcoming Hiking Events in Kenya</h1>
+    
+    <h1>Upcoming Guided Hiking Events in Kenya</h1>
 
-    <p>
-      Join unforgettable hiking adventures to Kijabe Hills,
-      Ngong Hills, Karura Forest, Mt Longonot and more scenic
-      destinations across Kenya.
-    </p>
+<p class="hero-subtitle">
+Join professionally guided hiking adventures to Kijabe Hills,
+Ngong Hills, Mount Longonot, Karura Forest and Kenya's most
+beautiful trails. Perfect for beginners, families,
+corporate teams and experienced hikers.
+</p>
+⭐⭐⭐⭐⭐ Rated by hikers
+
+✔ Professional Local Guides
+
+✔ Beginner Friendly
+
+✔ Group & Private Hikes
+
+✔ Affordable Packages
+
 
     <div class="hero-buttons">
       <a href="#upcoming-events" class="cta-button primary">
@@ -196,6 +300,7 @@
 <!-- ===========================
      FEATURED EVENT  (single — no duplicate)
 ============================ -->
+
 <section class="featured-event-hero" id="upcoming-events" aria-labelledby="featured-event-title">
 
   <div class="featured-event-overlay">
@@ -238,14 +343,14 @@
 
 </div>
 
-      <p class="featured-event-meta">
-        📅 Saturday, 1 August 2026 • ⏰ 9:30 AM – 4:00 PM
-      </p>
+   <p class="featured-event-meta" id="featuredEventDate"></p>
+   
+
 
      <p class="featured-event-location">
         📍 Kijabe Hills &bull;
         <a href="#event-map" class="map-link">
-         Meeting Point: Mai Mahiu Parking Area
+        Our Hiking Routes
         </a>
      </p>
       
@@ -313,6 +418,25 @@
 
 </div> <!-- featured-event-overlay -->
 
+</section>
+
+<!-- ===========================
+     GALLERY SLIDESHOW
+============================ -->
+<section class="gallery-slideshow" aria-labelledby="gallery-title">
+  <h2 id="gallery-title"><i class="fas fa-image" aria-hidden="true"></i> Photos from Our Hikes</h2>
+  <p>Real experiences from real hikers.</p>
+
+  <div class="slideshow"
+       id="slideshow"
+       role="region"
+       aria-roledescription="carousel"
+       aria-label="Hiking gallery slideshow">
+    <div class="slides" id="slides"></div>
+    <button class="slide-btn prev" aria-label="Previous slide">&#10094;</button>
+    <button class="slide-btn next" aria-label="Next slide">&#10095;</button>
+    <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
+  </div>
 </section>
 
 <!-- ===========================
@@ -476,48 +600,494 @@
   </div>
 
 </section>
-<!-- ===========================
-     MAP
-============================ -->
-<section class="event-location-map" id="event-map" aria-labelledby="map-title">
 
-  <h2 id="map-title">📍 Meeting Point — Maai-Mahiu, Parking Area-Kijabe Hills</h2>
-  <iframe
-    title="Meeting point map — Maai-Mahiu, Kijabe Hills"
-    src="https://www.google.com/maps?q=-0.980448,36.583753&z=17&output=embed"
-    width="100%"
-    height="400"
-    class="map-iframe"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-  <a href="https://www.google.com/maps/dir/-0.980448,36.583753/Kijabe+Hills/"
-     target="_blank"
-     rel="noopener noreferrer">
-    🧭 View Hiking Route
-  </a>
-
-</section>
 
 <!-- ===========================
-     GALLERY SLIDESHOW
+     HIKING ROUTE
 ============================ -->
-<section class="gallery-slideshow" aria-labelledby="gallery-title">
-  <h2 id="gallery-title"><i class="fas fa-image" aria-hidden="true"></i> Photos from Our Hikes</h2>
-  <p>Real experiences from real hikers.</p>
 
-  <div class="slideshow"
-       id="slideshow"
-       role="region"
-       aria-roledescription="carousel"
-       aria-label="Hiking gallery slideshow">
-    <div class="slides" id="slides"></div>
-    <button class="slide-btn prev" aria-label="Previous slide">&#10094;</button>
-    <button class="slide-btn next" aria-label="Next slide">&#10095;</button>
-    <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
-  </div>
+<section class="event-location-map" id="event-map" aria-labelledby="route-title">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            🥾 Scenic Hiking Route
+        </span>
+
+        <h2 id="route-title">
+            Explore the Kijabe Hills Hiking Route
+        </h2>
+
+        <p class="section-description">
+
+            Our guided hike takes you through breathtaking escarpments,
+            scenic forest trails, waterfalls, river crossings and panoramic
+            Great Rift Valley viewpoints.
+
+            <strong>
+                For safety reasons, the exact meeting location is shared only
+                with confirmed hikers via WhatsApp after booking.
+            </strong>
+
+        </p>
+
+    </div>
+
+    <div class="route-map">
+
+        <iframe
+            title="Kijabe Hills Hiking Route"
+            src="https://www.google.com/maps?q=Kijabe+Hills&z=13&output=embed"
+            width="100%"
+            height="450"
+            class="map-iframe"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+    <div class="route-buttons">
+
+        <a href="https://www.google.com/maps/dir//Kijabe+Hills"
+           target="_blank"
+           rel="noopener"
+           class="cta-button secondary">
+
+            🧭 View Hiking Route
+
+        </a>
+
+        <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures,%20I%20would%20like%20to%20join%20the%20next%20Kijabe%20Hills%20Hike.%20Please%20send%20me%20the%20meeting%20location."
+           target="_blank"
+           rel="noopener"
+           class="cta-button whatsapp">
+
+            📍 Request Meeting Location
+
+        </a>
+
+    </div>
+
 </section>
+<!-- =====================================
+     ROUTE HIGHLIGHTS
+====================================== -->
+<section class="route-highlights" id="route-highlights">
+
+<h2>🌄 What You'll Experience on the Kijabe Hills Hiking Trail</h2>
+
+<p class="section-intro">
+Every Kijabe Hills hiking adventure offers a unique combination of nature,
+history, breathtaking landscapes and exciting outdoor experiences.
+Our experienced local guides ensure you discover the best hidden gems
+while enjoying one of the most scenic hiking destinations near Nairobi.
+</p>
+
+<div class="highlights-grid">
+
+<div class="highlight-card">
+<i class="fas fa-tree"></i>
+<h3>🌳 Indigenous Forest</h3>
+<p>
+Walk through beautiful sections of the indigenous Kijabe Forest,
+home to native trees, colourful birds, fresh mountain air and peaceful
+nature trails ideal for both beginners and experienced hikers.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-water"></i>
+<h3>💧 Scenic Waterfalls</h3>
+<p>
+Discover seasonal waterfalls hidden deep inside the forest.
+These peaceful locations are perfect for photography,
+relaxation and nature appreciation.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-mountain"></i>
+<h3>🏞 Great Rift Valley Viewpoints</h3>
+<p>
+Enjoy spectacular panoramic viewpoints overlooking the Great Rift Valley.
+Capture incredible sunrise and landscape photographs from some of Kenya's
+most beautiful escarpments.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-train"></i>
+<h3>🚂 Historic Uganda Railway</h3>
+<p>
+Explore sections of the historic Uganda Railway,
+Old Kijabe Township and fascinating colonial-era landmarks while learning
+their rich history from experienced local hiking guides.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-water"></i>
+<h3>🌿 Rivers & Stream Crossings</h3>
+<p>
+Cross crystal-clear streams, rocky riverbeds and lush valleys that make
+Kijabe one of Kenya's most exciting and diverse hiking destinations.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-dove"></i>
+<h3>🐒 Wildlife & Bird Watching</h3>
+<p>
+Watch for monkeys, butterflies, indigenous birds and many other wildlife
+species commonly found throughout Kijabe Forest.
+Nature lovers will enjoy every section of the trail.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-camera"></i>
+<h3>📸 Photography Spots</h3>
+<p>
+Our guides know the best locations for memorable photos,
+whether you're capturing waterfalls,
+the Great Rift Valley,
+forest trails or dramatic escarpments.
+</p>
+</div>
+
+<div class="highlight-card">
+<i class="fas fa-users"></i>
+<h3>🤝 Social Hiking Experience</h3>
+<p>
+Meet fellow hikers from across Kenya,
+make new friends,
+network and enjoy an unforgettable outdoor adventure together.
+</p>
+</div>
+
+</div>
+
+</section><!-- =====================================
+     WHY HIKE WITH US
+====================================== -->
+<section class="search-intent">
+
+<h2>🥾 Looking for the Best Guided Hiking Events Near Nairobi?</h2>
+
+<p>
+Kijabe Adventures organizes professionally guided hiking events every month
+to some of Kenya's most spectacular destinations including
+Kijabe Hills,
+Kijabe Forest,
+Ngong Hills,
+Mt Longonot,
+Karura Forest and many more.
+Whether you're searching for a hiking group near Nairobi,
+weekend adventures,
+nature walks,
+corporate team-building activities or family outdoor experiences,
+we have a hike for you.
+</p>
+
+<p>
+Our guided hikes are suitable for beginners,
+experienced hikers,
+tourists,
+families,
+schools,
+church groups,
+corporate organizations and private groups looking for safe,
+well-organized outdoor adventures.
+</p>
+
+<div class="why-us-grid">
+
+<div class="why-card">
+<i class="fas fa-map-marked-alt"></i>
+<h3>Experienced Local Guides</h3>
+<p>
+Explore hidden trails safely with knowledgeable local guides who know
+every section of Kijabe Hills.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-shield-alt"></i>
+<h3>Safety First</h3>
+<p>
+Every hike is carefully planned with experienced guides,
+first aid preparedness and route planning.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-hiking"></i>
+<h3>Suitable for Beginners</h3>
+<p>
+Most of our monthly hikes are beginner friendly while still offering
+beautiful scenery and exciting adventure.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-camera-retro"></i>
+<h3>Professional Photography</h3>
+<p>
+Capture memorable moments at waterfalls,
+viewpoints,
+forest trails and historical sites.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-users"></i>
+<h3>Growing Hiking Community</h3>
+<p>
+Join hundreds of hikers who regularly participate in our monthly
+guided hiking adventures.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-handshake"></i>
+<h3>Corporate Team Building</h3>
+<p>
+We organize customized hiking experiences for companies,
+schools,
+churches and private organizations.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-wallet"></i>
+<h3>Affordable Prices</h3>
+<p>
+Transparent pricing with no hidden charges and flexible booking options.
+</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-child"></i>
+<h3>Family Friendly Adventures</h3>
+<p>
+Many of our hiking routes are suitable for families and children,
+making outdoor adventure enjoyable for everyone.
+</p>
+</div>
+
+</div>
+
+<div class="cta-section">
+
+<h3>🌿 Ready for Your Next Adventure?</h3>
+
+<p>
+Book your next guided hike with Kijabe Adventures and experience
+Kenya's forests, waterfalls, wildlife, viewpoints and historic trails
+with trusted local hiking experts.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#event-booking" class="cta-button primary">
+🎟️ Book the Next Hike
+</a>
+
+<a href="/private-group-hikes.html" class="cta-button secondary">
+👥 Private Group Hikes
+</a>
+
+<a href="https://wa.me/254743980340"
+class="cta-button whatsapp"
+target="_blank"
+rel="noopener">
+<i class="fab fa-whatsapp"></i>
+Chat on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+FAQ
+=========================================== -->
+<section class="faq-section" id="faq" aria-labelledby="faq-title">
+
+    <div class="section-header">
+        <span class="section-badge">❓ Need Help?</span>
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <p>
+            Everything you need to know before joining our guided hiking events in Kenya.
+        </p>
+    </div>
+
+    <div class="faq-grid">
+
+        <details open>
+            <summary>📍 Where is the meeting point?</summary>
+            <p>
+                For safety and easier coordination, the exact meeting location is shared
+                privately with confirmed participants through WhatsApp after booking.
+                The website only displays the hiking route.
+            </p>
+        </details>
+
+        <details>
+            <summary>🎟️ How do I book the upcoming hiking event?</summary>
+            <p>
+                Complete the Event Booking Calculator, review the automatically generated
+                booking fee, pay via the provided M-Pesa Till Number, then send your
+                M-Pesa confirmation message through WhatsApp to reserve your slot.
+            </p>
+        </details>
+
+        <details>
+            <summary>💳 Can I pay on the hiking day?</summary>
+            <p>
+                Yes. A 30% booking fee is required to reserve your space. The remaining
+                balance may be paid before or on the hiking day unless otherwise communicated.
+            </p>
+        </details>
+
+        <details>
+            <summary>🥾 Can beginners join?</summary>
+            <p>
+                Absolutely. Most of our group hikes are beginner friendly. The hike
+                description indicates the expected difficulty level, distance and fitness
+                requirements.
+            </p>
+        </details>
+
+        <details>
+            <summary>🏔️ Do I need previous hiking experience?</summary>
+            <p>
+                No. Our experienced local guides support hikers of all experience levels,
+                provide safety briefings and maintain a comfortable hiking pace.
+            </p>
+        </details>
+
+        <details>
+            <summary>👨‍👩‍👧 Can children participate?</summary>
+            <p>
+                Yes. Children are welcome when accompanied by a responsible adult.
+                Some hikes may have minimum age recommendations depending on terrain.
+            </p>
+        </details>
+
+        <details>
+            <summary>🎒 What should I carry?</summary>
+            <p>
+                We recommend comfortable hiking shoes, drinking water, snacks,
+                sunscreen, a hat, a light rain jacket, a fully charged phone,
+                sunglasses and a camera for photos.
+            </p>
+        </details>
+
+        <details>
+            <summary>🚐 Do you provide transport?</summary>
+            <p>
+                Yes. Shared transport is available for selected hikes.
+                Self-drive participants are also welcome where suitable parking exists.
+            </p>
+        </details>
+
+        <details>
+            <summary>🅿️ Is parking available?</summary>
+            <p>
+                Yes. Parking is available for hikers using private vehicles at the
+                designated parking area whenever applicable.
+            </p>
+        </details>
+
+        <details>
+            <summary>🌍 Can international tourists join?</summary>
+            <p>
+                Absolutely. Visitors from all countries are welcome to join our guided
+                hiking experiences around Kenya.
+            </p>
+        </details>
+
+        <details>
+            <summary>👥 Do you organize private group hikes?</summary>
+            <p>
+                Yes. We organize private hiking trips for families, schools,
+                corporate team-building events, churches and travel groups.
+            </p>
+        </details>
+
+        <details>
+            <summary>📅 Can I cancel or reschedule?</summary>
+            <p>
+                Yes. Booking changes are handled according to our booking and
+                cancellation policy. Contact us through WhatsApp as early as possible.
+            </p>
+        </details>
+
+        <details>
+            <summary>🌧️ What happens if it rains?</summary>
+            <p>
+                Light rain usually does not stop the hike. In case of severe weather or
+                unsafe trail conditions, the event may be postponed and participants
+                will be notified in advance.
+            </p>
+        </details>
+
+        <details>
+            <summary>📷 Can I bring a drone or professional camera?</summary>
+            <p>
+                Yes. Photography is encouraged, but drone use must comply with Kenya
+                Civil Aviation Authority regulations and any restrictions at the hiking location.
+            </p>
+        </details>
+
+        <details>
+            <summary>📱 How can I contact Kijabe Adventures?</summary>
+            <p>
+                The fastest way is through WhatsApp using the contact button on this page.
+                Our team responds quickly to booking requests and hiking enquiries.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+<section class="final-cta">
+
+<h2>
+
+Ready for Your Next Adventure?
+
+</h2>
+
+<p>
+
+Join hundreds of hikers exploring Kenya's most beautiful trails with experienced local guides.
+
+</p>
+
+<a href="#event-booking"
+
+class="cta-button primary">
+
+🎟 Reserve Your Spot
+
+</a>
+
+</section>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+
+<a href="/">Home</a>
+
+<span>›</span>
+
+<span>Upcoming Hiking Events</span>
+
+</nav>
+
 
 
 <!-- Gallery scripts (deferred — non-blocking) -->
@@ -588,16 +1158,18 @@
     </div>
 
   </div>
-
   <p class="copyright">
-    &copy; <span id="year"></span> Kijabe Adventures. All rights reserved.
-  </p>
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
 
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
   <p class="footer-legal">
-    <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a>
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
   </p>
 </footer>
-
 <!-- WhatsApp Float Button -->
 <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
    class="whatsapp-float"
@@ -607,71 +1179,6 @@
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
-<!-- ===========================
-     EVENT MODAL (single, for upcoming event)
-============================ -->
-<div id="eventModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-title" hidden>
-  <div class="modal-content">
-
-    <button class="close" onclick="closeEventModal()" aria-label="Close booking modal">&times;</button>
-
-    <h2 id="modal-event-title">🌄 Kijabe Hills Scenic Group Hike</h2>
-
-  <p class="event-meta">
-  📅 Saturday, 1 August 2026 &bull; ⏰ 9:30 AM<br>
-  📍 Kijabe Hills<br>
-  📌 Meeting Point: Mai Mahiu Parking Area & Kijabe Mission
-</p>
-
-    <div class="event-price-box">
-      <span>KES</span>
-      <strong>2,000</strong>
-      <small>per person</small>
-    </div>
-
-    <p class="deposit-warning">
-      ⚠️ Booking is only confirmed after paying a 30% booking fee via M-Pesa Till <strong>5440810</strong>.
-    </p>
-
-    <label for="modalEventName">Your Name</label>
-    <input type="text" id="modalEventName" placeholder="Your Name" required autocomplete="name">
-
-    <label for="modalEventPhone">Phone Number</label>
-    <input type="tel" id="modalEventPhone" placeholder="07XX XXX XXX" required autocomplete="tel">
-
-    <label for="modalEventPeople">Number of People</label>
-    <input type="number" id="modalEventPeople" placeholder="Number of People" min="1" max="100" required>
-
-    <label for="modalEventType">Hiker Type</label>
-    <select id="modalEventType">
-      <option value="">Select Type</option>
-      <option value="adult">Adult (KES 2,000)</option>
-      <option value="student">Student (KES 1,500)</option>
-      <option value="child">Child under 12 (KES 1,000)</option>
-    </select>
-
-    <label for="modalEventResidency">Residency</label>
-    <select id="modalEventResidency">
-      <option value="">Select Residency</option>
-      <option value="resident">Kenyan Resident</option>
-      <option value="nonresident">Non-Resident</option>
-    </select>
-
-    <p id="modalEventError" class="error-message" role="alert"></p>
-
-    <p>Total: <strong id="modalEventTotal">KES 0</strong></p>
-    <p>Booking fee (30%): <strong id="modalEventDeposit">KES 0</strong></p>
-
-    <a id="modalEventWhatsapp" class="cta-primary disabled" href="#" aria-disabled="true">
-      Confirm Booking via WhatsApp
-    </a>
-
-    <p class="mpesa-note">
-      💳 Pay via M-Pesa Till: <strong>5440810</strong>
-    </p>
-
-  </div>
-</div> <!-- End #eventModal -->
 
 <!-- ===========================
      SCRIPTS

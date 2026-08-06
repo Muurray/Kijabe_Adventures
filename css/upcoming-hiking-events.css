@@ -646,3 +646,349 @@ html {
     text-shadow:0 3px 8px rgba(0,0,0,.75);
 
 }
+/* ===========================
+   Hiking Route Section
+=========================== */
+
+.event-location-map{
+
+    max-width:1100px;
+    margin:70px auto;
+    padding:30px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.section-heading{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+.section-badge{
+
+    display:inline-block;
+    background:#2d6a4f;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:.9rem;
+    margin-bottom:15px;
+
+}
+
+.section-description{
+
+    max-width:850px;
+    margin:auto;
+    line-height:1.8;
+
+}
+
+.route-map iframe{
+
+    border:none;
+    border-radius:15px;
+
+}
+
+.route-buttons{
+
+    margin-top:25px;
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+.route-highlights{
+
+    max-width:1200px;
+    margin:80px auto;
+
+}
+
+.highlights-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+
+}
+
+.highlight-card{
+
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.highlight-card h3{
+
+    color:#2d6a4f;
+    margin-bottom:12px;
+
+}
+/* ==========================================
+FAQ
+========================================== */
+
+.faq-section{
+    max-width:1100px;
+    margin:70px auto;
+    padding:0 20px;
+}
+
+.faq-grid{
+    display:grid;
+    gap:16px;
+}
+
+.faq-grid details{
+    background:#fff;
+    border-radius:12px;
+    border:1px solid #e4e4e4;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.faq-grid details:hover{
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.faq-grid summary{
+    cursor:pointer;
+    list-style:none;
+    padding:18px 22px;
+    font-size:1.05rem;
+    font-weight:700;
+    color:#1f5130;
+    transition:.25s;
+}
+
+.faq-grid summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq-grid summary::after{
+    content:"+";
+    float:right;
+    font-size:1.4rem;
+    font-weight:700;
+    color:#2d6a4f;
+}
+
+.faq-grid details[open] summary::after{
+    content:"–";
+}
+
+.faq-grid details[open] summary{
+    background:#2d6a4f;
+    color:#fff;
+}
+
+.faq-grid p{
+    margin:0;
+    padding:18px 22px 22px;
+    line-height:1.8;
+    color:#555;
+}
+/* ==========================================
+   SEARCH INTENT / WHY HIKE WITH US
+========================================== */
+
+.search-intent{
+    max-width:1200px;
+    margin:70px auto;
+    padding:50px 30px;
+    background:#f8fcf8;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+
+.search-intent h2{
+    text-align:center;
+    color:#1f5e3b;
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.search-intent p{
+    max-width:900px;
+    margin:0 auto 20px;
+    text-align:center;
+    color:#444;
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.why-us-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-top:45px;
+}
+
+.why-card{
+    background:#fff;
+    padding:30px 25px;
+    border-radius:15px;
+    text-align:center;
+    transition:.35s;
+    border:1px solid #e5e5e5;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    border-color:#2d6a4f;
+}
+
+.why-card i{
+    font-size:2.8rem;
+    color:#2d6a4f;
+    margin-bottom:18px;
+}
+
+.why-card h3{
+    color:#1f5e3b;
+    margin-bottom:12px;
+    font-size:1.2rem;
+}
+
+.why-card p{
+    margin:0;
+    text-align:center;
+    font-size:.97rem;
+    color:#555;
+    line-height:1.7;
+}
+
+/* CTA AREA */
+
+.cta-section{
+    margin-top:60px;
+    text-align:center;
+    padding:45px 30px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#2d6a4f,#40916c);
+    color:#fff;
+}
+
+.cta-section h3{
+    font-size:2rem;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.cta-section p{
+    color:#f1f1f1;
+    max-width:700px;
+    margin:0 auto 30px;
+    font-size:1.05rem;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.hero-buttons .cta-button{
+    min-width:220px;
+}
+
+/* PRIMARY BUTTON */
+
+.cta-button.primary{
+    background:#ff9800;
+    color:#fff;
+}
+
+.cta-button.primary:hover{
+    background:#f57c00;
+}
+
+/* SECONDARY BUTTON */
+
+.cta-button.secondary{
+    background:#fff;
+    color:#2d6a4f;
+    border:2px solid #fff;
+}
+
+.cta-button.secondary:hover{
+    background:#e8f5e9;
+}
+
+/* WHATSAPP */
+
+.cta-button.whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+.cta-button.whatsapp:hover{
+    background:#1ebc59;
+}
+
+/* BUTTON STYLE */
+
+.cta-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.cta-button:hover{
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.search-intent{
+    padding:35px 20px;
+}
+
+.search-intent h2{
+    font-size:1.7rem;
+}
+
+.search-intent p{
+    font-size:1rem;
+}
+
+.cta-section{
+    padding:35px 20px;
+}
+
+.cta-section h3{
+    font-size:1.5rem;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-buttons .cta-button{
+    width:100%;
+}
+
+}
