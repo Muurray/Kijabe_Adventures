@@ -54,7 +54,6 @@ Social Sharing Widget
 
 ✅ Book your slot
 ✅ Guided by local experts
-✅ Great Rift Valley views
 ✅ Private group hikes available
 
 💳 Pay only a 30% booking fee

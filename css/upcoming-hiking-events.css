@@ -992,3 +992,261 @@ FAQ
 }
 
 }
+/* ======================================================
+   EVENT OVERVIEW
+====================================================== */
+
+.event-overview{
+    padding:80px 20px;
+    background:#f8faf8;
+}
+
+.section-header{
+    max-width:850px;
+    margin:0 auto 55px;
+    text-align:center;
+}
+
+.section-badge{
+    display:inline-block;
+    background:#2d6a4f;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:50px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.section-header h2{
+    font-size:2.2rem;
+    color:#1d3557;
+    margin-bottom:15px;
+}
+
+.section-header p{
+    color:#555;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+.overview-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:28px;
+
+}
+
+.overview-card{
+
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s;
+
+}
+
+.overview-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.overview-card h3{
+
+    color:#2d6a4f;
+
+    margin-bottom:25px;
+
+    font-size:1.3rem;
+
+}
+
+.overview-card h3 i{
+
+    margin-right:10px;
+
+}
+
+/* ===========================
+   QUICK INFO
+=========================== */
+
+.info-list{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.info-list div{
+
+    display:grid;
+
+    grid-template-columns:40px 1fr auto;
+
+    align-items:center;
+
+}
+
+.info-list i{
+
+    color:#2d6a4f;
+
+    font-size:1.2rem;
+
+}
+
+.info-list span{
+
+    color:#666;
+
+}
+
+.info-list strong{
+
+    color:#1d3557;
+
+}
+
+/* ===========================
+   TRUST
+=========================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    text-align:center;
+
+}
+
+.stats-grid strong{
+
+    display:block;
+
+    font-size:2rem;
+
+    color:#2d6a4f;
+
+}
+
+.stats-grid span{
+
+    color:#666;
+
+}
+
+/* ===========================
+   INCLUDED
+=========================== */
+
+.check-list,
+
+.cross-list,
+
+.weather-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.check-list li,
+
+.cross-list li,
+
+.weather-list li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.check-list li::before{
+
+    content:"✔ ";
+
+    color:#2d6a4f;
+
+    font-weight:bold;
+
+}
+
+.cross-list li::before{
+
+    content:"✖ ";
+
+    color:#d62828;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   DIFFICULTY
+=========================== */
+
+.difficulty-badge{
+
+    display:inline-block;
+
+    background:#d8f3dc;
+
+    color:#1b4332;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.section-header h2{
+
+font-size:1.8rem;
+
+}
+
+.overview-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.info-list div{
+
+grid-template-columns:35px 1fr;
+
+row-gap:5px;
+
+}
+
+.info-list strong{
+
+grid-column:2;
+
+}
+
+}

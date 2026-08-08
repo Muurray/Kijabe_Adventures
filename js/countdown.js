@@ -96,5 +96,16 @@ Countdown Timer
     updateCountdown();
 
     const timer = setInterval(updateCountdown, 1000);
+    const quickEventDate =
+    document.getElementById("quickEventDate");
+
+if (quickEventDate) {
+
+    quickEventDate.innerHTML =
+        `<strong>${SITE_CONFIG.eventDateText}</strong>
+         <br>
+         <small>9:30 AM – 4:00 PM</small>`;
+
+}
 
 })();
