@@ -1,0 +1,1949 @@
+/* =====================================================================
+   BLOG STYLES — deduplicated & organized by function
+   ===================================================================== */
+
+/* =========================
+   1. DESIGN TOKENS
+========================= */
+:root {
+  --primary: #155d27;
+  --primary-dark: #0d4720;
+  --primary-soft: #eaf5ed;
+  --accent: #ff9800;
+  --heading-color: #155d27;
+  --dark: #1f1f1f;
+  --light: #ffffff;
+  --muted: #6b7280;
+  --background-color: #f7faf8;
+  --text-color: #333333;
+  --bg-overlay: rgba(18, 28, 39, 0.78);
+  --radius: 18px;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #f7faf8;
+  color: var(--text-color);
+}
+
+/* =========================
+   2. SITE / BLOG HEADER (nav)
+========================= */
+header {
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+  color: white;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  padding: 12px 5%;
+  min-height: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "logo nav nav"
+    "tagline tagline badge";
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  grid-area: logo;
+  gap: 10px;
+}
+
+.logo svg {
+  margin-right: 10px;
+  fill: var(--accent);
+}
+
+.logo-img {
+  display: block;
+  max-height: 52px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  grid-area: tagline;
+  font-size: 0.9rem;
+  margin-top: 2px;
+  color: rgba(255,255,255,0.9);
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: rgba(255,255,255,0.94);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+.next-hike-badge {
+  display: inline-block;
+  margin: 0.8rem auto 0;
+  background: #70af4c;
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  grid-area: badge;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+.hero {
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  overflow: hidden;
+  margin-bottom: 0;
+  color: white;
+  border-radius: 0;
+  background:
+    linear-gradient(rgba(0, 55, 30, 0.82), rgba(0, 30, 18, 0.88)),
+    url('../images/hikes-near-nairobi.webp') center/cover no-repeat;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 3px 15px rgba(0,0,0,.35);
+}
+
+.hero p {
+  max-width: 750px;
+  margin: 0;
+  color: rgba(255,255,255,.94);
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   3. PAGE / SECTION LAYOUT
+========================= */
+main.blog-post,
+main.blog-page {
+  display: block;
+  background: transparent;
+  padding: 0;
+}
+
+.blog-section {
+  padding: 0.9rem 0;
+  font-family: var(--body-font);
+}
+
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+}
+
+/* Generic centered content container used by CTA / community sections */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+section h1,
+section h2,
+section h3 {
+  text-align: center;
+}
+
+section ul {
+  display: inline-block;
+  text-align: left;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+/* =========================
+   4. BLOG POST ARTICLE (card-style single post)
+========================= */
+.blog-post-article {
+  max-width: 1200px;
+  margin: 1.2rem auto;
+  background: #ffffff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding-bottom: 1.2rem;
+}
+
+.blog-post-image {
+  width: 50%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
+.blog-post-container {
+  padding: 1.2rem;
+}
+
+.blog-post-header {
+  text-align: center;
+  border-bottom: none;
+  margin-bottom: 0.9rem;
+}
+
+.blog-post-header h1 {
+  font-size: 2.2rem;
+  font-family: var(--heading-font);
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.reading-time {
+  color: var(--muted);
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Body copy for the .blog-post-article card layout.
+   NOTE: no inner max-width here — text now fills the full column
+   (matching the hero/header edge-to-edge feel) instead of being
+   capped at 680px as before. */
+.blog-post-content {
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.75;
+  font-family: var(--body-font);
+  max-width: none;
+}
+
+.blog-post-content h2 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.8rem;
+  font-family: var(--heading-font);
+  color: var(--primary-dark);
+  text-align: left;
+  font-weight: 700;
+}
+
+.blog-post-content h3 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.45rem;
+  font-size: 1.4rem;
+  font-family: var(--heading-font);
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.blog-post-content h4 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.35rem;
+  font-size: 1.2rem;
+  font-family: var(--heading-font);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  padding-left: 2rem;
+  margin: 0.7rem 0;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.blog-post-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.5rem;
+  margin: 1.1rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* =========================
+   5. TABLE OF CONTENTS
+========================= */
+.post-toc,
+.blog-toc,
+.table-of-contents {
+  margin: 0;
+  padding: 25px 20px;
+  background: #fff;
+  border: 1px solid rgba(21,93,39,.10);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.06);
+  font-family: var(--body-font);
+}
+
+@media (min-width: 900px) {
+  .post-toc,
+  .blog-toc,
+  .table-of-contents,
+  nav.table-of-contents {
+    float: left;
+    width: 270px;
+    max-width: 270px;
+    margin: 0 35px 25px 0;
+    position: sticky;
+    top: 25px;
+  }
+}
+
+.post-toc h2,
+.blog-toc h2,
+.table-of-contents h2,
+.post-toc h3,
+.blog-toc h3,
+.table-of-contents h3 {
+  margin: 0 0 15px;
+  color: var(--primary);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.post-toc .toc-list,
+.blog-toc ul,
+.table-of-contents ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-toc .toc-list li,
+.blog-toc li,
+.table-of-contents li {
+  margin: 0;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.post-toc .toc-list li:last-child,
+.blog-toc li:last-child,
+.table-of-contents li:last-child {
+  border-bottom: 0;
+}
+
+.post-toc a,
+.blog-toc a,
+.table-of-contents a {
+  display: block;
+  padding: 9px 3px;
+  color: #555;
+  font-size: .91rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color .2s ease, padding-left .2s ease;
+}
+
+.post-toc a:hover,
+.blog-toc a:hover,
+.table-of-contents a:hover {
+  color: var(--primary);
+  padding-left: 6px;
+  text-decoration: none;
+}
+
+.post-toc a.active,
+.blog-toc a.active,
+.table-of-contents a.active {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* =========================
+   6. SCROLL PROGRESS & BACK-TO-TOP
+========================= */
+#scroll-progress,
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #70af4c, var(--primary));
+  z-index: 9999;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   7. SHARE BUTTONS
+========================= */
+.share-actions,
+.post-share,
+.card-share {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.share-btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--body-font);
+  font-weight: 600;
+}
+
+.share-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.share-copy { background: #6b7280; }
+
+.more-article-card .share-actions { margin-top: 0.5rem; }
+
+/* Icon-style share row (e.g. on cards) */
+.share-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  z-index: 2;
+  position: relative;
+}
+
+.share-buttons .share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #ddd;
+  color: #222;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
+
+.share-buttons .share-btn i { pointer-events: none; }
+
+.fa-instagram { color: #e1306c; }
+.fa-facebook { color: #1877f2; }
+
+/* =========================
+   8. BLOG LISTING PAGE (index/search)
+========================= */
+.blog-list-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.6rem 1.5rem;
+  font-family: var(--body-font);
+}
+
+.blog-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.blog-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 1.3rem;
+  font-size: 1.1rem;
+  font-family: var(--body-font);
+}
+
+.blog-search {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.3rem;
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+.blog-search:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.1);
+}
+
+/* =========================
+   9. BLOG GRID & CARDS
+========================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.blog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card-image {
+  height: 210px;
+  overflow: hidden;
+}
+
+.blog-card-image img,
+.blog-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+.blog-card-content,
+.blog-card-body {
+  padding: 1.3rem 1.2rem;
+}
+
+.blog-card-content h3,
+.blog-card-body h3,
+.blog-card h3 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 1.25rem;
+  font-family: var(--heading-font);
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #888;
+  font-family: var(--body-font);
+}
+
+.blog-card-content p,
+.blog-card-body p,
+.blog-card p {
+  margin: 0.5rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.read-more,
+.blog-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--body-font);
+  transition: all 0.3s ease;
+}
+
+.read-more:hover,
+.blog-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  text-indent: -9999px;
+}
+
+.blog-card .blog-btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pill-style CTA button variant, used inside .blog-cta / single-post layout */
+.blog-btn.large,
+.cta-button.large {
+  padding: 16px 28px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* =========================
+   10. RELATED POSTS / ARTICLES
+========================= */
+.related-articles,
+.related-posts {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1.6rem auto;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.related-articles h2,
+.related-posts h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+.related-posts .blog-card { margin-bottom: 1rem; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  display: block;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.related-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.related-card-body { padding: 1rem; }
+
+.related-card-body h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--dark);
+}
+
+.related-card-body p {
+  margin: 0.75rem 0 0;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* =========================
+   11. "MORE ARTICLES" SECTION
+========================= */
+.more-articles-section {
+  margin-top: 1.6rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid #e5e5e5;
+}
+
+.more-article-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.more-article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.more-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* =========================
+   12. PAGINATION
+========================= */
+.pagination {
+  text-align: center;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 0.7rem 1.2rem;
+  margin: 0;
+  border: none;
+  background: #e6e6e6;
+  color: #222;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.pagination button.active {
+  background: var(--primary);
+  color: white;
+}
+
+.pagination button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   13. COMMENTS
+========================= */
+.comments-section {
+  margin-top: 1.6rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: var(--body-font);
+}
+
+.comments-list { margin-bottom: 0.8rem; }
+
+.comment-item {
+  padding: 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-item .comment-time {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--body-font);
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.1);
+}
+
+.comment-form button {
+  align-self: flex-start;
+  padding: 0.5rem 0.9rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.comment-form button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.comments-note {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   14. LOADING & ERROR STATES
+========================= */
+.loading {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-family: var(--body-font);
+}
+
+.error-message {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 2rem 0;
+  font-family: var(--body-font);
+}
+
+.error-message a {
+  color: #856404;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #856404;
+  transition: all 0.3s ease;
+}
+
+.error-message a:hover {
+  border-bottom-color: transparent;
+  color: #5a3e2b;
+}
+
+/* =========================
+   15. JSON-DRIVEN BLOG SYSTEM
+========================= */
+#jsonBlogSystem {
+  margin-top: 35px;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  font-family: var(--body-font);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.json-section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-family: var(--heading-font);
+}
+
+.json-card-body { padding: 0; }
+
+.json-card-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+#jsonBlogSystem .blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+}
+
+.json-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.json-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.json-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.json-card h3 {
+  margin: 15px 0 5px;
+  font-family: var(--heading-font);
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.json-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+#blogList .blog-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   16. TESTIMONIALS
+========================= */
+.testimonial-card {
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e5e5;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--primary);
+  object-fit: cover;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.testimonial-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-card span {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   17. MARKETING / CONVERSION SECTIONS
+========================= */
+.latest-blog {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: #f9faf8;
+  border-radius: 12px;
+}
+
+.latest-blog h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.badge {
+  background: #f4f7f3;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .trust-badges { flex-direction: column; }
+}
+
+.featured-hike {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-hike-card {
+  max-width: 350px;
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.featured-hike-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.featured-hikes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.final-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f5f9f6;
+  margin-top: 30px;
+}
+
+.final-cta h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.social-connect {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f7faf7;
+}
+
+.social-connect h2 {
+  margin-bottom: 18px;
+  font-size: 30px;
+}
+
+.social-connect a {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 12px 22px;
+  background: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.social-connect a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.whatsapp-booking {
+  text-align: center;
+  padding: 40px 20px;
+  background: #eaf7ef;
+}
+
+.whatsapp-booking h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.whatsapp-booking p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 22px;
+  font-size: 18px;
+}
+
+.whatsapp { display: inline-block; }
+
+.whatsapp-big-button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #25d366;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp-big-button i { margin-right: 10px; }
+
+.whatsapp-big-button:hover {
+  background: #1ebe5b;
+  transform: scale(1.05);
+}
+
+.booking-guarantee {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.booking-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.booking-section form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.booking-section textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.booking-section button { margin-top: 10px; }
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.insta-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.community-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.stat { min-width: 150px; }
+
+.stat h3 {
+  font-size: 32px;
+  color: #2e7d32;
+}
+
+.members-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.member-card {
+  max-width: 220px;
+  text-align: center;
+}
+
+.member-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.cta-section .blog-btn { display: inline-block; }
+.cta-section p { text-align: center; }
+
+.cta-center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* =========================
+   18. SINGLE-POST LAYOUT (.blog-post)
+========================= */
+.blog-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 25px 20px 60px;
+}
+
+.blog-post {
+  max-width: none;
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(21,93,39,.08);
+  border-radius: 18px;
+  box-shadow: 0 7px 28px rgba(0,0,0,.055);
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+}
+
+.blog-post > .blog-post-header,
+.blog-post > .blog-post-hero,
+.blog-post > .blog-post-article,
+.blog-post > .blog-cta,
+.blog-post > .blog-intro,
+.blog-post > .article-introduction,
+.blog-post > .quick-facts,
+.blog-post > section,
+.blog-post > p,
+.blog-post > figure,
+.blog-post > table,
+.blog-post > ul,
+.blog-post > ol,
+.blog-post > div:not(.blog-toc):not(.table-of-contents):not(.post-toc) {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.blog-post > .blog-toc,
+.blog-post > .post-toc,
+.blog-post > .table-of-contents,
+.blog-post > nav.table-of-contents,
+.blog-post .blog-post-content > .blog-toc,
+.blog-post .blog-post-content > .table-of-contents,
+.blog-post .blog-post-content > .post-toc,
+.blog-post .blog-post-content > nav.table-of-contents {
+  grid-column: 1;
+  width: 270px;
+  max-width: 270px;
+  margin: 0;
+  position: sticky;
+  top: 25px;
+  align-self: start;
+}
+
+.blog-post > .blog-post-header {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* Two-column (TOC + article) layout for the full illustrated post.
+   NOTE: article column now has no extra inner max-width — it grows to
+   fill the whole right-hand track, same edge-to-edge feel as the hero. */
+.blog-post .blog-post-content {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+  overflow: visible;
+}
+
+.blog-post .blog-post-content > *:not(.blog-toc):not(.table-of-contents):not(.post-toc):not(nav.table-of-contents) {
+  grid-column: 2;
+  min-width: 0;
+  max-width: none;
+}
+
+.blog-post h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #0b6b3a;
+  line-height: 1.15;
+  margin-bottom: 15px;
+}
+
+.blog-post h2 {
+  margin-top: 28px;
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 1.8rem;
+  border-left: 4px solid #155d27;
+  padding-left: 16px;
+}
+
+.blog-post h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #1b4332;
+}
+
+.blog-post p {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: #444;
+  margin: 12px 0;
+}
+
+.blog-post img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 14px 0;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post img:hover { transform: scale(1.02); }
+
+.blog-post ul {
+  margin: 16px 0;
+  padding-left: 28px;
+}
+
+.blog-post li {
+  margin-bottom: 8px;
+  line-height: 1.75;
+}
+
+.blog-post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+}
+
+.blog-post th {
+  background: #0b6b3a;
+  color: white;
+  padding: 15px;
+}
+
+.blog-post td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-post blockquote {
+  margin: 22px 0;
+  padding: 20px 30px;
+  background: #fafafa;
+  border-left: 6px solid var(--accent);
+  font-style: italic;
+}
+
+.blog-post img.float-right {
+  float: right;
+  width: 320px;
+  margin: 10px 0 20px 25px;
+  border-radius: 10px;
+}
+
+.blog-post img.float-left {
+  float: left;
+  width: 320px;
+  margin: 10px 25px 20px 0;
+  border-radius: 10px;
+}
+
+.blog-post::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Header — full-bleed image hero with dark overlay */
+.blog-post .blog-post-header {
+  position: relative;
+  grid-column: 1 / -1;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/hikes-near-nairobi.webp") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 220px;
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(21,93,39,.08);
+}
+
+.blog-post .blog-post-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.blog-post .blog-post-header h1 {
+  color: #fff;
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  font-weight: 800;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.blog-post .blog-meta {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.blog-cta {
+  margin-top: 30px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0b6b3a, #2e7d32);
+  color: white;
+}
+
+.blog-cta h2 {
+  color: white;
+  border: none;
+  padding: 0;
+}
+
+.blog-cta .blog-btn { margin: 10px; }
+
+.faq { margin-top: 45px; }
+
+.faq h3 {
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.faq p { padding-left: 15px; }
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  margin: 12px auto;
+  max-width: 850px;
+  color: #777;
+}
+
+.breadcrumbs a {
+  color: #0b6b3a;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover { text-decoration: underline; }
+
+.author-box {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 25px;
+  border-radius: 16px;
+  margin-top: 45px;
+}
+
+.author-box img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+/* Pill CTA button used inside this layout */
+.blog-post .blog-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: #0b6b3a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.blog-post .blog-btn:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Quick-facts summary card — the at-a-glance box near the top of a post
+   (season, difficulty, water needed, etc). Rules below intentionally
+   sit after the general .blog-post h2/ul/li rules so they win on
+   source order at equal specificity. */
+.quick-facts {
+  background: var(--primary-soft);
+  border: 1px solid rgba(21, 93, 39, .15);
+  border-left: 6px solid var(--primary);
+  border-radius: 16px;
+  padding: 26px 30px;
+  margin: 28px 0 34px;
+  box-shadow: var(--shadow);
+}
+
+.quick-facts h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  border-left: none;
+  padding-left: 0;
+  color: var(--primary-dark);
+}
+
+.quick-facts ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 28px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.quick-facts li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0;
+  line-height: 1.55;
+  color: #33413a;
+  font-size: 0.98rem;
+}
+
+.quick-facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.quick-facts li strong {
+  color: var(--primary-dark);
+}
+
+.quick-facts li a {
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(21, 93, 39, .35);
+}
+
+.quick-facts li a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .quick-facts {
+    padding: 20px 20px;
+  }
+
+  .quick-facts ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   19. IMAGE CAPTIONS / FIGURES
+========================= */
+.blog-caption,
+figure figcaption,
+figcaption {
+  display: block;
+  margin: 0.5rem auto 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.blog-figure {
+  max-width: 320px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.blog-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.blog-figure figcaption {
+  font-size: 0.85rem;
+}
+
+/* =========================
+   20. RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .blog-post .blog-post-content {
+    display: block;
+  }
+
+  .blog-post > .blog-toc,
+  .blog-post > .post-toc,
+  .blog-post > .table-of-contents,
+  .blog-post .blog-post-content > .blog-toc,
+  .blog-post .blog-post-content > .table-of-contents,
+  .blog-post .blog-post-content > .post-toc,
+  .blog-post .blog-post-content > nav.table-of-contents {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 20px;
+    position: static;
+    top: auto;
+    grid-column: auto;
+  }
+
+  .blog-post .blog-post-content > *:not(.blog-toc):not(.table-of-contents):not(.post-toc):not(nav.table-of-contents) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 150px;
+    padding: 22px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .blog-post .blog-post-header {
+    min-height: 150px;
+    padding: 28px 15px;
+  }
+
+  .blog-post-article {
+    padding: 1.5rem;
+    margin: 0.9rem auto;
+  }
+
+  .blog-post-header h1 { font-size: 1.8rem; }
+  .blog-post-content { font-size: 1rem; }
+
+  .blog-post-content h2 {
+    font-size: 1.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .blog-post-content h3 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .blog-title { font-size: 2rem; }
+
+  .blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .pagination { gap: 0.25rem; }
+
+  .pagination button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .blog-section,
+  .blog-container {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  .blog-post p {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-toc,
+  .blog-toc,
+  .table-of-contents {
+    position: static;
+    max-width: 100%;
+    margin-bottom: 1.3rem;
+  }
+
+  .blog-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .blog-grid { grid-template-columns: 1fr; }
+
+  .share-buttons { justify-content: center; }
+}
+
+/* =========================
+   21. COMPARISON TABLE
+========================= */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+}
+
+.comparison-table th {
+  background: #1b5e20;
+  color: white;
+  padding: 15px;
+}
+
+.comparison-table td {
+  padding: 14px;
+  border: 1px solid #ddd;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* =========================
+   22. BLOG TOOLS (search / filters)
+========================= */
+.blog-tools {
+  margin: 22px 0;
+}
+
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 18px 14px 48px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ececec;
+  cursor: pointer;
+  transition: .3s;
+  font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #2d6a4f;
+  color: #fff;
+}
+
+/* =========================
+   23. FOOTER
+========================= */
+footer {
+  background: linear-gradient(135deg, #155d27, #0b4320);
+  color: #fff;
+  padding: 2.5rem 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  color: rgba(255,255,255,.9);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.footer-section li + li {
+  margin-top: 0.35rem;
+}
+
+.footer-section a {
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.copyright,
+.footer-legal {
+  text-align: center;
+  margin-top: 1rem;
+  color: rgba(255,255,255,.9);
+}
+
+.footer-legal a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: var(--accent);
+}

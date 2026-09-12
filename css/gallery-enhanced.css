@@ -1,0 +1,553 @@
+/* ===========================
+   GALLERY PAGE ENHANCEMENTS
+   Enhanced SEO & Conversion Focused Styles
+========================== */
+
+/* ===========================
+   BREADCRUMB NAVIGATION
+=========================== */
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 20px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.breadcrumbs a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.breadcrumbs span {
+  color: #999;
+}
+
+/* ===========================
+   FEATURED HIKING EXPERIENCES
+=========================== */
+.featured-hikes {
+  background: linear-gradient(135deg, #f5f9f6 0%, #e8f3ea 100%);
+  padding: 80px 20px;
+}
+
+.featured-hikes .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-hikes h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Primary CTA Wrapper */
+.primary-cta-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.cta-button-primary {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--heading-color);
+  color: var(--dark);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+  cursor: pointer;
+  border: 2px solid var(--heading-color);
+}
+
+.cta-button-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(89, 228, 25, 0.3);
+  background: #fff;
+  color: var(--primary-dark);
+}
+
+.cta-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.cta-subtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+/* Secondary CTA Wrapper */
+.secondary-cta-wrapper {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondary-cta-wrapper p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.cta-button-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.cta-button-secondary:hover {
+  background: white;
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  color: var(--heading-color);
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hikes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hike-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.hike-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hike-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hike-header i {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.hike-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--dark);
+}
+
+.hike-card p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.hike-highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.hike-highlights li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hike-highlights li:last-child {
+  border-bottom: none;
+}
+
+.hike-highlights strong {
+  color: var(--primary);
+}
+
+.cta-button-small {
+  display: inline-block;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  border: 2px solid var(--primary);
+}
+
+.cta-button-small:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   GALLERY SLIDESHOW SECTION
+=========================== */
+.gallery-slideshow .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-slideshow h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-slideshow > section > p,
+.gallery-slideshow .container > p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+/* ===========================
+   VIDEO ITEM & TRANSCRIPT
+=========================== */
+.video-item {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 2rem;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-item figcaption {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Video Transcript Styles */
+.video-transcript {
+  background: #f8faf7;
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.video-transcript summary {
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+
+.video-transcript summary:hover {
+  color: var(--accent);
+}
+
+.video-transcript[open] summary {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+.transcript-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.transcript-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   PLAN YOUR ADVENTURE SECTION
+=========================== */
+.plan-adventure {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.plan-adventure .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plan-adventure h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.plan-adventure > div > p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Old booking-options styles removed - using new CTA hierarchy */
+
+/* ===========================
+   HIKING TIPS SECTION
+=========================== */
+.hiking-tips {
+  background: white;
+  padding: 80px 20px;
+}
+
+.hiking-tips .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hiking-tips h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hiking-tips > section > p {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tips-highlight {
+  background: #f8faf7;
+  border-left: 4px solid var(--primary);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.tips-highlight ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tips-highlight li {
+  padding: 1rem 0;
+  color: #555;
+  line-height: 1.7;
+}
+
+.tips-highlight li:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tips-highlight a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tips-highlight a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.hiking-tips .cta-button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+}
+
+/* ===========================
+   WHY CHOOSE US SECTION
+=========================== */
+.why-choose-us {
+  background: linear-gradient(135deg, #f5f9f6 0%, #e8f3ea 100%);
+  padding: 80px 20px;
+}
+
+.why-choose-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.reason-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.reason-card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.reason-card h3 {
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.reason-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+  .featured-hikes {
+    padding: 60px 15px;
+  }
+
+  .featured-hikes h2,
+  .hiking-tips h2,
+  .why-choose-us h2,
+  .plan-adventure h2 {
+    font-size: 1.6rem;
+  }
+
+  .hike-card {
+    padding: 1.5rem;
+  }
+
+  .primary-cta-wrapper {
+    padding: 2rem;
+  }
+
+  .cta-button-primary {
+    margin: 0.5rem;
+    font-size: 1rem;
+    padding: 14px 24px;
+  }
+
+  .reasons-grid {
+    gap: 1.5rem;
+  }
+
+  .reason-card {
+    padding: 1.5rem;
+  }
+
+  .tips-highlight {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-hikes,
+  .plan-adventure,
+  .hiking-tips,
+  .why-choose-us {
+    padding: 40px 15px;
+  }
+
+  .featured-hikes h2,
+  .hiking-tips h2,
+  .why-choose-us h2,
+  .plan-adventure h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hikes-grid,
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hike-card,
+  .reason-card {
+    padding: 1rem;
+  }
+
+  .hike-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hike-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .reason-card i {
+    font-size: 2rem;
+  }
+
+  .cta-button-small {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}

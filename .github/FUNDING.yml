@@ -1,0 +1,15 @@
+# Full FUNDING.yml for Kijabe Adventures
+
+github: [Muurray]                   # GitHub Sponsors username(s)
+patreon: MuurrayPatreon             # Patreon username
+open_collective: MuurrayOC          # Open Collective username
+ko_fi: MuurrayKoFi                  # Ko-fi username
+tidelift: npm/mypackage             # Tidelift platform/package
+community_bridge: cloud-foundry     # Community Bridge project
+liberapay: muurray-liberapay        # Liberapay username
+issuehunt: MuurrayIssuehunt         # IssueHunt username
+lfx_crowdfunding: cloud-foundry     # LFX Crowdfunding project
+polar: MuurrayPolar                 # Polar username
+buy_me_a_coffee: MuurrayBMC         # Buy Me a Coffee username
+thanks_dev: muurray-thanks          # thanks.dev username
+custom: ['https://link1.com', 'https://link2.com'] # Optional: any other direct URLs

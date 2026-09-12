@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===========================
+       BASIC META
+  ============================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiking Gallery Kenya | Kijabe Adventures</title>
+  <meta name="description"
+      content="Explore photos and hiking videos from Kijabe Adventures. See Kijabe Hills, Great Rift Valley viewpoints, forests and guided hiking experiences across Kenya." />
+  <meta name="keywords"
+    content="Kijabe Adventures, hiking Kenya, guided hikes Kenya, Ngong Hills hiking, Kijabe trails, Kenya tourism, eco tours Kenya" />
+
+  <meta name="author" content="Kijabe Adventures" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://kijabeadventures.com/gallery.html" />
+
+  <!-- ===========================
+       OPEN GRAPH (FACEBOOK / WHATSAPP)
+  ============================ -->
+  <meta property="og:title" content="Kijabe Adventures | Guided Hikes Across Kenya" />
+  <meta property="og:description"
+    content="Discover forests, hills, and scenic trails across Kenya with safe, guided hiking experiences." />
+  <meta property="og:url" content="https://kijabeadventures.com/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kijabeadventures.com/images/social/gallery-kijabe-adventures.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Hikers exploring scenic trails with Kijabe Adventures in Kenya" />
+  <meta property="og:site_name" content="Kijabe Adventures" />
+
+  <!-- ===========================
+       TWITTER CARD
+  ============================ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kijabe Adventures Hiking Gallery" />
+  <meta name="twitter:description"
+    content="Explore stunning photos and videos from Kijabe Hills, Ngong Hills, Mt Longonot, and Kenya hiking adventures." />
+  <meta name="twitter:image" content="https://kijabeadventures.com/images/social/gallery-kijabe-adventures.png" />
+
+  <!-- ===========================
+       FAVICONS
+  ============================ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#006400">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+
+  <meta name="msapplication-TileColor" content="#006400">
+  <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#006400">
+
+  <!-- ===========================
+       PRELOADS (PERFORMANCE)
+  ============================ -->
+  <link rel="preload" href="images/kijabe-adventure-logo.png" as="image" />
+
+  <!-- ===========================
+       CSS
+  ============================ -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/gallery-enhanced.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- ===========================
+       GOOGLE CONSENT MODE (default settings before analytics)
+  ============================ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- ===========================
+       GOOGLE TAG (gtag.js)
+  ============================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T50VJ5C9XV');
+  </script>
+
+  <!-- ===========================
+       GA4 EVENT TRACKING
+  ============================ -->
+  <script>
+    // Track photo carousel interactions
+    function trackPhotoView() {
+      gtag('event', 'gallery_photo_view', {
+        'event_category': 'engagement',
+        'event_label': 'photo_carousel'
+      });
+    }
+
+    // Track lightbox/full-screen view
+    function trackLightboxOpen() {
+      gtag('event', 'gallery_lightbox_open', {
+        'event_category': 'engagement',
+        'event_label': 'full_screen_view'
+      });
+    }
+
+    // Track video play
+    function trackVideoPlay(videoTitle) {
+      gtag('event', 'gallery_video_play', {
+        'event_category': 'video',
+        'event_label': videoTitle || 'hiking_video'
+      });
+    }
+
+    // Track video completion
+    function trackVideoComplete(videoTitle) {
+      gtag('event', 'gallery_video_complete', {
+        'event_category': 'video',
+        'event_label': videoTitle || 'hiking_video'
+      });
+    }
+
+    // Track booking CTA clicks (any booking button)
+    function trackBookingClick(buttonType) {
+      gtag('event', 'gallery_booking_click', {
+        'event_category': 'conversion',
+        'event_label': buttonType || 'booking_cta'
+      });
+    }
+
+    // Track private hike CTA clicks
+    function trackPrivateHikeClick() {
+      gtag('event', 'gallery_private_hike_click', {
+        'event_category': 'conversion',
+        'event_label': 'private_group_hike'
+      });
+    }
+
+    // Track WhatsApp contact clicks
+    function trackWhatsAppClick() {
+      gtag('event', 'gallery_whatsapp_click', {
+        'event_category': 'conversion',
+        'event_label': 'whatsapp_contact'
+      });
+    }
+
+    // Track blog/tips link clicks
+    function trackBlogClick(blogTitle) {
+      gtag('event', 'gallery_blog_click', {
+        'event_category': 'internal_link',
+        'event_label': blogTitle || 'hiking_tips'
+      });
+    }
+  </script>
+  <!-- ===========================
+       STRUCTURED DATA (SEO)
+  ============================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Kijabe Adventures Hiking Gallery",
+    "description": "Photo and video gallery from guided hiking experiences across Kenya including Kijabe, Ngong Hills, Mt Longonot, and scenic forest trails.",
+    "url": "https://kijabeadventures.com/gallery.html",
+    "image": "https://kijabeadventures.com/images/social/gallery-kijabe-adventures.png",
+    "hasPart": [
+      {
+        "@type": "ImageGallery",
+        "name": "Kijabe Adventures Hiking Photos",
+        "description": "High-quality photos from guided hiking experiences across Kenya"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kijabe Adventures",
+      "url": "https://kijabeadventures.com/",
+      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png",
+      "telephone": "+254743980340",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KE",
+        "addressLocality": "Kijabe"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Kenya"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kijabeadventures.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gallery",
+          "item": "https://kijabeadventures.com/gallery.html"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google CMP (2-button message) -->
+<script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
+<script>
+  (function() {
+    function signalGooglefcPresent() {
+      if (!window.frames['googlefcPresent']) {
+        if (document.body) {
+          const iframe = document.createElement('iframe');
+          iframe.style = 'width:0;height:0;border:0;display:none';
+          iframe.name = 'googlefcPresent';
+          document.body.appendChild(iframe);
+        } else {
+          setTimeout(signalGooglefcPresent, 300);
+        }
+      }
+    }
+    signalGooglefcPresent();
+  })();
+</script>
+<!-- END Google CMP -->
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<header>
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="/" aria-label="Kijabe Adventures Home">
+      <img src="/images/kijabe-adventure-logo.png"
+           alt="Kijabe Adventures"
+           width="140"
+           class="logo-img"
+           fetchpriority="high">
+    </a>
+    <span class="logo-text">Kijabe Adventures</span>
+  </div>
+ <!-- TAGLINE -->
+  <p class="tagline">
+    Guided Hiking & Touring Experiences Across Kenya
+  </p>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+    <span class="sr-only">Toggle navigation</span>
+    <i class="fas fa-bars"></i>
+  </button>
+ <!-- PRIMARY NAVIGATION -->
+  <nav id="primary-nav" class="primary-nav">
+    <a href="/">Home</a>
+   <a href="/about.html">About Us</a>
+    <a href="/contact.html">Contact Us</a>
+    <a href="/community.html">Community</a>
+    <a href="/gallery.html" class="active" aria-current="page">Gallery</a>
+     <a href="/blogs/blog.html">Blog</a>
+  </nav>
+
+  <!-- NEXT HIKE BADGE -->
+ <a href="upcoming-hiking-events.html"
+   class="next-hike-badge">
+    Loading...
+</a>
+</header>
+<main>
+
+ <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> ›
+      <a href="/gallery.html" aria-current="page">Gallery</a>
+    </nav>
+
+<!-- ===========================
+     HERO SECTION
+============================ -->
+<section class="page-hero">
+  <h1>Kijabe Adventures Hiking Gallery</h1>
+  <p>
+    Explore real hiking moments from Kenya's most scenic trails. From the dramatic cliffs of the
+    <strong>Great Rift Valley</strong> to lush forest canopies and highland peaks, discover why hikers
+    trust Kijabe Adventures for their Kenya hiking experience.
+  </p>
+</section>
+
+<!-- ===========================
+     FEATURED HIKING EXPERIENCES
+============================ -->
+<section class="featured-hikes">
+  <div class="container">
+    <h2>Featured Hiking Experiences</h2>
+    <p class="section-intro">
+      Explore our most popular Kenya hiking destinations with real photos and guided adventure details.
+    </p>
+
+    <div class="hikes-grid">
+
+      <!-- Kijabe Hills -->
+      <article class="hike-card">
+        <div class="hike-header">
+          <i class="fas fa-mountain" aria-hidden="true"></i>
+          <h3>Kijabe Hills</h3>
+        </div>
+        <p>
+          Experience the iconic Kijabe Hills with views of the <strong>Great Rift Valley</strong>
+          and historic Old Kijabe Township. Perfect for intermediate to advanced hikers seeking
+          scenic forest trails and panoramic Kenya vistas.
+        </p>
+        <ul class="hike-highlights">
+          <li><strong>Duration:</strong> 4-6 hours</li>
+          <li><strong>Difficulty:</strong> Intermediate</li>
+          <li><strong>Highlights:</strong> Rift Valley views, forest trails, cultural sites</li>
+        </ul>
+        <a href="/upcoming-hiking-events.html" class="cta-button-small">Book a Kijabe Hills Hike</a>
+      </article>
+
+      <!-- Ngong Hills -->
+      <article class="hike-card">
+        <div class="hike-header">
+          <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+          <h3>Ngong Hills</h3>
+        </div>
+        <p>
+          Nairobi's most iconic hiking destination. The famous Ngong Hills ridgeline offers spectacular
+          360-degree views of Nairobi, the surrounding countryside, and the Great Rift Valley floor.
+          Ideal for all fitness levels.
+        </p>
+        <ul class="hike-highlights">
+          <li><strong>Duration:</strong> 2-4 hours</li>
+          <li><strong>Difficulty:</strong> Beginner to Intermediate</li>
+          <li><strong>Highlights:</strong> Ridgeline views, accessible peaks, wildlife encounters</li>
+        </ul>
+        <a href="/upcoming-hiking-events.html" class="cta-button-small">Explore Ngong Hills</a>
+      </article>
+
+      <!-- Mt Longonot -->
+      <article class="hike-card">
+        <div class="hike-header">
+          <i class="fas fa-volcano" aria-hidden="true"></i>
+          <h3>Mt Longonot</h3>
+        </div>
+        <p>
+          An extinct volcano crater hike in the Great Rift Valley. Mt Longonot rewards hikers with
+          panoramic crater views, volcanic landscape, and year-round excellent hiking conditions.
+          A must-do for Kenya hiking enthusiasts.
+        </p>
+        <ul class="hike-highlights">
+          <li><strong>Duration:</strong> 3-4 hours</li>
+          <li><strong>Difficulty:</strong> Intermediate</li>
+          <li><strong>Highlights:</strong> Volcanic crater, crater lake, Rift Valley panoramas</li>
+        </ul>
+        <a href="/upcoming-hiking-events.html" class="cta-button-small">Schedule Mt Longonot Trek</a>
+      </article>
+
+      <!-- Other Kenya Trails -->
+      <article class="hike-card">
+        <div class="hike-header">
+          <i class="fas fa-tree" aria-hidden="true"></i>
+          <h3>Forest &amp; Nature Trails</h3>
+        </div>
+        <p>
+          Discover Kenya's hidden forest gems, secluded water features, and diverse ecosystems.
+          From beginner-friendly forest walks to challenging nature treks, we guide hikers
+          through the best scenic trails across central Kenya.
+        </p>
+        <ul class="hike-highlights">
+          <li><strong>Variety:</strong> Multiple trail options</li>
+          <li><strong>Difficulty:</strong> Beginner to Advanced</li>
+          <li><strong>Highlights:</strong> Biodiversity, waterfalls, scenic valleys</li>
+        </ul>
+        <a href="/blogs/blog.html" class="cta-button-small">Read Trail Guides</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     PHOTO GALLERY
+============================ -->
+<section class="gallery-slideshow">
+  <div class="container">
+    <h2><i class="fas fa-image" aria-hidden="true"></i> Hiking Gallery Photos</h2>
+    <p>
+      Real moments from real hikers. Browse our extensive gallery of Kenya hiking experiences,
+      scenic trail photos, and adventure memories from across Kijabe, the Rift Valley, and beyond.
+    </p>
+
+    <div class="slideshow" id="slideshow" role="region" aria-roledescription="carousel" aria-label="Gallery slideshow">
+      <div class="slides" id="slides"></div>
+      <button type="button" class="slide-btn prev" aria-label="Previous photo">&#10094;</button>
+      <button type="button" class="slide-btn next" aria-label="Next photo">&#10095;</button>
+      <div class="indicators" id="indicators" role="tablist" aria-label="Slide indicators"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     HIKING VIDEOS
+============================ -->
+<section class="gallery-videos">
+  <div class="container">
+    <h2><i class="fas fa-video" aria-hidden="true"></i> Guided Hiking Videos</h2>
+    <p>
+      Experience Kijabe Adventures through real hiking footage, scenic trails, Great Rift Valley viewpoints
+      and guided adventure activities with our local expert guides. See what a day on the trail looks like.
+    </p>
+
+    <figure class="video-item">
+      <video
+          controls
+          preload="metadata"
+          poster="/images/video-thumbnails/kijabe-hills-hike.png"
+          width="100%"
+          playsinline
+          aria-label="Kijabe Hills guided hiking adventure">
+          <source src="/videos/site1.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+      </video>
+      <script>
+        // Video event tracking
+        document.addEventListener('DOMContentLoaded', function() {
+          var video = document.querySelector('.video-item video');
+          if (video) {
+            // Track play event
+            video.addEventListener('play', function() {
+              trackVideoPlay('Kijabe Hills Guided Hike');
+            });
+
+            // Track completion (video ended)
+            video.addEventListener('ended', function() {
+              trackVideoComplete('Kijabe Hills Guided Hike');
+            });
+          }
+        });
+      </script>
+      <figcaption>
+        Experience a guided Kijabe Hills hike featuring scenic forest trails, Great Rift Valley viewpoints,
+        and post-hike recovery stretches. This is what a day of hiking with Kijabe Adventures looks like.
+      </figcaption>
+
+      <!-- Video Transcript -->
+      <details class="video-transcript">
+        <summary>View Video Transcript</summary>
+        <div class="transcript-content">
+          <p>
+            This video follows a group of hikers exploring the iconic Kijabe Hills in Kenya's Great Rift Valley region.
+            The adventure begins on scenic forest trails that wind through lush vegetation and offer breathtaking panoramic views of the Rift Valley floor.
+          </p>
+          <p>
+            Midway through the hike, the group pauses at a popular viewpoint to take in the stunning landscape, photograph the surroundings, and learn about the area's ecology and cultural heritage from the local guide.
+          </p>
+          <p>
+            After completing the hike, the group returns to base and participates in guided post-hike recovery stretches and cool-down exercises.
+            These stretching activities help improve flexibility, reduce muscle stiffness, and prepare the body for the next hiking adventure.
+          </p>
+          <p>
+            This video demonstrates what a typical day of hiking with Kijabe Adventures looks like: expert guidance, safety-focused planning, stunning natural scenery, and professional recovery practices.
+          </p>
+        </div>
+      </details>
+    </figure>
+  </div>
+</section>
+
+<!-- ===========================
+     PLAN YOUR NEXT ADVENTURE
+============================ -->
+<section class="plan-adventure">
+  <div class="container">
+    <h2>Ready to Experience These Trails?</h2>
+
+    <!-- Primary CTA -->
+    <div class="primary-cta-wrapper">
+      <a href="/upcoming-hiking-events.html" class="cta-button-primary" onclick="trackBookingClick('upcoming_hike')">
+        <span class="cta-icon">📅</span>
+        Book an Upcoming Hike
+      </a>
+      <p class="cta-subtext">or</p>
+      <a href="/private-group-hikes.html" class="cta-button-primary" onclick="trackPrivateHikeClick()">
+        <span class="cta-icon">👥</span>
+        Plan a Private Hike
+      </a>
+    </div>
+
+    <!-- Secondary CTA -->
+    <div class="secondary-cta-wrapper">
+      <p>Questions? <strong>Chat with our guides on WhatsApp.</strong></p>
+      <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+         class="cta-button-secondary"
+         target="_blank"
+           rel="noopener noreferrer"
+           onclick="trackWhatsAppClick()">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Message on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     HIKING TIPS & PREPARATION
+============================ -->
+<section class="hiking-tips">
+  <div class="container">
+    <h2>Hiking Tips &amp; Preparation Guides</h2>
+    <p>
+      Prepare for your Kenya hiking adventure. Learn what to pack, how to stay safe, and how to make
+      the most of your time on the trail. Our blog features guides from experienced local guides.
+    </p>
+    <div class="tips-highlight">
+      <ul>
+        <li>
+              <strong><a href="/blogs/blog-mountain-climbing-prep.html" onclick="trackBlogClick('mountain_climbing_prep')">Mountain Climbing Preparation</a></strong>
+          – Get ready for higher altitude hikes with proper training and gear.
+        </li>
+        <li>
+              <strong><a href="/blogs/kenya-safety.html" onclick="trackBlogClick('kenya_hiking_safety')">Kenya Hiking Safety</a></strong>
+          – Everything you need to know about staying safe while hiking in Kenya.
+        </li>
+        <li>
+              <strong><a href="/blogs/blog-best-time-to-hike.html" onclick="trackBlogClick('best_time_to_hike')">Best Time to Hike Kenya</a></strong>
+          – Learn about seasonal conditions and the ideal times for each trail.
+        </li>
+        <li>
+              <strong><a href="/blogs/safari-tips.html" onclick="trackBlogClick('safari_hiking_tips')">Safari &amp; Hiking Tips</a></strong>
+          – Combine your hiking adventure with a Kenya safari experience.
+        </li>
+      </ul>
+    </div>
+        <a href="/blogs/blog.html" class="cta-button" onclick="trackBlogClick('all_hiking_guides')">Read All Hiking Guides</a>
+  </div>
+</section>
+
+<!-- ===========================
+     WHY CHOOSE KIJABE ADVENTURES
+============================ -->
+<section class="why-choose-us">
+  <div class="container">
+    <h2>Why Choose Kijabe Adventures for Kenya Hiking?</h2>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
+        <h3>Local Expert Guides</h3>
+        <p>
+          Our guides are locals who know every trail, peak, and viewpoint across Kenya.
+          They share cultural insights, safety expertise, and insider knowledge.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-users-circle" aria-hidden="true"></i>
+        <h3>Small Groups, Big Experiences</h3>
+        <p>
+          We keep groups small to ensure personal attention, safety, and genuine connection
+          with the natural environment and local communities.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-leaf" aria-hidden="true"></i>
+        <h3>Eco-Friendly &amp; Sustainable</h3>
+        <p>
+          We're committed to responsible tourism that protects Kenya's trails and benefits
+          local communities. Every hike supports conservation efforts.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        <h3>Safety First</h3>
+        <p>
+          Comprehensive safety protocols, weather monitoring, first aid trained guides, and
+          emergency communication systems on every hike.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p><i class="fas fa-phone" aria-hidden="true"></i> +254 743 980 340</p>
+      <p><i class="fas fa-envelope" aria-hidden="true"></i> info@kijabeadventures.com</p>
+      <p>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        Kijabe, Kenya
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Community Center</h3>
+      <ul>
+        <li><a href="/Partnership.html">Partner With Us</a></li>
+        <li><a href="/community.html">Our Community</a></li>
+        <li><a href="/safety.html">Safety</a></li>
+        <li><a href="/blogs/blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener noreferrer" aria-label="Visit Kijabe Adventures on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener noreferrer" aria-label="Visit Kijabe Adventures on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://x.com/KijabeAdventures" target="_blank" rel="noopener noreferrer" aria-label="Follow Kijabe Adventures on X (Twitter)">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-section footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/gallery.html" aria-current="page">Gallery</a></li>
+        <li><a href="/blogs/blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+ <p class="copyright">
+© <span id="year"></span> Kijabe Adventures. All rights reserved.
+</p>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+  <p class="footer-legal">
+    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+  </p>
+
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+   class="whatsapp-float"
+   target="_blank"
+  rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Scripts -->
+ <!-- gallery scripts -->
+<script src="js/gallery-images.js"></script>
+<script src="js/gallery.js" defer></script>
+<script src="js/config.js" defer></script>
+<script src="js/countdown.js" defer></script>
+<script src="js/share.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/js/next-hike.js" defer></script>
+<script src="js/mobile.js" defer></script>
+
+<!-- Service Worker -->
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/js/sw.js");
+  }
+</script>
+<!-- MOBILE STICKY BOOKING BAR -->
+<div class="mobile-sticky-bar">
+
+  <a href="/upcoming-hiking-events.html"
+      class="sticky-btn upcoming"
+      onclick="trackBookingClick('mobile_upcoming_hike')">
+    🎉 Book Upcoming Hike
+  </a>
+
+  <a href="/private-group-hikes.html"
+      class="sticky-btn private"
+      onclick="trackPrivateHikeClick()">
+    💳 Book Private Hike
+  </a>
+
+</div>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"VideoObject",
+  "name":"Kijabe Hills Guided Hiking Adventure",
+  "description":"Experience a guided hike through Kijabe Hills featuring scenic forest trails, breathtaking Great Rift Valley viewpoints, Old Kijabe Township cultural sites, and post-hike recovery exercises with Kijabe Adventures local guides.",
+  "thumbnailUrl":"https://kijabeadventures.com/images/video-thumbnails/kijabe-hills-hike.png",
+  "uploadDate":"2026-07-30",
+  "duration":"PT2M30S",
+  "contentUrl":"https://kijabeadventures.com/videos/site1.mp4",
+  "publisher":{
+      "@type":"Organization",
+      "name":"Kijabe Adventures",
+      "logo":{
+          "@type":"ImageObject",
+          "url":"https://kijabeadventures.com/images/kijabe-adventure-logo.png"
+      }
+  },
+  "keywords": "Kijabe Hills hiking, Kenya hiking guide, Great Rift Valley trek, Kijabe Adventures, guided hikes Kenya, hiking video Kenya",
+  "isFamilyFriendly": true,
+  "author": {
+    "@type": "Organization",
+    "name": "Kijabe Adventures"
+  }
+}
+</script>
+
+<!-- Related Hiking Experiences Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Popular Kenya Hiking Destinations",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kijabe Hills Hike",
+      "description": "Guided hike through Kijabe Hills with Great Rift Valley views and forest trails",
+      "url": "https://kijabeadventures.com/gallery.html#kijabe-hills",
+      "image": "https://kijabeadventures.com/images/gallery/kijabe-hills.jpg"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ngong Hills Hike",
+      "description": "Iconic Nairobi hiking destination with 360-degree views and ridgeline trek",
+      "url": "https://kijabeadventures.com/gallery.html#ngong-hills",
+      "image": "https://kijabeadventures.com/images/gallery/ngong-hills.jpg"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mt Longonot Trek",
+      "description": "Extinct volcano crater hike with panoramic crater views in the Great Rift Valley",
+      "url": "https://kijabeadventures.com/gallery.html#mt-longonot",
+      "image": "https://kijabeadventures.com/images/gallery/mt-longonot.jpg"
+    }
+  ]
+}
+</script>
+</body>
+</html>
+

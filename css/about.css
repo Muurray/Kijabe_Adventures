@@ -1,0 +1,1944 @@
+/* =========================================================
+   KIJABE ADVENTURES
+   ABOUT PAGE STYLES
+   File: css/about.css
+
+   IMPORTANT:
+   This stylesheet is ONLY for about.html.
+   Global website styles remain in styles.css.
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.about-page {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero-new {
+
+  position: relative;
+
+  min-height: 72vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background:
+    url("../images/nature-trail.webp")
+    center center /
+    cover
+    no-repeat;
+
+}
+
+
+
+.about-hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 45, 22, 0.82),
+      rgba(0, 20, 10, 0.60)
+    );
+
+}
+
+
+.about-hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(950px, 92%);
+
+  padding: 90px 20px;
+
+}
+
+
+.hero-eyebrow {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 17px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 50px;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 25px;
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+}
+
+
+.about-hero-new h1 {
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      2.8rem,
+      7vw,
+      5.8rem
+    );
+
+  line-height: 0.98;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  text-shadow:
+    0 5px 25px
+    rgba(0, 0, 0, 0.3);
+
+}
+
+
+.about-hero-new p {
+
+  max-width: 750px;
+
+  margin:
+    28px auto
+    36px;
+
+  font-size:
+    clamp(
+      1rem,
+      2vw,
+      1.2rem
+    );
+
+  line-height: 1.8;
+
+  color:
+    rgba(255, 255, 255, 0.93);
+
+}
+
+
+.hero-buttons {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+}
+
+
+.hero-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 15px 27px;
+
+  min-height: 52px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  font-size: 0.94rem;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+}
+
+
+.hero-btn:hover {
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+.hero-btn-primary {
+
+  background: #ffffff;
+
+  color: #075b2a;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.18);
+
+}
+
+
+.hero-btn-primary:hover {
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.25);
+
+}
+
+
+.hero-btn-secondary {
+
+  border: 2px solid #ffffff;
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+}
+
+
+.hero-btn-secondary:hover {
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+}
+
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.about-trust {
+
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 1120px;
+
+  margin:
+    -48px auto
+    0;
+
+  padding:
+    0 20px;
+
+}
+
+
+.trust-inner {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.13);
+
+}
+
+
+.trust-item {
+
+  padding:
+    27px 18px;
+
+  text-align: center;
+
+  border-right:
+    1px solid #eeeeee;
+
+}
+
+
+.trust-item:last-child {
+
+  border-right: none;
+
+}
+
+
+.trust-item i {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #087c3e;
+
+  font-size: 1.5rem;
+
+}
+
+
+.trust-item strong {
+
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #16351f;
+
+  font-size: 0.98rem;
+
+}
+
+
+.trust-item span {
+
+  display: block;
+
+  color: #6b6b6b;
+
+  font-size: 0.82rem;
+
+}
+
+
+/* =========================================================
+   SHARED SECTION ELEMENTS
+========================================================= */
+
+.section-label {
+
+  margin-bottom: 11px;
+
+  color: #087c3e;
+
+  font-size: 0.78rem;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+}
+
+
+.section-heading {
+
+  max-width: 760px;
+
+  margin:
+    0 auto
+    55px;
+
+  text-align: center;
+
+}
+
+
+.section-heading h2 {
+
+  margin:
+    0 0 16px;
+
+  color: #16351f;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.2rem
+    );
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+
+}
+
+
+.section-heading p {
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   OUR STORY
+========================================================= */
+
+.about-intro {
+
+  max-width: 1150px;
+
+  margin:
+    105px auto;
+
+  padding:
+    0 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 75px;
+
+  align-items: center;
+
+}
+
+
+.about-intro-image {
+
+  position: relative;
+
+}
+
+
+.about-intro-image img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 520px;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 20px 55px
+    rgba(0, 0, 0, 0.15);
+
+}
+
+
+.image-badge {
+
+  position: absolute;
+
+  left: 25px;
+
+  bottom: 25px;
+
+  max-width: 250px;
+
+  padding:
+    16px 20px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.18);
+
+}
+
+
+.image-badge strong {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #075b2a;
+
+  font-size: 1.05rem;
+
+}
+
+
+.image-badge span {
+
+  display: block;
+
+  color: #666666;
+
+  font-size: 0.82rem;
+
+  line-height: 1.4;
+
+}
+
+
+.about-intro-content h2 {
+
+  margin:
+    0 0 22px;
+
+  color: #16351f;
+
+  font-size:
+    clamp(
+      2.1rem,
+      4vw,
+      3.4rem
+    );
+
+  line-height: 1.1;
+
+  letter-spacing: -1.2px;
+
+}
+
+
+.about-intro-content p {
+
+  margin:
+    0 0 17px;
+
+  color: #555555;
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+
+}
+
+
+.about-intro-content strong {
+
+  color: #16351f;
+
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values-section {
+
+  padding:
+    105px 25px;
+
+  background:
+    #f3f7f3;
+
+}
+
+
+.values-grid {
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 22px;
+
+}
+
+
+.value-card {
+
+  padding:
+    35px 25px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.04);
+
+  border-radius: 19px;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 30px
+    rgba(0, 0, 0, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.value-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 17px 40px
+    rgba(0, 0, 0, 0.11);
+
+}
+
+
+.value-icon {
+
+  width: 66px;
+
+  height: 66px;
+
+  margin:
+    0 auto
+    20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #e7f4eb;
+
+  color: #087c3e;
+
+  font-size: 1.45rem;
+
+}
+
+
+.value-card h3 {
+
+  margin:
+    0 0 12px;
+
+  color: #16351f;
+
+  font-size: 1.18rem;
+
+}
+
+
+.value-card p {
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 0.9rem;
+
+  line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.destinations-section {
+
+  padding:
+    105px 25px;
+
+  background: #ffffff;
+
+}
+
+
+.destination-grid {
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+
+}
+
+
+.destination-card {
+
+  position: relative;
+
+  min-height: 295px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background-position: center;
+
+  background-size: cover;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.destination-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+    inherit;
+
+  transition:
+    transform 0.5s ease;
+
+}
+
+
+.destination-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.03) 15%,
+      rgba(0, 0, 0, 0.76) 100%
+    );
+
+}
+
+
+.destination-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.17);
+
+}
+
+
+.destination-card:hover::before {
+
+  transform:
+    scale(1.06);
+
+}
+
+
+.destination-content {
+
+  width: 100%;
+
+  padding:
+    28px 25px;
+
+}
+
+
+.destination-content h3 {
+
+  margin:
+    0 0 7px;
+
+  font-size: 1.38rem;
+
+  line-height: 1.2;
+
+}
+
+
+.destination-content p {
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   DESTINATION IMAGES
+
+   Change filenames here if your actual image names differ.
+========================================================= */
+
+.destination-kijabe {
+
+  background-image:
+    url("../images/Sites/kijabe-hills.webp");
+
+}
+
+
+.destination-ngong {
+
+  background-image:
+    url("../images/Sites/ngong-hills.webp");
+
+}
+
+
+.destination-longonot {
+
+  background-image:
+    url("../images/Sites/mt-longonot.webp");
+
+}
+
+
+.destination-margaret {
+
+  background-image:
+    url("../images/Sites/mount-margaret-hiking.webp");
+
+}
+
+
+.destination-aberdares {
+
+  background-image:
+    url("../images/Sites/Aberdares-hiking-trail.webp");
+
+}
+
+
+.destination-rift {
+
+  background-image:
+    url("../images/Sites/rift-valley-viewpoint.webp");
+
+}
+
+
+/* =========================================================
+   OUR PROMISE
+========================================================= */
+
+.promise-section {
+
+  padding:
+    100px 25px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #075b2a,
+      #063d20
+    );
+
+}
+
+
+.promise-container {
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+}
+
+
+.promise-label {
+
+  margin-bottom: 12px;
+
+  color: #b8e6c6;
+
+  font-size: 0.78rem;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+}
+
+
+.promise-container h2 {
+
+  max-width: 850px;
+
+  margin:
+    0 auto 20px;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.4rem
+    );
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+
+}
+
+
+.promise-container > p {
+
+  max-width: 750px;
+
+  margin:
+    0 auto 50px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  line-height: 1.8;
+
+}
+
+
+.promise-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+
+}
+
+
+.promise-item {
+
+  padding:
+    30px 25px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+
+}
+
+
+.promise-item:hover {
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+}
+
+
+.promise-item i {
+
+  margin-bottom: 15px;
+
+  font-size: 1.7rem;
+
+}
+
+
+.promise-item h3 {
+
+  margin:
+    0 0 10px;
+
+  font-size: 1.15rem;
+
+}
+
+
+.promise-item p {
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team-section-new {
+
+  padding:
+    105px 25px;
+
+  background: #ffffff;
+
+}
+
+
+.team-grid {
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 30px;
+
+}
+
+
+.team-card {
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    190px minmax(0, 1fr);
+
+  background:
+    #f7f9f7;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.team-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 17px 45px
+    rgba(0, 0, 0, 0.12);
+
+}
+
+
+.team-photo-wrapper {
+
+  min-height: 300px;
+
+  overflow: hidden;
+
+}
+
+
+.team-photo-wrapper img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 300px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+
+}
+
+
+.team-card:hover
+.team-photo-wrapper img {
+
+  transform:
+    scale(1.04);
+
+}
+
+
+.team-info-new {
+
+  padding:
+    28px 26px;
+
+}
+
+
+.team-info-new h3 {
+
+  margin:
+    0 0 5px;
+
+  color: #16351f;
+
+  font-size: 1.35rem;
+
+}
+
+
+.team-role {
+
+  margin-bottom: 18px;
+
+  color: #087c3e;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  line-height: 1.45;
+
+}
+
+
+.team-info-new p {
+
+  margin:
+    0 0 14px;
+
+  color: #666666;
+
+  font-size: 0.88rem;
+
+  line-height: 1.72;
+
+}
+
+
+.team-info-new p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   COMMUNITY
+========================================================= */
+
+.community-section {
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding:
+    100px 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+}
+
+
+.community-content h2 {
+
+  margin:
+    0 0 20px;
+
+  color: #16351f;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.2rem
+    );
+
+  line-height: 1.12;
+
+}
+
+
+.community-content > p {
+
+  margin: 0;
+
+  color: #555555;
+
+  line-height: 1.8;
+
+}
+
+
+.community-list {
+
+  margin:
+    25px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.community-list li {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin:
+    14px 0;
+
+  color: #444444;
+
+  line-height: 1.5;
+
+}
+
+
+.community-list i {
+
+  flex-shrink: 0;
+
+  margin-top: 3px;
+
+  color: #087c3e;
+
+}
+
+
+.community-image {
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.12);
+
+}
+
+
+.community-image img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 450px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+
+}
+
+
+.community-image:hover img {
+
+  transform:
+    scale(1.04);
+
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-cta {
+
+  position: relative;
+
+  padding:
+    105px 25px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 55, 27, 0.88),
+      rgba(0, 35, 17, 0.92)
+    ),
+    url("../images/Sites/kijabe-railways-hiking.webp")
+    center /
+    cover
+    no-repeat;
+
+}
+
+
+.about-cta-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+}
+
+
+.cta-eyebrow {
+
+  margin-bottom: 14px;
+
+  color:
+    #b8e6c6;
+
+  font-size: 0.75rem;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+}
+
+
+.about-cta h2 {
+
+  margin:
+    0 0 18px;
+
+  font-size:
+    clamp(
+      2.3rem,
+      5vw,
+      4rem
+    );
+
+  line-height: 1.08;
+
+  letter-spacing: -1px;
+
+}
+
+
+.about-cta p {
+
+  max-width: 680px;
+
+  margin:
+    0 auto 32px;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  line-height: 1.8;
+
+}
+
+
+.cta-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 13px;
+
+  flex-wrap: wrap;
+
+}
+
+
+.cta-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 52px;
+
+  padding:
+    15px 28px;
+
+  border-radius: 50px;
+
+  background: #ffffff;
+
+  color: #075b2a;
+
+  text-decoration: none;
+
+  font-size: 0.92rem;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.cta-button:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.2);
+
+}
+
+
+.cta-button-outline {
+
+  color: #ffffff;
+
+  background:
+    transparent;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.8);
+
+}
+
+
+.cta-button-outline:hover {
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
+}
+
+
+/* =========================================================
+   ABOUT PAGE FOOTER SAFETY
+   These selectors prevent malformed footer lists from
+   affecting this page.
+========================================================= */
+
+.about-page footer ul {
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.about-page footer li {
+
+  list-style: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+
+  .about-intro {
+
+    gap: 45px;
+
+  }
+
+
+  .values-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .destination-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .team-grid {
+
+    grid-template-columns:
+      1fr;
+
+    max-width: 850px;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+
+  .about-hero-new {
+
+    min-height: 70vh;
+
+  }
+
+
+  .trust-inner {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .trust-item:nth-child(2) {
+
+    border-right: none;
+
+  }
+
+
+  .trust-item:nth-child(-n+2) {
+
+    border-bottom:
+      1px solid #eeeeee;
+
+  }
+
+
+  .about-intro {
+
+    grid-template-columns:
+      1fr;
+
+    margin:
+      85px auto;
+
+  }
+
+
+  .about-intro-image img {
+
+    height: 450px;
+
+  }
+
+
+  .promise-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .community-section {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 45px;
+
+  }
+
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+  .about-hero-new {
+
+    min-height: 78vh;
+
+  }
+
+
+  .about-hero-content {
+
+    padding:
+      80px 15px;
+
+  }
+
+
+  .about-hero-new h1 {
+
+    font-size:
+      clamp(
+        2.5rem,
+        12vw,
+        3.5rem
+      );
+
+    letter-spacing:
+      -1.5px;
+
+  }
+
+
+  .about-hero-new p {
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+  }
+
+
+  .hero-eyebrow {
+
+    font-size:
+      0.68rem;
+
+    letter-spacing:
+      1.2px;
+
+  }
+
+
+  .hero-buttons {
+
+    flex-direction:
+      column;
+
+    width: 100%;
+
+  }
+
+
+  .hero-btn {
+
+    width:
+      min(100%, 320px);
+
+  }
+
+
+  .about-trust {
+
+    margin-top:
+      -25px;
+
+    padding:
+      0 15px;
+
+  }
+
+
+  .trust-inner {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .trust-item {
+
+    border-right: none;
+
+    border-bottom:
+      1px solid #eeeeee;
+
+  }
+
+
+  .trust-item:last-child {
+
+    border-bottom: none;
+
+  }
+
+
+  .about-intro {
+
+    margin:
+      70px auto;
+
+    padding:
+      0 20px;
+
+  }
+
+
+  .about-intro-image img {
+
+    height:
+      370px;
+
+    border-radius:
+      20px;
+
+  }
+
+
+  .image-badge {
+
+    left: 15px;
+
+    bottom: 15px;
+
+    padding:
+      13px 15px;
+
+  }
+
+
+  .values-section,
+  .destinations-section,
+  .team-section-new {
+
+    padding:
+      75px 20px;
+
+  }
+
+
+  .values-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .destination-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .destination-card {
+
+    min-height:
+      280px;
+
+  }
+
+
+  .promise-section {
+
+    padding:
+      75px 20px;
+
+  }
+
+
+  .team-card {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .team-photo-wrapper {
+
+    min-height:
+      300px;
+
+  }
+
+
+  .team-photo-wrapper img {
+
+    min-height:
+      300px;
+
+  }
+
+
+  .community-section {
+
+    padding:
+      75px 20px;
+
+  }
+
+
+  .community-image img {
+
+    height:
+      350px;
+
+  }
+
+
+  .about-cta {
+
+    padding:
+      80px 20px;
+
+  }
+
+
+  .cta-buttons {
+
+    flex-direction:
+      column;
+
+  }
+
+
+  .cta-button {
+
+    width:
+      min(100%, 320px);
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+
+    scroll-behavior: auto !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+  }
+
+}
