@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navToggle && primaryNav) {
 
+        const closeNavigation = () => {
+            navToggle.setAttribute("aria-expanded", "false");
+            primaryNav.classList.remove("open");
+            document.body.classList.remove("menu-open");
+        };
+
         navToggle.addEventListener("click", () => {
 
             const isOpen =
@@ -28,6 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             document.body.classList.toggle("menu-open");
 
+        });
+
+        window.addEventListener("scroll", closeNavigation, { passive: true });
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeNavigation();
+            }
+        });
+
+        primaryNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", closeNavigation);
         });
 
     }
