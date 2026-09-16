@@ -39,7 +39,9 @@ const PricingEngine = {
   },
 
   calculateParking(people, enabled) {
-    if (!enabled) return { cars: 0, parkingCost: 0 };
+    if (!enabled) {
+      return { cars: 0, parkingCost: 0 };
+    }
 
     const cars = Math.ceil(people / 4);
 
@@ -54,75 +56,159 @@ const PricingEngine = {
   }
 };
 
-
 // ======================================
 // 🚐 TRANSPORT RULES
 // ======================================
 
 const TransportRules = {
-
   getAvailableOptions(hikers) {
-
     const n = Number(hikers) || 0;
 
-    if (n <= 0) return ["self", "nairobi", "westlands", "kikuyu"];
+    const base = ["self", "nairobi", "westlands", "kikuyu"];
 
-    if (n <= 4) return ["self", "nairobi", "westlands", "kikuyu"];
+    if (n <= 0) return base;
+    if (n <= 4) return base;
+    if (n <= 10) return [...base, "thika"];
+    if (n <= 20) return ["self", "nairobi", "westlands", "kikuyu", "thika", "coaster"];
 
-    if (n <= 10) return ["nairobi", "westlands", "kikuyu", "thika"];
-
-    if (n <= 20) return ["coaster"];
-
-    return ["bus"];
+    return ["self", "coaster", "bus"];
   }
 };
 
-
 // ======================================
-// 🚀 BOOKING CALCULATOR
+// 🚀 MIXED GROUP BOOKING CALCULATOR
 // ======================================
 
 function initBookingCalculator(config) {
-
-  // ================= INPUTS =================
   const name = document.querySelector(config.name);
-  const people = document.querySelector(config.people);
-  const type = document.querySelector(config.type);
   const residency = document.querySelector(config.residency);
+  const hikerType = document.querySelector(config.hikerType);
+  const groupInputs = Object.fromEntries(
+    Object.entries(config.categories).map(([key, selector]) => [key, document.querySelector(selector)])
+  );
   const transport = document.querySelector(config.transport);
+  const groupWrapper = config.groupWrapper ? document.querySelector(config.groupWrapper) : null;
+  const transportWrapper = config.transportWrapper ? document.querySelector(config.transportWrapper) : null;
   const parking = document.querySelector(config.parking);
-  const date = document.querySelector(config.date);
+  const date = config.date ? document.querySelector(config.date) : null;
 
-  // ================= OUTPUTS =================
   const totalEl = document.querySelector(config.total);
   const depositEl = document.querySelector(config.deposit);
   const btn = document.querySelector(config.button);
   const resultCard = document.querySelector(config.resultCard);
   const totalHikersEl = document.querySelector(config.totalHikers);
+  const breakdownEl = config.breakdown ? document.querySelector(config.breakdown) : null;
 
-  // ================= UI =================
   const parkingBox = document.querySelector(config.parkingBox);
   const pickupInfoBox = document.querySelector(config.pickupInfoBox);
   const pickupInfo = document.querySelector(config.pickupInfo);
 
-  // ================= DATE LIMIT =================
-  if (date) {
-    date.min = new Date().toISOString().split("T")[0];
+  if (date) date.min = new Date().toISOString().split("T")[0];
+
+  function getCounts() {
+    return Object.fromEntries(
+      Object.entries(groupInputs).map(([key, input]) => [
+        key,
+        Math.max(0, parseInt(input?.value, 10) || 0)
+      ])
+    );
   }
 
-  // ======================================
-  // 🚐 TRANSPORT OPTIONS (WORKS FOR BOTH)
-  // ======================================
+  function totalHikers() {
+    return Object.values(getCounts()).reduce((sum, count) => sum + count, 0);
+  }
+
+  function getVisibleFieldKeys() {
+    const currentResidency = residency?.value || "";
+    const currentType = hikerType?.value || "";
+
+    if (!currentResidency || !currentType) {
+      return [];
+    }
+
+    const map = {
+      resident: {
+        adult: ["residentAdult"],
+        student: ["residentStudent"],
+        child: ["residentChild"],
+        mixed: ["residentAdult", "residentStudent", "residentChild"]
+      },
+      nonresident: {
+        adult: ["nonresidentAdult"],
+        student: ["nonresidentStudent"],
+        child: ["nonresidentChild"],
+        mixed: ["nonresidentAdult", "nonresidentStudent", "nonresidentChild"]
+      },
+      mixed: {
+        adult: ["residentAdult", "nonresidentAdult"],
+        student: ["residentStudent", "nonresidentStudent"],
+        child: ["residentChild", "nonresidentChild"],
+        mixed: [
+          "residentAdult",
+          "residentStudent",
+          "residentChild",
+          "nonresidentAdult",
+          "nonresidentStudent",
+          "nonresidentChild"
+        ]
+      }
+    };
+
+    return map[currentResidency]?.[currentType] || [];
+  }
+
+  function updateGroupAndTransportState() {
+    const hasSelection = Boolean(residency?.value && hikerType?.value);
+    const visibleKeys = new Set(getVisibleFieldKeys());
+
+    Object.entries(groupInputs).forEach(([key, input]) => {
+      const row = input?.closest(".pricing-row");
+      if (!row) return;
+
+      const shouldShow = visibleKeys.has(key);
+      row.style.display = shouldShow ? "grid" : "none";
+      if (!shouldShow) input.value = "0";
+    });
+
+    if (groupWrapper) {
+      groupWrapper.classList.toggle("is-collapsed", !hasSelection);
+    }
+
+    if (transportWrapper) {
+      transportWrapper.classList.toggle("is-collapsed", !hasSelection);
+    }
+
+    if (parkingBox) {
+      parkingBox.classList.toggle("is-collapsed", !hasSelection || !transport?.value || transport.value !== "self");
+    }
+
+    if (pickupInfoBox) {
+      pickupInfoBox.classList.toggle("is-collapsed", !hasSelection || !transport?.value || transport.value === "self");
+    }
+
+    if (transport) {
+      transport.disabled = !hasSelection;
+      if (!hasSelection) {
+        transport.innerHTML = '<option value="">Select Transport</option>';
+        transport.value = "";
+      }
+    }
+  }
 
   function updateTransportOptions() {
+    const selectedResidency = residency?.value || "";
+    const selectedType = hikerType?.value || "";
 
-    const hikers = parseInt(people?.value, 10) || 0;
-    const select = transport;
+    if (!selectedResidency || !selectedType) {
+      updateGroupAndTransportState();
+      return;
+    }
 
-    if (!select) return;
+    if (transport) transport.disabled = false;
 
+    const previousValue = transport?.value || "";
     const labels = {
-      self: "Own Transport",
+      self: "Self Drive / Own Transport",
       nairobi: "Nairobi Pickup",
       westlands: "Westlands Pickup",
       kikuyu: "Kikuyu Pickup",
@@ -131,41 +217,34 @@ function initBookingCalculator(config) {
       bus: "Large Bus"
     };
 
-    const allowed = TransportRules.getAvailableOptions(hikers);
-
-    select.innerHTML = `<option value="">Select Transport</option>`;
+    const allowed = TransportRules.getAvailableOptions(totalHikers());
+    transport.innerHTML = '<option value="">Select Transport</option>';
 
     allowed.forEach(key => {
-      const opt = document.createElement("option");
-      opt.value = key;
-      opt.textContent = labels[key] || key;
-      select.appendChild(opt);
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = labels[key] || key;
+      transport.appendChild(option);
     });
 
-    if (!allowed.includes(select.value)) {
-      select.value = "";
-    }
+    transport.value = allowed.includes(previousValue) ? previousValue : "";
+    updateGroupAndTransportState();
   }
 
-  // ======================================
-  // 🚐 TRANSPORT UI
-  // ======================================
-
   function updateTransportUI() {
-
     if (!transport) return;
 
     const value = transport.value;
 
     if (value === "self") {
-      if (parkingBox) parkingBox.style.display = "block";
-      if (pickupInfoBox) pickupInfoBox.style.display = "none";
+      if (parkingBox) parkingBox.classList.remove("is-collapsed");
+      if (pickupInfoBox) pickupInfoBox.classList.add("is-collapsed");
+      return;
     }
 
-    else if (value) {
-
-      if (parkingBox) parkingBox.style.display = "none";
-      if (pickupInfoBox) pickupInfoBox.style.display = "block";
+    if (value) {
+      if (parkingBox) parkingBox.classList.add("is-collapsed");
+      if (pickupInfoBox) pickupInfoBox.classList.remove("is-collapsed");
 
       const infoMap = {
         nairobi: "🚐 Pickup: Nairobi CBD — 6:00 AM",
@@ -176,157 +255,161 @@ function initBookingCalculator(config) {
         bus: "🚌 Large Bus Pickup — details shared later"
       };
 
-      if (pickupInfo) {
-        pickupInfo.innerHTML = infoMap[value] || "";
-      }
-
+      if (pickupInfo) pickupInfo.innerHTML = infoMap[value] || "";
       if (parking) parking.checked = false;
+      return;
     }
 
-    else {
-      if (parkingBox) parkingBox.style.display = "none";
-      if (pickupInfoBox) pickupInfoBox.style.display = "none";
-    }
+    if (parkingBox) parkingBox.classList.add("is-collapsed");
+    if (pickupInfoBox) pickupInfoBox.classList.add("is-collapsed");
   }
 
-  // ======================================
-  // 🧠 MAIN UPDATE
-  // ======================================
-
   function update() {
-
     const customerName = name?.value?.trim() || "";
-    const hikers = parseInt(people?.value, 10) || 0;
-    const hikeType = type?.value || "";
-    const residentType = residency?.value || "";
+    const selectedResidency = residency?.value || "";
+    const selectedType = hikerType?.value || "";
+    const hikers = totalHikers();
     const transportType = transport?.value || "";
-    const selectedDate = date?.value || "";
-
-    const isValid =
-      customerName &&
-      hikers > 0 &&
-      hikeType &&
-      residentType &&
-      transportType;
+    const selectedDate = date?.value || "To be confirmed";
+    const isValid = customerName && hikers > 0 && selectedResidency && selectedType && transportType;
 
     if (!isValid) {
-
-      if (resultCard) resultCard.style.display = "none";
-
+      if (resultCard) {
+        resultCard.style.display = "none";
+        resultCard.hidden = true;
+      }
       if (totalEl) totalEl.innerText = "0";
       if (depositEl) depositEl.innerText = "0";
-
+      if (totalHikersEl) totalHikersEl.innerText = "0";
+      if (breakdownEl) breakdownEl.innerHTML = "";
       if (btn) {
         btn.classList.add("disabled");
         btn.href = "#";
       }
-
       return;
     }
 
-    // ================= BASE PRICE =================
-    const pricePerPerson =
-      PricingEngine.getPrice(hikeType, residentType);
+    const priceMap = {
+      residentAdult: ["adult", "resident", "Resident Adults"],
+      residentStudent: ["student", "resident", "Resident Students"],
+      residentChild: ["child", "resident", "Resident Children"],
+      nonresidentAdult: ["adult", "nonresident", "Non-resident Adults"],
+      nonresidentStudent: ["student", "nonresident", "Non-resident Students"],
+      nonresidentChild: ["child", "nonresident", "Non-resident Children"]
+    };
 
-    let total = pricePerPerson * hikers;
+    const counts = getCounts();
+    const pricing = Object.fromEntries(
+      Object.entries(priceMap).map(([key, [type, category, label]]) => {
+        const price = PricingEngine.getPrice(type, category);
+        return [key, {
+          count: counts[key],
+          price,
+          label,
+          subtotal: counts[key] * price
+        }];
+      })
+    );
 
-    // ================= TRANSPORT =================
-    const seatsPerCar = 4;
-    const carsNeeded = Math.ceil(hikers / seatsPerCar);
+    const hikingTotal = Object.values(pricing).reduce((sum, item) => sum + item.subtotal, 0);
+    const carsNeeded = Math.ceil(hikers / 4);
+    const transportFee = PricingEngine.getTransportFee(transportType);
+    const transportCost = transportFee === 0 ? 0 : transportFee * carsNeeded;
+    const parkingData = PricingEngine.calculateParking(
+      hikers,
+      transportType === "self" && parking?.checked
+    );
+    const total = hikingTotal + transportCost + parkingData.parkingCost;
+    const deposit = PricingEngine.calculateDeposit(total);
 
-    const transportFee =
-      PricingEngine.getTransportFee(transportType);
-
-    total += transportFee === 0 ? 0 : transportFee * carsNeeded;
-
-    // ================= PARKING =================
-    const parkingEnabled =
-      transportType === "self" && parking?.checked;
-
-    const parkingData =
-      PricingEngine.calculateParking(hikers, parkingEnabled);
-
-    total += parkingData.parkingCost;
-
-    // ================= DEPOSIT =================
-    const deposit =
-      PricingEngine.calculateDeposit(total);
-
-    // ================= UI =================
-    if (resultCard) resultCard.style.display = "block";
+    if (resultCard) {
+      resultCard.style.display = "block";
+      resultCard.hidden = false;
+    }
     if (totalHikersEl) totalHikersEl.innerText = hikers;
+    if (totalEl) totalEl.innerText = total.toLocaleString();
+    if (depositEl) depositEl.innerText = deposit.toLocaleString();
 
-    totalEl.innerText = total.toLocaleString();
-    depositEl.innerText = deposit.toLocaleString();
+    let message = `Hello Kijabe Adventures 👋🏾\n\nMy name is ${customerName}.\n\n📅 Date: ${selectedDate}\n\n👥 Total Hikers: ${hikers}\n\n👤 GROUP BREAKDOWN`;
 
-    // ================= WHATSAPP =================
-    const message = `
-Hello Kijabe Adventures 👋🏾
+    Object.values(pricing).forEach(item => {
+      if (item.count > 0) {
+        message += `\n${item.label}: ${item.count}`;
+      }
+    });
 
-My name is ${customerName}.
+    message += `\n\n💰 HIKING COST: KES ${hikingTotal.toLocaleString()}\n\n🚐 Transport: ${transportType}\n`;
 
-📅 Date: ${selectedDate}
+    if (transportCost > 0) {
+      message += `Transport Cost: KES ${transportCost.toLocaleString()}\n`;
+    }
 
-👥 Hikers: ${hikers}
-👤 Type: ${hikeType}
-🌍 Residency: ${residentType}
+    if (parkingData.parkingCost > 0) {
+      message += `🅿️ Parking: ${parkingData.cars} car(s) = KES ${parkingData.parkingCost.toLocaleString()}\n`;
+    }
 
-🚐 Transport: ${transportType}
+    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (30%): KES ${deposit.toLocaleString()}\n\nI will pay via Till Number 5440810.`;
 
-💰 Total: KES ${total.toLocaleString()}
-💳 Booking Fee (30%): KES ${deposit.toLocaleString()}
-
-I will pay via Till Number 5440810.
-`;
-
-    btn.href =
-      `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
-
-    btn.classList.remove("disabled");
+    if (btn) {
+      btn.href = `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
+      btn.classList.remove("disabled");
+    }
   }
 
-  // ======================================
-  // 🎯 EVENTS
-  // ======================================
-
-  name?.addEventListener("input", update);
-
-  people?.addEventListener("input", () => {
-    updateTransportOptions();
-    update();
+  Object.values(groupInputs).forEach(input => {
+    input?.addEventListener("input", () => {
+      updateTransportOptions();
+      updateTransportUI();
+      update();
+    });
   });
 
-  type?.addEventListener("change", update);
-  residency?.addEventListener("change", update);
-
+  name?.addEventListener("input", update);
+  residency?.addEventListener("change", () => {
+    updateGroupAndTransportState();
+    updateTransportOptions();
+    updateTransportUI();
+    update();
+  });
+  hikerType?.addEventListener("change", () => {
+    updateGroupAndTransportState();
+    updateTransportOptions();
+    updateTransportUI();
+    update();
+  });
   transport?.addEventListener("change", () => {
     updateTransportUI();
     update();
   });
-
-  date?.addEventListener("change", update);
   parking?.addEventListener("change", update);
+  date?.addEventListener("change", update);
 
-  // ================= INIT =================
+  updateGroupAndTransportState();
   updateTransportOptions();
   updateTransportUI();
   update();
 }
-
 
 // ======================================
 // 🚀 INIT BOTH CALCULATORS
 // ======================================
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  // PRIVATE
   initBookingCalculator({
     name: "#customerName",
-    people: "#hikers",
-    type: "#hikeType",
-    residency: "#residency",
+    residency: "#customerResidency",
+    hikerType: "#customerHikerType",
+    categories: {
+      residentAdult: "#residentAdults",
+      residentStudent: "#residentStudents",
+      residentChild: "#residentChildren",
+      nonresidentAdult: "#nonresidentAdults",
+      nonresidentStudent: "#nonresidentStudents",
+      nonresidentChild: "#nonresidentChildren"
+    },
     transport: "#transportOption",
+    groupWrapper: ".group-pricing",
+    transportWrapper: "#transportOptionWrapper",
     parking: "#parking",
     date: "#hikeDate",
 
@@ -336,21 +419,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultCard: "#resultCard",
     totalHikers: "#totalHikers",
+    breakdown: "#priceBreakdown",
 
     parkingBox: "#parkingBox",
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo"
   });
 
-  // EVENT (FIXED)
   initBookingCalculator({
     name: "#eventName",
-    people: "#eventPeople",
-    type: "#eventType",
     residency: "#eventResidency",
+    hikerType: "#eventHikerType",
+    categories: {
+      residentAdult: "#eventResidentAdults",
+      residentStudent: "#eventResidentStudents",
+      residentChild: "#eventResidentChildren",
+      nonresidentAdult: "#eventNonresidentAdults",
+      nonresidentStudent: "#eventNonresidentStudents",
+      nonresidentChild: "#eventNonresidentChildren"
+    },
     transport: "#eventTransport",
+    groupWrapper: ".group-pricing",
+    transportWrapper: "#eventTransportWrapper",
     parking: "#eventParking",
-    date: null, // optional
+    date: null,
 
     total: "#eventTotal",
     deposit: "#eventDeposit",
@@ -358,10 +450,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultCard: "#eventResultCard",
     totalHikers: "#eventTotalHikers",
+    breakdown: "#eventPriceBreakdown",
 
     parkingBox: "#eventParkingBox",
     pickupInfoBox: "#eventPickupInfoBox",
     pickupInfo: "#eventPickupInfo"
   });
-
 });

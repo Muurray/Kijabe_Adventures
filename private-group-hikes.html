@@ -182,6 +182,7 @@
     <a href="/community.html">Community</a>
     <a href="/gallery.html">Gallery</a>
     <a href="/blogs/blog.html">Blog</a>
+    <a href="/private-group-hikes.html" class="active">Private Hikes</a>
   </nav>
 <!-- NEXT HIKE BADGE -->
  <a href="upcoming-hiking-events.html"
@@ -265,23 +266,6 @@
         <input type="tel" id="customerPhone" placeholder="07XX XXX XXX">
       </div>
 
-      <!-- HIKE TYPE -->
-      <div class="form-group">
-        <label>Hiker Type</label>
-        <select id="hikeType" title="Select hiker type">
-          <option value="">Select Type</option>
-          <option value="adult">Adults</option>
-          <option value="student">Students</option>
-          <option value="child">Children under 12</option>
-        </select>
-      </div>
-
-      <!-- NUMBER OF HIKERS -->
-      <div class="form-group">
-        <label>Number of Hikers</label>
-        <input type="number" id="hikers" min="1" placeholder="e.g. 10">
-      </div>
-
       <!-- DATE -->
       <div class="form-group">
         <label for="hikeDate">Preferred Date</label>
@@ -300,22 +284,80 @@
         </select>
       </div>
 
-      <!-- RESIDENCY -->
       <div class="form-group">
-        <label>Residency</label>
-        <select id="residency" title="Select Residency">
+        <label for="customerResidency">Residency</label>
+        <select id="customerResidency" title="Select Residency">
           <option value="">Select Residency</option>
-          <option value="resident">Kenyan Resident</option>
-          <option value="nonresident">Non-Resident</option>
+          <option value="resident">Resident</option>
+          <option value="nonresident">Non-resident</option>
+          <option value="mixed">Mixed Residency</option>
         </select>
       </div>
 
-      <!-- TRANSPORT -->
       <div class="form-group">
+        <label for="customerHikerType">Hiker Type</label>
+        <select id="customerHikerType" title="Select Hiker Type">
+          <option value="">Select Hiker Type</option>
+          <option value="adult">Adults</option>
+          <option value="student">Students</option>
+          <option value="child">Children</option>
+          <option value="mixed">Mixed Hiker Types</option>
+        </select>
+      </div>
+
+      <div class="group-pricing form-group is-collapsed" style="grid-column: 1 / -1;">
+        <h3>👥 Hiker Group</h3>
+
+        <p>
+          Enter the number of hikers in each category. Use the residency and hiker type
+          selections above to reveal only the relevant fields.
+        </p>
+
+        <div class="pricing-group">
+          <h4>🇰🇪 Residents</h4>
+
+          <div class="pricing-row" data-field="residentAdult">
+            <label for="residentAdults">Resident Adults</label>
+            <input type="number" id="residentAdults" min="0" value="0" inputmode="numeric">
+          </div>
+
+          <div class="pricing-row" data-field="residentStudent">
+            <label for="residentStudents">Resident Students</label>
+            <input type="number" id="residentStudents" min="0" value="0" inputmode="numeric">
+          </div>
+
+          <div class="pricing-row" data-field="residentChild">
+            <label for="residentChildren">Resident Children</label>
+            <input type="number" id="residentChildren" min="0" value="0" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="pricing-group">
+          <h4>🌍 Non-residents</h4>
+
+          <div class="pricing-row" data-field="nonresidentAdult">
+            <label for="nonresidentAdults">Non-resident Adults</label>
+            <input type="number" id="nonresidentAdults" min="0" value="0" inputmode="numeric">
+          </div>
+
+          <div class="pricing-row" data-field="nonresidentStudent">
+            <label for="nonresidentStudents">Non-resident Students</label>
+            <input type="number" id="nonresidentStudents" min="0" value="0" inputmode="numeric">
+          </div>
+
+          <div class="pricing-row" data-field="nonresidentChild">
+            <label for="nonresidentChildren">Non-resident Children</label>
+            <input type="number" id="nonresidentChildren" min="0" value="0" inputmode="numeric">
+          </div>
+        </div>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="form-group is-collapsed" id="transportOptionWrapper">
         <label>Transport Option</label>
         <select id="transportOption" title="Select Transport Option">
           <option value="">Select Transport</option>
-          <option value="self">Own Transport</option>
+          <option value="self">Self Drive / Own Transport</option>
           <option value="nairobi">Nairobi Pickup</option>
           <option value="westlands">Westlands Pickup</option>
           <option value="kikuyu">Kikuyu Pickup</option>
@@ -324,7 +366,7 @@
       </div>
 
       <!-- PARKING (ONLY FOR SELF TRANSPORT) -->
-      <div class="form-group checkbox" id="parkingBox" hidden>
+      <div class="form-group checkbox is-collapsed" id="parkingBox">
         <label>
           <input type="checkbox" id="parking">
           Add Parking (+KES 300 per car)
@@ -332,7 +374,7 @@
       </div>
 
       <!-- PICKUP INFO -->
-      <div class="form-group" id="pickupInfoBox" hidden>
+      <div class="form-group is-collapsed" id="pickupInfoBox">
         <label>Pickup Info</label>
         <div id="pickupInfo"></div>
       </div>
@@ -344,7 +386,7 @@
 
     <!-- BUTTON -->
   <p class="live-note">
-  💡 Prices update automatically as you fill the form
+  💡 Select your Hike Type and Residency first. The available booking options will appear based on your selections.
 </p>
     <!-- RESULTS (HIDDEN UNTIL VALID) -->
     <div class="result-card" id="resultCard" hidden>

@@ -196,6 +196,7 @@ content="https://kijabeadventures.com/images/upcoming_hiking-event.png">
     <a href="/gallery.html">Gallery</a>
     <a href="/blogs/blog.html">Blog</a>
     <a href="/contact.html">Contact</a>
+    <a href="/upcoming-hiking-events.html" class="active">Upcoming Hikes</a>
   </nav>
 <!-- NEXT HIKE BADGE -->
  <a href="upcoming-hiking-events.html"
@@ -629,35 +630,71 @@ corporate teams and experienced hikers.
         <input type="tel" id="eventPhone" placeholder="07XX XXX XXX" autocomplete="tel">
       </div>
 
-      <!-- HIKER TYPE -->
-      <div class="form-group">
-        <label for="eventType">Hiker Type</label>
-        <select id="eventType">
-          <option value="">Select Type</option>
-          <option value="adult">Adults</option>
-          <option value="student">Students</option>
-          <option value="child">Children under 12</option>
-        </select>
-      </div>
-
-      <!-- NUMBER -->
-      <div class="form-group">
-        <label for="eventPeople">Number of People</label>
-        <input type="number" id="eventPeople" min="1" max="500" placeholder="e.g. 5">
-      </div>
-
-      <!-- RESIDENCY -->
       <div class="form-group">
         <label for="eventResidency">Residency</label>
         <select id="eventResidency">
           <option value="">Select Residency</option>
-          <option value="resident">Kenyan Resident</option>
-          <option value="nonresident">Non-Resident</option>
+          <option value="resident">Resident</option>
+          <option value="nonresident">Non-resident</option>
+          <option value="mixed">Mixed Residency</option>
         </select>
       </div>
 
-      <!-- TRANSPORT -->
       <div class="form-group">
+        <label for="eventHikerType">Hiker Type</label>
+        <select id="eventHikerType">
+          <option value="">Select Hiker Type</option>
+          <option value="adult">Adults</option>
+          <option value="student">Students</option>
+          <option value="child">Children</option>
+          <option value="mixed">Mixed Hiker Types</option>
+        </select>
+      </div>
+
+      <div class="group-pricing form-group is-collapsed" style="grid-column: 1 / -1;">
+        <h3>👥 Hiker Group</h3>
+
+        <div class="pricing-group">
+          <h4>🇰🇪 Residents</h4>
+
+          <label class="pricing-row" data-field="residentAdult">
+            Resident Adults
+            <input type="number" id="eventResidentAdults" min="0" value="0">
+          </label>
+
+          <label class="pricing-row" data-field="residentStudent">
+            Resident Students
+            <input type="number" id="eventResidentStudents" min="0" value="0">
+          </label>
+
+          <label class="pricing-row" data-field="residentChild">
+            Resident Children
+            <input type="number" id="eventResidentChildren" min="0" value="0">
+          </label>
+        </div>
+
+        <div class="pricing-group">
+          <h4>🌍 Non-residents</h4>
+
+          <label class="pricing-row" data-field="nonresidentAdult">
+            Non-resident Adults
+            <input type="number" id="eventNonresidentAdults" min="0" value="0">
+          </label>
+
+          <label class="pricing-row" data-field="nonresidentStudent">
+            Non-resident Students
+            <input type="number" id="eventNonresidentStudents" min="0" value="0">
+          </label>
+
+          <label class="pricing-row" data-field="nonresidentChild">
+            Non-resident Children
+            <input type="number" id="eventNonresidentChildren" min="0" value="0">
+          </label>
+        </div>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="form-group is-collapsed" id="eventTransportWrapper">
         <label for="eventTransport">Transport Option</label>
         <select id="eventTransport">
           <option value="">Select Transport</option>
@@ -665,21 +702,21 @@ corporate teams and experienced hikers.
       </div>
 
       <!-- PARKING -->
-      <div class="form-group checkbox" id="eventParkingBox">
+      <div class="form-group checkbox is-collapsed" id="eventParkingBox">
         <label>
           <input type="checkbox" id="eventParking">
-          Add Parking (Only if self transport)
+          Add Parking (+KES 300 per car)
         </label>
       </div>
 
     </div>
       <!-- BUTTON -->
   <p class="live-note">
-  💡 Prices update automatically as you fill the form
+  💡 Select your Hike Type and Residency first. The available booking options will appear based on your selections.
 </p>
 
     <!-- RESULTS -->
-    <div class="result-card" id="eventResultCard">
+    <div class="result-card" id="eventResultCard" style="display:none;">
       <p>Total Hikers: <strong id="eventTotalHikers">0</strong></p>
 
       <p>Total:
@@ -705,7 +742,7 @@ corporate teams and experienced hikers.
         <li>Send confirmation via WhatsApp</li>
       </ol>
 
-      <a id="whatsappLink"
+      <a id="eventWhatsapp"
          class="whatsapp-btn disabled"
          href="#">
         Confirm Booking via WhatsApp
