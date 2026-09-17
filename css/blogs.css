@@ -1811,6 +1811,9 @@ figcaption {
     width: 100%;
     box-sizing: border-box;
     display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     grid-template-columns: 1fr;
     grid-template-areas:
       "logo"
@@ -1905,7 +1908,9 @@ figcaption {
     max-width: 160px;
     margin: 0 14px 12px 0;
     padding: 14px 10px;
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 900;
     box-sizing: border-box;
   }
 
