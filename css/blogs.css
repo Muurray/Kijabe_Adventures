@@ -1811,12 +1811,13 @@ figcaption {
     width: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "logo toggle"
-      "tagline tagline"
-      "nav nav"
-      "badge badge";
+      "logo"
+      "tagline"
+      "toggle"
+      "nav"
+      "badge";
     align-items: center;
     gap: 8px 12px;
     padding: 12px 16px;
@@ -1847,6 +1848,7 @@ figcaption {
     width: 44px;
     height: 40px;
     margin: 0;
+    justify-self: start;
   }
 
   header .primary-nav {

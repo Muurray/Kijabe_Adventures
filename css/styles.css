@@ -1658,6 +1658,25 @@ outline-offset:2px;
 
 }
 @media (max-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "tagline"
+      "toggle"
+      "nav"
+      "badge";
+  }
+
+  header .header-top {
+    grid-area: top;
+  }
+
+  header .tagline {
+    grid-area: tagline;
+  }
+
   .slide img { height: 260px; }
 
   .header-container {
@@ -1674,10 +1693,12 @@ outline-offset:2px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    grid-area: navtoggle;
+    grid-area: toggle;
+    justify-self: start;
   }
 
   nav {
+    grid-area: nav;
     width: 100%;
     justify-content: flex-start;
     flex-direction: column;
