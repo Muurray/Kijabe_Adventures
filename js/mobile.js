@@ -5,6 +5,28 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    const isBlogPage = window.location.pathname.includes("/blogs/");
+    const siteHeader = document.querySelector("body > header");
+
+    const syncMobileHeaderOffset = () => {
+        if (!isBlogPage || !siteHeader || window.innerWidth > 768) return;
+
+        document.documentElement.style.setProperty(
+            "--mobile-header-height",
+            `${siteHeader.offsetHeight}px`
+        );
+    };
+
+    if (isBlogPage && siteHeader) {
+        document.body.classList.add("blog-mobile-layout");
+        syncMobileHeaderOffset();
+        window.addEventListener("resize", syncMobileHeaderOffset, { passive: true });
+
+        if ("ResizeObserver" in window) {
+            new ResizeObserver(syncMobileHeaderOffset).observe(siteHeader);
+        }
+    }
+
     /* ==========================================
        MOBILE NAVIGATION
     ========================================== */
@@ -18,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             navToggle.setAttribute("aria-expanded", "false");
             primaryNav.classList.remove("open");
             document.body.classList.remove("menu-open");
+            syncMobileHeaderOffset();
         };
 
         navToggle.addEventListener("click", () => {
@@ -33,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             primaryNav.classList.toggle("open");
 
             document.body.classList.toggle("menu-open");
+            syncMobileHeaderOffset();
 
         });
 
