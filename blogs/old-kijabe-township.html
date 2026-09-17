@@ -1048,21 +1048,6 @@ document.getElementById("year").textContent =
   });
 </script>
 <script>
-  (function () {
-    var navToggle = document.querySelector('.nav-toggle');
-    var primaryNav = document.getElementById('primary-nav');
-    if (navToggle && primaryNav) {
-      navToggle.addEventListener('click', function () {
-        var isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        primaryNav.classList.toggle('open');
-      });
-    }
-  })();
-</script>
-
-
-<script>
   document.querySelectorAll('.share-copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var url = btn.dataset.url;
