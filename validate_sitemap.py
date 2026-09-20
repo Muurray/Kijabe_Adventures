@@ -8,7 +8,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 path = 'sitemap.xml'
 root = ET.parse(path).getroot()
-ns = {'sm': 'https://www.sitemaps.org/schemas/sitemap/0.9'}
+ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls = [el.text for el in root.findall('.//sm:loc', ns)]
 print('Found', len(urls), 'URLs')
 failed = []
