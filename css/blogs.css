@@ -1313,6 +1313,24 @@ section ul {
   align-items: start;
 }
 
+/* The newer articles place the TOC and content directly in the post.
+   Keep the TOC beside the article content on desktop. */
+.modern-blog-post {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 35px;
+}
+
+.modern-blog-post > .table-of-contents {
+  grid-column: 1;
+  width: 270px;
+  max-width: 270px;
+  margin: 0;
+  position: sticky;
+  top: 25px;
+}
+
 .blog-post > .blog-post-header,
 .blog-post > .blog-post-hero,
 .blog-post > .blog-post-article,
@@ -1351,6 +1369,10 @@ section ul {
 .blog-post > .blog-post-header {
   grid-column: 1 / -1;
   width: 100%;
+}
+
+.modern-blog-post > * {
+  grid-area: auto;
 }
 
 /* Two-column (TOC + article) layout for the full illustrated post.
