@@ -32,6 +32,12 @@ xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kijabeadventures.com/mount-longonot-hike.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
     <loc>https://kijabeadventures.com/safety.html</loc>
@@ -168,6 +174,13 @@ xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://kijabeadventures.com/blogs/best-places-for-hot-springs-in-kenya.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 <url>
     <loc>https://kijabeadventures.com/gallery.html</loc>
 

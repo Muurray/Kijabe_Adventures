@@ -252,44 +252,257 @@ corporate teams and experienced hikers.
         🎉 View Upcoming Hikes
       </a>
       <a href="/private-group-hikes.html" class="cta-button primary">
-        💳 Private Group Hikes
+        💳 Book a Private Group Hike
       </a>
     </div>
 
   </div>
 </section>
-<!-- ===========================
-     FEATURED HIKE — compact banner
-============================ -->
 
-<section class="featured-hike" id="upcoming-events" aria-labelledby="featured-event-title">
+<!-- =========================================================
+     FEATURED HIKE — Compact Event Banner
+========================================================= -->
+
+<section
+  class="featured-hike"
+  id="upcoming-events"
+  aria-labelledby="featured-event-title"
+>
 
   <div class="featured-hike-banner">
 
-    <img class="featured-hike-thumb"
-         src="/images/kijabe-hills.webp"
-         alt="Hikers on the Kijabe Hills trail overlooking the Great Rift Valley"
-         loading="lazy">
+    <!-- Event Image -->
+    <div class="featured-hike-image">
+      <img
+        class="featured-hike-thumb"
+        src="/images/kijabe-hills.webp"
+        alt="Hikers enjoying the Kijabe Hills trail overlooking Kenya's Great Rift Valley"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
 
+    <!-- Event Information -->
     <div class="featured-hike-main">
 
       <div class="featured-hike-toprow">
-        <span class="featured-hike-badge">🔥 Limited Slots</span>
-        <span class="featured-hike-countdown" aria-label="Time remaining until event">
-          ⏳ <span id="days">--</span>d <span id="hours">--</span>h
-          <span id="minutes">--</span>m <span id="seconds">--</span>s left
+
+        <span class="featured-hike-badge">
+          🔥 Limited Slots
         </span>
+
+        <span
+          class="featured-hike-countdown"
+          id="featuredCountdown"
+          aria-live="polite"
+          aria-label="Time remaining until the Kijabe Hills Scenic Group Hike"
+        >
+          ⏳
+          <span id="days">--</span>d
+          <span id="hours">--</span>h
+          <span id="minutes">--</span>m
+          <span id="seconds">--</span>s
+        </span>
+
       </div>
 
-      <h2 id="featured-event-title">🌄 Kijabe Hills Scenic Group Hike</h2>
+      <h2 id="featured-event-title">
+        🌄 Kijabe Hills Scenic Group Hike
+      </h2>
 
       <p class="featured-hike-meta">
-        <span id="featuredEventDate"></span>
-        <span class="dot">&bull;</span> 📍 Kijabe Hills
-        <span class="dot">&bull;</span> <a href="#event-map" class="map-link">Route</a>
-        <span class="dot">&bull;</span> <a href="#whats-included" class="included-link">What's included</a>
+
+        <span id="featuredEventDate">
+          📅 Coming soon
+        </span>
+
+        <span class="dot" aria-hidden="true">•</span>
+
+        <span>
+          📍 Kijabe Hills, Kenya
+        </span>
+
+        <span class="dot" aria-hidden="true">•</span>
+
+        <a
+          href="#event-map"
+          class="map-link"
+          aria-label="View the Kijabe Hills hiking route"
+        >
+          🗺️ Route
+        </a>
+
+        <span class="dot" aria-hidden="true">•</span>
+
+        <a
+          href="#whats-included"
+          class="included-link"
+        >
+          🎒 What's included
+        </a>
+
       </p>
-      <script>
+
+      <p class="featured-hike-description">
+        Experience breathtaking Great Rift Valley views, scenic trails
+        and a memorable guided hiking adventure with Kijabe Adventures.
+      </p>
+
+    </div>
+
+
+    <!-- Booking / Price -->
+    <div class="featured-hike-cta">
+
+      <div class="featured-hike-price" aria-label="Price per person">
+        <strong>KES 2,000</strong>
+        <span>per person</span>
+      </div>
+
+      <a
+        href="#event-booking"
+        class="cta-button primary"
+        aria-label="Book the Kijabe Hills Scenic Group Hike"
+      >
+        🎟️ Book Now
+      </a>
+
+      <button
+        id="shareBtn"
+        class="icon-btn"
+        type="button"
+        aria-label="Share the Kijabe Hills Scenic Group Hike"
+        title="Share this hike"
+      >
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       SOCIAL SHARING
+  ======================================================== -->
+
+  <section
+    class="share-widget"
+    aria-labelledby="share-title"
+  >
+
+    <div class="share-widget-heading">
+
+      <h3 id="share-title">
+        📢 Invite Your Friends
+      </h3>
+
+      <p>
+        Know someone who would love this adventure?
+        Share the hike with them.
+      </p>
+
+    </div>
+
+
+    <div
+      class="share-buttons"
+      role="group"
+      aria-label="Share this hiking event"
+    >
+
+      <button
+        id="facebookBtn"
+        class="share-btn facebook"
+        type="button"
+        aria-label="Share this hike on Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        <span>Facebook</span>
+      </button>
+
+
+      <button
+        id="whatsappBtn"
+        class="share-btn whatsapp"
+        type="button"
+        aria-label="Share this hike on WhatsApp"
+      >
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span>WhatsApp</span>
+      </button>
+
+
+      <button
+        id="xBtn"
+        class="share-btn twitter"
+        type="button"
+        aria-label="Share this hike on X"
+      >
+        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        <span>X</span>
+      </button>
+
+
+      <button
+        id="linkedinBtn"
+        class="share-btn linkedin"
+        type="button"
+        aria-label="Share this hike on LinkedIn"
+      >
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        <span>LinkedIn</span>
+      </button>
+
+
+      <button
+        id="instagramBtn"
+        class="share-btn instagram"
+        type="button"
+        aria-label="Share this hike on Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <span>Instagram</span>
+      </button>
+
+
+      <button
+        id="tiktokBtn"
+        class="share-btn tiktok"
+        type="button"
+        aria-label="Share this hike on TikTok"
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+        <span>TikTok</span>
+      </button>
+
+
+      <button
+        id="copyBtn"
+        class="share-btn copy-link"
+        type="button"
+        aria-label="Copy the hiking event link"
+      >
+        🔗
+        <span>Copy Link</span>
+      </button>
+
+    </div>
+
+
+    <p
+      class="share-toast"
+      id="shareToast"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+  </section>
+
+</section>
+
+
+<script>
       document.addEventListener("DOMContentLoaded", () => {
         try {
           const featuredEl = document.getElementById("featuredEventDate");
@@ -309,22 +522,6 @@ corporate teams and experienced hikers.
       });
       </script>
 
-    </div> <!-- featured-hike-main -->
-
-    <div class="featured-hike-cta">
-      <div class="featured-hike-price">
-        KES 2,000
-        <span>per person</span>
-      </div>
-      <a href="#event-booking" class="cta-button primary">🎟️ Book Now</a>
-      <button id="shareBtn" class="icon-btn" aria-label="Share this hike">
-        <i class="fas fa-share-alt"></i>
-      </button>
-    </div>
-
-  </div> <!-- featured-hike-banner -->
-
-</section>
 
 <section class="event-overview" aria-labelledby="overview-title">
 
@@ -403,7 +600,7 @@ corporate teams and experienced hikers.
             <div class="stats-grid">
 
                 <div>
-                    <strong>1000+</strong>
+                    <strong>5000+</strong>
                     <span>Happy Hikers</span>
                 </div>
 
@@ -538,51 +735,414 @@ corporate teams and experienced hikers.
     </div>
 
 </section>
+```html
+<!-- =========================================================
+     FEATURED HIKE #2 — MOUNT LONGONOT
+     Links to dedicated Mount Longonot event page
+========================================================= -->
 
-<!-- ===========================
-     SHARE — standalone, no longer nested in the hero
-============================ -->
+<section
+  class="featured-hike featured-hike-longonot"
+  id="mount-longonot-event"
+  aria-labelledby="longonot-event-title"
+>
 
-<section class="share-widget" aria-labelledby="share-title">
+  <div class="featured-hike-banner">
 
-  <h3 id="share-title">📢 Invite Your Friends</h3>
-  <p>Invite your friends and family to join this hiking adventure.</p>
+    <!-- =====================================================
+         EVENT IMAGE
+    ====================================================== -->
 
-  <div class="share-buttons">
+    <div class="featured-hike-image">
 
-    <button id="facebookBtn" class="share-btn facebook">
-      <i class="fab fa-facebook-f"></i> Facebook
-    </button>
+      <a
+        href="/mount-longonot-hike.html"
+        aria-label="View the Mount Longonot guided hiking tour"
+      >
 
-    <button id="whatsappBtn" class="share-btn whatsapp">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </button>
+        <img
+          class="featured-hike-thumb"
+          src="/images/mount-longonot.webp"
+          alt="Hikers climbing Mount Longonot in Kenya"
+          loading="lazy"
+          decoding="async"
+        >
 
-    <button id="xBtn" class="share-btn twitter">
-      <i class="fab fa-x-twitter"></i> X
-    </button>
+      </a>
 
-    <button id="linkedinBtn" class="share-btn linkedin">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </button>
+    </div>
 
-    <button id="instagramBtn" class="share-btn instagram">
-      <i class="fab fa-instagram"></i> Instagram
-    </button>
 
-    <button id="tiktokBtn" class="share-btn tiktok">
-      <i class="fab fa-tiktok"></i> TikTok
-    </button>
+    <!-- =====================================================
+         EVENT INFORMATION
+    ====================================================== -->
 
-    <button id="copyBtn" class="share-btn">
-      🔗 Copy Link
-    </button>
+    <div class="featured-hike-main">
 
-  </div> <!-- share-buttons -->
+      <div class="featured-hike-toprow">
 
-  <p class="share-toast" id="shareToast" role="status" aria-live="polite"></p>
+        <span class="featured-hike-badge longonot-badge">
+          🏔️ Featured Hike
+        </span>
+
+
+        <!-- Countdown -->
+        <span
+          class="featured-hike-countdown"
+          id="longonotCountdown"
+          aria-live="polite"
+          aria-label="Time remaining until the next Mount Longonot hike"
+        >
+
+          ⏳
+
+          <span id="longonotDays">--</span>d
+          <span id="longonotHours">--</span>h
+          <span id="longonotMinutes">--</span>m
+          <span id="longonotSeconds">--</span>s
+
+          left
+
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           EVENT TITLE
+      ================================================== -->
+
+      <h2 id="longonot-event-title">
+
+        <a
+          href="/mount-longonot-hike.html"
+          class="featured-hike-title-link"
+        >
+          🏔️ Mount Longonot Guided Hiking Tour
+        </a>
+
+      </h2>
+
+
+      <!-- =================================================
+           EVENT META
+      ================================================== -->
+
+      <p class="featured-hike-meta">
+
+        <span id="longonotEventDate">
+          📅 Coming soon
+        </span>
+
+
+        <span class="dot" aria-hidden="true">
+          •
+        </span>
+
+
+        <span>
+          📍 Mount Longonot, Kenya
+        </span>
+
+
+        <span class="dot" aria-hidden="true">
+          •
+        </span>
+
+
+        <a
+          href="/mount-longonot-hike.html#longonot-map"
+          class="map-link"
+          aria-label="View the Mount Longonot hiking route"
+        >
+          🗺️ Route
+        </a>
+
+
+        <span class="dot" aria-hidden="true">
+          •
+        </span>
+
+
+        <a
+          href="/mount-longonot-hike.html#longonot-included"
+          class="included-link"
+        >
+          🎒 What's included
+        </a>
+
+      </p>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <p class="featured-hike-description">
+
+        Challenge yourself on the spectacular Mount Longonot
+        trail and enjoy panoramic views across Kenya's
+        Great Rift Valley with an experienced local guide.
+
+      </p>
+
+
+      <!-- =================================================
+           FULL DETAILS LINK
+      ================================================== -->
+
+      <a
+        href="/mount-longonot-hike.html"
+        class="featured-hike-details-link"
+        aria-label="View full Mount Longonot hike details"
+      >
+        View Full Hike Details
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         PRICE / BOOKING
+    ====================================================== -->
+
+    <div class="featured-hike-cta">
+
+      <div
+        class="featured-hike-price"
+        aria-label="Mount Longonot hike price per person"
+      >
+
+        <strong>KES 2,500</strong>
+
+        <span>
+          per person
+        </span>
+
+      </div>
+
+
+      <!-- Book Now -->
+      <a
+        href="/mount-longonot-hike.html#longonot-booking"
+        class="cta-button primary"
+        aria-label="Book the Mount Longonot guided hike"
+      >
+        🎟️ Book Now
+      </a>
+
+
+      <!-- View Details -->
+      <a
+        href="/mount-longonot-hike.html"
+        class="cta-button secondary"
+        aria-label="View Mount Longonot hike details"
+      >
+        View Details
+      </a>
+
+
+      <!-- Share -->
+      <button
+        id="longonotShareBtn"
+        class="icon-btn"
+        type="button"
+        aria-label="Share the Mount Longonot hike"
+        title="Share this hike"
+      >
+
+        <i
+          class="fas fa-share-alt"
+          aria-hidden="true"
+        ></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LONGONOT SOCIAL SHARING
+  ======================================================== -->
+
+  <section
+    class="share-widget"
+    aria-labelledby="longonot-share-title"
+  >
+
+    <div class="share-widget-heading">
+
+      <h3 id="longonot-share-title">
+        📢 Invite Your Friends
+      </h3>
+
+      <p>
+        Know someone who would love to conquer Mount Longonot?
+        Share this adventure with them.
+      </p>
+
+    </div>
+
+
+    <div
+      class="share-buttons"
+      role="group"
+      aria-label="Share the Mount Longonot hike"
+    >
+
+      <!-- Facebook -->
+
+      <button
+        id="longonotFacebookBtn"
+        class="share-btn facebook"
+        type="button"
+      >
+
+        <i
+          class="fab fa-facebook-f"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          Facebook
+        </span>
+
+      </button>
+
+
+      <!-- WhatsApp -->
+
+      <button
+        id="longonotWhatsappBtn"
+        class="share-btn whatsapp"
+        type="button"
+      >
+
+        <i
+          class="fab fa-whatsapp"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          WhatsApp
+        </span>
+
+      </button>
+
+
+      <!-- X -->
+
+      <button
+        id="longonotXBtn"
+        class="share-btn twitter"
+        type="button"
+      >
+
+        <i
+          class="fab fa-x-twitter"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          X
+        </span>
+
+      </button>
+
+
+      <!-- LinkedIn -->
+
+      <button
+        id="longonotLinkedinBtn"
+        class="share-btn linkedin"
+        type="button"
+      >
+
+        <i
+          class="fab fa-linkedin-in"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          LinkedIn
+        </span>
+
+      </button>
+
+
+      <!-- Instagram -->
+
+      <button
+        id="longonotInstagramBtn"
+        class="share-btn instagram"
+        type="button"
+      >
+
+        <i
+          class="fab fa-instagram"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          Instagram
+        </span>
+
+      </button>
+
+
+      <!-- TikTok -->
+
+      <button
+        id="longonotTiktokBtn"
+        class="share-btn tiktok"
+        type="button"
+      >
+
+        <i
+          class="fab fa-tiktok"
+          aria-hidden="true"
+        ></i>
+
+        <span>
+          TikTok
+        </span>
+
+      </button>
+
+
+      <!-- Copy Link -->
+
+      <button
+        id="longonotCopyBtn"
+        class="share-btn copy-link"
+        type="button"
+      >
+
+        🔗
+
+        <span>
+          Copy Link
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <p
+      class="share-toast"
+      id="longonotShareToast"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+  </section>
 
 </section>
+
 <!-- ===========================
      GALLERY SLIDESHOW
 ============================ -->
@@ -1388,6 +1948,7 @@ document.getElementById("year").textContent =
     navigator.serviceWorker.register("/js/sw.js");
   }
 </script>
+<script src="/js/longonot-event.js" defer></script>
 <script src="js/config.js" defer></script>
 
 <script src="js/event-schema.js" defer></script>
@@ -1395,6 +1956,7 @@ document.getElementById("year").textContent =
 
 <script src="js/countdown.js" defer></script>
 <script src="js/share.js" defer></script>
+
 <script src="js/calculator.js" defer></script>
 <script src="js/js/next-hike.js" defer></script>
 <script src="js/mobile.js" defer></script>

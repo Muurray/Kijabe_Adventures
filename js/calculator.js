@@ -9,10 +9,10 @@ const PricingEngine = {
 
   transportFees: {
     self: 0,
-    nairobi: 800,
-    westlands: 700,
-    kikuyu: 500,
-    thika: 1000,
+    nairobi: 9800,
+    westlands: 8700,
+    kikuyu: 7500,
+    thika: 15000,
     coaster: 0,
     bus: 0
   },
