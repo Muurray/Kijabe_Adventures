@@ -180,6 +180,14 @@ nav a.active {
   letter-spacing: 1px;
 }
 
+.tagline {
+  grid-area: tagline;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .logo-img {
   display: block;
   max-height: 48px;
@@ -1659,22 +1667,53 @@ outline-offset:2px;
 }
 @media (max-width: 768px) {
   header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "top"
-      "tagline"
-      "toggle"
-      "nav"
-      "badge";
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    padding: 12px 14px 10px;
   }
 
-  header .header-top {
-    grid-area: top;
+  header .logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  header .logo a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  header .logo-img {
+    max-height: 38px;
+    width: auto;
+  }
+
+  header .logo-text {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   header .tagline {
-    grid-area: tagline;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    letter-spacing: 0;
+    white-space: normal;
   }
 
   .slide img { height: 260px; }
@@ -1690,11 +1729,15 @@ outline-offset:2px;
   }
 
   .nav-toggle {
+    position: absolute;
+    right: 14px;
+    top: 12px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    grid-area: toggle;
-    justify-self: start;
+    width: 44px;
+    height: 40px;
+    margin: 0;
   }
 
   nav {
