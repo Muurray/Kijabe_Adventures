@@ -3687,7 +3687,7 @@ MODAL
         position: absolute !important;
 
         top: 8px !important;
-        right: 14px !important;
+        right: 7px !important;
         left: auto !important;
 
         width: auto !important;
@@ -3830,19 +3830,7 @@ MODAL
         font-size: 1.2rem;
     }
 
-    /* Tagline */
-    header .tagline {
-        display: block !important;
-        width: 100%;
-        margin: 4px 0 0 !important;
-        padding: 0 !important;
-
-        color: rgba(255,255,255,0.9);
-        font-size: 0.85rem !important;
-        line-height: 1.4;
-        text-align: left;
-        white-space: normal;
-    }
+  
 
     /* Navigation */
     header nav.primary-nav {
@@ -3864,6 +3852,176 @@ MODAL
         width: 100%;
         padding: 6px 0;
         color: #ffffff;
+    }
+
+}
+
+/* ==========================================
+   MOBILE HEADER - CLEAN STRUCTURE
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        display: block !important;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+        padding: 12px 14px;
+        background: linear-gradient(
+            120deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    }
+
+    /* LOGO ROW */
+    .header-top {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* LOGO */
+    .header-top .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .header-top .logo-img {
+        max-height: 38px;
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .header-top .logo-text {
+        font-size: 1.1rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    /* CONTROL GROUP */
+    .header-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    /* STAFF LOGIN */
+    .header-controls .staff-login-btn {
+        position: static !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: auto !important;
+        padding: 7px 10px !important;
+
+        background: #ff9800;
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+
+        font-size: 12px !important;
+        font-weight: 600;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    .header-controls .staff-login-btn:hover {
+        background: #e68900;
+        color: #ffffff;
+        transform: none;
+    }
+
+    /* HAMBURGER */
+    .header-controls .nav-toggle {
+        position: static !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px !important;
+        height: 38px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        background: rgba(255,255,255,0.12);
+        color: #ffffff;
+        border: 1px solid rgba(255,255,255,0.35);
+        border-radius: 8px;
+
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .header-controls .nav-toggle:hover {
+        background: rgba(255,255,255,0.22);
+    }
+
+    /* TAGLINE */
+    header .tagline {
+        display: block !important;
+        width: 100%;
+        margin: 8px 0 0;
+        padding: 0;
+
+        font-size: 0.85rem;
+        line-height: 1.4;
+        text-align: left;
+        color: rgba(255,255,255,0.9);
+    }
+
+    /* NAVIGATION - CLOSED */
+    header .primary-nav {
+        display: none !important;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+        padding: 10px 0 0;
+    }
+
+    /* NAVIGATION - OPEN */
+    header .primary-nav.open {
+        display: flex !important;
+    }
+
+    header .primary-nav a {
+        display: block;
+        width: 100%;
+        padding: 10px 5px;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        color: #ffffff;
+    }
+
+    header .primary-nav a:hover,
+    header .primary-nav a.active {
+        color: #ff9800;
+    }
+
+}
+
+/* DESKTOP HEADER CONTROLS */
+@media screen and (min-width: 769px) {
+
+    .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .header-controls .nav-toggle {
+        display: none !important;
     }
 
 }
