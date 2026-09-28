@@ -3855,173 +3855,109 @@ MODAL
     }
 
 }
+/* ==========================================================
+   MOBILE HEADER — FINAL OVERRIDE
+   Paste at the very END of styles.css (it replaces the effect
+   of all earlier mobile header / staff-login / nav-toggle rules).
 
-/* ==========================================
-   MOBILE HEADER - CLEAN STRUCTURE
-========================================== */
-
+   Layout (≤768px):
+   ┌──────────────────────────────────────┐
+   │ [logo] Kijabe Adventures  [🔒 Staff] │  ← staff login: small, top-right
+   │ Guided Hiking & Touring…       [ ☰ ] │  ← hamburger: right, under staff
+   └──────────────────────────────────────┘
+   Logo + tagline keep a right-hand gutter so they never run
+   under the two buttons.
+========================================================== */
 @media screen and (max-width: 768px) {
 
-    /* HEADER */
     header {
         display: block !important;
-        position: sticky;
-        top: 0;
-        z-index: 1100;
-        padding: 12px 14px;
-        background: linear-gradient(
-            120deg,
-            var(--primary-dark),
-            var(--primary)
-        );
+        padding: 8px 12px !important;
     }
 
-    /* LOGO ROW */
     .header-top {
+        position: relative !important;
         display: flex !important;
-        justify-content: space-between;
-        align-items: flex-start;
+        align-items: center !important;
+        min-height: 40px !important;
         width: 100%;
-        gap: 10px;
     }
 
-    /* LOGO */
-    .header-top .logo {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex: 1;
-        min-width: 0;
+    /* Logo: pushed left, with a gutter on the right for the Staff button */
+    header .header-top .logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100%;
+        padding-right: 88px !important;
     }
 
-    .header-top .logo-img {
-        max-height: 38px;
+    header .header-top .logo-img {
+        max-height: 34px !important;
         width: auto;
         flex-shrink: 0;
     }
 
-    .header-top .logo-text {
-        font-size: 1.1rem;
-        line-height: 1.2;
-        white-space: normal;
-    }
-
-    /* CONTROL GROUP */
-    .header-controls {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-    }
-
-    /* STAFF LOGIN */
-    .header-controls .staff-login-btn {
-        position: static !important;
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-
-        width: auto !important;
-        padding: 7px 10px !important;
-
-        background: #ff9800;
-        color: #ffffff;
-        border: none;
-        border-radius: 20px;
-
-        font-size: 12px !important;
-        font-weight: 600;
+    header .header-top .logo-text {
+        font-size: 1rem !important;
+        letter-spacing: 0.3px !important;
         line-height: 1.2;
         white-space: nowrap;
     }
 
-    .header-controls .staff-login-btn:hover {
-        background: #e68900;
-        color: #ffffff;
-        transform: none;
-    }
+    /* Staff Login — small pill, top-right corner */
+    #staffLoginBtn {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+        z-index: 1200 !important;
 
-    /* HAMBURGER */
-    .header-controls .nav-toggle {
-        position: static !important;
         display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
 
-        width: 42px !important;
-        height: 38px !important;
-        padding: 0 !important;
+        width: auto !important;
+        min-height: 0 !important;
+        padding: 3px 8px !important;
+
+        font-size: 0.65rem !important;
+        line-height: 1.2 !important;
+        white-space: nowrap;
+        border-width: 1px !important;
+        border-radius: 14px !important;
+    }
+
+    #staffLoginBtn i {
+        font-size: 0.6rem !important;
+    }
+
+    /* Hamburger — right edge, directly under Staff Login */
+    header .nav-toggle {
+        position: absolute !important;
+        top: 38px !important;
+        right: 12px !important;
+        left: auto !important;
+        z-index: 1200 !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 36px !important;
+        height: 32px !important;
         margin: 0 !important;
-
-        background: rgba(255,255,255,0.12);
-        color: #ffffff;
-        border: 1px solid rgba(255,255,255,0.35);
-        border-radius: 8px;
-
-        font-size: 20px;
-        cursor: pointer;
+        padding: 0 !important;
+        font-size: 1.05rem !important;
     }
 
-    .header-controls .nav-toggle:hover {
-        background: rgba(255,255,255,0.22);
-    }
-
-    /* TAGLINE */
+    /* Tagline: kept left, never runs under the hamburger */
     header .tagline {
-        display: block !important;
-        width: 100%;
-        margin: 8px 0 0;
-        padding: 0;
-
-        font-size: 0.85rem;
-        line-height: 1.4;
-        text-align: left;
-        color: rgba(255,255,255,0.9);
+        margin: 2px 0 0 !important;
+        padding: 0 52px 0 0 !important;
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
     }
-
-    /* NAVIGATION - CLOSED */
-    header .primary-nav {
-        display: none !important;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        gap: 0;
-        padding: 10px 0 0;
-    }
-
-    /* NAVIGATION - OPEN */
-    header .primary-nav.open {
-        display: flex !important;
-    }
-
-    header .primary-nav a {
-        display: block;
-        width: 100%;
-        padding: 10px 5px;
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-        color: #ffffff;
-    }
-
-    header .primary-nav a:hover,
-    header .primary-nav a.active {
-        color: #ff9800;
-    }
-
-}
-
-/* DESKTOP HEADER CONTROLS */
-@media screen and (min-width: 769px) {
-
-    .header-controls {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .header-controls .nav-toggle {
-        display: none !important;
-    }
-
 }
