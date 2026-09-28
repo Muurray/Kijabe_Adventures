@@ -3650,3 +3650,24 @@ MODAL
   background: var(--primary-dark);
   transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+
+    .header-container .staff-login-btn {
+        position: static !important;
+        order: 4 !important;
+
+        align-self: flex-start !important;
+
+        margin: 5px 0 0 !important;
+        padding: 4px 8px !important;
+
+        width: auto !important;
+        font-size: .75rem !important;
+    }
+
+    .header-container .nav-toggle {
+        order: 3 !important;
+        align-self: flex-start !important;
+    }
+
+}
