@@ -3671,3 +3671,55 @@ MODAL
     }
 
 }
+/* =========================================================
+   MOBILE HEADER
+   STAFF LOGIN ABOVE HAMBURGER
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .header-container {
+        position: relative !important;
+    }
+
+    /* Staff Login — top right */
+    .header-container .staff-login-btn {
+        position: absolute !important;
+
+        top: 8px !important;
+        right: 14px !important;
+        left: auto !important;
+
+        width: auto !important;
+
+        margin: 0 !important;
+
+        padding: 4px 8px !important;
+
+        font-size: 0.75rem !important;
+        line-height: 1 !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Hamburger — directly below Staff Login */
+    .header-container .nav-toggle {
+        position: absolute !important;
+
+        top: 48px !important;
+        right: 14px !important;
+        left: auto !important;
+
+        width: 44px !important;
+        height: 40px !important;
+
+        margin: 0 !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+}
