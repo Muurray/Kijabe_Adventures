@@ -2253,3 +2253,20 @@ footer {
 .footer-legal a:hover {
   color: var(--accent);
 }
+/* =============================================================
+   STICKY HEADER + "ON THIS PAGE" FIX — mobile blog pages
+   ============================================================= */
+
+@media (max-width: 768px) {
+
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  /* No longer needed: sticky headers stay in normal document
+     flow, so nothing needs to be pushed down to make room. */
+  body.blog-mobile-layout {
+    padding-top: 0;
+  }
+}
