@@ -962,8 +962,6 @@ button.close:hover {
     display: flex;
   }
 
-}
-
 @media (min-width: 769px) {
 
   .sticky-event-bar {
