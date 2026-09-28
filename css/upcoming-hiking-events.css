@@ -1615,3 +1615,58 @@ grid-column:2;
 
 }
 
+/* =============================================================
+   MOBILE FIX — FEATURED HIKE CTA (Kijabe + Mount Longonot)
+   ============================================================= */
+
+@media (max-width: 768px) {
+
+  /* Stop the whole page from scrolling sideways no matter what */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .featured-hike-banner {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Stack price / buttons / share icon vertically, full width */
+  .featured-hike-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0 0;
+  }
+
+  .featured-hike-price {
+    text-align: left;
+    margin-right: 0;
+  }
+
+  .featured-hike-cta .cta-button {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .featured-hike-cta .icon-btn {
+    align-self: center;
+  }
+
+  /* Long titles and links wrap cleanly instead of stretching the card */
+  .featured-hike-main h2,
+  .featured-hike-title-link {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  .featured-hike-details-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.9rem;
+  }
+}

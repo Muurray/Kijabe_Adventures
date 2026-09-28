@@ -1991,6 +1991,56 @@ figcaption {
     padding-top: var(--mobile-header-height, 0px);
   }
 
+  header .logo {
+    grid-area: logo;
+    min-width: 0;
+  }
+
+  header .logo-text {
+    min-width: 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  header .tagline {
+    grid-area: tagline;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  header .nav-toggle {
+    grid-area: toggle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 40px;
+    margin: 0;
+    justify-self: start;
+  }
+
+  header .primary-nav {
+    grid-area: nav;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 8px 0 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  header .primary-nav.open {
+    display: flex;
+  }
+
+  header .primary-nav a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 0;
+  }
+
   header .next-hike-badge {
     grid-area: badge;
     max-width: 100%;
