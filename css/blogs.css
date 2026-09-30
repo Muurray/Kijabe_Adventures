@@ -2470,3 +2470,54 @@ footer {
         max-width: 100%;
     }
 }
+
+/* ======================================================
+   MOBILE STICKY SITE HEADER
+   Logo + Tagline + Navigation + Upcoming Hike Badge
+====================================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    /* Target ONLY the main website header */
+    body > header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1100;
+        background: #fff;
+    }
+
+    /* Keep the hamburger above the expanded navigation */
+    body > header .nav-toggle {
+        position: relative;
+        z-index: 1102;
+    }
+
+    /* Expanded navigation appears beneath the header content */
+    body > header .primary-nav.open {
+        z-index: 1101;
+    }
+
+    /* Article header must scroll normally */
+    .blog-post-header {
+        position: relative;
+        z-index: auto;
+    }
+
+    /* Table of contents sticks below the site header */
+    .table-of-contents {
+        position: sticky;
+        top: var(--mobile-header-height, 70px);
+        z-index: 900;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+}
