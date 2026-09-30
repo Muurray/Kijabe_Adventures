@@ -2521,3 +2521,129 @@ footer {
         max-width: 100%;
     }
 }
+
+/* ======================================================
+   MOBILE HEADER — STICKY, NOT FIXED
+====================================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    /* Only the main website header stays at the top */
+    body > header {
+        position: sticky !important;
+        top: 0;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        z-index: 1100;
+        background: #fff;
+    }
+
+    /* Do not add artificial space above the page */
+    body.blog-mobile-layout {
+        padding-top: 0 !important;
+    }
+
+    /* Ensure tagline and hamburger are visible */
+    body > header .tagline {
+        display: block;
+    }
+
+    body > header .nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 1102;
+    }
+
+    /* The article's own header must scroll normally */
+    .blog-post-header {
+        position: relative !important;
+        top: auto;
+        z-index: auto;
+    }
+}
+
+/* ======================================================
+   MOBILE TABLE OF CONTENTS — LEFT COLUMN
+====================================================== */
+
+@media (max-width: 768px) {
+
+    .table-of-contents {
+        float: left;
+        position: sticky;
+        top: calc(var(--mobile-header-height, 70px) + 8px);
+
+        width: 27%;
+        max-width: 125px;
+        min-width: 0;
+
+        max-height: calc(100dvh - var(--mobile-header-height, 70px) - 100px);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-sizing: border-box;
+        margin: 0 10px 15px 0;
+        padding: 10px 8px;
+
+        background: #f5f8f6;
+        border: 1px solid #dce7df;
+        border-radius: 8px;
+
+        font-size: 12px;
+        line-height: 1.4;
+        z-index: 900;
+    }
+
+    .table-of-contents h2 {
+        font-size: 13px;
+        line-height: 1.3;
+        margin: 0 0 8px;
+        padding-bottom: 6px;
+    }
+
+    .table-of-contents ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .table-of-contents li {
+        margin: 0;
+        padding: 7px 0;
+        border-bottom: 1px solid #dce7df;
+    }
+
+    .table-of-contents li:last-child {
+        border-bottom: none;
+    }
+
+    .table-of-contents a {
+        display: block;
+        font-size: 12px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* Keep article text readable beside the TOC */
+    .blog-post > section,
+    .blog-post > div {
+        min-width: 0;
+    }
+
+    /* Clear the floated TOC after the article content */
+    .blog-post::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

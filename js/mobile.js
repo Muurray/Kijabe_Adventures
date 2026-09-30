@@ -119,3 +119,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* ==========================================
+   BLOG MOBILE HEADER OFFSET
+========================================== */
+
+const isBlogPage = window.location.pathname.includes("/blogs/");
+const siteHeader = document.querySelector("body > header");
+
+const syncMobileHeaderOffset = () => {
+    if (!isBlogPage || !siteHeader) return;
+
+    if (window.innerWidth <= 768) {
+        requestAnimationFrame(() => {
+            const height = siteHeader.getBoundingClientRect().height;
+
+            document.documentElement.style.setProperty(
+                "--mobile-header-height",
+                `${height}px`
+            );
+        });
+    } else {
+        document.documentElement.style.removeProperty(
+            "--mobile-header-height"
+        );
+    }
+};
+
+if (isBlogPage && siteHeader) {
+
+    document.body.classList.add("blog-mobile-layout");
+
+    syncMobileHeaderOffset();
+
+    window.addEventListener(
+        "resize",
+        syncMobileHeaderOffset,
+        { passive: true }
+    );
+
+    if ("ResizeObserver" in window) {
+        const headerObserver = new ResizeObserver(
+            syncMobileHeaderOffset
+        );
+
+        headerObserver.observe(siteHeader);
+    }
+}
