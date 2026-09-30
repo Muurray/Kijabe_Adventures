@@ -380,7 +380,28 @@
     progress.style.width = height > 0 ? ((scrollTop / height) * 100) + "%" : "0%";
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
 
+    if (!header) return;
+
+    const updateHeaderHeight = () => {
+        const height = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty(
+            "--mobile-header-height",
+            `${height}px`
+        );
+    };
+
+    updateHeaderHeight();
+
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(header);
+
+    window.addEventListener("resize", updateHeaderHeight);
+});
+</script>
 <div class="mobile-sticky-bar">
   <a href="/upcoming-hiking-events.html" class="sticky-btn upcoming">
     Book Upcoming Hike
