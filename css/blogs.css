@@ -2279,3 +2279,12 @@ body > header {
   padding: 50px 20px;
   min-height: 220px;
 }
+
+@media (max-width: 768px) {
+  body > header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
