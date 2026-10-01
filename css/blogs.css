@@ -2253,3 +2253,29 @@ footer {
 .footer-legal a:hover {
   color: var(--accent);
 }
+/* Main website navigation header */
+body > header {
+  background: linear-gradient(
+    120deg,
+    var(--primary-dark),
+    var(--primary)
+  );
+  color: white;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  padding: 12px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Article title header */
+.blog-post .blog-post-header {
+  position: relative;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/hikes-near-nairobi.webp") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 220px;
+}
