@@ -1,411 +1,1762 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- ===========================
-       BASIC META
-  ============================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kijabe Adventures | Hiking & Nature Tours Across Kenya</title>
-  <meta name="robots" content="index, follow">
+
+  <!-- =========================================================
+       BASIC SEO
+  ========================================================== -->
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Book Guided Hiking Tours in Kenya | Kijabe Adventures</title>
+
   <meta name="description"
-    content="Kijabe Adventures provides guided hikes, nature walks, and eco-tourism experiences across Kenya. Safe, affordable, and led by experienced local guides." />
+        content="Book guided hiking tours and nature experiences across Kenya with Kijabe Adventures. Explore Kijabe Hills, Ngong Hills, forests and scenic trails with experienced local guides.">
+
+  <meta name="robots"
+        content="index, follow, max-image-preview:large">
+
+  <meta name="author"
+        content="Kijabe Adventures">
 
   <meta name="keywords"
-    content="Kijabe Adventures, hiking Kenya, guided hikes Kenya, Ngong Hills hiking, Kijabe trails, Kenya tourism, eco tours Kenya" />
+        content="book hiking Kenya, guided hikes Kenya, hiking tours Kenya, Kijabe Adventures booking, Kijabe Hills hike, Ngong Hills hiking, Kenya hiking tours, private group hikes Kenya">
 
-  <meta name="author" content="Kijabe Adventures" />
+  <!-- CANONICAL -->
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://kijabeadventures.com/contact.html" />
+  <link rel="canonical"
+        href="https://kijabeadventures.com/contact.html">
 
-  <!-- ===========================
-       OPEN GRAPH (FACEBOOK / WHATSAPP)
-  ============================ -->
-  <meta property="og:title" content="Kijabe Adventures | Guided Hikes Across Kenya" />
+
+  <!-- =========================================================
+       OPEN GRAPH
+  ========================================================== -->
+
+  <meta property="og:title"
+        content="Book a Guided Hiking Adventure in Kenya | Kijabe Adventures">
+
   <meta property="og:description"
-    content="Discover forests, hills, and scenic trails across Kenya with safe, guided hiking experiences." />
-  <meta property="og:url" content="https://kijabeadventures.com/contact.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://kijabeadventures.com/images/hero.jpg" />
-  <meta property="og:site_name" content="Kijabe Adventures" />
+        content="Reserve your next guided hiking adventure across Kenya with Kijabe Adventures. Safe, affordable and led by experienced local guides.">
 
-  <!-- ===========================
-       TWITTER CARD
-  ============================ -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kijabe Adventures | Explore Kenya Beyond the Ordinary" />
+  <meta property="og:url"
+        content="https://kijabeadventures.com/contact.html">
+
+  <meta property="og:type"
+        content="website">
+
+  <meta property="og:image"
+        content="https://kijabeadventures.com/images/hero.jpg">
+
+  <meta property="og:site_name"
+        content="Kijabe Adventures">
+
+
+  <!-- =========================================================
+       TWITTER / X
+  ========================================================== -->
+
+  <meta name="twitter:card"
+        content="summary_large_image">
+
+  <meta name="twitter:title"
+        content="Book Guided Hiking Tours in Kenya | Kijabe Adventures">
+
   <meta name="twitter:description"
-    content="Guided hiking and touring experiences across Kenya. Safe. Sustainable. Memorable." />
-  <meta name="twitter:image" content="https://kijabeadventures.com/images/hero.jpg" />
+        content="Book guided hiking and nature experiences across Kenya with Kijabe Adventures.">
 
-  <!-- ===========================
+  <meta name="twitter:image"
+        content="https://kijabeadventures.com/images/hero.jpg">
+
+
+  <!-- =========================================================
        FAVICONS
-  ============================ -->
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-  <link rel="manifest" href="images/favicons/site.webmanifest">
-  <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#006400">
-  <link rel="shortcut icon" href="images/favicons/favicon.ico">
+  ========================================================== -->
 
-  <meta name="msapplication-TileColor" content="#006400">
-  <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#006400">
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="/images/favicons/apple-touch-icon.png">
 
-  <!-- ===========================
-       PRELOADS (PERFORMANCE)
-  ============================ -->
-  <link rel="preload" href="css/styles.css" as="style" />
-  <link rel="preload" href="images/kijabe-adventure-logo.png" as="image" />
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/images/favicons/favicon-32x32.png">
 
-  <!-- ===========================
-       CSS
-  ============================ -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/images/favicons/favicon-16x16.png">
+
+  <link rel="manifest"
+        href="/images/favicons/site.webmanifest">
+
+  <link rel="shortcut icon"
+        href="/images/favicons/favicon.ico">
+
+  <meta name="theme-color"
+        content="#006400">
+
+
+  <!-- =========================================================
+       PERFORMANCE
+  ========================================================== -->
+
+  <link rel="preload"
+        href="/css/styles.css"
+        as="style">
+
+  <link rel="preload"
+        href="/images/kijabe-adventure-logo.png"
+        as="image">
+
+
+  <!-- =========================================================
+       MAIN GLOBAL CSS
+       HEADER / NAVIGATION STYLES COME FROM HERE
+  ========================================================== -->
+
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        href="/css/styles.css">
 
-  <!-- ===========================
-       GOOGLE TAG (gtag.js)
-  ============================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+
+  <!-- =========================================================
+       CONTACT PAGE CSS
+       ALL PAGE-SPECIFIC STYLES ARE HERE
+  ========================================================== -->
+
+  <link rel="stylesheet"
+        href="/css/contacts.css">
+
+
+  <!-- =========================================================
+       FONT AWESOME
+  ========================================================== -->
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+  <!-- =========================================================
+       GOOGLE ANALYTICS
+  ========================================================== -->
+
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+
   <script>
+
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'G-T50VJ5C9XV');
+
   </script>
 
-  <!-- ===========================
-       STRUCTURED DATA (SEO)
-  ============================ -->
+
+  <!-- =========================================================
+       STRUCTURED DATA
+  ========================================================== -->
+
   <script type="application/ld+json">
+
   {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
-    "name": "Kijabe Adventures Hiking Tours",
-    "description": "Guided hiking and outdoor experiences across Kenya including Kijabe, Ngong Hills, and scenic forest trails.",
+    "name": "Kijabe Adventures Guided Hiking Tours",
+    "description": "Guided hiking and outdoor experiences across Kenya including Kijabe Hills, Ngong Hills and scenic forest trails.",
+    "url": "https://kijabeadventures.com/contact.html",
+
     "provider": {
       "@type": "Organization",
       "name": "Kijabe Adventures",
       "url": "https://kijabeadventures.com/",
-      "logo": "https://kijabeadventures.com/images/logo.png",
+      "logo": "https://kijabeadventures.com/images/kijabe-adventure-logo.png",
       "telephone": "+254743980340",
+      "email": "info@kijabeadventures.com",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Kijabe",
         "addressCountry": "KE"
       }
     },
-    "touristType": "Hikers",
+
+    "touristType": [
+      "Hikers",
+      "Nature lovers",
+      "Adventure travelers"
+    ],
+
     "areaServed": {
       "@type": "Country",
       "name": "Kenya"
     }
   }
-  </script>
-  <!-- Google CMP (2-button message) -->
-<script async src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2"></script>
-<script>
-  (function() {
-    function signalGooglefcPresent() {
-      if (!window.frames['googlefcPresent']) {
-        if (document.body) {
-          const iframe = document.createElement('iframe');
-          iframe.style = 'width:0;height:0;border:0;display:none';
-          iframe.name = 'googlefcPresent';
-          document.body.appendChild(iframe);
-        } else {
-          setTimeout(signalGooglefcPresent, 300);
-        }
-      }
-    }
-    signalGooglefcPresent();
-  })();
-</script>
-<!-- END Google CMP -->
-<!-- Google Consent Mode (default settings before consent) -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
-</script>
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
-     crossorigin="anonymous"></script>
 
+  </script>
+
+
+  <!-- =========================================================
+       GOOGLE CONSENT / CMP
+  ========================================================== -->
+
+  <script async
+          src="https://fundingchoicesmessages.google.com/i/pub-3754507736699545?ers=2">
+  </script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+
+  </script>
+
+
+  <!-- =========================================================
+       GOOGLE ADSENSE
+  ========================================================== -->
+
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3754507736699545"
+          crossorigin="anonymous">
+  </script>
 
 </head>
 
+
 <body>
-<header>
-  <!-- LOGO -->
-  <div class="logo">
-    <a href="/" aria-label="Kijabe Adventures Home">
-      <img src="/images/kijabe-adventure-logo.png"
-           alt="Kijabe Adventures Logo"
-           width="140"
-           class="logo-img"
-           loading="lazy">
-    </a>
-    <span class="logo-text">Kijabe Adventures</span>
-  </div>
-
-   <!-- TAGLINE -->
-  <p class="tagline">
-    Guided Hiking & Touring Experiences Across Kenya
-  </p>
-
-  <!-- MOBILE MENU BUTTON -->
-  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-    <span class="sr-only">Toggle navigation</span>
-    <i class="fas fa-bars"></i>
-  </button>
-
-  <!-- PRIMARY NAVIGATION -->
-  <nav id="primary-nav" class="primary-nav">
-    <a href="/">Home</a>
-   <a href="/about.html">About Us</a>
-    <a href="/contact.html"class="active">Contact Us</a>
-    <a href="/community.html">Community</a>
-     <a href="/gallery.html">Gallery</a>
-     <a href="/blogs/blog.html">Blog</a>
-  </nav>
 
 
-  <!-- NEXT HIKE BADGE -->
- <a href="upcoming-hiking-events.html"
-   class="next-hike-badge">
-    Loading...
-</a>
-</header>
+  <!-- =========================================================
+       HEADER
+       STYLES COME FROM /css/styles.css
+  ========================================================== -->
 
-<main class="page-content">
+  <header>
 
-  <!-- PAGE HERO -->
-<section class="page-hero">
-  <h1>Book Your Next Hiking Adventure</h1>
-  <p>Join guided hikes across Kenya — safe, affordable, and led by experienced local guides.</p>
+    <div class="logo">
 
-  <div class="hero-buttons">
-    <a href="#booking-form" class="cta-button large">
-📅 Reserve Your Spot
-</a>
-    <a href="https://wa.me/254743980340?text=Hello%20I%20want%20to%20book%20a%20hike"
-       class="cta-button secondary"
-       target="_blank">
-       Book Instantly on WhatsApp
-    </a>
-  </div>
-  <div class="hero-cta"></div>
-</section>
+      <a href="/"
+         aria-label="Kijabe Adventures Home">
 
-<section class="booking-guarantee">
+        <img src="/images/kijabe-adventure-logo.png"
+             alt="Kijabe Adventures Logo"
+             width="140"
+             class="logo-img">
 
-<p>✔ Secure your spot instantly</p>
-<p>✔ Pay easily via M-Pesa</p>
-<p>✔ Experienced local hiking guides</p>
-<p>✔ Small friendly groups</p>
+      </a>
 
-</section>
+      <span class="logo-text">
+        Kijabe Adventures
+      </span>
 
-  <!-- CONTACT SECTION -->
-   <section id="booking-form" class="booking-section">
-    <h2>Reserve Your Spot</h2>
-<form action="https://formsubmit.co/e829d55a227eefc780c3186bc8393f1f" method="POST">
-
-<input type="text" name="name" placeholder="Full Name" required>
-
-<input type="email" name="email" placeholder="Email Address" required>
-
-<input type="tel" name="phone" placeholder="Phone Number" required>
-
-<select name="hike">
-
-<option value="">Select Hike</option>
-<option>Upcoming Hike</option>
-<option>Private Group Hike</option>
-
-</select>
-
-<select name="people">
-<option>Number of Participants</option>
-<option>1</option>
-<option>2</option>
-<option>3-5</option>
-<option>6+</option>
-</select>
-
-<textarea name="message" placeholder="Special requests or questions"></textarea>
-
-<button type="submit" class="cta-button large">
-Book My Hike
-</button>
-
-</form>
-  </section>
-
-
-  <!-- SOCIAL CONNECT -->
-   <section class="social-connect">
-
-<h2>Follow Our Adventures</h2>
-
-<a href="https://instagram.com/kijabeadventures">
-<i class="fab fa-instagram"></i> Instagram
-</a>
-
-<a href="https://facebook.com">
-<i class="fab fa-facebook"></i> Facebook
-</a>
-
-</section>
-
-
-<section class="whatsapp-booking">
-
-<h2>Need a Quick Booking?</h2>
-
-<p>Chat with us directly on WhatsApp and reserve your hiking spot instantly.</p>
-
-<a href="https://wa.me/254743980340?text=Hello%20I%20want%20to%20book%20a%20hike"
-class="whatsapp-big-button">
-
-<i class="fab fa-whatsapp"></i>
-Chat on WhatsApp
-
-</a>
-</section>
-
-<section class="faq-section">
-
-<h2>Booking Questions</h2>
-
-<h3>Do I need hiking experience?</h3>
-<p>No. We offer beginner, moderate, and advanced hikes.</p>
-
-<h3>What should I bring?</h3>
-<p>Water, comfortable shoes, sunscreen, and a light jacket.</p>
-
-<h3>Are group discounts available?</h3>
-<p>Yes. Contact us for private group bookings.</p>
-
-</section>
-<section class="final-cta">
-
-<h2>Ready for Your Next Adventure?</h2>
-
-<a href="#booking-form" class="cta-button large">
-Reserve Your Hiking Spot
-</a>
-
-</section>
-
-
-</main>
-<!-- FOOTER -->
-<footer>
-  <div class="footer-content">
-
-    <div class="footer-section">
-      <h3>Contact</h3>
-      <p><i class="fas fa-phone"></i> +254 743 980 340</p>
-      <p><i class="fas fa-envelope"></i> info@kijabeadventures.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kijabe,kenya</p>
     </div>
 
-    <div class="footer-section">
-      <h3>Community Center</h3>
-      <ul>
-       <li><a href="/Partnership.html">Partner With Us</a></li>
-       <li><a href="/community.html"> Our Community</a></li>
-        <li><a href="/blogs/blog.html">Blog</a></li>
-        <li><a href="/safety.html">Safety</a></li>
-      </ul>
-    </div>
 
-    <div class="footer-section">
-      <h3>Follow Us</h3>
-      <div class="social-links">
-        <a href="https://web.facebook.com/profile.php?id=61587034792994" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/kijabeadventures" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-       <a href="https://x.com/KijabeAdventures"
-   target="_blank"
-   rel="noopener noreferrer">
-    <i class="fa-brands fa-x-twitter"></i>
-</a>
+    <p class="tagline">
+      Guided Hiking & Touring Experiences Across Kenya
+    </p>
+
+
+    <button class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav">
+
+      <span class="sr-only">
+        Toggle navigation
+      </span>
+
+      <i class="fas fa-bars"></i>
+
+    </button>
+
+
+    <nav id="primary-nav"
+         class="primary-nav">
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/about.html">
+        About Us
+      </a>
+
+      <a href="/contact.html"
+         class="active">
+        Contact Us
+      </a>
+
+      <a href="/community.html">
+        Community
+      </a>
+
+      <a href="/gallery.html">
+        Gallery
+      </a>
+
+      <a href="/blogs/blog.html">
+        Blog
+      </a>
+
+    </nav>
+
+
+    <!-- NEXT HIKE -->
+
+    <a href="/upcoming-hiking-events.html"
+       class="next-hike-badge"
+       aria-label="View next upcoming hike">
+
+      Loading...
+
+    </a>
+
+  </header>
+
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+
+  <main class="contact-page">
+
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section class="contact-hero">
+
+      <div class="contact-hero-content">
+
+        <span class="contact-eyebrow">
+          KIJABE ADVENTURES
+        </span>
+
+        <h1>
+          Book Your Next Hiking Adventure in Kenya
+        </h1>
+
+        <p>
+          Join a guided hiking experience across Kenya with
+          experienced local guides, friendly groups and carefully
+          planned outdoor adventures.
+        </p>
+
+
+        <div class="contact-hero-buttons">
+
+          <a href="#booking-form"
+             class="contact-btn contact-btn-primary">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Reserve Your Spot
+
+          </a>
+
+
+          <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures%2C%20I%20would%20like%20to%20book%20a%20hike."
+             class="contact-btn contact-btn-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            <i class="fab fa-whatsapp"></i>
+
+            Book on WhatsApp
+
+          </a>
+
+        </div>
+
       </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         TRUST BAR
+    ======================================================== -->
+
+    <section class="booking-trust">
+
+      <div class="trust-item">
+
+        <strong>
+          4.9★
+        </strong>
+
+        <span>
+          Rated
+        </span>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <strong>
+          5,000+
+        </strong>
+
+        <span>
+          Happy Hikers
+        </span>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <strong>
+          Safety
+        </strong>
+
+        <span>
+          First
+        </span>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <strong>
+          Beginner
+        </strong>
+
+        <span>
+          Friendly
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CHOOSE YOUR ADVENTURE
+    ======================================================== -->
+
+    <section class="adventure-section">
+
+      <div class="section-heading">
+
+        <span>
+          EXPLORE WITH US
+        </span>
+
+        <h2>
+          Choose Your Adventure
+        </h2>
+
+        <p>
+          Whether you're looking for scenic hills, forest trails,
+          challenging terrain or a private group experience,
+          we can help you find the right adventure.
+        </p>
+
+      </div>
+
+
+      <div class="adventure-grid">
+
+
+        <!-- KIJABE HILLS -->
+
+        <article class="adventure-card">
+
+          <div class="adventure-image">
+
+            <img src="/images/kijabe-hills.webp"
+                 alt="Hikers exploring Kijabe Hills overlooking the Great Rift Valley"
+                 loading="lazy">
+
+          </div>
+
+          <div class="adventure-content">
+
+            <h3>
+              Kijabe Hills
+            </h3>
+
+            <p>
+              Scenic trails, dramatic escarpment views and
+              beautiful landscapes overlooking the Great Rift Valley.
+            </p>
+
+            <a href="/upcoming-hiking-events.html">
+              View Upcoming Hikes
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- NGONG HILLS -->
+
+        <article class="adventure-card">
+
+          <div class="adventure-image">
+
+            <img src="/images/ngong-hills.webp"
+                 alt="Hikers walking along the scenic Ngong Hills trail"
+                 loading="lazy">
+
+          </div>
+
+          <div class="adventure-content">
+
+            <h3>
+              Ngong Hills
+            </h3>
+
+            <p>
+              Enjoy ridge walks, fresh air and panoramic views
+              on one of Kenya's popular hiking destinations.
+            </p>
+
+            <a href="#booking-form">
+              Ask About Ngong Hills
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- FOREST TRAILS -->
+
+        <article class="adventure-card">
+
+          <div class="adventure-image">
+
+            <img src="/images/nature-trail.webp"
+                 alt="Nature trail through a Kenyan forest"
+                 loading="lazy">
+
+          </div>
+
+          <div class="adventure-content">
+
+            <h3>
+              Forest Adventures
+            </h3>
+
+            <p>
+              Discover peaceful forest trails, waterfalls,
+              wildlife and nature experiences across Kenya.
+            </p>
+
+            <a href="#booking-form">
+              Plan a Forest Hike
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRIVATE GROUPS -->
+
+        <article class="adventure-card">
+
+          <div class="adventure-image">
+
+            <img src="/images/private-hike.webp"
+                 alt="Group enjoying a private guided hiking experience"
+                 loading="lazy">
+
+          </div>
+
+          <div class="adventure-content">
+
+            <h3>
+              Private Group Hikes
+            </h3>
+
+            <p>
+              Plan a private hiking experience for friends,
+              families, teams, schools or organizations.
+            </p>
+
+            <a href="/private-group-hikes.html">
+              Explore Private Hikes
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         BOOKING SECTION
+    ======================================================== -->
+
+    <section id="booking-form"
+             class="booking-section">
+
+      <div class="booking-container">
+
+
+        <div class="booking-intro">
+
+          <span class="section-label">
+            BOOK WITH US
+          </span>
+
+          <h2>
+            Reserve Your Hiking Spot
+          </h2>
+
+          <p>
+            Complete the form below and our team will contact you
+            to confirm availability, meeting details and payment
+            information.
+          </p>
+
+          <div class="booking-notice">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <div>
+
+              <strong>
+                Booking fee
+              </strong>
+
+              <p>
+                A 30% booking fee is required to secure your
+                hiking spot. The remaining balance can be paid
+                on the hike day or before the hike.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form class="booking-form"
+              action="https://formsubmit.co/e829d55a227eefc780c3186bc8393f1f"
+              method="POST">
+
+
+          <!-- FORMSUBMIT SETTINGS -->
+
+          <input type="hidden"
+                 name="_subject"
+                 value="New Kijabe Adventures Hiking Booking">
+
+          <input type="hidden"
+                 name="_template"
+                 value="table">
+
+          <input type="hidden"
+                 name="_captcha"
+                 value="true">
+
+
+          <!-- NAME -->
+
+          <div class="form-group">
+
+            <label for="name">
+              Full Name
+            </label>
+
+            <input id="name"
+                   type="text"
+                   name="name"
+                   placeholder="Enter your full name"
+                   autocomplete="name"
+                   required>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input id="email"
+                   type="email"
+                   name="email"
+                   placeholder="you@example.com"
+                   autocomplete="email"
+                   required>
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone / WhatsApp Number
+            </label>
+
+            <input id="phone"
+                   type="tel"
+                   name="phone"
+                   placeholder="+254 7XX XXX XXX"
+                   autocomplete="tel"
+                   required>
+
+          </div>
+
+
+          <!-- HIKE -->
+
+          <div class="form-group">
+
+            <label for="hike">
+              What would you like to book?
+            </label>
+
+            <select id="hike"
+                    name="hike"
+                    required>
+
+              <option value="">
+                Select an adventure
+              </option>
+
+              <option value="Kijabe Hills">
+                Kijabe Hills
+              </option>
+
+              <option value="Ngong Hills">
+                Ngong Hills
+              </option>
+
+              <option value="Forest Hike">
+                Forest Hike
+              </option>
+
+              <option value="Private Group Hike">
+                Private Group Hike
+              </option>
+
+              <option value="Upcoming Hike">
+                Upcoming Group Hike
+              </option>
+
+              <option value="Other">
+                Other / Not Sure
+
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- DATE -->
+
+          <div class="form-group">
+
+            <label for="hike-date">
+              Preferred Hiking Date
+            </label>
+
+            <input id="hike-date"
+                   type="date"
+                   name="preferred_date">
+
+          </div>
+
+
+          <!-- PARTICIPANTS -->
+
+          <div class="form-group">
+
+            <label for="people">
+              Number of Participants
+            </label>
+
+            <select id="people"
+                    name="participants"
+                    required>
+
+              <option value="">
+                Select group size
+              </option>
+
+              <option value="1">
+                1 person
+              </option>
+
+              <option value="2">
+                2 people
+              </option>
+
+              <option value="3-5">
+                3–5 people
+              </option>
+
+              <option value="6-10">
+                6–10 people
+              </option>
+
+              <option value="11+">
+                11+ people
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- PICKUP -->
+
+          <div class="form-group">
+
+            <label for="pickup">
+              Pickup / Starting Location
+            </label>
+
+            <select id="pickup"
+                    name="pickup_location">
+
+              <option value="">
+                Select an option
+              </option>
+
+              <option value="Own transport">
+                I will arrange my own transport
+              </option>
+
+              <option value="Nairobi">
+                Nairobi
+              </option>
+
+              <option value="Westlands">
+                Westlands
+              </option>
+
+              <option value="Kikuyu">
+                Kikuyu
+              </option>
+
+              <option value="Thika">
+                Thika
+              </option>
+
+              <option value="Other">
+                Other location
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <div class="form-group form-full">
+
+            <label for="message">
+              Special Requests or Questions
+            </label>
+
+            <textarea id="message"
+                      name="message"
+                      rows="5"
+                      placeholder="Tell us anything we should know about your booking..."></textarea>
+
+          </div>
+
+
+          <!-- CONSENT -->
+
+          <div class="form-consent">
+
+            <input id="booking-consent"
+                   type="checkbox"
+                   required>
+
+            <label for="booking-consent">
+
+              I confirm that the information provided is correct
+              and I agree to be contacted about my hiking booking.
+
+            </label>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button type="submit"
+                  class="contact-btn contact-btn-submit">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Submit Booking Request
+
+          </button>
+
+
+          <p class="form-security">
+
+            <i class="fa-solid fa-lock"></i>
+
+            Your booking information is used only to respond
+            to your request.
+
+          </p>
+
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         HOW BOOKING WORKS
+    ======================================================== -->
+
+    <section class="booking-process">
+
+      <div class="section-heading">
+
+        <span>
+          SIMPLE BOOKING
+        </span>
+
+        <h2>
+          What Happens After You Book?
+        </h2>
+
+        <p>
+          We keep the booking process simple from your first
+          enquiry to the day of your adventure.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            1
+          </div>
+
+          <i class="fa-solid fa-file-pen"></i>
+
+          <h3>
+            Send Your Request
+          </h3>
+
+          <p>
+            Tell us which hike you're interested in, your
+            preferred date and group size.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            2
+          </div>
+
+          <i class="fa-solid fa-comments"></i>
+
+          <h3>
+            We Confirm Details
+          </h3>
+
+          <p>
+            Our team contacts you to confirm availability,
+            meeting point and other important details.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            3
+          </div>
+
+          <i class="fa-solid fa-mobile-screen-button"></i>
+
+          <h3>
+            Pay Your Booking Fee
+          </h3>
+
+          <p>
+            Secure your place by paying the required 30%
+            booking fee through M-Pesa.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            4
+          </div>
+
+          <i class="fa-solid fa-person-hiking"></i>
+
+          <h3>
+            Enjoy the Adventure
+          </h3>
+
+          <p>
+            Receive your final hike details and join us for
+            your guided outdoor experience.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         PAYMENT
+    ======================================================== -->
+
+    <section class="payment-section">
+
+      <div class="payment-content">
+
+        <div class="payment-icon">
+
+          <i class="fa-solid fa-mobile-screen-button"></i>
+
+        </div>
+
+        <div>
+
+          <span class="section-label">
+            EASY PAYMENT
+          </span>
+
+          <h2>
+            Pay Securely via M-Pesa
+          </h2>
+
+          <p>
+            Once your hike is confirmed, you can secure your
+            booking using the Kijabe Adventures M-Pesa Till.
+          </p>
+
+          <div class="till-box">
+
+            <span>
+              M-Pesa Till Number
+            </span>
+
+            <strong>
+              5440810
+            </strong>
+
+          </div>
+
+          <p class="payment-note">
+
+            <strong>
+              30% booking fee
+            </strong>
+            required to secure your place.
+            Balance payable on the hike day or before.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         WHY HIKE WITH US
+    ======================================================== -->
+
+    <section class="why-section">
+
+      <div class="section-heading">
+
+        <span>
+          WHY KIJABE ADVENTURES
+        </span>
+
+        <h2>
+          Hike With Confidence
+        </h2>
+
+      </div>
+
+
+      <div class="why-grid">
+
+
+        <article class="why-card">
+
+          <i class="fa-solid fa-shield-heart"></i>
+
+          <h3>
+            Safety First
+          </h3>
+
+          <p>
+            We prioritize responsible planning, experienced
+            guidance and safe hiking experiences.
+          </p>
+
+        </article>
+
+
+        <article class="why-card">
+
+          <i class="fa-solid fa-person-hiking"></i>
+
+          <h3>
+            Experienced Local Guides
+          </h3>
+
+          <p>
+            Explore Kenya with people who understand the
+            trails, landscapes and local environment.
+          </p>
+
+        </article>
+
+
+        <article class="why-card">
+
+          <i class="fa-solid fa-users"></i>
+
+          <h3>
+            Friendly Groups
+          </h3>
+
+          <p>
+            Meet fellow hikers and enjoy welcoming,
+            social outdoor experiences.
+          </p>
+
+        </article>
+
+
+        <article class="why-card">
+
+          <i class="fa-solid fa-seedling"></i>
+
+          <h3>
+            Nature & Conservation
+          </h3>
+
+          <p>
+            Discover Kenya's natural landscapes while
+            promoting responsible outdoor recreation.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         WHATSAPP CTA
+    ======================================================== -->
+
+    <section class="quick-booking">
+
+      <div class="quick-booking-content">
+
+        <div>
+
+          <span class="section-label">
+            NEED HELP?
+          </span>
+
+          <h2>
+            Not Sure Which Hike to Choose?
+          </h2>
+
+          <p>
+            Chat with us directly on WhatsApp. Tell us your
+            preferred date, group size and hiking experience,
+            and we'll help you find an adventure that fits.
+          </p>
+
+        </div>
+
+
+        <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures%2C%20I%20need%20help%20choosing%20a%20hike."
+           class="quick-whatsapp"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <i class="fab fa-whatsapp"></i>
+
+          Chat With a Guide
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         FAQ
+    ======================================================== -->
+
+    <section class="faq-section">
+
+      <div class="section-heading">
+
+        <span>
+          HAVE QUESTIONS?
+        </span>
+
+        <h2>
+          Hiking & Booking Questions
+        </h2>
+
+      </div>
+
+
+      <div class="faq-list">
+
+
+        <details class="faq-item">
+
+          <summary>
+            Do I need previous hiking experience?
+          </summary>
+
+          <p>
+            No. We offer hiking experiences suitable for
+            beginners as well as more experienced hikers.
+            Let us know your experience level when booking
+            so we can help you choose an appropriate hike.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            What should I bring on a hike?
+          </summary>
+
+          <p>
+            Bring enough drinking water, comfortable hiking
+            shoes, sunscreen, weather-appropriate clothing
+            and a light jacket. Depending on the hike,
+            additional items may be recommended.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            How do I secure my hiking spot?
+          </summary>
+
+          <p>
+            After availability is confirmed, a 30% booking
+            fee is required to secure your place. The remaining
+            balance can be paid on the hike day or before.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Can I book a private group hike?
+          </summary>
+
+          <p>
+            Yes. We organize private hiking experiences for
+            friends, families, teams, schools and organizations.
+            Visit our private group hiking page or contact us
+            directly for assistance.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Can children participate?
+          </summary>
+
+          <p>
+            Children may be able to participate depending on
+            the specific trail, distance and difficulty level.
+            Contact us before booking so we can recommend
+            suitable options.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            What happens if the weather changes?
+          </summary>
+
+          <p>
+            Hiking conditions can change, particularly during
+            rainy periods. We prioritize participant safety and
+            will communicate with hikers if weather conditions
+            require a change to the hiking plan.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Where do we meet for the hike?
+          </summary>
+
+          <p>
+            Meeting points vary depending on the hiking
+            destination. Once your booking is confirmed,
+            we will provide the relevant meeting point,
+            timing and directions.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Can I ask about a hike that is not listed?
+          </summary>
+
+          <p>
+            Yes. If you have a specific trail, destination
+            or outdoor experience in mind, contact us and
+            we'll let you know what options are available.
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         FINAL CTA
+    ======================================================== -->
+
+    <section class="final-contact-cta">
+
+      <div>
+
+        <span>
+          READY TO EXPLORE?
+        </span>
+
+        <h2>
+          Your Next Adventure Starts Here
+        </h2>
+
+        <p>
+          Choose your hike, gather your friends and get ready
+          to explore Kenya with Kijabe Adventures.
+        </p>
+
+      </div>
+
+
+      <div class="final-cta-buttons">
+
+        <a href="#booking-form"
+           class="contact-btn contact-btn-primary">
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+          Reserve Your Spot
+
+        </a>
+
+
+        <a href="/upcoming-hiking-events.html"
+           class="contact-btn contact-btn-outline">
+
+          <i class="fa-solid fa-mountain-sun"></i>
+
+          View Upcoming Hikes
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="footer-content">
+
+
+      <div class="footer-section">
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          <i class="fas fa-phone"></i>
+          +254 743 980 340
+        </p>
+
+        <p>
+          <i class="fas fa-envelope"></i>
+          info@kijabeadventures.com
+        </p>
+
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          Kijabe, Kenya
+        </p>
+
+      </div>
+
+
+      <div class="footer-section">
+
+        <h3>
+          Community Center
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/Partnership.html">
+              Partner With Us
+            </a>
+          </li>
+
+          <li>
+            <a href="/community.html">
+              Our Community
+            </a>
+          </li>
+
+          <li>
+            <a href="/blogs/blog.html">
+              Blog
+            </a>
+          </li>
+
+          <li>
+            <a href="/safety.html">
+              Safety
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="footer-section">
+
+        <h3>
+          Follow Us
+        </h3>
+
+        <div class="social-links">
+
+          <a href="https://web.facebook.com/profile.php?id=61587034792994"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Kijabe Adventures on Facebook">
+
+            <i class="fab fa-facebook"></i>
+
+          </a>
+
+
+          <a href="https://www.instagram.com/kijabeadventures"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Kijabe Adventures on Instagram">
+
+            <i class="fab fa-instagram"></i>
+
+          </a>
+
+
+          <a href="https://x.com/KijabeAdventures"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Kijabe Adventures on X">
+
+            <i class="fa-brands fa-x-twitter"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-section footer-links">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact.html">
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="/gallery.html">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="/blogs/blog.html">
+              Blog
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
     </div>
 
-    <div class="footer-section footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-         <li><a href="/gallery.html">Gallery</a></li>
-          <li><a href="/blogs/blog.html">Blog</a></li>
-      </ul>
-    </div>
+
+    <p class="copyright">
+
+      © <span id="year"></span>
+      Kijabe Adventures.
+      All rights reserved.
+
+    </p>
+
+
+    <p class="footer-legal">
+
+      <a href="/privacy.html">
+        Privacy
+      </a>
+
+      ·
+
+      <a href="/terms.html">
+        Terms
+      </a>
+
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================================
+       WHATSAPP FLOAT
+  ========================================================== -->
+
+  <a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with Kijabe Adventures on WhatsApp">
+
+    <i class="fab fa-whatsapp"></i>
+
+  </a>
+
+
+  <!-- =========================================================
+       MOBILE STICKY BOOKING BAR
+  ========================================================== -->
+
+  <div class="mobile-sticky-bar">
+
+    <a href="/upcoming-hiking-events.html"
+       class="sticky-btn upcoming">
+
+      🎉 Book Upcoming Hike
+
+    </a>
+
+
+    <a href="/private-group-hikes.html"
+       class="sticky-btn private">
+
+      💳 Book Private Hike
+
+    </a>
 
   </div>
 
-  <p class="copyright">
-© <span id="year"></span> Kijabe Adventures. All rights reserved.
-</p>
 
-<script>
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
-  <p class="footer-legal">
-    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
-  </p>
-</footer>
+  <!-- =========================================================
+       SCRIPTS
+  ========================================================== -->
 
-<!-- WhatsApp Float Button -->
-<a href="https://wa.me/254743980340?text=Hello%20Kijabe%20Adventures!%20I%20would%20like%20to%20book%20a%20hike."
-   class="whatsapp-float"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <script src="/js/config.js"
+          defer></script>
 
-<!-- Scripts -->
-<script src="js/config.js" defer></script>
-<script src="js/countdown.js" defer></script>
-<script src="js/share.js" defer></script>
-<script src="js/calculator.js" defer></script>
-<script src="js/js/next-hike.js" defer></script>
-<script src="js/mobile.js" defer></script>
+  <script src="/js/js/next-hike.js"
+          defer></script>
 
-<!-- Service Worker -->
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/sw.js");
-  }
-</script>
-<!-- MOBILE STICKY BOOKING BAR -->
-<div class="mobile-sticky-bar">
+  <script src="/js/mobile.js"
+          defer></script>
 
-  <a href="/upcoming-hiking-events.html"
-     class="sticky-btn upcoming">
-    🎉 Book Upcoming Hike
-  </a>
 
-  <a href="/private-group-hikes.html"
-     class="sticky-btn private">
-    💳 Book Private Hike
-  </a>
+  <!-- YEAR -->
 
-</div>
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+
+  <!-- =========================================================
+       BOOKING FORM ANALYTICS
+  ========================================================== -->
+
+  <script>
+
+    const bookingForm =
+      document.querySelector(".booking-form");
+
+    if (bookingForm) {
+
+      bookingForm.addEventListener("submit", function () {
+
+        if (typeof gtag === "function") {
+
+          gtag("event", "booking_form_submit", {
+            event_category: "Booking",
+            event_label: "Contact Page Booking Form"
+          });
+
+        }
+
+      });
+
+    }
+
+
+    document.querySelectorAll(
+      'a[href*="wa.me"]'
+    ).forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        if (typeof gtag === "function") {
+
+          gtag("event", "whatsapp_click", {
+            event_category: "Booking",
+            event_label: "WhatsApp Booking"
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+
 </body>
-</html>
 
+</html>

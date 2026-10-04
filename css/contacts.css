@@ -1,0 +1,1918 @@
+/* ==========================================================
+   KIJABE ADVENTURES
+   CONTACT / BOOKING PAGE
+   contacts.css
+
+   IMPORTANT:
+   Header and navigation styles are intentionally NOT included.
+   They are controlled by /css/styles.css.
+========================================================== */
+
+
+/* ==========================================================
+   PAGE VARIABLES
+========================================================== */
+
+.contact-page {
+
+  --contact-primary: #006400;
+  --contact-primary-dark: #004d00;
+  --contact-primary-light: #eaf5ea;
+
+  --contact-accent: #f4b400;
+  --contact-whatsapp: #25d366;
+
+  --contact-dark: #17301d;
+  --contact-text: #333333;
+  --contact-muted: #6b7280;
+
+  --contact-light: #f7faf7;
+  --contact-white: #ffffff;
+
+  --contact-border: #e2e8e2;
+
+  --contact-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  --contact-radius: 16px;
+
+  color: var(--contact-text);
+
+  line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   GENERAL
+========================================================== */
+
+.contact-page *,
+.contact-page *::before,
+.contact-page *::after {
+
+  box-sizing: border-box;
+
+}
+
+
+.contact-page img {
+
+  display: block;
+
+  max-width: 100%;
+
+}
+
+
+.contact-page a {
+
+  text-decoration: none;
+
+}
+
+
+.contact-page section {
+
+  width: 100%;
+
+}
+
+
+.contact-page p {
+
+  margin-top: 0;
+
+}
+
+
+.contact-page h1,
+.contact-page h2,
+.contact-page h3 {
+
+  color: var(--contact-dark);
+
+  line-height: 1.2;
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.contact-hero {
+
+  position: relative;
+
+  min-height: 430px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 60, 0, 0.94),
+      rgba(0, 100, 0, 0.86)
+    );
+
+  color: white;
+
+}
+
+
+.contact-hero-content {
+
+  width: min(900px, 100%);
+
+  margin: auto;
+
+}
+
+
+.contact-eyebrow {
+
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  padding: 7px 15px;
+
+  border: 1px solid rgba(255,255,255,0.35);
+
+  border-radius: 999px;
+
+  color: white;
+
+  font-size: 0.8rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.contact-hero h1 {
+
+  max-width: 850px;
+
+  margin: 0 auto 18px;
+
+  color: white;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+}
+
+
+.contact-hero p {
+
+  max-width: 720px;
+
+  margin: 0 auto 30px;
+
+  color: rgba(255,255,255,0.92);
+
+  font-size: clamp(1rem, 2vw, 1.2rem);
+
+}
+
+
+.contact-hero-buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.contact-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 50px;
+
+  padding: 13px 22px;
+
+  border-radius: 9px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+}
+
+
+.contact-btn:hover {
+
+  transform: translateY(-2px);
+
+}
+
+
+.contact-btn-primary {
+
+  background: white;
+
+  color: var(--contact-primary);
+
+  box-shadow:
+    0 7px 20px rgba(0,0,0,0.16);
+
+}
+
+
+.contact-btn-primary:hover {
+
+  background: #f4f7f4;
+
+}
+
+
+.contact-btn-whatsapp {
+
+  background: var(--contact-whatsapp);
+
+  color: white;
+
+}
+
+
+.contact-btn-whatsapp:hover {
+
+  background: #1fb958;
+
+}
+
+
+/* ==========================================================
+   TRUST BAR
+========================================================== */
+
+.booking-trust {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  max-width: 1100px;
+
+  margin: -35px auto 0;
+
+  position: relative;
+
+  z-index: 3;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: var(--contact-shadow);
+
+  overflow: hidden;
+
+}
+
+
+.trust-item {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 100px;
+
+  padding: 18px;
+
+  border-right: 1px solid var(--contact-border);
+
+  text-align: center;
+
+}
+
+
+.trust-item:last-child {
+
+  border-right: 0;
+
+}
+
+
+.trust-item strong {
+
+  color: var(--contact-primary);
+
+  font-size: 1.25rem;
+
+  font-weight: 900;
+
+}
+
+
+.trust-item span {
+
+  color: var(--contact-muted);
+
+  font-size: 0.9rem;
+
+}
+
+
+/* ==========================================================
+   GENERAL SECTION HEADING
+========================================================== */
+
+.section-heading {
+
+  max-width: 760px;
+
+  margin: 0 auto 42px;
+
+  text-align: center;
+
+}
+
+
+.section-heading > span,
+.section-label {
+
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--contact-primary);
+
+  font-size: 0.78rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+}
+
+
+.section-heading h2 {
+
+  margin: 0 0 14px;
+
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+}
+
+
+.section-heading p {
+
+  margin-bottom: 0;
+
+  color: var(--contact-muted);
+
+}
+
+
+/* ==========================================================
+   ADVENTURE SECTION
+========================================================== */
+
+.adventure-section {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 80px 20px;
+
+}
+
+
+.adventure-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 22px;
+
+}
+
+
+.adventure-card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid var(--contact-border);
+
+  border-radius: var(--contact-radius);
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.adventure-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: var(--contact-shadow);
+
+}
+
+
+.adventure-image {
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+}
+
+
+.adventure-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+
+}
+
+
+.adventure-card:hover .adventure-image img {
+
+  transform: scale(1.05);
+
+}
+
+
+.adventure-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 22px;
+
+}
+
+
+.adventure-content h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.25rem;
+
+}
+
+
+.adventure-content p {
+
+  flex: 1;
+
+  color: var(--contact-muted);
+
+  font-size: 0.94rem;
+
+}
+
+
+.adventure-content a {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+
+  color: var(--contact-primary);
+
+  font-weight: 800;
+
+}
+
+
+/* ==========================================================
+   BOOKING SECTION
+========================================================== */
+
+.booking-section {
+
+  padding: 85px 20px;
+
+  background: var(--contact-light);
+
+}
+
+
+.booking-container {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(400px, 1.2fr);
+
+  gap: 55px;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+}
+
+
+.booking-intro h2 {
+
+  margin: 0 0 16px;
+
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+
+}
+
+
+.booking-intro > p {
+
+  color: var(--contact-muted);
+
+}
+
+
+.booking-notice {
+
+  display: flex;
+
+  gap: 14px;
+
+  margin-top: 28px;
+
+  padding: 20px;
+
+  background: var(--contact-primary-light);
+
+  border-left: 4px solid var(--contact-primary);
+
+  border-radius: 10px;
+
+}
+
+
+.booking-notice > i {
+
+  margin-top: 4px;
+
+  color: var(--contact-primary);
+
+}
+
+
+.booking-notice strong {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--contact-dark);
+
+}
+
+
+.booking-notice p {
+
+  margin: 0;
+
+  color: var(--contact-text);
+
+  font-size: 0.93rem;
+
+}
+
+
+/* ==========================================================
+   BOOKING FORM
+========================================================== */
+
+.booking-form {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding: 32px;
+
+  background: white;
+
+  border: 1px solid var(--contact-border);
+
+  border-radius: var(--contact-radius);
+
+  box-shadow: var(--contact-shadow);
+
+}
+
+
+.form-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.form-full {
+
+  grid-column: 1 / -1;
+
+}
+
+
+.form-group label {
+
+  margin-bottom: 7px;
+
+  color: var(--contact-dark);
+
+  font-size: 0.9rem;
+
+  font-weight: 800;
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #ccd6cc;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--contact-text);
+
+  font: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.form-group textarea {
+
+  resize: vertical;
+
+  min-height: 125px;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+  border-color: var(--contact-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(0,100,0,0.10);
+
+}
+
+
+.form-consent {
+
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  font-size: 0.85rem;
+
+  color: var(--contact-muted);
+
+}
+
+
+.form-consent input {
+
+  width: 18px;
+
+  height: 18px;
+
+  margin-top: 3px;
+
+  flex-shrink: 0;
+
+  accent-color: var(--contact-primary);
+
+}
+
+
+.form-consent label {
+
+  cursor: pointer;
+
+}
+
+
+.contact-btn-submit {
+
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  border: 0;
+
+  background: var(--contact-primary);
+
+  color: white;
+
+  cursor: pointer;
+
+  font: inherit;
+
+}
+
+
+.contact-btn-submit:hover {
+
+  background: var(--contact-primary-dark);
+
+}
+
+
+.form-security {
+
+  grid-column: 1 / -1;
+
+  margin: -4px 0 0;
+
+  text-align: center;
+
+  color: var(--contact-muted);
+
+  font-size: 0.78rem;
+
+}
+
+
+.form-security i {
+
+  color: var(--contact-primary);
+
+}
+
+
+/* ==========================================================
+   BOOKING PROCESS
+========================================================== */
+
+.booking-process {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 85px 20px;
+
+}
+
+
+.process-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+}
+
+
+.process-card {
+
+  position: relative;
+
+  padding: 28px 22px;
+
+  text-align: center;
+
+  background: white;
+
+  border: 1px solid var(--contact-border);
+
+  border-radius: var(--contact-radius);
+
+}
+
+
+.process-number {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: var(--contact-primary);
+
+  color: white;
+
+  font-weight: 900;
+
+}
+
+
+.process-card > i {
+
+  margin-bottom: 15px;
+
+  color: var(--contact-primary);
+
+  font-size: 1.7rem;
+
+}
+
+
+.process-card h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.15rem;
+
+}
+
+
+.process-card p {
+
+  margin: 0;
+
+  color: var(--contact-muted);
+
+  font-size: 0.92rem;
+
+}
+
+
+/* ==========================================================
+   PAYMENT SECTION
+========================================================== */
+
+.payment-section {
+
+  padding: 75px 20px;
+
+  background: var(--contact-primary);
+
+  color: white;
+
+}
+
+
+.payment-content {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  max-width: 900px;
+
+  margin: auto;
+
+}
+
+
+.payment-icon {
+
+  width: 76px;
+
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.13);
+
+  font-size: 2rem;
+
+}
+
+
+.payment-content h2 {
+
+  margin: 0 0 12px;
+
+  color: white;
+
+}
+
+
+.payment-content p {
+
+  color: rgba(255,255,255,0.9);
+
+}
+
+
+.till-box {
+
+  display: inline-flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  margin: 15px 0;
+
+  padding: 14px 20px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.10);
+
+}
+
+
+.till-box span {
+
+  font-size: 0.78rem;
+
+  opacity: 0.85;
+
+}
+
+
+.till-box strong {
+
+  font-size: 1.5rem;
+
+  letter-spacing: 1px;
+
+}
+
+
+.payment-note {
+
+  margin-bottom: 0;
+
+}
+
+
+/* ==========================================================
+   WHY SECTION
+========================================================== */
+
+.why-section {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 85px 20px;
+
+}
+
+
+.why-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+}
+
+
+.why-card {
+
+  padding: 30px 22px;
+
+  text-align: center;
+
+  border: 1px solid var(--contact-border);
+
+  border-radius: var(--contact-radius);
+
+}
+
+
+.why-card > i {
+
+  margin-bottom: 17px;
+
+  color: var(--contact-primary);
+
+  font-size: 2rem;
+
+}
+
+
+.why-card h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.15rem;
+
+}
+
+
+.why-card p {
+
+  margin: 0;
+
+  color: var(--contact-muted);
+
+  font-size: 0.92rem;
+
+}
+
+
+/* ==========================================================
+   QUICK WHATSAPP
+========================================================== */
+
+.quick-booking {
+
+  padding: 70px 20px;
+
+  background: #f1f8f1;
+
+}
+
+
+.quick-booking-content {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 35px;
+
+  max-width: 1050px;
+
+  margin: auto;
+
+}
+
+
+.quick-booking h2 {
+
+  margin: 0 0 12px;
+
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+
+}
+
+
+.quick-booking p {
+
+  max-width: 700px;
+
+  margin: 0;
+
+  color: var(--contact-muted);
+
+}
+
+
+.quick-whatsapp {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  padding: 15px 22px;
+
+  border-radius: 9px;
+
+  background: var(--contact-whatsapp);
+
+  color: white;
+
+  font-weight: 800;
+
+  box-shadow: 0 6px 18px rgba(37,211,102,0.22);
+
+}
+
+
+.quick-whatsapp:hover {
+
+  background: #1fb958;
+
+}
+
+
+/* ==========================================================
+   FAQ
+========================================================== */
+
+.faq-section {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 85px 20px;
+
+}
+
+
+.faq-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+.faq-item {
+
+  overflow: hidden;
+
+  border: 1px solid var(--contact-border);
+
+  border-radius: 10px;
+
+  background: white;
+
+}
+
+
+.faq-item summary {
+
+  position: relative;
+
+  padding: 20px 50px 20px 20px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  color: var(--contact-dark);
+
+  font-weight: 800;
+
+}
+
+
+.faq-item summary::-webkit-details-marker {
+
+  display: none;
+
+}
+
+
+.faq-item summary::after {
+
+  content: "+";
+
+  position: absolute;
+
+  right: 20px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--contact-primary);
+
+  font-size: 1.3rem;
+
+  font-weight: 900;
+
+}
+
+
+.faq-item[open] summary::after {
+
+  content: "−";
+
+}
+
+
+.faq-item p {
+
+  margin: 0;
+
+  padding: 0 20px 20px;
+
+  color: var(--contact-muted);
+
+}
+
+
+/* ==========================================================
+   FINAL CTA
+========================================================== */
+
+.final-contact-cta {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  max-width: 1150px;
+
+  margin: 0 auto 80px;
+
+  padding: 45px;
+
+  border-radius: var(--contact-radius);
+
+  background:
+    linear-gradient(
+      135deg,
+      #004d00,
+      #006400
+    );
+
+  color: white;
+
+}
+
+
+.final-contact-cta > div:first-child {
+
+  max-width: 650px;
+
+}
+
+
+.final-contact-cta span {
+
+  font-size: 0.78rem;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.final-contact-cta h2 {
+
+  margin: 8px 0 12px;
+
+  color: white;
+
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+
+}
+
+
+.final-contact-cta p {
+
+  margin: 0;
+
+  color: rgba(255,255,255,0.9);
+
+}
+
+
+.final-cta-buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+}
+
+
+.contact-btn-outline {
+
+  border: 1px solid rgba(255,255,255,0.7);
+
+  color: white;
+
+}
+
+
+.contact-btn-outline:hover {
+
+  background: rgba(255,255,255,0.1);
+
+}
+
+
+/* ==========================================================
+   FOOTER PAGE-SPECIFIC ADJUSTMENTS
+   Does NOT style the header.
+========================================================== */
+
+.contact-page + footer {
+
+  margin-top: 0;
+
+}
+
+
+/* ==========================================================
+   WHATSAPP FLOAT
+========================================================== */
+
+.whatsapp-float {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 25px;
+
+  z-index: 1000;
+
+  width: 56px;
+
+  height: 56px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--contact-whatsapp);
+
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.2);
+
+  font-size: 1.7rem;
+
+  transition:
+    transform 0.2s ease;
+
+}
+
+
+.whatsapp-float:hover {
+
+  transform: scale(1.08);
+
+}
+
+
+/* ==========================================================
+   MOBILE STICKY BOOKING BAR
+========================================================== */
+
+.mobile-sticky-bar {
+
+  display: none;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+
+  .adventure-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .process-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .why-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .booking-container {
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+  }
+
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+
+  .contact-hero {
+
+    min-height: 390px;
+
+    padding:
+      55px
+      18px;
+
+  }
+
+
+  .contact-hero h1 {
+
+    font-size: 2rem;
+
+  }
+
+
+  .contact-hero-buttons {
+
+    flex-direction: column;
+
+    width: 100%;
+
+  }
+
+
+  .contact-hero-buttons .contact-btn {
+
+    width: 100%;
+
+  }
+
+
+  .booking-trust {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    width: calc(100% - 30px);
+
+    margin-top: -25px;
+
+  }
+
+
+  .trust-item {
+
+    min-height: 85px;
+
+    padding: 13px;
+
+  }
+
+
+  .trust-item:nth-child(2) {
+
+    border-right: 0;
+
+  }
+
+
+  .trust-item:nth-child(-n+2) {
+
+    border-bottom: 1px solid var(--contact-border);
+
+  }
+
+
+  .adventure-section,
+  .booking-process,
+  .why-section,
+  .faq-section {
+
+    padding:
+      60px 16px;
+
+  }
+
+
+  .adventure-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .booking-section {
+
+    padding:
+      60px 16px;
+
+  }
+
+
+  .booking-form {
+
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+
+  }
+
+
+  .form-full,
+  .form-consent,
+  .contact-btn-submit,
+  .form-security {
+
+    grid-column: 1;
+
+  }
+
+
+  .process-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .why-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .payment-section {
+
+    padding:
+      60px 18px;
+
+  }
+
+
+  .payment-content {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+
+  .quick-booking {
+
+    padding:
+      60px 18px;
+
+  }
+
+
+  .quick-booking-content {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+
+  .quick-whatsapp {
+
+    width: 100%;
+
+  }
+
+
+  .final-contact-cta {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin:
+      0 16px 60px;
+
+    padding: 30px 24px;
+
+  }
+
+
+  .final-cta-buttons {
+
+    width: 100%;
+
+    flex-direction: column;
+
+  }
+
+
+  .final-cta-buttons .contact-btn {
+
+    width: 100%;
+
+  }
+
+
+  .whatsapp-float {
+
+    right: 15px;
+
+    bottom: 80px;
+
+    width: 52px;
+
+    height: 52px;
+
+  }
+
+
+  /*
+     The two existing mobile sticky buttons
+     remain visible at the bottom.
+  */
+
+  .mobile-sticky-bar {
+
+    position: fixed;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 999;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 6px;
+
+    background: rgba(255,255,255,0.97);
+
+    box-shadow:
+      0 -4px 18px rgba(0,0,0,0.12);
+
+  }
+
+
+  .sticky-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 8px;
+
+    border-radius: 7px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+  }
+
+
+  .sticky-btn.upcoming {
+
+    background: var(--contact-primary);
+
+  }
+
+
+  .sticky-btn.private {
+
+    background: #333333;
+
+  }
+
+
+  /*
+     Give the page enough bottom space so the
+     sticky bar does not cover the final content.
+  */
+
+  .contact-page {
+
+    padding-bottom: 65px;
+
+  }
+
+
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width: 420px) {
+
+
+  .contact-hero {
+
+    min-height: 360px;
+
+    padding:
+      45px 15px;
+
+  }
+
+
+  .contact-hero h1 {
+
+    font-size: 1.75rem;
+
+  }
+
+
+  .contact-hero p {
+
+    font-size: 0.94rem;
+
+  }
+
+
+  .booking-trust {
+
+    width: calc(100% - 20px);
+
+  }
+
+
+  .booking-form {
+
+    padding: 18px;
+
+  }
+
+
+  .faq-item summary {
+
+    padding:
+      17px 45px 17px 16px;
+
+    font-size: 0.93rem;
+
+  }
+
+
+  .faq-item p {
+
+    padding:
+      0 16px 17px;
+
+    font-size: 0.9rem;
+
+  }
+
+
+  .final-contact-cta {
+
+    padding: 25px 20px;
+
+  }
+
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+  .contact-page *,
+  .contact-page *::before,
+  .contact-page *::after {
+
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+
+  }
+
+
+}
