@@ -114,8 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------- Copy Link ---------- */
+  const copyMessage = document.getElementById("copyMessage");
   document.getElementById("copyBtn")?.addEventListener("click", async () => {
     const copied = await copyLink();
+    if (copyMessage) {
+      copyMessage.textContent = copied
+        ? "Link copied! Share it with your friends."
+        : "Unable to copy automatically. Please copy the page link from your browser.";
+    }
     showToast(copied ? "🔗 Link copied to clipboard!" : "Couldn't copy the link — try again.");
   });
 

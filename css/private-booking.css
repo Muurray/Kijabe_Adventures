@@ -1193,3 +1193,275 @@ html {
     text-shadow:0 3px 8px rgba(0,0,0,.75);
 
 }
+
+/* Transport savings note */
+.transport-tip {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #f3f8f1;
+  border-left: 3px solid #2e7d32;
+  border-radius: 6px;
+  color: #405040;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.transport-tip strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #285c2c;
+}
+
+.transport-tip p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .transport-tip {
+    padding: 9px 10px;
+    font-size: 0.82rem;
+  }
+}
+
+.private-hike-hero {
+  padding: 58px 20px;
+  background:
+    linear-gradient(90deg, rgb(14 39 29 / 78%), rgb(14 39 29 / 28%)),
+    url('/images/private-groups.webp') center 48% / cover no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.private-hike-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.private-hike-hero h1,
+.private-hike-hero .hero-subtitle,
+.private-hike-hero .hero-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.private-hike-hero .hero-tag {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 0;
+  color: #e4f2d4;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  backdrop-filter: none;
+}
+
+.private-hike-hero h1 {
+  max-width: 760px;
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 38px;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 30%);
+}
+
+.private-hike-hero .hero-subtitle {
+  max-width: 650px;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 35%);
+}
+
+.private-hike-hero .hero-actions {
+  align-self: stretch;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.private-hike-hero .hero-actions .cta-button {
+  min-height: 46px;
+  padding: 13px 20px;
+  color: #fff;
+  background: #176b45;
+  border: 1px solid #a6d6b8;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.private-hike-hero .hero-actions .cta-button:hover {
+  background: #104b32;
+}
+
+@media (max-width: 600px) {
+  .private-hike-hero {
+    padding: 44px 16px;
+    background-position: 58% center;
+  }
+
+  .private-hike-hero h1 {
+    font-size: 30px;
+  }
+
+  .private-hike-hero .hero-subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .private-hikes-page header .next-hike-badge {
+    display: none;
+  }
+}
+
+/* Guided private booking calculator */
+#booking-calculator {
+  --booking-green: #176b45;
+  --booking-green-light: #eaf5ee;
+  --booking-text: #1b2a21;
+  --booking-muted: #68776d;
+  --booking-border: #e1e9e3;
+  padding: 30px 16px;
+  background: #f5f8f5;
+  color: var(--booking-text);
+}
+
+#booking-calculator * { box-sizing: border-box; }
+#booking-calculator .booking-shell { width: 100%; max-width: 1120px; margin: 0 auto; }
+#booking-calculator .booking-intro { margin-bottom: 25px; }
+#booking-calculator .booking-eyebrow,
+#booking-calculator .summary-label { color: var(--booking-green); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+#booking-calculator .booking-intro h2 { margin: 7px 0 8px; font-size: clamp(25px, 4vw, 36px); line-height: 1.2; }
+#booking-calculator .booking-intro > p { max-width: 650px; margin: 0; color: var(--booking-muted); font-size: 14px; }
+#booking-calculator .booking-benefits { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 16px; }
+#booking-calculator .booking-benefits span { display: inline-flex; align-items: center; gap: 7px; color: #43594a; font-size: 12px; font-weight: 600; }
+#booking-calculator .booking-benefits i,
+#booking-calculator .summary-stat i { color: var(--booking-green); }
+#booking-calculator .booking-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(290px, .85fr); align-items: start; gap: 20px; }
+#booking-calculator .booking-form-card,
+#booking-calculator .payment-card,
+#booking-calculator .booking-summary { min-width: 0; padding: 23px; background: #fff; border: 1px solid var(--booking-border); border-radius: 12px; box-shadow: 0 5px 22px rgb(28 67 42 / 5%); }
+#booking-calculator .booking-section-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 19px; }
+#booking-calculator .booking-step { display: grid; place-items: center; flex: 0 0 38px; height: 38px; color: var(--booking-green); background: var(--booking-green-light); border-radius: 9px; font-size: 12px; font-weight: 800; }
+#booking-calculator .booking-section-heading h3 { margin: 0 0 4px; color: var(--booking-text); font-size: 17px; }
+#booking-calculator .booking-section-heading p { margin: 0; color: var(--booking-muted); font-size: 12px; line-height: 1.6; }
+#booking-calculator .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 0 16px; }
+#booking-calculator .form-group { min-width: 0; margin-bottom: 15px; }
+#booking-calculator .form-group > label { display: block; margin-bottom: 7px; color: #34463a; font-size: 12px; font-weight: 700; }
+#booking-calculator input:not([type="checkbox"]),
+#booking-calculator select { display: block; width: 100%; min-height: 46px; padding: 11px 12px; color: var(--booking-text); background-color: #fff; border: 1px solid #dce5de; border-radius: 8px; font-size: 14px; transition: border-color .2s, box-shadow .2s; }
+#booking-calculator input:focus,
+#booking-calculator select:focus { outline: none; border-color: var(--booking-green); box-shadow: 0 0 0 3px rgb(23 107 69 / 10%); }
+#booking-calculator input::placeholder { color: #9aa69d; }
+#booking-calculator .booking-divider { height: 1px; margin: 22px 0; background: var(--booking-border); }
+#booking-calculator .transport-tip { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 19px; padding: 14px; background: #f0f7f1; border: 1px solid #dfede2; border-radius: 10px; }
+#booking-calculator .transport-tip-icon,
+#booking-calculator .summary-icon,
+#booking-calculator .payment-icon { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; color: var(--booking-green); background: #fff; border-radius: 9px; }
+#booking-calculator .transport-tip strong { font-size: 12px; }
+#booking-calculator .transport-tip p { margin: 4px 0 0; color: #52665a; font-size: 12px; line-height: 1.7; }
+#booking-calculator .group-pricing { display: flex; flex-direction: column; grid-column: 1 / -1; gap: 12px; margin: 8px 0 15px; padding: 17px; background: #f8faf8; border: 1px solid var(--booking-border); border-radius: 10px; }
+#booking-calculator .group-pricing-heading h4,
+#booking-calculator .pricing-group > h4 { margin: 0 0 8px; color: var(--booking-text); font-size: 14px; }
+#booking-calculator .group-pricing-heading p { margin: 0 0 5px; color: var(--booking-muted); font-size: 12px; }
+#booking-calculator .pricing-group { display: flex; flex-direction: column; gap: 8px; padding: 14px 0; background: transparent; border: 0; border-top: 1px solid var(--booking-border); border-radius: 0; }
+#booking-calculator .pricing-row { display: grid; grid-template-columns: minmax(0, 1fr) 85px; align-items: center; gap: 12px; margin: 0; }
+#booking-calculator .pricing-row label { margin: 0; font-size: 12px; font-weight: 600; }
+#booking-calculator .pricing-row input { min-height: 39px; padding: 7px 10px; text-align: center; }
+#booking-calculator .parking-option { display: flex !important; align-items: center; gap: 10px; min-height: 65px; padding: 12px; background: #f8faf8; border: 1px solid var(--booking-border); border-radius: 9px; cursor: pointer; }
+#booking-calculator input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--booking-green); }
+#booking-calculator .parking-option strong,
+#booking-calculator .parking-option small { display: block; }
+#booking-calculator .parking-option strong { font-size: 12px; }
+#booking-calculator .parking-option small { margin-top: 3px; color: var(--booking-muted); font-size: 11px; }
+#booking-calculator #pickupInfo { color: var(--booking-text); font-size: 12px; line-height: 1.7; }
+#booking-calculator .live-note,
+#booking-calculator .error-message { font-size: 11px; line-height: 1.7; }
+#booking-calculator .live-note { margin: 15px 0 0; color: var(--booking-muted); }
+#booking-calculator .live-note i { color: var(--booking-green); }
+#booking-calculator .error-message { min-height: 0; margin: 0; }
+#booking-calculator .booking-sidebar { display: grid; gap: 16px; min-width: 0; }
+#booking-calculator .booking-summary[hidden] { display: none !important; }
+#booking-calculator .summary-top,
+#booking-calculator .summary-stat,
+#booking-calculator .summary-total { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+#booking-calculator .summary-icon { flex: 0 0 39px; width: 39px; height: 39px; background: var(--booking-green-light); }
+#booking-calculator .booking-summary h3 { margin: 13px 0 5px; color: var(--booking-text); font-size: 19px; }
+#booking-calculator .summary-stat { padding: 13px 0; border-bottom: 1px solid var(--booking-border); color: var(--booking-text); font-size: 12px; }
+#booking-calculator .summary-total { display: block; padding: 5px 0 17px; }
+#booking-calculator .summary-total > span { display: block; margin-bottom: 7px; color: var(--booking-muted); font-size: 12px; }
+#booking-calculator .summary-total > strong { font-size: 26px; overflow-wrap: anywhere; }
+#booking-calculator .balance-panel { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 0; border-top: 1px solid var(--booking-border); color: var(--booking-text); }
+#booking-calculator .balance-panel > span { color: var(--booking-muted); font-size: 12px; }
+#booking-calculator .balance-panel > strong { font-size: 16px; text-align: right; overflow-wrap: anywhere; }
+#booking-calculator .deposit-panel { padding: 16px; color: #fff; background: var(--booking-green); border-radius: 9px; }
+#booking-calculator .deposit-panel > span,
+#booking-calculator .deposit-panel > strong,
+#booking-calculator .deposit-panel > small { display: block; }
+#booking-calculator .deposit-panel > span { font-size: 12px; }
+#booking-calculator .deposit-panel > strong { margin: 8px 0; font-size: 23px; overflow-wrap: anywhere; }
+#booking-calculator .deposit-panel > small { color: #e0f1e5; font-size: 11px; line-height: 1.6; }
+#booking-calculator .balance-note,
+#booking-calculator .payment-reminder { color: var(--booking-muted); font-size: 11px; line-height: 1.7; }
+#booking-calculator .balance-note { margin: 12px 0 0; }
+#booking-calculator .payment-card { margin: 0; background: #fff; }
+#booking-calculator .payment-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 17px; }
+#booking-calculator .payment-icon { flex: 0 0 39px; width: 39px; height: 39px; background: var(--booking-green-light); }
+#booking-calculator .payment-heading h3 { margin: 0 0 4px; color: var(--booking-text); font-size: 15px; }
+#booking-calculator .payment-heading p { margin: 0; color: var(--booking-muted); font-size: 11px; }
+#booking-calculator .till-box { padding: 14px; text-align: center; background: #f4f8f4; border: 1px dashed #a7c5ae; border-radius: 9px; }
+#booking-calculator .till-box span,
+#booking-calculator .till-box strong { display: block; }
+#booking-calculator .till-box span { color: var(--booking-muted); font-size: 11px; }
+#booking-calculator .till-box strong { margin-top: 5px; color: var(--booking-green); font-size: 26px; }
+#booking-calculator .payment-steps { display: grid; gap: 10px; padding-left: 19px; margin: 18px 0; color: #4c5c51; font-size: 12px; line-height: 1.65; }
+#booking-calculator .payment-steps li::marker { color: var(--booking-green); font-weight: 800; }
+#booking-calculator .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 47px; margin-top: 0; padding: 12px 14px; color: #fff; background: #16834a; border: 0; border-radius: 8px; font-size: 12px; text-align: center; text-decoration: none; }
+#booking-calculator .whatsapp-btn:hover { background: #106b3b; }
+#booking-calculator .whatsapp-btn.disabled { opacity: .55; }
+#booking-calculator .payment-reminder { margin: 12px 0 0; }
+#booking-calculator .booking-share { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-top: 20px; padding: 20px 23px; background: #fff; border: 1px solid var(--booking-border); border-radius: 10px; }
+#booking-calculator .booking-share h3 { margin: 0 0 5px; color: var(--booking-text); font-size: 15px; }
+#booking-calculator .booking-share p { margin: 0; color: var(--booking-muted); font-size: 12px; }
+#booking-calculator .share-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0; }
+#booking-calculator .share-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 37px; padding: 9px 12px; color: #35483b; background: #f4f7f4; border: 1px solid var(--booking-border); border-radius: 7px; font-size: 11px; font-weight: 650; cursor: pointer; }
+#booking-calculator .share-btn:hover { background: #e8f1e9; transform: none; }
+#booking-calculator .share-btn.facebook { color: #fff; background: #1877f2; border-color: #1877f2; }
+#booking-calculator .share-btn.facebook:hover { background: #125fca; }
+#booking-calculator .share-btn.whatsapp { color: #fff; background: #16834a; border-color: #16834a; }
+#booking-calculator .share-btn.whatsapp:hover { background: #106b3b; }
+#booking-calculator .share-btn.twitter { color: #fff; background: #111827; border-color: #111827; }
+#booking-calculator .share-btn.twitter:hover { background: #303b4d; }
+#booking-calculator .share-btn.linkedin { color: #fff; background: #0a66c2; border-color: #0a66c2; }
+#booking-calculator .share-btn.linkedin:hover { background: #084f98; }
+#booking-calculator #copyBtn { color: #176b45; background: #eaf5ee; border-color: #c9e2d1; }
+#booking-calculator #copyBtn:hover { background: #d9ecdf; }
+#booking-calculator .copy-message { display: block; width: 100%; color: #176b45; font-size: 12px; font-weight: 600; }
+#booking-calculator .copy-message:empty { display: none; }
+#booking-calculator .is-collapsed { display: none !important; }
+#booking-calculator #parkingBox:not(.is-collapsed),
+#booking-calculator #pickupInfoBox:not(.is-collapsed) { display: flex; }
+
+@media (max-width: 800px) {
+  #booking-calculator { padding: 22px 12px; }
+  #booking-calculator .booking-layout { grid-template-columns: minmax(0, 1fr); }
+  #booking-calculator .booking-form-card,
+  #booking-calculator .payment-card,
+  #booking-calculator .booking-summary { padding: 18px; }
+  #booking-calculator .booking-share { align-items: flex-start; flex-direction: column; padding: 18px; }
+}
+
+@media (max-width: 480px) {
+  #booking-calculator .form-grid { grid-template-columns: minmax(0, 1fr); }
+  #booking-calculator .booking-intro h2 { font-size: 27px; }
+  #booking-calculator .booking-benefits { gap: 10px 14px; }
+  #booking-calculator .share-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  #booking-calculator .share-btn { width: 100%; padding: 10px 6px; }
+  #booking-calculator .summary-total > strong { font-size: 24px; }
+}

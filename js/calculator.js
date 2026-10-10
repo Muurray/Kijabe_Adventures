@@ -9,10 +9,10 @@ const PricingEngine = {
 
   transportFees: {
     self: 0,
-    nairobi: 9800,
-    westlands: 8700,
-    kikuyu: 7500,
-    thika: 15000,
+    nairobi: 6829,
+    westlands: 5759,
+    kikuyu: 5509,
+    thika: 7219,
     coaster: 0,
     bus: 0
   },
@@ -81,8 +81,10 @@ const TransportRules = {
 
 function initBookingCalculator(config) {
   const name = document.querySelector(config.name);
+  const phone = config.phone ? document.querySelector(config.phone) : null;
   const residency = document.querySelector(config.residency);
   const hikerType = document.querySelector(config.hikerType);
+  const destination = config.destination ? document.querySelector(config.destination) : null;
   const groupInputs = Object.fromEntries(
     Object.entries(config.categories).map(([key, selector]) => [key, document.querySelector(selector)])
   );
@@ -94,16 +96,19 @@ function initBookingCalculator(config) {
 
   const totalEl = document.querySelector(config.total);
   const depositEl = document.querySelector(config.deposit);
+  const balanceEl = config.balance ? document.querySelector(config.balance) : null;
   const btn = document.querySelector(config.button);
   const resultCard = document.querySelector(config.resultCard);
   const totalHikersEl = document.querySelector(config.totalHikers);
-  const breakdownEl = config.breakdown ? document.querySelector(config.breakdown) : null;
 
   const parkingBox = document.querySelector(config.parkingBox);
   const pickupInfoBox = document.querySelector(config.pickupInfoBox);
   const pickupInfo = document.querySelector(config.pickupInfo);
 
-  if (date) date.min = new Date().toISOString().split("T")[0];
+  if (date) {
+    const today = new Date();
+    date.min = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  }
 
   function getCounts() {
     return Object.fromEntries(
@@ -247,10 +252,10 @@ function initBookingCalculator(config) {
       if (pickupInfoBox) pickupInfoBox.classList.remove("is-collapsed");
 
       const infoMap = {
-        nairobi: "🚐 Pickup: Nairobi CBD — 6:00 AM",
-        westlands: "🚐 Pickup: Westlands — 6:20 AM",
-        kikuyu: "🚐 Pickup: Kikuyu — 7:00 AM",
-        thika: "🚐 Pickup: Thika — 5:30 AM",
+        nairobi: "🚐 Pickup: Nairobi CBD — time to be agreed",
+        westlands: "🚐 Pickup: Westlands — time to be agreed",
+        kikuyu: "🚐 Pickup: Kikuyu — time to be agreed",
+        thika: "🚐 Pickup: Thika — time to be agreed",
         coaster: "🚌 Coaster Bus Pickup — details shared later",
         bus: "🚌 Large Bus Pickup — details shared later"
       };
@@ -266,25 +271,31 @@ function initBookingCalculator(config) {
 
   function update() {
     const customerName = name?.value?.trim() || "";
+    const customerPhone = phone?.value?.trim() || "";
+    const validPhone = /^(?:(?:\+?254)|0)?[17]\d{8}$/.test(customerPhone.replace(/[\s()-]/g, ""));
     const selectedResidency = residency?.value || "";
     const selectedType = hikerType?.value || "";
+    const selectedDestination = destination?.value || "";
     const hikers = totalHikers();
     const transportType = transport?.value || "";
-    const selectedDate = date?.value || "To be confirmed";
-    const isValid = customerName && hikers > 0 && selectedResidency && selectedType && transportType;
+    const selectedDate = date?.value || "";
+    const isValidDate = Boolean(selectedDate && (!date?.min || selectedDate >= date.min));
+    const canEstimate = hikers > 0 && selectedResidency && selectedType && transportType;
+    const canConfirm = Boolean(canEstimate && customerName && validPhone && isValidDate && selectedDestination);
 
-    if (!isValid) {
+    if (!canEstimate) {
       if (resultCard) {
         resultCard.style.display = "none";
         resultCard.hidden = true;
       }
       if (totalEl) totalEl.innerText = "0";
       if (depositEl) depositEl.innerText = "0";
+      if (balanceEl) balanceEl.innerText = "0";
       if (totalHikersEl) totalHikersEl.innerText = "0";
-      if (breakdownEl) breakdownEl.innerHTML = "";
       if (btn) {
         btn.classList.add("disabled");
         btn.href = "#";
+        btn.setAttribute("aria-disabled", "true");
       }
       return;
     }
@@ -329,8 +340,18 @@ function initBookingCalculator(config) {
     if (totalHikersEl) totalHikersEl.innerText = hikers;
     if (totalEl) totalEl.innerText = total.toLocaleString();
     if (depositEl) depositEl.innerText = deposit.toLocaleString();
+    if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
 
-    let message = `Hello Kijabe Adventures 👋🏾\n\nMy name is ${customerName}.\n\n📅 Date: ${selectedDate}\n\n👥 Total Hikers: ${hikers}\n\n👤 GROUP BREAKDOWN`;
+    if (!canConfirm) {
+      if (btn) {
+        btn.classList.add("disabled");
+        btn.href = "#";
+        btn.setAttribute("aria-disabled", "true");
+      }
+      return;
+    }
+
+    let message = `Hello Kijabe Adventures 👋🏾\n\nMy name is ${customerName}.\nPhone: ${customerPhone}\nDestination: ${selectedDestination}\n📅 Date: ${selectedDate}\n\n👥 Total Hikers: ${hikers}\n\n👤 GROUP BREAKDOWN`;
 
     Object.values(pricing).forEach(item => {
       if (item.count > 0) {
@@ -353,6 +374,7 @@ function initBookingCalculator(config) {
     if (btn) {
       btn.href = `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
       btn.classList.remove("disabled");
+      btn.setAttribute("aria-disabled", "false");
     }
   }
 
@@ -365,6 +387,8 @@ function initBookingCalculator(config) {
   });
 
   name?.addEventListener("input", update);
+  phone?.addEventListener("input", update);
+  destination?.addEventListener("change", update);
   residency?.addEventListener("change", () => {
     updateGroupAndTransportState();
     updateTransportOptions();
@@ -397,6 +421,8 @@ function initBookingCalculator(config) {
 document.addEventListener("DOMContentLoaded", () => {
   initBookingCalculator({
     name: "#customerName",
+    phone: "#customerPhone",
+    destination: "#destination",
     residency: "#customerResidency",
     hikerType: "#customerHikerType",
     categories: {
@@ -415,11 +441,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     total: "#total",
     deposit: "#deposit",
+    balance: "#balance",
     button: "#whatsappLink",
 
     resultCard: "#resultCard",
     totalHikers: "#totalHikers",
-    breakdown: "#priceBreakdown",
 
     parkingBox: "#parkingBox",
     pickupInfoBox: "#pickupInfoBox",
@@ -450,7 +476,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultCard: "#eventResultCard",
     totalHikers: "#eventTotalHikers",
-    breakdown: "#eventPriceBreakdown",
 
     parkingBox: "#eventParkingBox",
     pickupInfoBox: "#eventPickupInfoBox",

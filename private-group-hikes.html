@@ -141,7 +141,7 @@
 
 </head>
 
-<body>
+<body class="private-hikes-page">
 
 <!-- ===========================
      HEADER
@@ -196,267 +196,208 @@
 <!-- ===========================
      HERO  (single — duplicate private-hero removed)
 ============================ -->
-<section class="hero">
+<section class="hero private-hike-hero">
 
   <div class="container">
 
     <span class="hero-tag">
-      🌍 Kenya Private Hiking Experiences
+      PRIVATE HIKING IN KENYA
     </span>
 
-    <h1>Private Group Hikes in Kenya</h1>
+    <h1>Private Group Hikes and outdoor adventures in Kenya</h1>
 
     <p class="hero-subtitle">
-      Book guided private hiking adventures across Kenya including
-      Kijabe Hills, Kijabe River Waterfalls, Kiharu Waterfalls,
-      Ngong Hills, Mt Longonot, Karura Forest and scenic escarpment trails.
+      Bring your group together for a guided hike through Kenya's hills, forests, and waterfalls.
     </p>
-
     <p class="hero-description">
       Perfect for corporate team building, friends, schools,
       travel groups, birthday hikes, outdoor communities and
       family adventures.
     </p>
 
-    <div class="hero-keywords">
-      <span>✅ Corporate Team Building Hikes</span>
-      <span>✅ Kijabe Hills Waterfalls</span>
-      <span>✅ Railway Trail Adventures</span>
-      <span>✅ Scenic River Walk Trails</span>
-      <span>✅ Beginner Friendly Hiking</span>
-      <span>✅ Guided Group Hiking Tours</span>
-    </div>
-
     <div class="hero-actions">
       <a href="/upcoming-hiking-events.html" class="cta-button primary">
         🎉 Join Upcoming Hike
       </a>
-      <a href="#booking-calculator" class="cta-button whatsapp">
-        💳 Get Private Group Price
+    
+      <a href="#booking-calculator" class="cta-button primary">
+        Plan your private hike
       </a>
     </div>
 
   </div>
 
 </section>
+
+
 <!-- ======================================
 ⛰️ PRIVATE BOOKING CALCULATOR (FULL UI)
 ====================================== -->
 
 <section class="private-bookings" id="booking-calculator">
-
-  <div class="calc-card">
-
-    <h2>⛰️ Private Group Booking Calculator</h2>
-    <p class="subtitle">
-      Plan your hike in seconds. Prices shown only when all fields are complete.
-    </p>
-
-    <div class="form-grid">
-
-      <!-- NAME -->
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" id="customerName" placeholder="John Doe">
+  <div class="booking-shell">
+    <header class="booking-intro">
+      <span class="booking-eyebrow">YOUR NEXT ADVENTURE</span>
+      <h2>Use our Calculator to Plan Your Private Hike</h2>
+      <p>Choose your destination, tell us about your group, and get an instant booking estimate.</p>
+      <div class="booking-benefits">
+        <span><i class="fas fa-mountain" aria-hidden="true"></i> Guided adventures</span>
+        <span><i class="fas fa-users" aria-hidden="true"></i> Private groups</span>
+        <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Safety first</span>
       </div>
+    </header>
 
-      <!-- PHONE -->
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" id="customerPhone" placeholder="07XX XXX XXX">
-      </div>
+    <div class="booking-layout">
+      <div class="booking-form-card">
+        <div class="booking-section-heading">
+          <span class="booking-step">01</span>
+          <div><h3>Plan your adventure</h3><p>Tell us when and where you would like to hike.</p></div>
+        </div>
 
-      <!-- DATE -->
-      <div class="form-group">
-        <label for="hikeDate">Preferred Date</label>
-        <input type="date" id="hikeDate" title="Preferred Date">
-      </div>
-
-      <!-- DESTINATION (OPTIONAL FOR FUTURE PRICING) -->
-      <div class="form-group">
-        <label>Destination</label>
-        <select id="destination" title="Select destination">
-          <option value="">Select Destination</option>
-          <option value="Kijabe Hills">Kijabe Hills</option>
-          <option value="Ngong Hills">Ngong Hills</option>
-          <option value="Mt Longonot">Mt Longonot</option>
-          <option value="Karura Forest">Karura Forest</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="customerResidency">Residency</label>
-        <select id="customerResidency" title="Select Residency">
-          <option value="">Select Residency</option>
-          <option value="resident">Resident</option>
-          <option value="nonresident">Non-resident</option>
-          <option value="mixed">Mixed Residency</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="customerHikerType">Hiker Type</label>
-        <select id="customerHikerType" title="Select Hiker Type">
-          <option value="">Select Hiker Type</option>
-          <option value="adult">Adults</option>
-          <option value="student">Students</option>
-          <option value="child">Children</option>
-          <option value="mixed">Mixed Hiker Types</option>
-        </select>
-      </div>
-
-      <div class="group-pricing form-group is-collapsed" style="grid-column: 1 / -1;">
-        <h3>👥 Hiker Group</h3>
-
-        <p>
-          Enter the number of hikers in each category. Use the residency and hiker type
-          selections above to reveal only the relevant fields.
-        </p>
-
-        <div class="pricing-group">
-          <h4>🇰🇪 Residents</h4>
-
-          <div class="pricing-row" data-field="residentAdult">
-            <label for="residentAdults">Resident Adults</label>
-            <input type="number" id="residentAdults" min="0" value="0" inputmode="numeric">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="customerName">Full name</label>
+            <input type="text" id="customerName" placeholder="Enter your name" autocomplete="name" required>
           </div>
-
-          <div class="pricing-row" data-field="residentStudent">
-            <label for="residentStudents">Resident Students</label>
-            <input type="number" id="residentStudents" min="0" value="0" inputmode="numeric">
+          <div class="form-group">
+            <label for="customerPhone">Phone number</label>
+            <input type="tel" id="customerPhone" placeholder="07XX XXX XXX" autocomplete="tel" required>
           </div>
-
-          <div class="pricing-row" data-field="residentChild">
-            <label for="residentChildren">Resident Children</label>
-            <input type="number" id="residentChildren" min="0" value="0" inputmode="numeric">
+          <div class="form-group">
+            <label for="hikeDate">Preferred hiking date</label>
+            <input type="date" id="hikeDate" required>
+          </div>
+          <div class="form-group">
+            <label for="destination">Hiking destination</label>
+            <select id="destination" required>
+              <option value="">Choose a destination</option>
+              <option value="Kijabe Hills">Kijabe Hills</option>
+              <option value="Ngong Hills">Ngong Hills</option>
+              <option value="Mt Longonot">Mt Longonot</option>
+              <option value="Karura Forest">Karura Forest</option>
+            </select>
           </div>
         </div>
 
-        <div class="pricing-group">
-          <h4>🌍 Non-residents</h4>
+        <div class="booking-divider"></div>
+        <div class="booking-section-heading">
+          <span class="booking-step">02</span>
+          <div><h3>Who's joining the hike?</h3><p>Select residency and age categories to calculate the cost.</p></div>
+        </div>
 
-          <div class="pricing-row" data-field="nonresidentAdult">
-            <label for="nonresidentAdults">Non-resident Adults</label>
-            <input type="number" id="nonresidentAdults" min="0" value="0" inputmode="numeric">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="customerResidency">Residency</label>
+            <select id="customerResidency" required>
+              <option value="">Choose residency</option>
+              <option value="resident">Residents</option>
+              <option value="nonresident">Non-residents</option>
+              <option value="mixed">Mixed residency</option>
+            </select>
           </div>
-
-          <div class="pricing-row" data-field="nonresidentStudent">
-            <label for="nonresidentStudents">Non-resident Students</label>
-            <input type="number" id="nonresidentStudents" min="0" value="0" inputmode="numeric">
-          </div>
-
-          <div class="pricing-row" data-field="nonresidentChild">
-            <label for="nonresidentChildren">Non-resident Children</label>
-            <input type="number" id="nonresidentChildren" min="0" value="0" inputmode="numeric">
+          <div class="form-group">
+            <label for="customerHikerType">Hiker categories</label>
+            <select id="customerHikerType" required>
+              <option value="">Choose hiker categories</option>
+              <option value="adult">Adults</option>
+              <option value="student">Students</option>
+              <option value="child">Children</option>
+              <option value="mixed">Mixed age groups</option>
+            </select>
           </div>
         </div>
+
+        <div class="group-pricing form-group is-collapsed">
+          <div class="group-pricing-heading">
+            <h4><i class="fas fa-users" aria-hidden="true"></i> Your hiking group</h4>
+            <p>Enter the number of people in each applicable category.</p>
+          </div>
+          <div class="pricing-group">
+            <h4>Residents</h4>
+            <div class="pricing-row" data-field="residentAdult"><label for="residentAdults">Adults</label><input type="number" id="residentAdults" min="0" step="1" value="0" inputmode="numeric"></div>
+            <div class="pricing-row" data-field="residentStudent"><label for="residentStudents">Students</label><input type="number" id="residentStudents" min="0" step="1" value="0" inputmode="numeric"></div>
+            <div class="pricing-row" data-field="residentChild"><label for="residentChildren">Children</label><input type="number" id="residentChildren" min="0" step="1" value="0" inputmode="numeric"></div>
+          </div>
+          <div class="pricing-group">
+            <h4>Non-residents</h4>
+            <div class="pricing-row" data-field="nonresidentAdult"><label for="nonresidentAdults">Adults</label><input type="number" id="nonresidentAdults" min="0" step="1" value="0" inputmode="numeric"></div>
+            <div class="pricing-row" data-field="nonresidentStudent"><label for="nonresidentStudents">Students</label><input type="number" id="nonresidentStudents" min="0" step="1" value="0" inputmode="numeric"></div>
+            <div class="pricing-row" data-field="nonresidentChild"><label for="nonresidentChildren">Children</label><input type="number" id="nonresidentChildren" min="0" step="1" value="0" inputmode="numeric"></div>
+          </div>
+        </div>
+
+        <div class="booking-divider"></div>
+        <div class="booking-section-heading">
+          <span class="booking-step">03</span>
+          <div><h3>Getting to the meeting point</h3><p>Choose the transport arrangement that works for you.</p></div>
+        </div>
+        <div class="transport-tip">
+          <span class="transport-tip-icon"><i class="fas fa-wallet" aria-hidden="true"></i></span>
+          <div><strong>Save on transport</strong><p>Arrange your own transport to the designated meeting point for a more affordable booking. Pickup may be available at an additional cost.</p></div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group is-collapsed" id="transportOptionWrapper">
+            <label for="transportOption">Transport arrangement</label>
+            <select id="transportOption">
+              <option value="">Choose transport</option>
+              <option value="self">I'll arrange my own transport</option>
+              <option value="nairobi">Nairobi pickup</option>
+              <option value="westlands">Westlands pickup</option>
+              <option value="kikuyu">Kikuyu pickup</option>
+              <option value="thika">Thika pickup</option>
+            </select>
+          </div>
+          <div class="form-group checkbox is-collapsed" id="parkingBox">
+            <label for="parking" class="parking-option"><input type="checkbox" id="parking"><span><strong>Add parking</strong><small>KES 300 per car</small></span></label>
+          </div>
+          <div class="form-group is-collapsed" id="pickupInfoBox">
+            <label>Pickup information</label>
+            <div id="pickupInfo"></div>
+          </div>
+        </div>
+
+        <p id="errorMsg" class="error-message" role="alert" aria-live="polite"></p>
+        <p class="live-note"><i class="fas fa-info-circle" aria-hidden="true"></i> Complete the required selections to view your estimated cost.</p>
       </div>
 
-      <!-- TRANSPORT -->
-      <div class="form-group is-collapsed" id="transportOptionWrapper">
-        <label>Transport Option</label>
-        <select id="transportOption" title="Select Transport Option">
-          <option value="">Select Transport</option>
-          <option value="self">Self Drive / Own Transport</option>
-          <option value="nairobi">Nairobi Pickup</option>
-          <option value="westlands">Westlands Pickup</option>
-          <option value="kikuyu">Kikuyu Pickup</option>
-          <option value="thika">Thika Pickup</option>
-        </select>
-      </div>
+      <aside class="booking-sidebar">
+        <div class="result-card booking-summary" id="resultCard" hidden>
+          <div class="summary-top"><span class="summary-label">YOUR ESTIMATE</span><span class="summary-icon"><i class="fas fa-receipt" aria-hidden="true"></i></span></div>
+          <h3>Booking summary</h3>
+          <div class="summary-stat"><span><i class="fas fa-users" aria-hidden="true"></i> Total hikers</span><strong id="totalHikers">0</strong></div>
+          <div class="summary-total"><span>Estimated total</span><strong>KES <span id="total">0</span></strong></div>
+          <div class="deposit-panel"><span>Booking fee (30%)</span><strong>KES <span id="deposit">0</span></strong><small>Pay this amount to secure your booking.</small></div>
+          <div class="balance-panel"><span>Balance payable on the hiking day</span><strong>KES <span id="balance">0</span></strong></div>
+        </div>
 
-      <!-- PARKING (ONLY FOR SELF TRANSPORT) -->
-      <div class="form-group checkbox is-collapsed" id="parkingBox">
-        <label>
-          <input type="checkbox" id="parking">
-          Add Parking (+KES 300 per car)
-        </label>
-      </div>
-
-      <!-- PICKUP INFO -->
-      <div class="form-group is-collapsed" id="pickupInfoBox">
-        <label>Pickup Info</label>
-        <div id="pickupInfo"></div>
-      </div>
-
+        <div class="payment-card">
+          <div class="payment-heading"><span class="payment-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></span><div><h3>M-Pesa payment</h3><p>Confirm your booking after making payment.</p></div></div>
+          <div class="till-box"><span>Buy Goods Till Number</span><strong>5440810</strong></div>
+          <ol class="payment-steps">
+            <li>Open M-Pesa.</li>
+            <li>Select <strong>Lipa na M-Pesa → Buy Goods.</strong></li>
+            <li>Enter Till Number <strong>5440810</strong>.</li>
+            <li>Pay the 30% booking fee shown in your estimate.</li>
+            <li>Send your payment confirmation message via WhatsApp.</li>
+          </ol>
+          <a id="whatsappLink" class="whatsapp-btn disabled" href="#" aria-disabled="true"><i class="fab fa-whatsapp" aria-hidden="true"></i> Confirm booking on WhatsApp</a>
+          <p class="payment-reminder">Please confirm your booking details and amount with Kijabe Adventures after paying the booking fee.</p>
+        </div>
+      </aside>
     </div>
 
-    <!-- ERROR / INFO -->
-    <p id="errorMsg" class="error-message"></p>
-
-    <!-- BUTTON -->
-  <p class="live-note">
-  💡 Select your Hike Type and Residency first. The available booking options will appear based on your selections.
-</p>
-    <!-- RESULTS (HIDDEN UNTIL VALID) -->
-    <div class="result-card" id="resultCard" hidden>
-
-      <p>👥 Hikers: <strong id="totalHikers">0</strong></p>
-
-      <p class="price">
-        Total Cost:
-        <strong>KES <span id="total">0</span></strong>
-      </p>
-
-      <p class="deposit">
-        Booking Fee (30%):
-        <strong>KES <span id="deposit">0</span></strong>
-      </p>
-
-    </div>
-
-    <!-- PAYMENT INFO -->
-    <div class="payment-card">
-
-      <h4>📲 Payment Instructions</h4>
-
-      <ol>
-        <li>Go to M-Pesa</li>
-        <li>Select Lipa na M-Pesa → Buy Goods</li>
-        <li>Enter Till Number: <strong>5440810</strong></li>
-        <li>Pay booking fee only (30%)</li>
-        <li>Send confirmation via WhatsApp</li>
-      </ol>
-
-      <a id="whatsappLink"
-         class="whatsapp-btn disabled"
-         href="#">
-        Confirm Booking via WhatsApp
-      </a>
-
-    </div>
-     <h3>📢 Invite Your Friends</h3>
-<p>
-    Invite your friends and family to join this hiking adventure.
-</p>
-
-
+    <div class="booking-share">
+      <div><h3>Bring your friends along</h3><p>Share the adventure with friends and family.</p></div>
       <div class="share-buttons">
-
-    <button id="facebookBtn" class="share-btn facebook">
-    <i class="fab fa-facebook-f"></i> Facebook
-</button>
-
-<button id="whatsappBtn" class="share-btn whatsapp">
-    <i class="fab fa-whatsapp"></i> WhatsApp
-</button>
-
-<button id="xBtn" class="share-btn twitter">
-    <i class="fab fa-x-twitter"></i> X
-</button>
-
-<button id="linkedinBtn" class="share-btn linkedin">
-    <i class="fab fa-linkedin"></i> LinkedIn
-</button>
-    <button id="copyBtn" class="share-btn">
-        🔗 Copy Link
-    </button>
-    </div> <!-- share-buttons -->
-
-</div> <!-- share-widget -->
-
+        <button type="button" id="facebookBtn" class="share-btn facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</button>
+        <button type="button" id="whatsappBtn" class="share-btn whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</button>
+        <button type="button" id="xBtn" class="share-btn twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i> X</button>
+        <button type="button" id="linkedinBtn" class="share-btn linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</button>
+        <button type="button" id="copyBtn" class="share-btn"><i class="fas fa-link" aria-hidden="true"></i> Copy link</button>
+        <span id="copyMessage" class="copy-message" role="status" aria-live="polite"></span>
+      </div>
+    </div>
   </div>
-
 </section>
 
 <!-- ===========================
@@ -748,7 +689,7 @@ document.getElementById("year").textContent =
     <p>Booking fee (30%): <strong id="calcDeposit">KES 0</strong></p>
 
     <a id="calcWhatsapp" class="cta-primary disabled" href="#" aria-disabled="true">
-      Confirm Booking via WhatsApp
+      Confirm Booking via WhatsApp after paying the booking fee
     </a>
 
     <p class="mpesa-note">
@@ -817,8 +758,8 @@ document.getElementById("year").textContent =
 </script>
 <script src="js/config.js" defer></script>
 <script src="js/countdown.js" defer></script>
-<script src="js/share.js" defer></script>
-<script src="js/calculator.js" defer></script>
+<script src="js/share.js?v=2" defer></script>
+<script src="js/calculator.js?v=2" defer></script>
 <script src="js/js/next-hike.js" defer></script>
 <script src="js/mobile.js" defer></script>
 

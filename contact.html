@@ -846,46 +846,65 @@
 
           <!-- PICKUP -->
 
-          <div class="form-group">
+           
+          <div class="form-group form-full transport-choice">
 
-            <label for="pickup">
-              Pickup / Starting Location
-            </label>
+  <label for="pickup">
+    How will you get to the hike? select your preferred transport option. If you have your own vehicle, you can meet us at the trailhead (usually the most affordable option).
+  </label>
 
-            <select id="pickup"
-                    name="pickup_location">
+  <select id="pickup"
+          name="pickup_location"
+          required>
 
-              <option value="">
-                Select an option
-              </option>
+    <option value="">
+      Select your transport option
+    </option>
 
-              <option value="Own transport">
-                I will arrange my own transport
-              </option>
+    <option value="Own transport - meet at trailhead">
+      🚗 Own transport — meet at the trailhead (lowest cost)
+    </option>
 
-              <option value="Nairobi">
-                Nairobi
-              </option>
+    <option value="Nairobi">
+      🚐 Transport from Nairobi
+    </option>
 
-              <option value="Westlands">
-                Westlands
-              </option>
+    <option value="Westlands">
+      🚐 Transport from Westlands
+    </option>
 
-              <option value="Kikuyu">
-                Kikuyu
-              </option>
+    <option value="Kikuyu">
+      🚐 Transport from Kikuyu
+    </option>
 
-              <option value="Thika">
-                Thika
-              </option>
+    <option value="Thika">
+      🚐 Transport from Thika
+    </option>
 
-              <option value="Other">
-                Other location
-              </option>
+    <option value="Other">
+      📍 Other pickup location
+    </option>
 
-            </select>
+  </select>
 
-          </div>
+  <div class="transport-saving-note">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <div>
+      <strong>Save on transport</strong>
+
+      <p>
+        Coming with your own vehicle and meeting us at the
+        designated trailhead is usually the most affordable
+        option. We'll provide the meeting point and directions
+        after your booking is confirmed.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 
 
           <!-- MESSAGE -->
