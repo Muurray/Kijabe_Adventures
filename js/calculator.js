@@ -371,6 +371,10 @@ function initBookingCalculator(config) {
 
     message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (30%): KES ${deposit.toLocaleString()}\n\nI will pay via Till Number 5440810.`;
 
+    if (config.bookingMessage) {
+      message += `\n\n${config.bookingMessage}`;
+    }
+
     if (btn) {
       btn.href = `https://wa.me/254743980340?text=${encodeURIComponent(message)}`;
       btn.classList.remove("disabled");
@@ -449,7 +453,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     parkingBox: "#parkingBox",
     pickupInfoBox: "#pickupInfoBox",
-    pickupInfo: "#pickupInfo"
+    pickupInfo: "#pickupInfo",
+    bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 
   initBookingCalculator({

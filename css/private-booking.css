@@ -1465,3 +1465,212 @@ html {
   #booking-calculator .share-btn { width: 100%; padding: 10px 6px; }
   #booking-calculator .summary-total > strong { font-size: 24px; }
 }
+
+/* Private hikes SEO content */
+.private-seo-content {
+  width: 100%;
+  padding: 28px 18px 40px;
+  background: #fff;
+  color: #25352c;
+  font-family: var(--body-font);
+  line-height: 1.75;
+}
+
+.private-seo-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.private-seo-content h2,
+.private-seo-content h3 {
+  color: #214e38;
+  font-family: var(--heading-font);
+  line-height: 1.35;
+}
+
+.private-seo-content h2 {
+  margin: 0 0 14px;
+  font-size: 1.9rem;
+  text-align: left;
+}
+
+.private-seo-content h3 {
+  margin: 0 0 9px;
+  font-size: 1.05rem;
+}
+
+.private-seo-content p {
+  margin: 0 0 14px;
+}
+
+.private-seo-content a {
+  color: #246b45;
+  text-underline-offset: 3px;
+}
+
+.private-seo-content a:hover {
+  color: #163f2a;
+}
+
+.private-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 22px;
+  color: #65746a;
+  font-size: 0.88rem;
+}
+
+.private-seo-intro {
+  display: block;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  box-shadow: none;
+  position: static;
+  z-index: auto;
+}
+
+.private-eyebrow {
+  margin-bottom: 8px !important;
+  color: #28734a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.private-seo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.private-seo-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #246b45;
+  border-radius: 8px;
+  background: #246b45;
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.private-seo-button:hover {
+  background: #194c31;
+  transform: translateY(-1px);
+}
+
+.private-seo-button-outline {
+  background: #fff;
+  color: #246b45 !important;
+}
+
+.private-seo-button-outline:hover {
+  background: #f0f7f2;
+}
+
+.private-seo-section {
+  margin: 32px 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #e4ebe5;
+}
+
+.private-seo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.private-seo-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e0e9e2;
+  border-radius: 8px;
+  background: #f9fbf9;
+}
+
+.private-seo-card p {
+  margin-bottom: 8px;
+  font-size: 0.94rem;
+}
+
+.private-seo-card a {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.private-seo-note {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 4px solid #3e8157;
+  border-radius: 6px;
+  background: #f2f7f3;
+}
+
+.private-seo-steps {
+  padding-left: 24px;
+}
+
+.private-seo-steps li {
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.private-seo-related {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #e4ebe5;
+}
+
+.private-seo-related ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding-left: 20px;
+}
+
+@media (max-width: 800px) {
+  .private-seo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .private-seo-content {
+    padding: 22px 15px 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .private-seo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .private-seo-card {
+    padding: 15px;
+  }
+
+  .private-seo-actions {
+    flex-direction: column;
+  }
+
+  .private-seo-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .private-seo-section {
+    margin: 25px 0;
+    padding-top: 20px;
+  }
+}
