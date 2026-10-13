@@ -94,7 +94,7 @@ section h2 {
 /* =========================
    HEADER & NAV
 ========================= */
-header {
+body > header {
     background: linear-gradient(120deg, var(--primary-dark), var(--primary));
     color: white;
     box-shadow: var(--shadow);
@@ -1666,7 +1666,7 @@ outline-offset:2px;
 
 }
 @media (max-width: 768px) {
-  header {
+  body > header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1677,7 +1677,7 @@ outline-offset:2px;
     padding: 12px 14px 10px;
   }
 
-  header .logo {
+  body > header .logo {
     display: flex;
     align-items: center;
     width: 100%;
@@ -1685,25 +1685,25 @@ outline-offset:2px;
     gap: 10px;
   }
 
-  header .logo a {
+  body > header .logo a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  header .logo-img {
+  body > header .logo-img {
     max-height: 38px;
     width: auto;
   }
 
-  header .logo-text {
+  body > header .logo-text {
     font-size: 1.25rem;
     line-height: 1.2;
     white-space: nowrap;
   }
 
-  header .tagline {
+  body > header .tagline {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -3732,7 +3732,7 @@ MODAL
 @media screen and (max-width: 768px) {
 
     /* Main header */
-    header {
+    body > header {
         position: sticky !important;
         top: 0;
         z-index: 1100;

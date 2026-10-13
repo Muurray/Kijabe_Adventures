@@ -1334,10 +1334,14 @@ html {
 
 #booking-calculator * { box-sizing: border-box; }
 #booking-calculator .booking-shell { width: 100%; max-width: 1120px; margin: 0 auto; }
-#booking-calculator .booking-intro { margin-bottom: 25px; }
+#booking-calculator .booking-intro {
+  margin-bottom: 24px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--booking-border);
+}
 #booking-calculator .booking-eyebrow,
 #booking-calculator .summary-label { color: var(--booking-green); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
-#booking-calculator .booking-intro h2 { margin: 7px 0 8px; font-size: clamp(25px, 4vw, 36px); line-height: 1.2; }
+#booking-calculator .booking-intro h2 { margin: 7px 0 0; color: var(--booking-text); font-size: 30px; line-height: 1.25; }
 #booking-calculator .booking-intro > p { max-width: 650px; margin: 0; color: var(--booking-muted); font-size: 14px; }
 #booking-calculator .booking-benefits { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 16px; }
 #booking-calculator .booking-benefits span { display: inline-flex; align-items: center; gap: 7px; color: #43594a; font-size: 12px; font-weight: 600; }
@@ -1459,7 +1463,7 @@ html {
 
 @media (max-width: 480px) {
   #booking-calculator .form-grid { grid-template-columns: minmax(0, 1fr); }
-  #booking-calculator .booking-intro h2 { font-size: 27px; }
+  #booking-calculator .booking-intro h2 { font-size: 26px; }
   #booking-calculator .booking-benefits { gap: 10px 14px; }
   #booking-calculator .share-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
   #booking-calculator .share-btn { width: 100%; padding: 10px 6px; }
@@ -1517,9 +1521,16 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  margin-bottom: 22px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 18px 24px;
+  border-top: 1px solid #e5ebe6;
   color: #65746a;
   font-size: 0.88rem;
+}
+
+.private-breadcrumb a {
+  color: #246b45;
 }
 
 .private-seo-intro {

@@ -5,6 +5,23 @@ Global Configuration
 =========================================
 */
 
+window.GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJSwL2gy-l_tA_krrmHnOVWaGRl7R56Es1PndLBCRnpN-EIR6R_S8C_5MBaj1B_00W/exec";
+
+window.saveBookingToGoogleSheet = async function (booking) {
+    const formData = new URLSearchParams();
+
+    Object.entries(booking).forEach(([key, value]) => {
+        formData.set(key, String(value ?? ""));
+    });
+
+    await fetch(window.GOOGLE_SHEETS_WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+        keepalive: true
+    });
+};
+
 function getNextHikeDate() {
 
     const now = new Date();

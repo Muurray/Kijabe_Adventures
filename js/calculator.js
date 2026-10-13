@@ -104,6 +104,7 @@ function initBookingCalculator(config) {
   const parkingBox = document.querySelector(config.parkingBox);
   const pickupInfoBox = document.querySelector(config.pickupInfoBox);
   const pickupInfo = document.querySelector(config.pickupInfo);
+  let currentBooking = null;
 
   if (date) {
     const today = new Date();
@@ -275,11 +276,13 @@ function initBookingCalculator(config) {
     const validPhone = /^(?:(?:\+?254)|0)?[17]\d{8}$/.test(customerPhone.replace(/[\s()-]/g, ""));
     const selectedResidency = residency?.value || "";
     const selectedType = hikerType?.value || "";
-    const selectedDestination = destination?.value || "";
+    const selectedDestination = destination?.value || config.destination || "";
     const hikers = totalHikers();
     const transportType = transport?.value || "";
-    const selectedDate = date?.value || "";
-    const isValidDate = Boolean(selectedDate && (!date?.min || selectedDate >= date.min));
+    const selectedDate = date?.value || config.preferredDate || "";
+    const isValidDate = date || config.preferredDate
+      ? Boolean(selectedDate && (!date?.min || selectedDate >= date.min))
+      : true;
     const canEstimate = hikers > 0 && selectedResidency && selectedType && transportType;
     const canConfirm = Boolean(canEstimate && customerName && validPhone && isValidDate && selectedDestination);
 
@@ -343,6 +346,7 @@ function initBookingCalculator(config) {
     if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
 
     if (!canConfirm) {
+      currentBooking = null;
       if (btn) {
         btn.classList.add("disabled");
         btn.href = "#";
@@ -350,6 +354,21 @@ function initBookingCalculator(config) {
       }
       return;
     }
+
+    currentBooking = {
+      bookingType: config.bookingType || "Private Group Hike",
+      activity: config.bookingActivity || selectedDestination,
+      preferredDate: selectedDate,
+      participants: hikers,
+      customerName,
+      phone: customerPhone,
+      email: "",
+      transport: transport?.selectedOptions?.[0]?.textContent.trim() || "",
+      totalCost: total,
+      bookingFee: deposit,
+      remainingBalance: total - deposit,
+      paymentOption: "M-Pesa Till 5440810"
+    };
 
     let message = `Hello Kijabe Adventures 👋🏾\n\nMy name is ${customerName}.\nPhone: ${customerPhone}\nDestination: ${selectedDestination}\n📅 Date: ${selectedDate}\n\n👥 Total Hikers: ${hikers}\n\n👤 GROUP BREAKDOWN`;
 
@@ -381,6 +400,27 @@ function initBookingCalculator(config) {
       btn.setAttribute("aria-disabled", "false");
     }
   }
+
+  btn?.addEventListener("click", async event => {
+    if (!currentBooking || btn.getAttribute("aria-disabled") === "true") {
+      event.preventDefault();
+      return;
+    }
+
+    event.preventDefault();
+    const whatsappUrl = btn.href;
+    btn.classList.add("disabled");
+    btn.setAttribute("aria-disabled", "true");
+    btn.setAttribute("aria-busy", "true");
+
+    try {
+      await window.saveBookingToGoogleSheet(currentBooking);
+    } catch (error) {
+      console.error("Could not send booking to Google Sheets.", error);
+    } finally {
+      window.location.assign(whatsappUrl);
+    }
+  });
 
   Object.values(groupInputs).forEach(input => {
     input?.addEventListener("input", () => {
@@ -454,11 +494,17 @@ document.addEventListener("DOMContentLoaded", () => {
     parkingBox: "#parkingBox",
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo",
+    bookingType: "Private Group Hike",
     bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 
   initBookingCalculator({
     name: "#eventName",
+    phone: "#eventPhone",
+    preferredDate: new Date(SITE_CONFIG.eventDate).toISOString().slice(0, 10),
+    bookingType: "Upcoming Group Hike",
+    bookingActivity: SITE_CONFIG.eventTitle,
+    destination: SITE_CONFIG.destination,
     residency: "#eventResidency",
     hikerType: "#eventHikerType",
     categories: {
