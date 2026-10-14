@@ -75,28 +75,25 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <!-- ===========================
-       GOOGLE TAG
-  ============================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-T50VJ5C9XV');
-  </script>
-
-  <!-- ===========================
        GOOGLE CONSENT MODE
   ============================ -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
     });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-T50VJ5C9XV');
   </script>
 
   <!-- Google CMP -->
@@ -147,11 +144,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       "@type": "GeoCoordinates",
       "latitude": -0.9328,
       "longitude": 36.5842
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "5000"
     },
     "priceRange": "KES 1,500 – KES 3,200",
     "sameAs": [
@@ -256,64 +248,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
   }
   </script>
 
-  <!-- Reviews structured data -->
-   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Guided Hiking Tours — Kijabe Adventures",
-  "brand": {
-    "@type": "Brand",
-    "name": "Kijabe Adventures"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "James M."
-      },
-      "reviewBody": "Amazing experience at Ngong Hills. The guides were professional and very safety conscious."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Aisha K."
-      },
-      "reviewBody": "Kijabe Hills was breathtaking. Highly recommended for both beginners and experienced hikers."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Peter W."
-      },
-      "reviewBody": "Well-organized hikes, friendly guides, and great views. Worth every shilling."
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "5000"
-  }
-}
-</script>
 </head>
 
 <body>
@@ -744,13 +678,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <a href="/private-group-hikes.html" class="cta-button primary trail-cta">
           book private group hike
         </a>
-      </div>
-
 
         <a href="/blogs/old-kijabe-township.html" class="cta-button primary trail-cta">
             Read Complete Guide →
         </a>
-
     </div>
 
 </article>
@@ -940,8 +871,8 @@ Planning your next outdoor adventure? Explore our expert hiking guides, destinat
 <a href="/blogs/blog-forest-conservation.html">Why Forest Conservation Matters for Hikers</a>
 <a href="/blogs/blog-nairobi-day-hikes.html">Best Day Hikes Near Nairobi: Perfect for Weekends</a>
 <a href="/blogs/kenya-safety.html">Kenya Safety Tips for Hikers and Travelers</a>
-<a href="/blogs\safari-cost.html">How Much Does a Safari Cost in Kenya?</a>
-<a href="/blogs\safari-tips.html">10 Essential Safari Hiking Tips for Beginners</a>
+<a href="/blogs/safari-cost.html">How Much Does a Safari Cost in Kenya?</a>
+<a href="/blogs/safari-tips.html">10 Essential Safari Hiking Tips for Beginners</a>
 
 </div>
 <p class="explore-cta">
@@ -973,43 +904,45 @@ Book Your Next Hike
 
         <div class="partners-grid">
 
-            <a href="#" target="_blank">
-                <img src="images/community/kenya-forest-service.webp"
-                     alt="Kenya Forest Service">
-            </a>
+                <div>
+                 <img src="images/community/kenya-forest-service.webp"
+                   alt="Kenya Forest Service">
+                </div>
 
-            <a href="#" target="_blank">
-                <img src="images/community/kws.webp"
-                     alt="Kenya Wildlife Service">
-            </a>
+                <div>
+                 <img src="images/community/kws.webp"
+                   alt="Kenya Wildlife Service">
+                </div>
 
-            <a href="#" target="_blank">
-                <img src="images/community/Kenya-Tourism-Logo.webp"
-                     alt="Kenya Tourism Board">
-            </a>
+                <div>
+                 <img src="images/community/Kenya-Tourism-Logo.webp"
+                   alt="Kenya Tourism Board">
+                </div>
 
-            <a href="#" target="_blank">
-                <img src="images/community/rsz_kato_bonded_color.webp"
-                     alt="KATO Kenya Association of Tour Operators">
-            </a>
+                <div>
+                 <img src="images/community/rsz_kato_bonded_color.webp"
+                   alt="KATO Kenya Association of Tour Operators">
+                </div>
 
-            <a href="#" target="_blank">
-                <img src="images/community/expeditionkenyasafar.webp"
-                     alt="expedition kenya safar">
-            </a>
+                <div>
+                 <img src="images/community/expeditionkenyasafar.webp"
+                   alt="Expedition Kenya Safari">
+                </div>
 
-            <a href="#" target="_blank">
-                <img src="images/community/ecotourism.webp"
-                     alt="Eco Tourism">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/community/KWCA-LOGO.webp"
-                     alt="Kenya Wildlife Conservancy Association">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/community/East-African-wildlife-society.webp"
-                     alt="East African Wildlife Society">
-            </a>
+                <div>
+                 <img src="images/community/ecotourism.webp"
+                   alt="Ecotourism Kenya">
+                </div>
+
+                <div>
+                 <img src="images/community/KWCA-LOGO.webp"
+                   alt="Kenya Wildlife Conservancy Association">
+                </div>
+
+                <div>
+                 <img src="images/community/East-African-wildlife-society.webp"
+                   alt="East African Wildlife Society">
+                </div>
 
         </div>
 
@@ -1128,36 +1061,6 @@ document.getElementById("year").textContent =
 
 
 
-
-<!-- WhatsApp booking (called from contact/current-hike pages only — kept here for reference) -->
-<script>
-  function sendToWhatsApp(name, phone, people, event) {
-    if (!name || !phone || !people) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    var data = { name: name, phone: phone, people: people, event: event };
-
-    // Save to Google Sheets (non-blocking)
-    fetch("https://script.google.com/macros/s/AKfycbw1VQQzZZc4g3nGNPfM_MWw3OFox8-823OKtfjuZpIRE9JssRVJK3JF_EDICuuiy-_p/exec", {
-      method: "POST",
-      body: JSON.stringify(data)
-    }).catch(function (err) {
-      console.warn("Booking log failed:", err);
-    });
-
-    var message = encodeURIComponent(
-      "Hello Kijabe Adventures!\n" +
-      "I would like to book: " + event + "\n" +
-      "Name: " + name + "\n" +
-      "Phone: " + phone + "\n" +
-      "People: " + people
-    );
-
-    window.open("https://wa.me/254743980340?text=" + message, "_blank");
-  }
-</script>
 
 <!-- MOBILE STICKY BOOKING BAR -->
 <div class="mobile-sticky-bar">

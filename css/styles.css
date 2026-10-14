@@ -3200,7 +3200,7 @@ margin:0 6px;
 
 }
 
-.partners-grid a{
+.partners-grid > div{
 
     display:flex;
 
@@ -3220,14 +3220,6 @@ margin:0 6px;
 
 }
 
-.partners-grid a:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
-
-}
-
 .partners-grid img{
 
     max-width:110px;
@@ -3235,20 +3227,6 @@ margin:0 6px;
     max-height:80px;
 
     width:auto;
-
-    filter:grayscale(100%);
-
-    opacity:.8;
-
-    transition:.3s;
-
-}
-
-.partners-grid a:hover img{
-
-    filter:none;
-
-    opacity:1;
 
 }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = "kijabe-cache-v2";
+const CACHE_NAME = "kijabe-cache-v3";
 
 const FILES = [
     "/",
@@ -34,15 +34,22 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
-
-    if (event.request.url.includes("upcoming-hiking-events.html")) {
-        event.respondWith(fetch(event.request));
+    if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) {
         return;
     }
 
     event.respondWith(
-        caches.match(event.request)
-            .then(response => response || fetch(event.request))
+        fetch(event.request)
+            .then(response => {
+                if (response.ok) {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.put(event.request, response.clone()))
+                    );
+                }
+                return response;
+            })
+            .catch(() => caches.match(event.request))
     );
 
 });

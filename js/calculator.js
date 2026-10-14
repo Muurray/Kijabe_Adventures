@@ -417,6 +417,7 @@ function initBookingCalculator(config) {
       await window.saveBookingToGoogleSheet(currentBooking);
     } catch (error) {
       console.error("Could not send booking to Google Sheets.", error);
+      window.alert("We could not confirm that your booking details were saved. Please continue in WhatsApp and send your booking details there.");
     } finally {
       window.location.assign(whatsappUrl);
     }
