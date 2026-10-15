@@ -2567,3 +2567,25 @@ body > header {
     flex: 1 1 110px;
   }
 }
+@media (max-width: 768px) {
+
+  /* Pin the site header to the top */
+  body > header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+  }
+
+  /* Push content down so it isn't hidden behind the fixed header.
+     --mobile-header-height is already set by your JS. */
+  body {
+    padding-top: var(--mobile-header-height, 80px);
+  }
+
+  /* Make #anchor jumps from the table of contents land below the header */
+  html {
+    scroll-padding-top: calc(var(--mobile-header-height, 80px) + 8px);
+  }
+}
