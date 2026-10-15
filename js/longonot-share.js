@@ -34,7 +34,7 @@ const tiktokBtn =
 
 
   const pageURL =
-    window.location.href;
+    "https://kijabeadventures.com/mount-longonot-hike.html";
 
   const shareTitle =
     "Mount Longonot Guided Hiking Tour | Kijabe Adventures";
@@ -55,10 +55,10 @@ const tiktokBtn =
 
     toast.textContent = message;
 
-    toast.classList.add("show");
+    toast.classList.add("visible");
 
     setTimeout(() => {
-      toast.classList.remove("show");
+      toast.classList.remove("visible");
     }, 2500);
 
   }
