@@ -104,7 +104,7 @@ if (quickEventDate) {
     quickEventDate.innerHTML =
         `<strong>${SITE_CONFIG.eventDateText}</strong>
          <br>
-         <small>9:30 AM – 4:00 PM</small>`;
+         <small>9:00 AM – 4:00 PM</small>`;
 
 }
 
