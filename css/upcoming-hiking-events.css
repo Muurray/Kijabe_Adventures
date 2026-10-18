@@ -93,8 +93,16 @@
 
 .group-pricing.is-collapsed,
 #eventTransportWrapper.is-collapsed,
+#eventPrivateTransportWrapper.is-collapsed,
+#eventSharedTransportWrapper.is-collapsed,
+#eventMeetingPointWrapper.is-collapsed,
 #eventParkingBox.is-collapsed {
   display: none;
+}
+
+.event-transport {
+  grid-column: 1 / -1;
+  gap: 14px;
 }
 
 .group-pricing h3 {
@@ -1050,6 +1058,7 @@ FAQ
     background:#fff;
     border-radius:18px;
     padding:20px;
+  font-size:.95rem;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     transition:.35s;
     scroll-margin-top:100px;
@@ -1070,7 +1079,7 @@ FAQ
 
     margin-bottom:25px;
 
-    font-size:1.3rem;
+    font-size:1.15rem;
 
 }
 
@@ -1142,7 +1151,7 @@ FAQ
 
     display:block;
 
-    font-size:2rem;
+    font-size:1.15rem;
 
     color:#2d6a4f;
 
@@ -1668,5 +1677,204 @@ grid-column:2;
     display: inline-block;
     margin-top: 6px;
     font-size: 0.9rem;
+  }
+}
+
+/* =============================================================
+   UPCOMING PAGE — COMPACT TYPE AND SECTION RHYTHM
+   ============================================================= */
+
+main {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+main > section[class]:not(.hero):not(.featured-hike) {
+  margin-block: 16px;
+  padding-block: 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.event-booking-card h2,
+.event-overview .section-header h2,
+.event-location-map h2,
+.route-highlights h2,
+.search-intent h2,
+.faq-section h2,
+.event-benefits h2,
+.gallery-slideshow h2,
+.final-cta h2 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.featured-hike-main h2 {
+  font-size: 1.25rem;
+}
+
+.event-booking-card .subtitle,
+.event-overview .section-header p,
+.section-description,
+.search-intent p,
+.cta-section p,
+.faq-grid p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.event-booking-card .subtitle {
+  margin-bottom: 22px;
+}
+
+.event-overview .section-header {
+  margin-bottom: 28px;
+}
+
+.section-badge {
+  margin-bottom: 10px;
+}
+
+.overview-grid,
+.highlights-grid,
+.why-us-grid {
+  gap: 16px;
+}
+
+.overview-card {
+  font-size: 0.9rem;
+}
+
+.overview-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.info-list {
+  gap: 12px;
+}
+
+.info-list i {
+  font-size: 1rem;
+}
+
+.stats-grid {
+  gap: 14px;
+}
+
+.stats-grid strong {
+  font-size: 1.05rem;
+}
+
+.check-list li,
+.cross-list li,
+.weather-list li {
+  padding-block: 6px;
+}
+
+.difficulty-badge {
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+}
+
+.event-location-map,
+.route-highlights,
+.faq-section,
+.search-intent {
+  margin-block: 24px;
+}
+
+.event-location-map {
+  padding: 24px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.route-buttons {
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.highlight-card {
+  padding: 18px;
+}
+
+.highlight-card h3,
+.why-card h3,
+.share-header h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.why-us-grid {
+  margin-top: 24px;
+}
+
+.why-card {
+  padding: 20px 18px;
+}
+
+.why-card i {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cta-section {
+  margin-top: 32px;
+  padding: 28px 20px;
+}
+
+.cta-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.faq-grid {
+  gap: 10px;
+}
+
+.faq-grid summary {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+}
+
+.faq-grid p {
+  padding: 12px 18px 16px;
+}
+
+.share-widget {
+  margin-block: 12px 24px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  main > section[class]:not(.hero):not(.featured-hike) {
+    margin-block: 12px;
+    padding-block: 16px;
+  }
+
+  .event-location-map {
+    padding: 16px 12px;
+  }
+
+  .share-widget {
+    padding: 16px 14px;
   }
 }

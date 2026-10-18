@@ -244,7 +244,7 @@ beautiful trails. Perfect for beginners, families,
 corporate teams and experienced hikers.
 </p>
 
-⭐⭐⭐⭐⭐ Rated by hikers
+✔ Rated by hikers
 
 ✔ Professional Local Guides
 
@@ -858,11 +858,41 @@ corporate teams and experienced hikers.
       </div>
 
       <!-- TRANSPORT -->
-      <div class="form-group is-collapsed" id="eventTransportWrapper">
-        <label for="eventTransport">Transport Option</label>
-        <select id="eventTransport">
-          <option value="">Select Transport</option>
+      <div class="event-transport form-group is-collapsed" id="eventTransportWrapper">
+        <label for="eventTransportMode">Transport Type</label>
+        <select id="eventTransportMode">
+          <option value="">Select Transport Type</option>
+          <option value="shared">Shared Transport</option>
+          <option value="private">Private Pickup Transport</option>
+          <option value="self-drive">Self-drive / Own Transport</option>
+          <option value="meeting-point">Meet at a Meeting Point</option>
         </select>
+
+        <div class="form-group is-collapsed" id="eventPrivateTransportWrapper">
+          <label for="eventTransport">Private Transport Pickup</label>
+          <select id="eventTransport">
+            <option value="">Select Pickup Option</option>
+          </select>
+        </div>
+
+        <div class="form-group is-collapsed" id="eventSharedTransportWrapper">
+          <label for="eventSharedPickup">Shared Transport Pickup Town</label>
+          <select id="eventSharedPickup">
+            <option value="">Select Pickup Town</option>
+            <option value="thika">Thika</option>
+            <option value="nairobi">Nairobi</option>
+            <option value="kikuyu">Kikuyu</option>
+          </select>
+        </div>
+
+        <div class="form-group is-collapsed" id="eventMeetingPointWrapper">
+          <label for="eventMeetingPoint">Meeting Point</label>
+          <select id="eventMeetingPoint">
+            <option value="">Select Meeting Point</option>
+            <option value="maai-mahiu">Maai Mahiu Town</option>
+            <option value="aic-kijabe-hospital">AIC Kijabe Hospital Entrance</option>
+          </select>
+        </div>
       </div>
 
       <!-- PARKING -->
@@ -889,6 +919,10 @@ corporate teams and experienced hikers.
 
       <p>Booking Fee (30%):
         <strong>KES <span id="eventDeposit">0</span></strong>
+      </p>
+
+      <p>Remaining Balance:
+        <strong>KES <span id="eventBalance">0</span></strong>
       </p>
     </div>
 

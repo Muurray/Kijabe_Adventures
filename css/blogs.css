@@ -2589,3 +2589,23 @@ body > header {
     scroll-padding-top: calc(var(--mobile-header-height, 80px) + 8px);
   }
 }
+
+.related-articles {
+  margin-top: 2.5rem;
+  padding: 1.25rem;
+  border: 1px solid #dce9e1;
+  border-radius: 14px;
+  background: #f6faf7;
+}
+
+.related-articles h2 {
+  margin-top: 0;
+}
+
+.related-articles ul {
+  padding-left: 1.25rem;
+}
+
+.related-articles li {
+  margin: 0.65rem 0;
+}

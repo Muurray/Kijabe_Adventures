@@ -6,12 +6,13 @@ const PricingEngine = {
 
   BOOKING_FEE_RATE: 0.3,
   PARKING_PER_CAR: 300,
+  GROUP_DISCOUNT_PER_ADDITIONAL_HIKER: 300,
 
   transportFees: {
     self: 0,
-    nairobi: 6829,
-    westlands: 5759,
-    kikuyu: 5509,
+    nairobi: 5929,
+    westlands: 4959,
+    kikuyu: 3591,
     thika: 7219,
     coaster: 0,
     bus: 0
@@ -19,9 +20,9 @@ const PricingEngine = {
 
   prices: {
     resident: {
-      adult: 1573,
-      student: 1275,
-      child: 1000
+      adult: 1973,
+      student: 1775,
+      child: 1355
     },
     nonresident: {
       adult: 3000,
@@ -89,8 +90,14 @@ function initBookingCalculator(config) {
     Object.entries(config.categories).map(([key, selector]) => [key, document.querySelector(selector)])
   );
   const transport = document.querySelector(config.transport);
+  const transportMode = config.transportMode ? document.querySelector(config.transportMode) : null;
+  const sharedPickup = config.sharedPickup ? document.querySelector(config.sharedPickup) : null;
+  const meetingPoint = config.meetingPoint ? document.querySelector(config.meetingPoint) : null;
   const groupWrapper = config.groupWrapper ? document.querySelector(config.groupWrapper) : null;
   const transportWrapper = config.transportWrapper ? document.querySelector(config.transportWrapper) : null;
+  const privateTransportWrapper = config.privateTransportWrapper ? document.querySelector(config.privateTransportWrapper) : null;
+  const sharedTransportWrapper = config.sharedTransportWrapper ? document.querySelector(config.sharedTransportWrapper) : null;
+  const meetingPointWrapper = config.meetingPointWrapper ? document.querySelector(config.meetingPointWrapper) : null;
   const parking = document.querySelector(config.parking);
   const date = config.date ? document.querySelector(config.date) : null;
 
@@ -185,19 +192,48 @@ function initBookingCalculator(config) {
     }
 
     if (parkingBox) {
-      parkingBox.classList.toggle("is-collapsed", !hasSelection || !transport?.value || transport.value !== "self");
+      const isSelfDrive = transportMode ? transportMode.value === "self-drive" : transport?.value === "self";
+      parkingBox.classList.toggle("is-collapsed", !hasSelection || !isSelfDrive);
     }
 
     if (pickupInfoBox) {
-      pickupInfoBox.classList.toggle("is-collapsed", !hasSelection || !transport?.value || transport.value === "self");
+      const hasPickup = transportMode ? transportMode.value === "private" && transport?.value && transport.value !== "self" : transport?.value && transport.value !== "self";
+      pickupInfoBox.classList.toggle("is-collapsed", !hasSelection || !hasPickup);
+    }
+
+    if (transportMode) {
+      transportMode.disabled = !hasSelection;
+      if (!hasSelection) transportMode.value = "";
+    }
+
+    if (privateTransportWrapper) {
+      privateTransportWrapper.classList.toggle("is-collapsed", !hasSelection || transportMode?.value !== "private");
+    }
+
+    if (sharedTransportWrapper) {
+      sharedTransportWrapper.classList.toggle("is-collapsed", !hasSelection || transportMode?.value !== "shared");
+    }
+
+    if (meetingPointWrapper) {
+      meetingPointWrapper.classList.toggle("is-collapsed", !hasSelection || transportMode?.value !== "meeting-point");
     }
 
     if (transport) {
-      transport.disabled = !hasSelection;
+      transport.disabled = !hasSelection || Boolean(transportMode && transportMode.value !== "private");
       if (!hasSelection) {
         transport.innerHTML = '<option value="">Select Transport</option>';
         transport.value = "";
       }
+    }
+
+    if (sharedPickup) {
+      sharedPickup.disabled = !hasSelection || transportMode?.value !== "shared";
+      if (!hasSelection || transportMode?.value !== "shared") sharedPickup.value = "";
+    }
+
+    if (meetingPoint) {
+      meetingPoint.disabled = !hasSelection || transportMode?.value !== "meeting-point";
+      if (!hasSelection || transportMode?.value !== "meeting-point") meetingPoint.value = "";
     }
   }
 
@@ -223,7 +259,8 @@ function initBookingCalculator(config) {
       bus: "Large Bus"
     };
 
-    const allowed = TransportRules.getAvailableOptions(totalHikers());
+    const options = TransportRules.getAvailableOptions(totalHikers());
+    const allowed = transportMode ? options.filter(key => key !== "self") : options;
     transport.innerHTML = '<option value="">Select Transport</option>';
 
     allowed.forEach(key => {
@@ -239,6 +276,18 @@ function initBookingCalculator(config) {
 
   function updateTransportUI() {
     if (!transport) return;
+
+    if (transportMode?.value === "shared" || transportMode?.value === "meeting-point") {
+      if (parkingBox) parkingBox.classList.add("is-collapsed");
+      if (pickupInfoBox) pickupInfoBox.classList.add("is-collapsed");
+      return;
+    }
+
+    if (transportMode?.value === "self-drive") {
+      if (parkingBox) parkingBox.classList.remove("is-collapsed");
+      if (pickupInfoBox) pickupInfoBox.classList.add("is-collapsed");
+      return;
+    }
 
     const value = transport.value;
 
@@ -279,11 +328,22 @@ function initBookingCalculator(config) {
     const selectedDestination = destination?.value || config.destination || "";
     const hikers = totalHikers();
     const transportType = transport?.value || "";
+    const selectedTransportMode = transportMode?.value || "";
+    const selectedSharedPickup = sharedPickup?.value || "";
+    const hasTransportSelection = transportMode
+      ? selectedTransportMode === "shared"
+        ? Boolean(selectedSharedPickup)
+        : selectedTransportMode === "private"
+          ? Boolean(transportType)
+          : selectedTransportMode === "meeting-point"
+            ? Boolean(meetingPoint?.value)
+            : selectedTransportMode === "self-drive"
+      : Boolean(transportType);
     const selectedDate = date?.value || config.preferredDate || "";
     const isValidDate = date || config.preferredDate
       ? Boolean(selectedDate && (!date?.min || selectedDate >= date.min))
       : true;
-    const canEstimate = hikers > 0 && selectedResidency && selectedType && transportType;
+    const canEstimate = hikers > 0 && selectedResidency && selectedType && hasTransportSelection;
     const canConfirm = Boolean(canEstimate && customerName && validPhone && isValidDate && selectedDestination);
 
     if (!canEstimate) {
@@ -326,14 +386,24 @@ function initBookingCalculator(config) {
     );
 
     const hikingTotal = Object.values(pricing).reduce((sum, item) => sum + item.subtotal, 0);
+    const discountRate = Number(config.groupDiscountPerAdditionalHiker) || 0;
+    const groupDiscount = Math.min(
+      hikingTotal,
+      Math.max(0, hikers - 1) * discountRate
+    );
+    const discountedHikingTotal = hikingTotal - groupDiscount;
     const carsNeeded = Math.ceil(hikers / 4);
-    const transportFee = PricingEngine.getTransportFee(transportType);
-    const transportCost = transportFee === 0 ? 0 : transportFee * carsNeeded;
+    const transportFee = selectedTransportMode === "shared"
+      ? Number(config.sharedTransportFares?.[selectedSharedPickup]) || 0
+      : PricingEngine.getTransportFee(transportType);
+    const transportCost = selectedTransportMode === "shared"
+      ? transportFee * hikers
+      : transportFee === 0 ? 0 : transportFee * carsNeeded;
     const parkingData = PricingEngine.calculateParking(
       hikers,
-      transportType === "self" && parking?.checked
+      (selectedTransportMode === "self-drive" || (!transportMode && transportType === "self")) && parking?.checked
     );
-    const total = hikingTotal + transportCost + parkingData.parkingCost;
+    const total = discountedHikingTotal + transportCost + parkingData.parkingCost;
     const deposit = PricingEngine.calculateDeposit(total);
 
     if (resultCard) {
@@ -355,6 +425,15 @@ function initBookingCalculator(config) {
       return;
     }
 
+    const meetingPointLabel = meetingPoint?.selectedOptions?.[0]?.textContent.trim() || "";
+    const transportLabel = selectedTransportMode === "shared"
+      ? `Shared Transport - ${selectedSharedPickup.charAt(0).toUpperCase()}${selectedSharedPickup.slice(1)}`
+      : selectedTransportMode === "self-drive"
+        ? "Self-drive / Own Transport"
+        : selectedTransportMode === "meeting-point"
+          ? `Meet at ${meetingPointLabel}`
+          : transport?.selectedOptions?.[0]?.textContent.trim() || "";
+
     currentBooking = {
       bookingType: config.bookingType || "Private Group Hike",
       activity: config.bookingActivity || selectedDestination,
@@ -363,7 +442,7 @@ function initBookingCalculator(config) {
       customerName,
       phone: customerPhone,
       email: "",
-      transport: transport?.selectedOptions?.[0]?.textContent.trim() || "",
+      transport: transportLabel,
       totalCost: total,
       bookingFee: deposit,
       remainingBalance: total - deposit,
@@ -378,7 +457,17 @@ function initBookingCalculator(config) {
       }
     });
 
-    message += `\n\n💰 HIKING COST: KES ${hikingTotal.toLocaleString()}\n\n🚐 Transport: ${transportType}\n`;
+    const transportMessage = selectedTransportMode === "shared"
+      ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
+      : transportLabel || transportType;
+    message += `\n\n💰 Original Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
+
+    if (groupDiscount > 0) {
+      message += `\n🎉 Group Discount: -KES ${groupDiscount.toLocaleString()}`;
+    }
+
+    message += `\n🥾 Discounted Hiking Cost: KES ${discountedHikingTotal.toLocaleString()}`;
+    message += `\n\n🚐 Transport: ${transportMessage}\n`;
 
     if (transportCost > 0) {
       message += `Transport Cost: KES ${transportCost.toLocaleString()}\n`;
@@ -388,7 +477,7 @@ function initBookingCalculator(config) {
       message += `🅿️ Parking: ${parkingData.cars} car(s) = KES ${parkingData.parkingCost.toLocaleString()}\n`;
     }
 
-    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (30%): KES ${deposit.toLocaleString()}\n\nI will pay via Till Number 5440810.`;
+    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (30%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}\n\nI will pay via Till Number 5440810.`;
 
     if (config.bookingMessage) {
       message += `\n\n${config.bookingMessage}`;
@@ -450,6 +539,16 @@ function initBookingCalculator(config) {
     updateTransportUI();
     update();
   });
+  transportMode?.addEventListener("change", () => {
+    if (transport) transport.value = "";
+    if (sharedPickup) sharedPickup.value = "";
+    if (meetingPoint) meetingPoint.value = "";
+    updateGroupAndTransportState();
+    updateTransportUI();
+    update();
+  });
+  sharedPickup?.addEventListener("change", update);
+  meetingPoint?.addEventListener("change", update);
   parking?.addEventListener("change", update);
   date?.addEventListener("change", update);
 
@@ -504,6 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: "#eventPhone",
     preferredDate: new Date(SITE_CONFIG.eventDate).toISOString().slice(0, 10),
     bookingType: "Upcoming Group Hike",
+    groupDiscountPerAdditionalHiker: PricingEngine.GROUP_DISCOUNT_PER_ADDITIONAL_HIKER,
     bookingActivity: SITE_CONFIG.eventTitle,
     destination: SITE_CONFIG.destination,
     residency: "#eventResidency",
@@ -517,13 +617,25 @@ document.addEventListener("DOMContentLoaded", () => {
       nonresidentChild: "#eventNonresidentChildren"
     },
     transport: "#eventTransport",
+    transportMode: "#eventTransportMode",
+    sharedPickup: "#eventSharedPickup",
+    meetingPoint: "#eventMeetingPoint",
+    sharedTransportFares: {
+      thika: 1500,
+      nairobi: 1000,
+      kikuyu: 800
+    },
     groupWrapper: ".group-pricing",
     transportWrapper: "#eventTransportWrapper",
+    privateTransportWrapper: "#eventPrivateTransportWrapper",
+    sharedTransportWrapper: "#eventSharedTransportWrapper",
+    meetingPointWrapper: "#eventMeetingPointWrapper",
     parking: "#eventParking",
     date: null,
 
     total: "#eventTotal",
     deposit: "#eventDeposit",
+    balance: "#eventBalance",
     button: "#eventWhatsapp",
 
     resultCard: "#eventResultCard",

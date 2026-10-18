@@ -72,7 +72,7 @@ const SITE_CONFIG = {
 
     eventPrice: 2000,
 
-    meetingPoint: "Mai Mahiu Parking Area",
+    meetingPoint: "Maai Mahiu Town or AIC Kijabe Hospital Entrance",
 
     destination: "Kijabe Hills",
 
