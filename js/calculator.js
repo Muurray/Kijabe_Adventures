@@ -51,8 +51,8 @@ const PricingEngine = {
     };
   },
 
-  calculateDeposit(total) {
-    return Math.round(total * this.BOOKING_FEE_RATE);
+  calculateDeposit(total, rate = this.BOOKING_FEE_RATE) {
+    return Math.round(total * rate);
   }
 };
 
@@ -374,7 +374,7 @@ function initBookingCalculator(config) {
     const counts = getCounts();
     const pricing = Object.fromEntries(
       Object.entries(priceMap).map(([key, [type, category, label]]) => {
-        const price = PricingEngine.getPrice(type, category);
+        const price = config.prices?.[category]?.[type] ?? PricingEngine.getPrice(type, category);
         return [key, {
           count: counts[key],
           price,
@@ -397,7 +397,9 @@ function initBookingCalculator(config) {
       (selectedTransportMode === "self-drive" || (!transportMode && transportType === "self")) && parking?.checked
     );
     const total = hikingTotal + transportCost + parkingData.parkingCost;
-    const deposit = PricingEngine.calculateDeposit(total);
+    const bookingFeeRate = config.bookingFeeRate ?? PricingEngine.BOOKING_FEE_RATE;
+    const bookingFeePercent = Math.round(bookingFeeRate * 100);
+    const deposit = PricingEngine.calculateDeposit(total, bookingFeeRate);
 
     if (resultCard) {
       resultCard.style.display = "block";
@@ -464,7 +466,7 @@ function initBookingCalculator(config) {
       message += `🅿️ Parking: ${parkingData.cars} car(s) = KES ${parkingData.parkingCost.toLocaleString()}\n`;
     }
 
-    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (30%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}\n\nI will pay via Till Number 5440810.`;
+    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (${bookingFeePercent}%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}\n\nI will pay via Till Number 5440810.`;
 
     if (config.bookingMessage) {
       message += `\n\n${config.bookingMessage}`;
@@ -582,7 +584,20 @@ document.addEventListener("DOMContentLoaded", () => {
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo",
     bookingType: "Private Group Hike",
-    bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
+    bookingFeeRate: 0.5,
+    prices: {
+      resident: {
+        adult: 1183,
+        student: 885,
+        child: 785
+      },
+      nonresident: {
+        adult: 1883,
+        student: 1285,
+        child: 985
+      }
+    },
+    bookingMessage: "I understand my booking is confirmed after the 50% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 50% fee is received. I will meet my assigned guides there and, if I paid the 50% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 
   initBookingCalculator({
