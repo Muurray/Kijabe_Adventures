@@ -6,7 +6,6 @@ const PricingEngine = {
 
   BOOKING_FEE_RATE: 0.3,
   PARKING_PER_CAR: 300,
-  GROUP_DISCOUNT_PER_ADDITIONAL_HIKER: 300,
 
   transportFees: {
     self: 0,
@@ -386,15 +385,6 @@ function initBookingCalculator(config) {
     );
 
     const hikingTotal = Object.values(pricing).reduce((sum, item) => sum + item.subtotal, 0);
-    const priceReductionPerHiker = Number(config.hikingPriceReductionPerHiker) || 0;
-    const privatePriceReduction = Math.min(hikingTotal, hikers * priceReductionPerHiker);
-    const hikingTotalAfterPriceReduction = hikingTotal - privatePriceReduction;
-    const discountRate = Number(config.groupDiscountPerAdditionalHiker) || 0;
-    const groupDiscount = Math.min(
-      hikingTotalAfterPriceReduction,
-      Math.max(0, hikers - 1) * discountRate
-    );
-    const discountedHikingTotal = hikingTotalAfterPriceReduction - groupDiscount;
     const carsNeeded = Math.ceil(hikers / 4);
     const transportFee = selectedTransportMode === "shared"
       ? Number(config.sharedTransportFares?.[selectedSharedPickup]) || 0
@@ -406,7 +396,7 @@ function initBookingCalculator(config) {
       hikers,
       (selectedTransportMode === "self-drive" || (!transportMode && transportType === "self")) && parking?.checked
     );
-    const total = discountedHikingTotal + transportCost + parkingData.parkingCost;
+    const total = hikingTotal + transportCost + parkingData.parkingCost;
     const deposit = PricingEngine.calculateDeposit(total);
 
     if (resultCard) {
@@ -463,17 +453,7 @@ function initBookingCalculator(config) {
     const transportMessage = selectedTransportMode === "shared"
       ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
-    message += `\n\n💰 Original Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
-
-    if (privatePriceReduction > 0) {
-      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
-    }
-
-    if (groupDiscount > 0) {
-      message += `\n🎉 Group Discount: -KES ${groupDiscount.toLocaleString()}`;
-    }
-
-    message += `\n🥾 Discounted Hiking Cost: KES ${discountedHikingTotal.toLocaleString()}`;
+    message += `\n\n🥾 Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
     message += `\n\n🚐 Transport: ${transportMessage}\n`;
 
     if (transportCost > 0) {
@@ -602,8 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo",
     bookingType: "Private Group Hike",
-    hikingPriceReductionPerHiker: 500,
-    groupDiscountPerAdditionalHiker: 300,
     bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 
@@ -612,7 +590,6 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: "#eventPhone",
     preferredDate: new Date(SITE_CONFIG.eventDate).toISOString().slice(0, 10),
     bookingType: "Upcoming Group Hike",
-    groupDiscountPerAdditionalHiker: PricingEngine.GROUP_DISCOUNT_PER_ADDITIONAL_HIKER,
     bookingActivity: SITE_CONFIG.eventTitle,
     destination: SITE_CONFIG.destination,
     residency: "#eventResidency",
