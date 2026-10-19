@@ -595,6 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo",
     bookingType: "Private Group Hike",
+    groupDiscountPerAdditionalHiker: 300,
     bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 
