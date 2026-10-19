@@ -386,12 +386,15 @@ function initBookingCalculator(config) {
     );
 
     const hikingTotal = Object.values(pricing).reduce((sum, item) => sum + item.subtotal, 0);
+    const priceReductionPerHiker = Number(config.hikingPriceReductionPerHiker) || 0;
+    const privatePriceReduction = Math.min(hikingTotal, hikers * priceReductionPerHiker);
+    const hikingTotalAfterPriceReduction = hikingTotal - privatePriceReduction;
     const discountRate = Number(config.groupDiscountPerAdditionalHiker) || 0;
     const groupDiscount = Math.min(
-      hikingTotal,
+      hikingTotalAfterPriceReduction,
       Math.max(0, hikers - 1) * discountRate
     );
-    const discountedHikingTotal = hikingTotal - groupDiscount;
+    const discountedHikingTotal = hikingTotalAfterPriceReduction - groupDiscount;
     const carsNeeded = Math.ceil(hikers / 4);
     const transportFee = selectedTransportMode === "shared"
       ? Number(config.sharedTransportFares?.[selectedSharedPickup]) || 0
@@ -461,6 +464,10 @@ function initBookingCalculator(config) {
       ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
     message += `\n\n💰 Original Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
+
+    if (privatePriceReduction > 0) {
+      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
+    }
 
     if (groupDiscount > 0) {
       message += `\n🎉 Group Discount: -KES ${groupDiscount.toLocaleString()}`;
@@ -595,6 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pickupInfoBox: "#pickupInfoBox",
     pickupInfo: "#pickupInfo",
     bookingType: "Private Group Hike",
+    hikingPriceReductionPerHiker: 500,
     groupDiscountPerAdditionalHiker: 300,
     bookingMessage: "I understand my booking is confirmed after the 30% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 30% fee is received. I will meet my assigned guides there and, if I paid the 30% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
