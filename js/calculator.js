@@ -20,14 +20,14 @@ const PricingEngine = {
 
   prices: {
     resident: {
-      adult: 1573,
-      student: 1375,
-      child: 1355
+      adult: 1173,
+      student: 975,
+      child: 855
     },
     nonresident: {
-      adult: 3000,
-      student: 2500,
-      child: 2000
+      adult: 2000,
+      student: 1500,
+      child: 1300
     }
   },
 
@@ -418,10 +418,6 @@ function initBookingCalculator(config) {
     if (depositEl) depositEl.innerText = deposit.toLocaleString();
     if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
 
-    if (privatePriceReduction > 0) {
-      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
-    }
-
     if (!canConfirm) {
       currentBooking = null;
       if (btn) {
@@ -468,6 +464,10 @@ function initBookingCalculator(config) {
       ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
     message += `\n\n💰 Original Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
+
+    if (privatePriceReduction > 0) {
+      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
+    }
 
     if (groupDiscount > 0) {
       message += `\n🎉 Group Discount: -KES ${groupDiscount.toLocaleString()}`;
