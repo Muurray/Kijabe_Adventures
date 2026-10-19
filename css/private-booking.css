@@ -576,6 +576,17 @@ textarea {
   text-align: center;
 }
 
+.private-seo-content .destination-card .dest-cta,
+.private-seo-content .destination-card .dest-cta:hover,
+.private-seo-content .destination-card .dest-cta:focus-visible {
+  color: #fff;
+}
+
+.private-seo-content .destination-card .dest-cta:focus-visible {
+  outline: 3px solid #ff9800;
+  outline-offset: 3px;
+}
+
 /* =========================
    FAQ SECTION
    ========================= */
