@@ -20,14 +20,14 @@ const PricingEngine = {
 
   prices: {
     resident: {
-      adult: 1973,
-      student: 1775,
-      child: 1355
+      adult: 1083,
+      student: 785,
+      child: 685
     },
     nonresident: {
-      adult: 3000,
-      student: 2500,
-      child: 2000
+      adult: 1633,
+      student: 985,
+      child: 885
     }
   },
 
