@@ -418,6 +418,10 @@ function initBookingCalculator(config) {
     if (depositEl) depositEl.innerText = deposit.toLocaleString();
     if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
 
+    if (privatePriceReduction > 0) {
+      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
+    }
+
     if (!canConfirm) {
       currentBooking = null;
       if (btn) {
@@ -464,10 +468,6 @@ function initBookingCalculator(config) {
       ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
     message += `\n\n💰 Original Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
-
-    if (privatePriceReduction > 0) {
-      message += `\n🏷️ Private Hike Price Reduction: -KES ${privatePriceReduction.toLocaleString()}`;
-    }
 
     if (groupDiscount > 0) {
       message += `\n🎉 Group Discount: -KES ${groupDiscount.toLocaleString()}`;
