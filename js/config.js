@@ -70,7 +70,7 @@ const SITE_CONFIG = {
         }
     ),
 
-    eventPrice: 2000,
+    eventPrice: 1083,
 
     meetingPoint: "Maai Mahiu Town or AIC Kijabe Hospital Entrance",
 
