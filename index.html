@@ -73,7 +73,8 @@
   <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+  <!-- Google Analytics with default consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
   <!-- ===========================
        GOOGLE CONSENT MODE
   ============================ -->
@@ -87,11 +88,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       ad_personalization: 'denied',
       wait_for_update: 500
     });
-  </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50VJ5C9XV"></script>
-  <script>
+    gtag('consent', 'update', {
+      analytics_storage: 'granted',
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted'
+    });
+  </script>
+  
+
+    <script> 
     gtag('js', new Date());
     gtag('config', 'G-T50VJ5C9XV');
   </script>
@@ -1039,7 +1046,7 @@ document.getElementById("year").textContent =
 <!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/sw.js");
+    navigator.serviceWorker.register("/js/sw.js").catch(() => undefined);
   }
 </script>
 <script>

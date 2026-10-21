@@ -2609,3 +2609,11 @@ body > header {
 .related-articles li {
   margin: 0.65rem 0;
 }
+
+.blog-page > article.blog-post.kijabe-hills-guide > .blog-post-header {
+  grid-column: 1 / -1;
+}
+
+.blog-post.kijabe-hills-guide > .blog-post-header > p:not(.blog-meta) {
+  color: rgba(255, 255, 255, 0.94);
+}

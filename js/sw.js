@@ -1,8 +1,7 @@
-const CACHE_NAME = "kijabe-cache-v3";
+const CACHE_NAME = "kijabe-cache-v4";
 
 const FILES = [
     "/",
-    "/index.html",
     "/css/styles.css"
 ];
 
