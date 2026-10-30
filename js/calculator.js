@@ -9,24 +9,24 @@ const PricingEngine = {
 
   transportFees: {
     self: 0,
-    nairobi: 5929,
-    westlands: 4959,
+    nairobi: 4929,
+    westlands: 3959,
     kikuyu: 3591,
-    thika: 7219,
+    thika: 5219,
     coaster: 0,
     bus: 0
   },
 
   prices: {
     resident: {
-      adult: 1083,
-      student: 785,
-      child: 685
+      adult: 1433,
+      student: 895,
+      child: 695
     },
     nonresident: {
-      adult: 1633,
-      student: 985,
-      child: 885
+      adult: 2533,
+      student: 1195,
+      child: 1095
     }
   },
 
@@ -103,6 +103,7 @@ function initBookingCalculator(config) {
   const totalEl = document.querySelector(config.total);
   const depositEl = document.querySelector(config.deposit);
   const balanceEl = config.balance ? document.querySelector(config.balance) : null;
+  const costBreakdownEl = config.costBreakdown ? document.querySelector(config.costBreakdown) : null;
   const btn = document.querySelector(config.button);
   const resultCard = document.querySelector(config.resultCard);
   const totalHikersEl = document.querySelector(config.totalHikers);
@@ -385,6 +386,16 @@ function initBookingCalculator(config) {
     );
 
     const hikingTotal = Object.values(pricing).reduce((sum, item) => sum + item.subtotal, 0);
+    const guideCount = config.guideFeePerGuide && config.hikersPerGuide
+      ? Math.ceil(hikers / config.hikersPerGuide)
+      : 0;
+    const guideCost = guideCount * (config.guideFeePerGuide || 0);
+    const baseCost = hikingTotal + guideCost;
+    const operatingCostRate = config.operatingCostRate ?? 0;
+    const companyChargeRate = config.companyChargeRate ?? 0;
+    const operatingCost = Math.round(baseCost * operatingCostRate);
+    const companyCharge = Math.round(baseCost * companyChargeRate);
+    const packageCost = Math.round(baseCost * (1 + operatingCostRate + companyChargeRate));
     const carsNeeded = Math.ceil(hikers / 4);
     const transportFee = selectedTransportMode === "shared"
       ? Number(config.sharedTransportFares?.[selectedSharedPickup]) || 0
@@ -396,7 +407,7 @@ function initBookingCalculator(config) {
       hikers,
       (selectedTransportMode === "self-drive" || (!transportMode && transportType === "self")) && parking?.checked
     );
-    const total = hikingTotal + transportCost + parkingData.parkingCost;
+    const total = packageCost + transportCost + parkingData.parkingCost;
     const bookingFeeRate = config.bookingFeeRate ?? PricingEngine.BOOKING_FEE_RATE;
     const bookingFeePercent = Math.round(bookingFeeRate * 100);
     const deposit = PricingEngine.calculateDeposit(total, bookingFeeRate);
@@ -409,6 +420,18 @@ function initBookingCalculator(config) {
     if (totalEl) totalEl.innerText = total.toLocaleString();
     if (depositEl) depositEl.innerText = deposit.toLocaleString();
     if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
+    if (costBreakdownEl) {
+      costBreakdownEl.innerText = [
+        `Forest access fees + transaction charges: KES ${hikingTotal.toLocaleString()}`,
+        `Guide fees (${guideCount} × KES ${(config.guideFeePerGuide || 0).toLocaleString()}): KES ${guideCost.toLocaleString()}`,
+        `Base cost: KES ${baseCost.toLocaleString()}`,
+        `Operating costs (${Math.round(operatingCostRate * 100)}%): KES ${operatingCost.toLocaleString()}`,
+        `Company charge (${Math.round(companyChargeRate * 100)}%): KES ${companyCharge.toLocaleString()}`,
+        `Transport: KES ${transportCost.toLocaleString()}`,
+        `Parking: KES ${parkingData.parkingCost.toLocaleString()}`,
+        "Forest access fees are exclusive of VAT."
+      ].join("\n");
+    }
 
     if (!canConfirm) {
       currentBooking = null;
@@ -455,7 +478,19 @@ function initBookingCalculator(config) {
     const transportMessage = selectedTransportMode === "shared"
       ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
-    message += `\n\n🥾 Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
+    if (config.costBreakdown) {
+      message += `\n\n🥾 Forest access fees + transaction charges: KES ${hikingTotal.toLocaleString()}`;
+      message += `\n🧭 Guide fees (${guideCount} × KES ${(config.guideFeePerGuide || 0).toLocaleString()}): KES ${guideCost.toLocaleString()}`;
+      message += `\nBase cost: KES ${baseCost.toLocaleString()}`;
+      if (operatingCostRate > 0) {
+        message += `\nOperating costs (${Math.round(operatingCostRate * 100)}%): KES ${operatingCost.toLocaleString()}`;
+      }
+      if (companyChargeRate > 0) {
+        message += `\nCompany charge (${Math.round(companyChargeRate * 100)}%): KES ${companyCharge.toLocaleString()}`;
+      }
+    } else {
+      message += `\n\n🥾 Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
+    }
     message += `\n\n🚐 Transport: ${transportMessage}\n`;
 
     if (transportCost > 0) {
@@ -466,7 +501,11 @@ function initBookingCalculator(config) {
       message += `🅿️ Parking: ${parkingData.cars} car(s) = KES ${parkingData.parkingCost.toLocaleString()}\n`;
     }
 
-    message += `\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (${bookingFeePercent}%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}\n\nI will pay via Till Number 5440810.`;
+    message += `\n\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (${bookingFeePercent}%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}`;
+    if (config.costBreakdown) {
+      message += "\n\nForest access fees are exclusive of VAT.";
+    }
+    message += "\n\nI will pay via Till Number 5440810.";
 
     if (config.bookingMessage) {
       message += `\n\n${config.bookingMessage}`;
@@ -585,18 +624,23 @@ document.addEventListener("DOMContentLoaded", () => {
     pickupInfo: "#pickupInfo",
     bookingType: "Private Group Hike",
     bookingFeeRate: 0.5,
+    guideFeePerGuide: 2000,
+    hikersPerGuide: 4,
+    operatingCostRate: 0.2,
+    companyChargeRate: 0.1,
     prices: {
       resident: {
-        adult: 1183,
-        student: 885,
-        child: 785
+        adult: 433,
+        student: 133,
+        child: 133
       },
       nonresident: {
-        adult: 1883,
-        student: 1285,
-        child: 985
+        adult: 633,
+        student: 183,
+        child: 183
       }
     },
+    costBreakdown: "#costBreakdown",
     bookingMessage: "I understand my booking is confirmed after the 50% booking fee or full payment is received. Meeting point or arranged pick-up point details are shared after the 50% fee is received. I will meet my assigned guides there and, if I paid the 50% fee, pay the remaining balance after meeting them and before the hike begins. Full payment in advance is also accepted."
   });
 

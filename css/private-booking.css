@@ -1412,6 +1412,7 @@ html {
 #booking-calculator .summary-total { display: block; padding: 5px 0 17px; }
 #booking-calculator .summary-total > span { display: block; margin-bottom: 7px; color: var(--booking-muted); font-size: 12px; }
 #booking-calculator .summary-total > strong { font-size: 26px; overflow-wrap: anywhere; }
+#booking-calculator .summary-breakdown { margin: 0 0 16px; color: var(--booking-muted); font-size: 12px; line-height: 1.7; white-space: pre-line; }
 #booking-calculator .balance-panel { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 0; border-top: 1px solid var(--booking-border); color: var(--booking-text); }
 #booking-calculator .balance-panel > span { color: var(--booking-muted); font-size: 12px; }
 #booking-calculator .balance-panel > strong { font-size: 16px; text-align: right; overflow-wrap: anywhere; }
