@@ -103,7 +103,9 @@ function initBookingCalculator(config) {
   const totalEl = document.querySelector(config.total);
   const depositEl = document.querySelector(config.deposit);
   const balanceEl = config.balance ? document.querySelector(config.balance) : null;
-  const costBreakdownEl = config.costBreakdown ? document.querySelector(config.costBreakdown) : null;
+  const showCostBreakdown = Boolean(config.costBreakdown && config.showCostBreakdown);
+  const hideCostBreakdown = Boolean(config.costBreakdown && !showCostBreakdown);
+  const costBreakdownEl = showCostBreakdown ? document.querySelector(config.costBreakdown) : null;
   const btn = document.querySelector(config.button);
   const resultCard = document.querySelector(config.resultCard);
   const totalHikersEl = document.querySelector(config.totalHikers);
@@ -476,33 +478,35 @@ function initBookingCalculator(config) {
     });
 
     const transportMessage = selectedTransportMode === "shared"
-      ? `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
+      ? hideCostBreakdown ? transportLabel : `${transportLabel} (KES ${transportFee.toLocaleString()} per person)`
       : transportLabel || transportType;
     if (config.costBreakdown) {
-      message += `\n\n🥾 Forest access fees + transaction charges: KES ${hikingTotal.toLocaleString()}`;
-      message += `\n🧭 Guide fees (${guideCount} × KES ${(config.guideFeePerGuide || 0).toLocaleString()}): KES ${guideCost.toLocaleString()}`;
-      message += `\nBase cost: KES ${baseCost.toLocaleString()}`;
-      if (operatingCostRate > 0) {
-        message += `\nOperating costs (${Math.round(operatingCostRate * 100)}%): KES ${operatingCost.toLocaleString()}`;
-      }
-      if (companyChargeRate > 0) {
-        message += `\nCompany charge (${Math.round(companyChargeRate * 100)}%): KES ${companyCharge.toLocaleString()}`;
+      if (showCostBreakdown) {
+        message += `\n\n🥾 Forest access fees + transaction charges: KES ${hikingTotal.toLocaleString()}`;
+        message += `\n🧭 Guide fees (${guideCount} × KES ${(config.guideFeePerGuide || 0).toLocaleString()}): KES ${guideCost.toLocaleString()}`;
+        message += `\nBase cost: KES ${baseCost.toLocaleString()}`;
+        if (operatingCostRate > 0) {
+          message += `\nOperating costs (${Math.round(operatingCostRate * 100)}%): KES ${operatingCost.toLocaleString()}`;
+        }
+        if (companyChargeRate > 0) {
+          message += `\nCompany charge (${Math.round(companyChargeRate * 100)}%): KES ${companyCharge.toLocaleString()}`;
+        }
       }
     } else {
       message += `\n\n🥾 Hiking Cost: KES ${hikingTotal.toLocaleString()}`;
     }
     message += `\n\n🚐 Transport: ${transportMessage}\n`;
 
-    if (transportCost > 0) {
+    if (!hideCostBreakdown && transportCost > 0) {
       message += `Transport Cost: KES ${transportCost.toLocaleString()}\n`;
     }
 
-    if (parkingData.parkingCost > 0) {
+    if (!hideCostBreakdown && parkingData.parkingCost > 0) {
       message += `🅿️ Parking: ${parkingData.cars} car(s) = KES ${parkingData.parkingCost.toLocaleString()}\n`;
     }
 
     message += `\n\n💰 TOTAL: KES ${total.toLocaleString()}\n\n💳 Booking Fee (${bookingFeePercent}%): KES ${deposit.toLocaleString()}\n💵 Remaining Balance: KES ${(total - deposit).toLocaleString()}`;
-    if (config.costBreakdown) {
+    if (showCostBreakdown) {
       message += "\n\nForest access fees are exclusive of VAT.";
     }
     message += "\n\nI will pay via Till Number 5440810.";
@@ -628,6 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hikersPerGuide: 4,
     operatingCostRate: 0.2,
     companyChargeRate: 0.1,
+    showCostBreakdown: false,
     prices: {
       resident: {
         adult: 433,
