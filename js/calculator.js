@@ -105,7 +105,6 @@ function initBookingCalculator(config) {
   const balanceEl = config.balance ? document.querySelector(config.balance) : null;
   const showCostBreakdown = Boolean(config.costBreakdown && config.showCostBreakdown);
   const hideCostBreakdown = Boolean(config.costBreakdown && !showCostBreakdown);
-  const costBreakdownEl = showCostBreakdown ? document.querySelector(config.costBreakdown) : null;
   const btn = document.querySelector(config.button);
   const resultCard = document.querySelector(config.resultCard);
   const totalHikersEl = document.querySelector(config.totalHikers);
@@ -422,18 +421,6 @@ function initBookingCalculator(config) {
     if (totalEl) totalEl.innerText = total.toLocaleString();
     if (depositEl) depositEl.innerText = deposit.toLocaleString();
     if (balanceEl) balanceEl.innerText = (total - deposit).toLocaleString();
-    if (costBreakdownEl) {
-      costBreakdownEl.innerText = [
-        `Forest access fees + transaction charges: KES ${hikingTotal.toLocaleString()}`,
-        `Guide fees (${guideCount} × KES ${(config.guideFeePerGuide || 0).toLocaleString()}): KES ${guideCost.toLocaleString()}`,
-        `Base cost: KES ${baseCost.toLocaleString()}`,
-        `Operating costs (${Math.round(operatingCostRate * 100)}%): KES ${operatingCost.toLocaleString()}`,
-        `Company charge (${Math.round(companyChargeRate * 100)}%): KES ${companyCharge.toLocaleString()}`,
-        `Transport: KES ${transportCost.toLocaleString()}`,
-        `Parking: KES ${parkingData.parkingCost.toLocaleString()}`,
-        "Forest access fees are exclusive of VAT."
-      ].join("\n");
-    }
 
     if (!canConfirm) {
       currentBooking = null;

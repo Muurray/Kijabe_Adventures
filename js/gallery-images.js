@@ -1,15 +1,27 @@
 // List of gallery image filenames in /images/Gallery/
 window.GALLERY_IMAGES = [
   "hike1.jpeg",
+  "hike1a.jpeg",
+  "nov1.jpeg",
   "hike2.jpeg",
+  "hike2a.jpeg",
+  "sept13.jpeg",
   "hike3.jpeg",
+  "hike3a.jpeg",
   "hike4.jpeg",
+  "hike4a.jpeg",
   "hike5.jpeg",
+  "hike6.jpeg",
+  "sept13a.jpeg",
   "hike7.jpeg",
   "hike8.jpeg",
+  "hike8a.jpeg",
   "hike9.jpeg",
+  "hike9a.jpeg",
   "hike10.jpeg",
+  "hike10a.jpeg",
   "hike11.jpeg",
+  "hike11a.jpeg",
   "hike12.jpeg",
   "hike13.jpeg",
   "hike14.jpeg",
@@ -49,5 +61,7 @@ window.GALLERY_IMAGES = [
   "hike49.jpeg",
   "hike50.jpeg",
   "hike51.jpeg",
-  "hike52.jpeg"
+  "hike52.jpeg",
+  "hike20-2.jpeg",
+  "hike53.jpeg"
 ];
