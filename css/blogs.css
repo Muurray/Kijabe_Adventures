@@ -2617,3 +2617,136 @@ body > header {
 .blog-post.kijabe-hills-guide > .blog-post-header > p:not(.blog-meta) {
   color: rgba(255, 255, 255, 0.94);
 }
+
+/* =========================================
+   UBUNTU CAFE PARTNERSHIP FEATURE
+========================================= */
+
+.ubuntu-partner-feature {
+  margin: 45px 0;
+  padding: 35px 25px;
+  background: #f1f6f1;
+  border-radius: 16px;
+}
+
+.ubuntu-partner-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.ubuntu-partner-tag {
+  display: inline-block;
+  padding: 7px 15px;
+  background: #dcece1;
+  color: #245d3c;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+
+.ubuntu-partner-heading h2 {
+  color: #173f32;
+  margin-bottom: 10px;
+}
+
+.ubuntu-partner-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ubuntu-partner-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.ubuntu-partner-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 13px;
+}
+
+.ubuntu-partner-details h3 {
+  color: #173f32;
+  margin-bottom: 12px;
+}
+
+.ubuntu-partner-benefits {
+  display: grid;
+  gap: 13px;
+  margin: 22px 0;
+}
+
+.ubuntu-partner-benefits div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ubuntu-partner-benefits i {
+  color: #34764c;
+  font-size: 19px;
+  min-width: 22px;
+  margin-top: 4px;
+}
+
+.ubuntu-member-note {
+  background: #fff;
+  border-left: 4px solid #34764c;
+  padding: 16px;
+  border-radius: 7px;
+  margin: 22px 0;
+  line-height: 1.6;
+}
+
+.ubuntu-partner-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.ubuntu-partner-actions .cta-button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ubuntu-website-link {
+  color: #245d3c;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+  .ubuntu-partner-feature {
+    padding: 25px 16px;
+    margin: 30px 0;
+  }
+
+  .ubuntu-partner-content {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ubuntu-partner-image img {
+    height: auto;
+  }
+
+  .ubuntu-partner-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ubuntu-partner-actions .cta-button {
+    text-align: center;
+  }
+
+  .ubuntu-partner-actions .ubuntu-website-link {
+    text-align: center;
+  }
+}
